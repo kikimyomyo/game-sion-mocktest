@@ -210,9 +210,10 @@
             sheet_tab: cfg.sheet_tab,
             player: name,
             score: correct,
+            total: problems.length,
             duration_sec: dur,
-            answers_json: JSON.stringify(finalAnswers),
-            meta_json: JSON.stringify({ week: meta.week, weakness_focus: meta.weakness_focus, total: problems.length }),
+            answers: finalAnswers,
+            meta: { week: meta.week, weakness_focus: meta.weakness_focus },
           });
           setDone(true);
         }
