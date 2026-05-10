@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>시온이 모의시험</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet" />
+  <script src="./config.js"></script>
+  <script src="./recorder.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; font-family: 'Nanum Gothic', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #ffe5f0 0%, #e8d5ff 50%, #d5e6ff 100%);
+      min-height: 100vh; padding: 16px; color: #2a2a3a;
+    }
+    .root { max-width: 720px; margin: 0 auto; }
+    .card { background: rgba(255,255,255,0.92); border-radius: 24px; padding: 28px; box-shadow: 0 12px 36px rgba(120,80,200,0.18); }
+    .title { font-family: 'Gaegu', cursive; font-size: 2em; font-weight: 700; color: #6b4ba8; text-align: center; margin-bottom: 6px; }
+    .subtitle { text-align: center; color: #888; font-size: 0.95em; margin-bottom: 18px; }
+    .progress { background: #f0e8ff; height: 10px; border-radius: 6px; overflow: hidden; margin-bottom: 18px; }
+    .progress-bar { background: linear-gradient(90deg, #ff8fc5, #b48dff); height: 100%; transition: width 0.4s; }
+    .qmeta { color: #888; font-size: 0.9em; margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .qbox { background: #faf6ff; border-radius: 16px; padding: 22px; margin-bottom: 16px; font-size: 1.1em; line-height: 1.6; }
+    .speak-btn { background: #6b4ba8; color: white; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 0.85em; margin-left: 8px; }
+    .choices { display: grid; gap: 10px; margin-bottom: 14px; }
+    .choice { background: white; border: 2px solid #e8d5ff; border-radius: 14px; padding: 14px 16px; text-align: left; cursor: pointer; font-size: 1em; transition: all 0.15s; font-family: inherit; }
+    .choice:hover:not(:disabled) { border-color: #b48dff; transform: translateY(-1px); }
+    .choice.correct { background: #d4f5d4; border-color: #4caf50; }
+    .choice.wrong { background: #ffd4d4; border-color: #f44336; }
+    .choice:disabled { cursor: default; }
+    .short-input { width: 100%; padding: 14px; border: 2px solid #e8d5ff; border-radius: 14px; font-size: 1em; font-family: inherit; }
+    .short-input:focus { outline: none; border-color: #b48dff; }
+    .actions { display: flex; gap: 10px; justify-content: space-between; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+    .btn { background: linear-gradient(135deg, #ff8fc5, #b48dff); color: white; border: none; border-radius: 14px; padding: 12px 22px; font-size: 1em; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-ghost { background: white; color: #6b4ba8; border: 2px solid #b48dff; }
+    .feedback { background: #fff8e1; border-left: 4px solid #ffb84d; border-radius: 10px; padding: 14px; margin-top: 12px; font-size: 0.95em; line-height: 1.5; }
+    .feedback.ok { background: #e8f7e8; border-left-color: #4caf50; }
+    .hint { background: #e8f2ff; border-left: 4px solid #4d9eff; border-radius: 10px; padding: 12px; margin-top: 10px; font-size: 0.92em; }
+    .empty { text-align: center; padding: 40px 20px; color: #888; }
+    .empty-emoji { font-size: 3em; margin-bottom: 10px; }
+    .result-card { text-align: center; }
+    .result-score { font-family: 'Gaegu', cursive; font-size: 4em; color: #6b4ba8; font-weight: 700; }
+    .result-pct { color: #888; font-size: 1.1em; margin-bottom: 16px; }
+    .result-msg { font-size: 1.05em; margin: 14px 0; line-height: 1.5; }
+    .focus-tag { display: inline-block; background: #f0e8ff; color: #6b4ba8; border-radius: 20px; padding: 4px 12px; font-size: 0.85em; margin: 3px; }
+    @media (max-width: 480px) {
+      .card { padding: 18px; }
+      .title { font-size: 1.6em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="root" id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    function speak(text) {
+      try {
+        if (!("speechSynthesis" in window)) return;
+        const u = new SpeechSynthesisUtterance(text);
+        const isKo = /[ㄱ-힝]/.test(text);
+        u.lang = isKo ? "ko-KR" : "en-US";
+        u.rate = 0.92;
+        speechSynthesis.cancel();
+        speechSynthesis.speak(u);
+      } catch (e) {}
+    }
+
+    function playSfx(type) {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain); gain.connect(ctx.destination);
+        if (type === "ok") { osc.frequency.value = 660; osc.type = "triangle"; gain.gain.value = 0.18; }
+        else if (type === "wrong") { osc.frequency.value = 220; osc.type = "sawtooth"; gain.gain.value = 0.12; }
+        else { osc.frequency.value = 440; osc.type = "sine"; gain.gain.value = 0.1; }
+        osc.start();
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+        osc.stop(ctx.currentTime + 0.32);
+      } catch (e) {}
+    }
+
+    function recordResult(payload) {
+      try {
+        if (window.GameRecorder?.send) return window.GameRecorder.send(payload);
+        const cfg = window.GAME_CONFIG;
+        if (!cfg.endpoint || cfg.endpoint.includes("PLACEHOLDER")) return;
+        fetch(cfg.endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify(payload),
+        }).catch(() => {});
+      } catch (e) {}
+    }
+
+    function App() {
+      const cfg = window.GAME_CONFIG || {};
+      const problems = cfg.problems || [];
+      const meta = cfg.meta || {};
+
+      const [idx, setIdx] = useState(0);
+      const [answers, setAnswers] = useState([]);
+      const [picked, setPicked] = useState(null);
+      const [shortText, setShortText] = useState("");
+      const [showFeedback, setShowFeedback] = useState(false);
+      const [hintShown, setHintShown] = useState(false);
+      const [done, setDone] = useState(false);
+      const [name, setName] = useState("시온");
+      const [started, setStarted] = useState(false);
+      const startTimeRef = useRef(Date.now());
+      const qStartRef = useRef(Date.now());
+
+      useEffect(() => { qStartRef.current = Date.now(); setHintShown(false); setPicked(null); setShortText(""); setShowFeedback(false); }, [idx]);
+
+      if (problems.length === 0) {
+        return (
+          <div className="card empty">
+            <div className="empty-emoji">📚</div>
+            <h2 style={{color:"#6b4ba8"}}>이번 주 모의시험 준비 중</h2>
+            <p style={{marginTop:10, color:"#666"}}>곧 새 문제가 올라와요!</p>
+            <p style={{marginTop:6, fontSize:"0.9em", color:"#999"}}>마지막 갱신: {meta.generated_at || "—"}</p>
+          </div>
+        );
+      }
+
+      if (!started) {
+        return (
+          <div className="card">
+            <h1 className="title">📚 {cfg.title || "시온이 모의시험"}</h1>
+            <p className="subtitle">{meta.week} · 총 {problems.length}문제 · 약점 위주</p>
+            {meta.weakness_focus && meta.weakness_focus.length > 0 && (
+              <div style={{textAlign:"center", marginBottom:16}}>
+                <div style={{fontSize:"0.9em", color:"#666", marginBottom:6}}>이번 주 집중 단원</div>
+                {meta.weakness_focus.map((f,i) => <span key={i} className="focus-tag">{f}</span>)}
+              </div>
+            )}
+            <div style={{margin:"20px 0", textAlign:"center"}}>
+              <input className="short-input" style={{maxWidth:240, textAlign:"center"}} value={name} onChange={e => setName(e.target.value)} placeholder="이름" />
+            </div>
+            <div style={{textAlign:"center"}}>
+              <button className="btn" onClick={() => { setStarted(true); startTimeRef.current = Date.now(); qStartRef.current = Date.now(); }}>시작하기 ▶</button>
+            </div>
+          </div>
+        );
+      }
+
+      if (done) {
+        const correct = answers.filter(a => a.correct).length;
+        const total = problems.length;
+        const pct = Math.round((correct/total)*100);
+        const dur = Math.round((Date.now() - startTimeRef.current)/1000);
+        const wrongUnits = [...new Set(answers.filter(a => !a.correct).map(a => a.unit))];
+        return (
+          <div className="card result-card">
+            <h1 className="title">🎉 수고했어 시온!</h1>
+            <div className="result-score">{correct}<span style={{fontSize:"0.5em", color:"#888"}}>/{total}</span></div>
+            <p className="result-pct">{pct}점 · {Math.floor(dur/60)}분 {dur%60}초</p>
+            <p className="result-msg">
+              {pct === 100 ? "🌟 완벽해! 진짜 잘했어!" :
+               pct >= 80 ? "👏 정말 잘했어! 이대로만 가자!" :
+               pct >= 60 ? "💪 잘하고 있어! 약점 단원 한 번 더 보면 완벽!" :
+               "🌱 천천히 다시 풀어보자. 약점이 보이는 게 중요해!"}
+            </p>
+            {wrongUnits.length > 0 && (
+              <div style={{margin:"14px 0"}}>
+                <div style={{fontSize:"0.95em", color:"#666", marginBottom:6}}>다음에 더 연습할 단원</div>
+                {wrongUnits.map((u,i) => <span key={i} className="focus-tag">{u}</span>)}
+              </div>
+            )}
+            <button className="btn" onClick={() => { setIdx(0); setAnswers([]); setDone(false); setStarted(false); }}>다시 풀기 🔁</button>
+          </div>
+        );
+      }
+
+      const q = problems[idx];
+      const isMcq = q.type === "mcq";
+
+      function submit() {
+        if (showFeedback) return;
+        let userAns, isCorrect;
+        if (isMcq) {
+          userAns = picked;
+          isCorrect = picked === q.answer;
+        } else {
+          userAns = shortText.trim();
+          isCorrect = userAns.toLowerCase() === String(q.answer).trim().toLowerCase();
+        }
+        if (userAns === null || userAns === "") return;
+        const time = (Date.now() - qStartRef.current) / 1000;
+        playSfx(isCorrect ? "ok" : "wrong");
+        setAnswers([...answers, { id: q.id, picked: userAns, correct: isCorrect, time, unit: q.unit }]);
+        setShowFeedback(true);
+      }
+
+      function next() {
+        if (idx + 1 < problems.length) {
+          setIdx(idx + 1);
+        } else {
+          const finalAnswers = [...answers];
+          const correct = finalAnswers.filter(a => a.correct).length;
+          const dur = Math.round((Date.now() - startTimeRef.current)/1000);
+          recordResult({
+            game: cfg.game,
+            sheet_tab: cfg.sheet_tab,
+            player: name,
+            score: correct,
+            duration_sec: dur,
+            answers_json: JSON.stringify(finalAnswers),
+            meta_json: JSON.stringify({ week: meta.week, weakness_focus: meta.weakness_focus, total: problems.length }),
+          });
+          setDone(true);
+        }
+      }
+
+      const isCorrect = showFeedback && answers[answers.length-1]?.correct;
+
+      return (
+        <div className="card">
+          <div className="qmeta">
+            <span>문제 {idx+1} / {problems.length}</span>
+            <span>{q.subject} · {q.unit} · {"★".repeat(q.difficulty || 1)}</span>
+          </div>
+          <div className="progress"><div className="progress-bar" style={{width: `${((idx+1)/problems.length)*100}%`}}></div></div>
+          <div className="qbox">
+            {q.question}
+            {(q.subject === "영어" || /[a-zA-Z]/.test(q.question)) && (
+              <button className="speak-btn" onClick={() => speak(q.question)}>🔊</button>
+            )}
+          </div>
+          {isMcq ? (
+            <div className="choices">
+              {(q.choices || []).map((c, i) => {
+                let cls = "choice";
+                if (showFeedback) {
+                  if (c === q.answer) cls += " correct";
+                  else if (c === picked) cls += " wrong";
+                }
+                return <button key={i} className={cls} disabled={showFeedback} onClick={() => setPicked(c)} style={picked === c && !showFeedback ? {borderColor:"#b48dff", background:"#f6f0ff"} : {}}>{c}</button>;
+              })}
+            </div>
+          ) : (
+            <input className="short-input" value={shortText} onChange={e => setShortText(e.target.value)} placeholder="답을 입력하세요" disabled={showFeedback} onKeyDown={e => e.key === "Enter" && submit()} autoFocus />
+          )}
+          {hintShown && q.hint && <div className="hint">💡 {q.hint}</div>}
+          {showFeedback && (
+            <div className={"feedback " + (isCorrect ? "ok" : "")}>
+              <strong>{isCorrect ? "✅ 정답!" : `❌ 정답: ${q.answer}`}</strong>
+              {q.explanation && <div style={{marginTop:6}}>{q.explanation}</div>}
+            </div>
+          )}
+          <div className="actions">
+            {!showFeedback && q.hint && <button className="btn btn-ghost" onClick={() => setHintShown(true)} disabled={hintShown}>💡 힌트</button>}
+            {!showFeedback ? (
+              <button className="btn" onClick={submit} disabled={isMcq ? picked === null : !shortText.trim()} style={{marginLeft:"auto"}}>제출</button>
+            ) : (
+              <button className="btn" onClick={next} style={{marginLeft:"auto"}}>{idx+1 === problems.length ? "결과 보기 🎉" : "다음 ▶"}</button>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
