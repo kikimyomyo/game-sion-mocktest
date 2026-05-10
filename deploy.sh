@@ -32,12 +32,22 @@ for src in "$HUB/_shared/"*.js; do
 done
 
 # 엔드포인트를 config.js에 주입 (PLACEHOLDER 치환)
-ENDPOINT_FILE="$HUB/_shared/endpoint.txt"
+# sion-mocktest는 시온 전용 spreadsheet/Apps Script 사용 (성경게임과 분리)
+SION_ENDPOINT_FILE="$HOME/sys/active/기묘한_시온튜터/data/sion_endpoint.txt"
+SHARED_ENDPOINT_FILE="$HUB/_shared/endpoint.txt"
+if [[ -f "$SION_ENDPOINT_FILE" ]]; then
+  ENDPOINT_FILE="$SION_ENDPOINT_FILE"
+  echo "▶ 시온 전용 endpoint 사용: $ENDPOINT_FILE"
+else
+  ENDPOINT_FILE="$SHARED_ENDPOINT_FILE"
+  echo "⚠ 시온 전용 endpoint 없음, 공용 endpoint 사용 (성경게임과 같은 시트로 들어감)"
+  echo "  분리하려면: $SION_ENDPOINT_FILE 에 시온 전용 Apps Script URL 저장"
+fi
 ENDPOINT="$(grep -v '^#' "$ENDPOINT_FILE" | grep -v '^$' | head -1)"
 if [[ "$ENDPOINT" == *PLACEHOLDER* ]]; then
-  echo "⚠ _shared/endpoint.txt가 PLACEHOLDER 상태입니다. Apps Script URL로 교체해야 기록이 됩니다."
+  echo "⚠ endpoint.txt가 PLACEHOLDER 상태입니다. Apps Script URL로 교체해야 기록이 됩니다."
 else
-  perl -i -pe "s|https://script.google.com/macros/s/PLACEHOLDER/exec|$ENDPOINT|g" "$GAME_DIR/config.js"
+  perl -i -pe "s|https://script.google.com/macros/s/[A-Za-z0-9_-]+/exec|$ENDPOINT|g" "$GAME_DIR/config.js"
   echo "✓ endpoint 주입 완료"
 fi
 

@@ -2,7 +2,7 @@ window.GAME_CONFIG = {
   game: "sion-mocktest",
   title: "시온이 모의시험",
   sheet_tab: "sion-mocktest",
-  endpoint: "https://script.google.com/macros/s/AKfycbx3a96h-vRywYTCxOJxdn199uaFAELyfzy7LRIGeInFuG-ZhxsBh_AKso--Yw8PbYPH/exec",
+  endpoint: "https://script.google.com/macros/s/AKfycbxTAhLbkb-55MT-UGGnGSvgAobVxiU73YiFJ98OEwPH8SONRqIxevqgSuK1Q6yTjdwRnQ/exec",
   problems: [
   {
     "id": 1,
