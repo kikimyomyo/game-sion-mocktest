@@ -123,7 +123,7 @@
       // 모든 사이클을 평탄화된 step 리스트로
       const allSteps = problems.flatMap((p, idx) => {
         const steps = expandCycleToSteps(p);
-        return steps.map(s => ({ ...s, cycleIdx: idx, cycleId: p.id }));
+        return steps.map(s => ({ ...s, cycleIdx: idx, cycleId: p.id, image_url: p.image_url }));
       });
 
       const [stepIdx, setStepIdx] = useState(0);
@@ -268,6 +268,11 @@
               {step.suneung && <div style={{marginBottom:10}}><span className="badge suneung">📌 참고 기출: {step.suneung}</span></div>}
               <div className="step-title">{step.title || "🎯 기출 문제"}</div>
               <div className="step-body">{step.body}</div>
+              {step.image_url && (
+                <div style={{margin:"16px 0", textAlign:"center"}}>
+                  <img src={step.image_url} alt="개념 도식" style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
+                </div>
+              )}
               <p style={{marginTop:14, color:"#888", fontSize:"0.9em"}}>이 문제 풀이에 필요한 개념을 차근차근 배워보자.</p>
             </>
           )}
@@ -283,6 +288,11 @@
           {step.type === "solution" && (
             <>
               <div className="step-title">{step.title || "✏️ 풀이 해설"}</div>
+              {step.image_url && (
+                <div style={{margin:"10px 0", textAlign:"center"}}>
+                  <img src={step.image_url} alt="풀이 도식" style={{maxWidth:"80%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
+                </div>
+              )}
               <div className="step-body">{step.body}</div>
             </>
           )}
