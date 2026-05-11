@@ -363,18 +363,138 @@ window.GAME_CONFIG = {
     "answer": "knives",
     "explanation": "five 뒤 복수 + knife → knives (-fe → -ves)",
     "hint": "-fe → -ves"
+  },
+  {
+    "id": 25,
+    "subject": "수학",
+    "unit": "6-1 각기둥·각뿔 / 밑면 둘레",
+    "difficulty": 3,
+    "type": "mcq",
+    "question": "오각기둥의 밑면(정오각형)의 한 변이 7cm일 때, 밑면의 둘레는?",
+    "choices": [
+      "7cm",
+      "14cm",
+      "35cm",
+      "70cm"
+    ],
+    "answer": "35cm",
+    "explanation": "정오각형 둘레 = 한 변 × 5 = 7 × 5 = 35cm",
+    "hint": "오각형 = 5변. 둘레 = 한 변 × 변의 수"
+  },
+  {
+    "id": 26,
+    "subject": "수학",
+    "unit": "6-1 각기둥·각뿔 / 밑면 둘레",
+    "difficulty": 3,
+    "type": "short",
+    "question": "정육각뿔의 밑면 한 변이 4cm일 때, 밑면의 둘레는 몇 cm인가요?",
+    "answer": "24",
+    "explanation": "육각뿔 밑면 = 정육각형. 둘레 = 4 × 6 = 24cm",
+    "hint": "육각 = 6변"
+  },
+  {
+    "id": 27,
+    "subject": "수학",
+    "unit": "평면도형 / 중점 연결",
+    "difficulty": 4,
+    "type": "mcq",
+    "question": "정사각형의 네 변의 중점을 연결해 만든 안쪽 정사각형의 넓이는 원래 정사각형의 몇 분의 몇인가요?",
+    "choices": [
+      "1/4",
+      "1/2",
+      "2/3",
+      "1/3"
+    ],
+    "answer": "1/2",
+    "explanation": "중점 연결로 만든 안쪽 정사각형은 원래의 정확히 절반 넓이. 매 단계마다 1/2씩 줄어듦.",
+    "hint": "한 단계당 1/2"
+  },
+  {
+    "id": 28,
+    "subject": "수학",
+    "unit": "평면도형 / 중점 연결 반복",
+    "difficulty": 4,
+    "type": "mcq",
+    "question": "넓이 16cm²인 정사각형에서 중점 연결을 두 번 반복하면 가장 안쪽 정사각형의 넓이는?",
+    "choices": [
+      "8cm²",
+      "4cm²",
+      "2cm²",
+      "1cm²"
+    ],
+    "answer": "4cm²",
+    "explanation": "단계마다 1/2. 16 → 8 → 4. 두 번 반복 = ×1/4",
+    "hint": "매 단계 1/2. 2단계면 ×1/4"
+  },
+  {
+    "id": 29,
+    "subject": "수학",
+    "unit": "평면도형 / 중점 연결 반복",
+    "difficulty": 4,
+    "type": "short",
+    "question": "넓이 32cm²인 정사각형에서 중점 연결을 세 번 반복하면 가장 안쪽 정사각형의 넓이는 몇 cm²?",
+    "answer": "4",
+    "explanation": "세 번 = ×1/2 × 1/2 × 1/2 = ×1/8. 32 ÷ 8 = 4cm²",
+    "hint": "3단계 = ×1/8"
+  },
+  {
+    "id": 30,
+    "subject": "수학",
+    "unit": "6-1 직육면체 / 부피",
+    "difficulty": 3,
+    "type": "mcq",
+    "question": "가로 5cm, 세로 4cm, 높이 3cm인 직육면체의 부피는?",
+    "choices": [
+      "12cm³",
+      "20cm³",
+      "60cm³",
+      "47cm³"
+    ],
+    "answer": "60cm³",
+    "explanation": "부피 = 가로 × 세로 × 높이 = 5 × 4 × 3 = 60cm³",
+    "hint": "세 변 모두 곱하기"
+  },
+  {
+    "id": 31,
+    "subject": "수학",
+    "unit": "6-1 직육면체 / 부피·단위",
+    "difficulty": 4,
+    "type": "short",
+    "question": "한 모서리 길이가 0.5m인 정육면체의 부피는 몇 m³인가요?",
+    "answer": "0.125",
+    "explanation": "0.5 × 0.5 × 0.5 = 0.125 m³",
+    "hint": "소수점 곱셈 자릿수 주의"
+  },
+  {
+    "id": 32,
+    "subject": "수학",
+    "unit": "평면도형 / 중점 연결 + 둘레",
+    "difficulty": 4,
+    "type": "mcq",
+    "question": "정삼각형의 한 변이 8cm. 각 변의 중점을 연결해 만든 안쪽 정삼각형의 둘레는?",
+    "choices": [
+      "4cm",
+      "8cm",
+      "12cm",
+      "24cm"
+    ],
+    "answer": "12cm",
+    "explanation": "중점 연결 시 한 변은 원래의 1/2 = 4cm. 정삼각형 둘레 = 4 × 3 = 12cm",
+    "hint": "중점 연결 = 변 1/2 → 둘레도 1/2. 그 후 ×3변"
   }
 ],
   meta: {
   "generated_at": "2026-05-11",
   "week": "2026-W20",
   "weakness_focus": [
-    "자음+y → ies",
-    "-x → es",
-    "-f 예외",
-    "child→children 불규칙",
-    "지시어 복수 응용",
-    "their vs theirs"
+    "영어: 자음+y → ies",
+    "영어: -x → es",
+    "영어: -f 예외",
+    "영어: child→children",
+    "영어: 지시어 복수",
+    "영어: their vs theirs",
+    "수학: 중점 연결 단계",
+    "수학: 각뿔·각기둥 밑면 둘레"
   ],
   "grade": "초6"
 }
