@@ -225,21 +225,30 @@
         }
       }
 
+      function resolveAnswer(q) {
+        // answer가 "1"~"4" 번호 형식이면 choices[N-1]로 변환 (Codex 출제 흔한 패턴)
+        if (q.type === "mcq" && q.choices && /^[1-4]$/.test(String(q.answer).trim())) {
+          const idx = parseInt(q.answer) - 1;
+          if (q.choices[idx] !== undefined) return q.choices[idx];
+        }
+        return q.answer;
+      }
       function submitQuiz() {
         if (showFeedback) return;
         const q = step.data;
         const isMcq = q.type === "mcq";
+        const correctAns = resolveAnswer(q);
         let userAns, isCorrect;
         if (isMcq) {
           userAns = picked;
-          isCorrect = picked === q.answer;
+          isCorrect = picked === correctAns;
         } else {
           userAns = shortText.trim();
-          isCorrect = userAns.toLowerCase() === String(q.answer).trim().toLowerCase();
+          isCorrect = userAns.toLowerCase() === String(correctAns).trim().toLowerCase();
         }
         if (userAns === null || userAns === "") return;
         playSfx(isCorrect ? "ok" : "wrong");
-        setAnswers([...answers, { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, time: 0 }]);
+        setAnswers([...answers, { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, time: 0, correctAns }]);
         setShowFeedback(true);
       }
 
@@ -286,9 +295,10 @@
                 {step.data.type === "mcq" ? (
                   <div className="choices">
                     {(step.data.choices || []).map((c, i) => {
+                      const correctAns = resolveAnswer(step.data);
                       let cls = "choice";
                       if (showFeedback) {
-                        if (c === step.data.answer) cls += " correct";
+                        if (c === correctAns) cls += " correct";
                         else if (c === picked) cls += " wrong";
                       }
                       return <button key={i} className={cls} disabled={showFeedback} onClick={() => setPicked(c)} style={picked === c && !showFeedback ? {borderColor:"#b48dff", background:"#f6f0ff"} : {}}>{c}</button>;
@@ -299,7 +309,7 @@
                 )}
                 {showFeedback && (
                   <div className={"feedback " + (answers[answers.length-1]?.correct ? "ok" : "")}>
-                    <strong>{answers[answers.length-1]?.correct ? "✅ 정답!" : `❌ 정답: ${step.data.answer}`}</strong>
+                    <strong>{answers[answers.length-1]?.correct ? "✅ 정답!" : `❌ 정답: ${answers[answers.length-1]?.correctAns ?? resolveAnswer(step.data)}`}</strong>
                     {step.data.explanation && <div style={{marginTop:6}}>{step.data.explanation}</div>}
                   </div>
                 )}
