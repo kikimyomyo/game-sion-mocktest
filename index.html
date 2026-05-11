@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>시온이 모의시험</title>
+  <title>시온이 학습</title>
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -15,42 +15,47 @@
     html, body { min-height: 100%; font-family: 'Nanum Gothic', sans-serif; }
     body {
       background: linear-gradient(135deg, #ffe5f0 0%, #e8d5ff 50%, #d5e6ff 100%);
-      min-height: 100vh; padding: 16px; color: #2a2a3a;
+      min-height: 100vh; padding: 16px; color: #2a2a3a; line-height: 1.6;
     }
-    .root { max-width: 720px; margin: 0 auto; }
-    .card { background: rgba(255,255,255,0.92); border-radius: 24px; padding: 28px; box-shadow: 0 12px 36px rgba(120,80,200,0.18); }
-    .title { font-family: 'Gaegu', cursive; font-size: 2em; font-weight: 700; color: #6b4ba8; text-align: center; margin-bottom: 6px; }
-    .subtitle { text-align: center; color: #888; font-size: 0.95em; margin-bottom: 18px; }
-    .progress { background: #f0e8ff; height: 10px; border-radius: 6px; overflow: hidden; margin-bottom: 18px; }
+    .root { max-width: 760px; margin: 0 auto; }
+    .card { background: rgba(255,255,255,0.94); border-radius: 24px; padding: 26px; box-shadow: 0 12px 36px rgba(120,80,200,0.18); margin-bottom: 14px; }
+    .title { font-family: 'Gaegu', cursive; font-size: 1.8em; font-weight: 700; color: #6b4ba8; text-align: center; margin-bottom: 6px; }
+    .subtitle { text-align: center; color: #888; font-size: 0.93em; margin-bottom: 14px; }
+    .progress { background: #f0e8ff; height: 8px; border-radius: 6px; overflow: hidden; margin-bottom: 16px; }
     .progress-bar { background: linear-gradient(90deg, #ff8fc5, #b48dff); height: 100%; transition: width 0.4s; }
-    .qmeta { color: #888; font-size: 0.9em; margin-bottom: 8px; display: flex; justify-content: space-between; }
-    .qbox { background: #faf6ff; border-radius: 16px; padding: 22px; margin-bottom: 16px; font-size: 1.1em; line-height: 1.6; }
-    .speak-btn { background: #6b4ba8; color: white; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 0.85em; margin-left: 8px; }
-    .choices { display: grid; gap: 10px; margin-bottom: 14px; }
-    .choice { background: white; border: 2px solid #e8d5ff; border-radius: 14px; padding: 14px 16px; text-align: left; cursor: pointer; font-size: 1em; transition: all 0.15s; font-family: inherit; }
+    .step-meta { color: #888; font-size: 0.85em; margin-bottom: 8px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+    .badge { display: inline-block; background: #f0e8ff; color: #6b4ba8; border-radius: 14px; padding: 3px 10px; font-size: 0.82em; }
+    .badge.suneung { background: #fff0e0; color: #c87800; font-weight: 700; }
+    .step-title { font-family: 'Gaegu', cursive; font-size: 1.6em; color: #6b4ba8; margin-bottom: 10px; }
+    .step-body { font-size: 1.05em; line-height: 1.75; white-space: pre-wrap; }
+    .step-body p { margin-bottom: 8px; }
+    .level-tag { display: inline-block; background: #b48dff; color: white; border-radius: 10px; padding: 4px 12px; font-size: 0.92em; font-weight: 700; margin-bottom: 8px; }
+    .level-tag.초등 { background: #ff8fc5; }
+    .level-tag.중등 { background: #b48dff; }
+    .level-tag.고등 { background: #4d9eff; }
+    .quiz-box { background: #faf6ff; border-radius: 16px; padding: 18px; margin-top: 10px; }
+    .choices { display: grid; gap: 10px; margin: 14px 0; }
+    .choice { background: white; border: 2px solid #e8d5ff; border-radius: 14px; padding: 13px 16px; text-align: left; cursor: pointer; font-size: 1em; transition: all 0.15s; font-family: inherit; }
     .choice:hover:not(:disabled) { border-color: #b48dff; transform: translateY(-1px); }
     .choice.correct { background: #d4f5d4; border-color: #4caf50; }
     .choice.wrong { background: #ffd4d4; border-color: #f44336; }
     .choice:disabled { cursor: default; }
-    .short-input { width: 100%; padding: 14px; border: 2px solid #e8d5ff; border-radius: 14px; font-size: 1em; font-family: inherit; }
+    .short-input { width: 100%; padding: 13px; border: 2px solid #e8d5ff; border-radius: 14px; font-size: 1em; font-family: inherit; }
     .short-input:focus { outline: none; border-color: #b48dff; }
-    .actions { display: flex; gap: 10px; justify-content: space-between; align-items: center; margin-top: 12px; flex-wrap: wrap; }
-    .btn { background: linear-gradient(135deg, #ff8fc5, #b48dff); color: white; border: none; border-radius: 14px; padding: 12px 22px; font-size: 1em; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .feedback { background: #fff8e1; border-left: 4px solid #ffb84d; border-radius: 10px; padding: 12px; margin-top: 12px; font-size: 0.95em; }
+    .feedback.ok { background: #e8f7e8; border-left-color: #4caf50; }
+    .actions { display: flex; gap: 10px; justify-content: space-between; align-items: center; margin-top: 16px; flex-wrap: wrap; }
+    .btn { background: linear-gradient(135deg, #ff8fc5, #b48dff); color: white; border: none; border-radius: 14px; padding: 12px 24px; font-size: 1em; font-weight: 700; cursor: pointer; font-family: inherit; }
     .btn:disabled { opacity: 0.4; cursor: not-allowed; }
     .btn-ghost { background: white; color: #6b4ba8; border: 2px solid #b48dff; }
-    .feedback { background: #fff8e1; border-left: 4px solid #ffb84d; border-radius: 10px; padding: 14px; margin-top: 12px; font-size: 0.95em; line-height: 1.5; }
-    .feedback.ok { background: #e8f7e8; border-left-color: #4caf50; }
-    .hint { background: #e8f2ff; border-left: 4px solid #4d9eff; border-radius: 10px; padding: 12px; margin-top: 10px; font-size: 0.92em; }
     .empty { text-align: center; padding: 40px 20px; color: #888; }
     .empty-emoji { font-size: 3em; margin-bottom: 10px; }
-    .result-card { text-align: center; }
-    .result-score { font-family: 'Gaegu', cursive; font-size: 4em; color: #6b4ba8; font-weight: 700; }
-    .result-pct { color: #888; font-size: 1.1em; margin-bottom: 16px; }
-    .result-msg { font-size: 1.05em; margin: 14px 0; line-height: 1.5; }
-    .focus-tag { display: inline-block; background: #f0e8ff; color: #6b4ba8; border-radius: 20px; padding: 4px 12px; font-size: 0.85em; margin: 3px; }
+    .result-score { font-family: 'Gaegu', cursive; font-size: 3.5em; color: #6b4ba8; font-weight: 700; text-align: center; }
+    .focus-tag { display: inline-block; background: #f0e8ff; color: #6b4ba8; border-radius: 18px; padding: 3px 12px; font-size: 0.85em; margin: 3px; }
     @media (max-width: 480px) {
       .card { padding: 18px; }
-      .title { font-size: 1.6em; }
+      .title { font-size: 1.5em; }
+      .step-title { font-size: 1.4em; }
     }
   </style>
 </head>
@@ -63,40 +68,51 @@
       try {
         if (!("speechSynthesis" in window)) return;
         const u = new SpeechSynthesisUtterance(text);
-        const isKo = /[ㄱ-힝]/.test(text);
-        u.lang = isKo ? "ko-KR" : "en-US";
+        u.lang = /[ㄱ-힝]/.test(text) ? "ko-KR" : "en-US";
         u.rate = 0.92;
         speechSynthesis.cancel();
         speechSynthesis.speak(u);
       } catch (e) {}
     }
-
-    function playSfx(type) {
+    function playSfx(t) {
       try {
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain); gain.connect(ctx.destination);
-        if (type === "ok") { osc.frequency.value = 660; osc.type = "triangle"; gain.gain.value = 0.18; }
-        else if (type === "wrong") { osc.frequency.value = 220; osc.type = "sawtooth"; gain.gain.value = 0.12; }
-        else { osc.frequency.value = 440; osc.type = "sine"; gain.gain.value = 0.1; }
+        const osc = ctx.createOscillator(); const g = ctx.createGain();
+        osc.connect(g); g.connect(ctx.destination);
+        if (t === "ok") { osc.frequency.value = 660; osc.type = "triangle"; g.gain.value = 0.18; }
+        else if (t === "wrong") { osc.frequency.value = 220; osc.type = "sawtooth"; g.gain.value = 0.12; }
+        else { osc.frequency.value = 440; osc.type = "sine"; g.gain.value = 0.1; }
         osc.start();
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+        g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
         osc.stop(ctx.currentTime + 0.32);
       } catch (e) {}
     }
-
     function recordResult(payload) {
       try {
         if (window.GameRecorder?.send) return window.GameRecorder.send(payload);
         const cfg = window.GAME_CONFIG;
         if (!cfg.endpoint || cfg.endpoint.includes("PLACEHOLDER")) return;
-        fetch(cfg.endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain" },
-          body: JSON.stringify(payload),
-        }).catch(() => {});
+        fetch(cfg.endpoint, { method: "POST", headers: {"Content-Type":"text/plain"}, body: JSON.stringify(payload) }).catch(() => {});
       } catch (e) {}
+    }
+
+    // 각 사이클을 6 step으로 펼침 (학습 슬라이드)
+    function expandCycleToSteps(p) {
+      if (!p.기출유사문제 && !p.개념사다리 && !p.풀이해설) {
+        // 구버전 단일 문제 = 1 step만
+        return [{ type: "quiz", data: p }];
+      }
+      const steps = [];
+      if (p.기출유사문제 || p.수능출처) {
+        steps.push({ type: "intro", title: "🎯 수능 기출 유사 문제", body: p.기출유사문제 || "", suneung: p.수능출처 || "", unit: p.unit });
+      }
+      const sadari = p.개념사다리 || {};
+      ["초등","중등","고등"].forEach(level => {
+        if (sadari[level]) steps.push({ type: "concept", level, body: sadari[level] });
+      });
+      if (p.풀이해설) steps.push({ type: "solution", title: "✏️ 풀이 해설", body: p.풀이해설 });
+      if (p.변형문제) steps.push({ type: "quiz", title: "🎲 변형 문제 — 이해했는지 확인!", data: { ...p.변형문제, id: p.id, unit: p.unit, subject: p.subject } });
+      return steps;
     }
 
     function App() {
@@ -104,25 +120,29 @@
       const problems = cfg.problems || [];
       const meta = cfg.meta || {};
 
-      const [idx, setIdx] = useState(0);
+      // 모든 사이클을 평탄화된 step 리스트로
+      const allSteps = problems.flatMap((p, idx) => {
+        const steps = expandCycleToSteps(p);
+        return steps.map(s => ({ ...s, cycleIdx: idx, cycleId: p.id }));
+      });
+
+      const [stepIdx, setStepIdx] = useState(0);
       const [answers, setAnswers] = useState([]);
       const [picked, setPicked] = useState(null);
       const [shortText, setShortText] = useState("");
       const [showFeedback, setShowFeedback] = useState(false);
-      const [hintShown, setHintShown] = useState(false);
       const [done, setDone] = useState(false);
       const [name, setName] = useState("시온");
       const [started, setStarted] = useState(false);
-      const startTimeRef = useRef(Date.now());
-      const qStartRef = useRef(Date.now());
+      const startRef = useRef(Date.now());
 
-      useEffect(() => { qStartRef.current = Date.now(); setHintShown(false); setPicked(null); setShortText(""); setShowFeedback(false); }, [idx]);
+      useEffect(() => { setPicked(null); setShortText(""); setShowFeedback(false); }, [stepIdx]);
 
       if (problems.length === 0) {
         return (
           <div className="card empty">
             <div className="empty-emoji">📚</div>
-            <h2 style={{color:"#6b4ba8"}}>이번 주 모의시험 준비 중</h2>
+            <h2 style={{color:"#6b4ba8"}}>오늘의 학습 준비 중</h2>
             <p style={{marginTop:10, color:"#666"}}>곧 새 문제가 올라와요!</p>
             <p style={{marginTop:6, fontSize:"0.9em", color:"#999"}}>마지막 갱신: {meta.generated_at || "—"}</p>
           </div>
@@ -130,59 +150,85 @@
       }
 
       if (!started) {
+        const cycles = problems.length;
         return (
           <div className="card">
-            <h1 className="title">📚 {cfg.title || "시온이 모의시험"}</h1>
-            <p className="subtitle">{meta.week} · 총 {problems.length}문제 · 약점 위주</p>
+            <h1 className="title">📚 {cfg.title || "시온이 학습"}</h1>
+            <p className="subtitle">{meta.week || meta.generated_at} · {cycles}사이클 · 수능 기출 학습</p>
             {meta.weakness_focus && meta.weakness_focus.length > 0 && (
               <div style={{textAlign:"center", marginBottom:16}}>
-                <div style={{fontSize:"0.9em", color:"#666", marginBottom:6}}>이번 주 집중 단원</div>
+                <div style={{fontSize:"0.9em", color:"#666", marginBottom:6}}>오늘의 집중</div>
                 {meta.weakness_focus.map((f,i) => <span key={i} className="focus-tag">{f}</span>)}
               </div>
             )}
-            <div style={{margin:"20px 0", textAlign:"center"}}>
+            <div style={{margin:"22px 0", textAlign:"center"}}>
               <input className="short-input" style={{maxWidth:240, textAlign:"center"}} value={name} onChange={e => setName(e.target.value)} placeholder="이름" />
             </div>
             <div style={{textAlign:"center"}}>
-              <button className="btn" onClick={() => { setStarted(true); startTimeRef.current = Date.now(); qStartRef.current = Date.now(); }}>시작하기 ▶</button>
+              <button className="btn" onClick={() => { setStarted(true); startRef.current = Date.now(); }}>시작하기 ▶</button>
             </div>
+            <p style={{textAlign:"center", marginTop:14, color:"#888", fontSize:"0.88em"}}>
+              한 사이클: 🎯 기출 → 🪜 개념(초→중→고) → ✏️ 풀이 → 🎲 변형
+            </p>
           </div>
         );
       }
 
       if (done) {
         const correct = answers.filter(a => a.correct).length;
-        const total = problems.length;
-        const pct = Math.round((correct/total)*100);
-        const dur = Math.round((Date.now() - startTimeRef.current)/1000);
+        const total = answers.length;
+        const pct = total > 0 ? Math.round((correct/total)*100) : 100;
+        const dur = Math.round((Date.now() - startRef.current)/1000);
         const wrongUnits = [...new Set(answers.filter(a => !a.correct).map(a => a.unit))];
         return (
-          <div className="card result-card">
+          <div className="card" style={{textAlign:"center"}}>
             <h1 className="title">🎉 수고했어 시온!</h1>
             <div className="result-score">{correct}<span style={{fontSize:"0.5em", color:"#888"}}>/{total}</span></div>
-            <p className="result-pct">{pct}점 · {Math.floor(dur/60)}분 {dur%60}초</p>
-            <p className="result-msg">
-              {pct === 100 ? "🌟 완벽해! 진짜 잘했어!" :
-               pct >= 80 ? "👏 정말 잘했어! 이대로만 가자!" :
-               pct >= 60 ? "💪 잘하고 있어! 약점 단원 한 번 더 보면 완벽!" :
-               "🌱 천천히 다시 풀어보자. 약점이 보이는 게 중요해!"}
+            <p className="subtitle">{pct}점 · {Math.floor(dur/60)}분 {dur%60}초</p>
+            <p style={{marginTop:14, fontSize:"1.05em"}}>
+              {pct === 100 ? "🌟 완벽! 변형 문제도 다 맞았어!" :
+               pct >= 70 ? "👏 잘했어! 개념 단단해지고 있어." :
+               pct >= 40 ? "💪 단계별로 다시 한 번 보면 더 좋아질 거야!" :
+               "🌱 천천히 개념 사다리 다시 읽어보자."}
             </p>
             {wrongUnits.length > 0 && (
-              <div style={{margin:"14px 0"}}>
-                <div style={{fontSize:"0.95em", color:"#666", marginBottom:6}}>다음에 더 연습할 단원</div>
+              <div style={{margin:"16px 0"}}>
+                <div style={{fontSize:"0.95em", color:"#666", marginBottom:6}}>다시 볼 단원</div>
                 {wrongUnits.map((u,i) => <span key={i} className="focus-tag">{u}</span>)}
               </div>
             )}
-            <button className="btn" onClick={() => { setIdx(0); setAnswers([]); setDone(false); setStarted(false); }}>다시 풀기 🔁</button>
+            <button className="btn" onClick={() => { setStepIdx(0); setAnswers([]); setDone(false); setStarted(false); }}>다시 보기 🔁</button>
           </div>
         );
       }
 
-      const q = problems[idx];
-      const isMcq = q.type === "mcq";
+      const step = allSteps[stepIdx];
+      const isLastStep = stepIdx + 1 >= allSteps.length;
 
-      function submit() {
+      function goNext() {
+        if (isLastStep) {
+          const correct = answers.filter(a => a.correct).length;
+          const dur = Math.round((Date.now() - startRef.current)/1000);
+          recordResult({
+            game: cfg.game,
+            sheet_tab: cfg.sheet_tab,
+            player: name,
+            score: correct,
+            total: answers.length,
+            duration_sec: dur,
+            answers: answers,
+            meta: { week: meta.week, weakness_focus: meta.weakness_focus, suneung: true },
+          });
+          setDone(true);
+        } else {
+          setStepIdx(stepIdx + 1);
+        }
+      }
+
+      function submitQuiz() {
         if (showFeedback) return;
+        const q = step.data;
+        const isMcq = q.type === "mcq";
         let userAns, isCorrect;
         if (isMcq) {
           userAns = picked;
@@ -192,75 +238,80 @@
           isCorrect = userAns.toLowerCase() === String(q.answer).trim().toLowerCase();
         }
         if (userAns === null || userAns === "") return;
-        const time = (Date.now() - qStartRef.current) / 1000;
         playSfx(isCorrect ? "ok" : "wrong");
-        setAnswers([...answers, { id: q.id, picked: userAns, correct: isCorrect, time, unit: q.unit }]);
+        setAnswers([...answers, { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, time: 0 }]);
         setShowFeedback(true);
       }
 
-      function next() {
-        if (idx + 1 < problems.length) {
-          setIdx(idx + 1);
-        } else {
-          const finalAnswers = [...answers];
-          const correct = finalAnswers.filter(a => a.correct).length;
-          const dur = Math.round((Date.now() - startTimeRef.current)/1000);
-          recordResult({
-            game: cfg.game,
-            sheet_tab: cfg.sheet_tab,
-            player: name,
-            score: correct,
-            total: problems.length,
-            duration_sec: dur,
-            answers: finalAnswers,
-            meta: { week: meta.week, weakness_focus: meta.weakness_focus },
-          });
-          setDone(true);
-        }
-      }
-
-      const isCorrect = showFeedback && answers[answers.length-1]?.correct;
+      const cycleTotal = problems.length;
+      const cycleIdx = step.cycleIdx + 1;
 
       return (
         <div className="card">
-          <div className="qmeta">
-            <span>문제 {idx+1} / {problems.length}</span>
-            <span>{q.subject} · {q.unit} · {"★".repeat(q.difficulty || 1)}</span>
+          <div className="step-meta">
+            <span>사이클 {cycleIdx} / {cycleTotal} · 단계 {stepIdx+1} / {allSteps.length}</span>
+            <span>{step.unit && <span className="badge">{step.unit}</span>}</span>
           </div>
-          <div className="progress"><div className="progress-bar" style={{width: `${((idx+1)/problems.length)*100}%`}}></div></div>
-          <div className="qbox">
-            {q.question}
-            {(q.subject === "영어" || /[a-zA-Z]/.test(q.question)) && (
-              <button className="speak-btn" onClick={() => speak(q.question)}>🔊</button>
-            )}
-          </div>
-          {isMcq ? (
-            <div className="choices">
-              {(q.choices || []).map((c, i) => {
-                let cls = "choice";
-                if (showFeedback) {
-                  if (c === q.answer) cls += " correct";
-                  else if (c === picked) cls += " wrong";
-                }
-                return <button key={i} className={cls} disabled={showFeedback} onClick={() => setPicked(c)} style={picked === c && !showFeedback ? {borderColor:"#b48dff", background:"#f6f0ff"} : {}}>{c}</button>;
-              })}
-            </div>
-          ) : (
-            <input className="short-input" value={shortText} onChange={e => setShortText(e.target.value)} placeholder="답을 입력하세요" disabled={showFeedback} onKeyDown={e => e.key === "Enter" && submit()} autoFocus />
+          <div className="progress"><div className="progress-bar" style={{width: `${((stepIdx+1)/allSteps.length)*100}%`}}></div></div>
+
+          {step.type === "intro" && (
+            <>
+              {step.suneung && <div style={{marginBottom:10}}><span className="badge suneung">📌 참고 기출: {step.suneung}</span></div>}
+              <div className="step-title">{step.title || "🎯 기출 문제"}</div>
+              <div className="step-body">{step.body}</div>
+              <p style={{marginTop:14, color:"#888", fontSize:"0.9em"}}>이 문제 풀이에 필요한 개념을 차근차근 배워보자.</p>
+            </>
           )}
-          {hintShown && q.hint && <div className="hint">💡 {q.hint}</div>}
-          {showFeedback && (
-            <div className={"feedback " + (isCorrect ? "ok" : "")}>
-              <strong>{isCorrect ? "✅ 정답!" : `❌ 정답: ${q.answer}`}</strong>
-              {q.explanation && <div style={{marginTop:6}}>{q.explanation}</div>}
-            </div>
+
+          {step.type === "concept" && (
+            <>
+              <span className={`level-tag ${step.level}`}>🪜 {step.level}</span>
+              <div className="step-title">개념 사다리</div>
+              <div className="step-body">{step.body}</div>
+            </>
           )}
+
+          {step.type === "solution" && (
+            <>
+              <div className="step-title">{step.title || "✏️ 풀이 해설"}</div>
+              <div className="step-body">{step.body}</div>
+            </>
+          )}
+
+          {step.type === "quiz" && (
+            <>
+              <div className="step-title">{step.title || "🎲 변형 문제"}</div>
+              <div className="quiz-box">
+                <div className="step-body" style={{marginBottom:14, fontWeight:700}}>{step.data.question}</div>
+                {step.data.type === "mcq" ? (
+                  <div className="choices">
+                    {(step.data.choices || []).map((c, i) => {
+                      let cls = "choice";
+                      if (showFeedback) {
+                        if (c === step.data.answer) cls += " correct";
+                        else if (c === picked) cls += " wrong";
+                      }
+                      return <button key={i} className={cls} disabled={showFeedback} onClick={() => setPicked(c)} style={picked === c && !showFeedback ? {borderColor:"#b48dff", background:"#f6f0ff"} : {}}>{c}</button>;
+                    })}
+                  </div>
+                ) : (
+                  <input className="short-input" value={shortText} onChange={e => setShortText(e.target.value)} placeholder="답을 입력하세요" disabled={showFeedback} onKeyDown={e => e.key === "Enter" && submitQuiz()} autoFocus />
+                )}
+                {showFeedback && (
+                  <div className={"feedback " + (answers[answers.length-1]?.correct ? "ok" : "")}>
+                    <strong>{answers[answers.length-1]?.correct ? "✅ 정답!" : `❌ 정답: ${step.data.answer}`}</strong>
+                    {step.data.explanation && <div style={{marginTop:6}}>{step.data.explanation}</div>}
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+
           <div className="actions">
-            {!showFeedback && q.hint && <button className="btn btn-ghost" onClick={() => setHintShown(true)} disabled={hintShown}>💡 힌트</button>}
-            {!showFeedback ? (
-              <button className="btn" onClick={submit} disabled={isMcq ? picked === null : !shortText.trim()} style={{marginLeft:"auto"}}>제출</button>
+            {step.type === "quiz" && !showFeedback ? (
+              <button className="btn" onClick={submitQuiz} disabled={step.data.type === "mcq" ? picked === null : !shortText.trim()} style={{marginLeft:"auto"}}>제출</button>
             ) : (
-              <button className="btn" onClick={next} style={{marginLeft:"auto"}}>{idx+1 === problems.length ? "결과 보기 🎉" : "다음 ▶"}</button>
+              <button className="btn" onClick={goNext} style={{marginLeft:"auto"}}>{isLastStep ? "결과 보기 🎉" : "다음 ▶"}</button>
             )}
           </div>
         </div>
