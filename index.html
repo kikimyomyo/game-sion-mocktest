@@ -117,8 +117,41 @@
 
     function App() {
       const cfg = window.GAME_CONFIG || {};
-      const problems = cfg.problems || [];
-      const meta = cfg.meta || {};
+      const defaultProblems = cfg.problems || [];
+      const defaultMeta = cfg.meta || {};
+      const [selectedProblems, setSelectedProblems] = useState(defaultProblems);
+      const [selectedMeta, setSelectedMeta] = useState(defaultMeta);
+      const [selectedDate, setSelectedDate] = useState(defaultMeta.generated_at || "");
+      const [hubMode, setHubMode] = useState(true);
+      const [archiveIndex, setArchiveIndex] = useState(null);
+
+      // 허브: archive/index.json 가져오기
+      useEffect(() => {
+        fetch(`./archive/index.json?v=${Date.now()}`)
+          .then(r => r.ok ? r.json() : null)
+          .then(d => setArchiveIndex(d))
+          .catch(() => setArchiveIndex(null));
+      }, []);
+
+      function loadDay(date) {
+        fetch(`./archive/${date}.json?v=${Date.now()}`)
+          .then(r => r.json())
+          .then(d => {
+            setSelectedProblems(d.problems || []);
+            setSelectedMeta(d.meta || {});
+            setSelectedDate(date);
+            setHubMode(false);
+          })
+          .catch(e => alert("그날 자료 못 불러옴: " + e));
+      }
+
+      function backToHub() {
+        setHubMode(true);
+        setSelectedDate("");
+      }
+
+      const problems = selectedProblems;
+      const meta = selectedMeta;
 
       // 모든 사이클을 평탄화된 step 리스트로
       const allSteps = problems.flatMap((p, idx) => {
@@ -138,6 +171,61 @@
 
       useEffect(() => { setPicked(null); setShortText(""); setShowFeedback(false); }, [stepIdx]);
 
+      // 허브 모드: 날짜 리스트 표시
+      if (hubMode && archiveIndex && archiveIndex.days && archiveIndex.days.length > 0) {
+        const today = new Date().toISOString().slice(0,10);
+        return (
+          <div className="card">
+            <h1 className="title">📚 시온이 학습 허브</h1>
+            <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
+            <div style={{margin:"20px 0", textAlign:"center", color:"#666", fontSize:"0.9em"}}>
+              총 {archiveIndex.days.length}일치 학습 자료 누적
+            </div>
+            <div style={{display:"grid", gap:10}}>
+              {archiveIndex.days.map((d, i) => {
+                const isToday = d.date === today;
+                return (
+                  <button
+                    key={i}
+                    onClick={() => loadDay(d.date)}
+                    style={{
+                      background: isToday ? "linear-gradient(135deg, #ff8fc5, #b48dff)" : "white",
+                      color: isToday ? "white" : "#2a2a3a",
+                      border: isToday ? "none" : "2px solid #e8d5ff",
+                      borderRadius: 14,
+                      padding: "14px 18px",
+                      textAlign: "left",
+                      cursor: "pointer",
+                      fontSize: "0.98em",
+                      fontFamily: "inherit",
+                    }}
+                  >
+                    <div style={{fontWeight:700, fontSize:"1.05em"}}>
+                      {isToday && "🔥 "} {d.date} ({d.weekday})
+                    </div>
+                    <div style={{fontSize:"0.85em", marginTop:4, opacity:0.85}}>
+                      {d.subjects.join(" · ")} · {d.cycle_count}사이클
+                    </div>
+                    {d.현재단원 && (
+                      <div style={{fontSize:"0.82em", marginTop:3, opacity:0.7}}>
+                        📍 {d.현재단원}
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+            {defaultProblems.length > 0 && (
+              <div style={{marginTop:18, textAlign:"center"}}>
+                <button className="btn" onClick={() => { setSelectedProblems(defaultProblems); setSelectedMeta(defaultMeta); setSelectedDate(defaultMeta.generated_at||""); setHubMode(false); }}>
+                  오늘 바로 시작 ▶
+                </button>
+              </div>
+            )}
+          </div>
+        );
+      }
+
       if (problems.length === 0) {
         return (
           <div className="card empty">
@@ -153,8 +241,15 @@
         const cycles = problems.length;
         return (
           <div className="card">
+            {!hubMode && archiveIndex && archiveIndex.days && archiveIndex.days.length > 1 && (
+              <div style={{marginBottom:10}}>
+                <button className="btn btn-ghost" style={{padding:"6px 14px", fontSize:"0.88em"}} onClick={backToHub}>
+                  ◀ 허브로
+                </button>
+              </div>
+            )}
             <h1 className="title">📚 {cfg.title || "시온이 학습"}</h1>
-            <p className="subtitle">{meta.week || meta.generated_at} · {cycles}사이클 · 수능 기출 학습</p>
+            <p className="subtitle">{selectedDate || meta.generated_at} · {cycles}사이클 · 수능 기출 학습</p>
             {meta.weakness_focus && meta.weakness_focus.length > 0 && (
               <div style={{textAlign:"center", marginBottom:16}}>
                 <div style={{fontSize:"0.9em", color:"#666", marginBottom:6}}>오늘의 집중</div>
