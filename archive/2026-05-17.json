@@ -63,7 +63,8 @@
         "hint": "먼저 넷째 주 화분 수를 찾고, 그 다음 3을 곱하자."
       },
       "이미지_묘사": "화분 수가 1개, 2개, 4개, 8개로 늘어나는 도식. 각 화분에 새싹 3개. 아래에 8 × 3 = 24를 크게 표시. 초등 교과서 파스텔 스타일.",
-      "image_url": "./images/2026-05-17_cycle_2.png"
+      "image_url": "./images/2026-05-17_cycle_2.png",
+      "video_url": "./diagrams/midpoint_theorem_demo.mp4"
     },
     {
       "id": 3,
