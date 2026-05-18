@@ -124,6 +124,7 @@
       const [selectedDate, setSelectedDate] = useState(defaultMeta.generated_at || "");
       const [hubMode, setHubMode] = useState(true);
       const [archiveIndex, setArchiveIndex] = useState(null);
+      const [solveStats, setSolveStats] = useState(null);  // 시트에서 가져온 풀이 결과 {byDate, totals}
 
       // 허브: archive/index.json 가져오기
       useEffect(() => {
@@ -131,6 +132,59 @@
           .then(r => r.ok ? r.json() : null)
           .then(d => setArchiveIndex(d))
           .catch(() => setArchiveIndex(null));
+      }, []);
+
+      // 허브: 시온이 풀이 결과 (Apps Script doGet sion-mocktest 시트)
+      useEffect(() => {
+        const ep = cfg.endpoint;
+        if (!ep || ep.includes("PLACEHOLDER")) return;
+        fetch(`${ep}?action=get&tab=sion-mocktest&v=${Date.now()}`)
+          .then(r => r.ok ? r.json() : null)
+          .then(j => {
+            if (!j || !j.ok || !Array.isArray(j.rows)) return;
+            const rows = j.rows.slice(1);  // skip header
+            const byDate = {};
+            let totalSolved = 0, totalCorrect = 0, perfectCount = 0;
+            for (const r of rows) {
+              try {
+                const ts = r[0];
+                const score = parseInt(r[2], 10);
+                const total = parseInt(r[3], 10);
+                const dur = parseInt(r[4], 10);
+                if (!ts || !Number.isFinite(score) || !Number.isFinite(total) || total === 0) continue;
+                // 시온이 본인 풀이만 (장난 풀이 score/total < 50% & duration < 60초 = 무작위 입력 의심 제외)
+                if (score / total < 0.5 && dur < 60 && total > 5) continue;
+                const date = ts.slice(0, 10);
+                if (!byDate[date]) byDate[date] = [];
+                byDate[date].push({ score, total, dur });
+                totalSolved += total;
+                totalCorrect += score;
+                if (score === total) perfectCount++;
+              } catch (e) {}
+            }
+            // 연속일 계산 (오늘부터 거꾸로)
+            let streak = 0;
+            const today = new Date();
+            for (let i = 0; i < 60; i++) {
+              const d = new Date(today); d.setDate(today.getDate() - i);
+              const ds = d.toISOString().slice(0, 10);
+              if (byDate[ds]) streak++;
+              else if (i > 0) break;  // 오늘은 안 풀어도 OK, 어제부터 끊김 체크
+            }
+            setSolveStats({
+              byDate,
+              totals: {
+                days: Object.keys(byDate).length,
+                attempts: rows.length,
+                solved: totalSolved,
+                correct: totalCorrect,
+                rate: totalSolved ? (totalCorrect / totalSolved) : 0,
+                perfect: perfectCount,
+                streak,
+              },
+            });
+          })
+          .catch(() => {});
       }, []);
 
       function loadDay(date) {
@@ -174,24 +228,86 @@
       // 허브 모드: 날짜 리스트 표시
       if (hubMode && archiveIndex && archiveIndex.days && archiveIndex.days.length > 0) {
         const today = new Date().toISOString().slice(0,10);
+        const stats = solveStats?.totals;
+        const byDate = solveStats?.byDate || {};
+        const fmtAttempt = (a) => {
+          const pct = a.score / a.total;
+          let emoji = "💪";
+          if (a.score === a.total) emoji = "🏆";
+          else if (pct >= 0.8) emoji = "✨";
+          else if (pct >= 0.6) emoji = "👍";
+          else emoji = "🔄";
+          const mm = Math.floor(a.dur/60), ss = a.dur%60;
+          return `${emoji} ${a.score}/${a.total} (${mm}:${String(ss).padStart(2,'0')})`;
+        };
         return (
           <div className="card">
             <h1 className="title">📚 시온이 학습 허브</h1>
             <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
-            <div style={{margin:"20px 0", textAlign:"center", color:"#666", fontSize:"0.9em"}}>
+
+            {stats && (
+              <div style={{
+                margin:"14px 0 20px",
+                background:"linear-gradient(135deg, #fff0f7 0%, #f0e8ff 100%)",
+                borderRadius:18,
+                padding:"16px 14px",
+              }}>
+                <div style={{textAlign:"center", color:"#6b4ba8", fontWeight:700, fontSize:"1.05em", marginBottom:10}}>
+                  🎯 시온이 전적
+                </div>
+                <div style={{display:"grid", gridTemplateColumns:"1fr 1fr 1fr 1fr", gap:8, textAlign:"center"}}>
+                  <div>
+                    <div style={{fontSize:"1.5em", fontWeight:700, color:"#c87800"}}>{stats.streak}</div>
+                    <div style={{fontSize:"0.78em", color:"#888"}}>🔥 연속일</div>
+                  </div>
+                  <div>
+                    <div style={{fontSize:"1.5em", fontWeight:700, color:"#6b4ba8"}}>{stats.days}</div>
+                    <div style={{fontSize:"0.78em", color:"#888"}}>📅 참여일</div>
+                  </div>
+                  <div>
+                    <div style={{fontSize:"1.5em", fontWeight:700, color:"#4caf50"}}>{Math.round(stats.rate*100)}%</div>
+                    <div style={{fontSize:"0.78em", color:"#888"}}>✅ 정답률</div>
+                  </div>
+                  <div>
+                    <div style={{fontSize:"1.5em", fontWeight:700, color:"#ff6f61"}}>{stats.perfect}</div>
+                    <div style={{fontSize:"0.78em", color:"#888"}}>🏆 만점</div>
+                  </div>
+                </div>
+                <div style={{textAlign:"center", marginTop:10, fontSize:"0.85em", color:"#666"}}>
+                  총 {stats.attempts}번 도전 · {stats.correct}/{stats.solved}문제 맞춤
+                </div>
+              </div>
+            )}
+
+            <div style={{margin:"0 0 14px", textAlign:"center", color:"#666", fontSize:"0.9em"}}>
               총 {archiveIndex.days.length}일치 학습 자료 누적
             </div>
             <div style={{display:"grid", gap:10}}>
               {archiveIndex.days.map((d, i) => {
                 const isToday = d.date === today;
+                const attempts = byDate[d.date] || [];
+                const solved = attempts.length > 0;
+                const best = solved ? attempts.reduce((a,b) => (b.score/b.total > a.score/a.total ? b : a)) : null;
+                const allPerfect = solved && attempts.every(a => a.score === a.total);
+                const bgColor = isToday
+                  ? "linear-gradient(135deg, #ff8fc5, #b48dff)"
+                  : allPerfect
+                  ? "linear-gradient(135deg, #fff8d4, #ffe8a0)"
+                  : solved
+                  ? "linear-gradient(135deg, #e8f7e8, #d4f5d4)"
+                  : "white";
+                const borderColor = isToday ? "none"
+                  : allPerfect ? "2px solid #ffc107"
+                  : solved ? "2px solid #4caf50"
+                  : "2px solid #e8d5ff";
                 return (
                   <button
                     key={i}
                     onClick={() => loadDay(d.date)}
                     style={{
-                      background: isToday ? "linear-gradient(135deg, #ff8fc5, #b48dff)" : "white",
+                      background: bgColor,
                       color: isToday ? "white" : "#2a2a3a",
-                      border: isToday ? "none" : "2px solid #e8d5ff",
+                      border: borderColor,
                       borderRadius: 14,
                       padding: "14px 18px",
                       textAlign: "left",
@@ -200,8 +316,16 @@
                       fontFamily: "inherit",
                     }}
                   >
-                    <div style={{fontWeight:700, fontSize:"1.05em"}}>
-                      {isToday && "🔥 "} {d.date} ({d.weekday})
+                    <div style={{fontWeight:700, fontSize:"1.05em", display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:6}}>
+                      <span>{isToday && "🔥 "}{allPerfect && !isToday && "👑 "} {d.date} ({d.weekday})</span>
+                      {solved && (
+                        <span style={{fontSize:"0.85em", fontWeight:700, color: isToday ? "white" : "#2a7a2a"}}>
+                          {attempts.length === 1 ? fmtAttempt(attempts[0]) : `${attempts.length}회 도전 · 최고 ${best.score}/${best.total}`}
+                        </span>
+                      )}
+                      {!solved && !isToday && (
+                        <span style={{fontSize:"0.8em", color:"#888", fontWeight:600}}>💪 도전!</span>
+                      )}
                     </div>
                     <div style={{fontSize:"0.85em", marginTop:4, opacity:0.85}}>
                       {d.subjects.join(" · ")} · {d.cycle_count}사이클
@@ -209,6 +333,11 @@
                     {d.현재단원 && (
                       <div style={{fontSize:"0.82em", marginTop:3, opacity:0.7}}>
                         📍 {d.현재단원}
+                      </div>
+                    )}
+                    {solved && attempts.length > 1 && (
+                      <div style={{fontSize:"0.78em", marginTop:5, opacity:0.85}}>
+                        {attempts.map((a,j) => <span key={j} style={{marginRight:8}}>{fmtAttempt(a)}</span>)}
                       </div>
                     )}
                   </button>
