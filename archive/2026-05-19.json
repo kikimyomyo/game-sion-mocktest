@@ -151,7 +151,8 @@
         "hint": "먼저 60,000원의 10%를 구하고, 그것을 3배 해 보자."
       },
       "이미지_묘사": "60,000원 막대가 50%, 30%, 20% 세 칸으로 나뉜 그림. 30% 칸에 빵 그림과 18,000원 라벨. 아래에 ‘비율 × 전체 금액 = 실제 금액’이라고 큰 글씨.",
-      "image_url": "./images/2026-05-19_cycle_5.png"
+      "image_url": "./images/2026-05-19_cycle_5.png",
+      "video_url": "./diagrams/ratio_distribution_demo.mp4"
     }
   ],
   "meta": {
