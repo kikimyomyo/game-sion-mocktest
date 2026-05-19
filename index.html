@@ -520,6 +520,37 @@
               {step.suneung && <div style={{marginBottom:10}}><span className="badge suneung">📌 참고 기출: {step.suneung}</span></div>}
               <div className="step-title">{step.title || "🎯 기출 문제"}</div>
               <div className="step-body">{step.body}</div>
+              {/* v3: 진짜 수능 선택지 ①~⑤ 카드 — 시온이 진짜 수능 그대로 노출 */}
+              {step.realChoices && step.realChoices.length >= 4 && (
+                <div style={{marginTop:18, background:"#faf6ff", padding:14, borderRadius:14}}>
+                  <div style={{fontSize:"0.9em", color:"#6b4ba8", fontWeight:700, marginBottom:10}}>선택지 (진짜 수능 그대로)</div>
+                  {step.realChoices.map((c, i) => {
+                    const circled = ["①","②","③","④","⑤"][i] || `${i+1}.`;
+                    return (
+                      <div key={i} style={{
+                        padding:"8px 12px",
+                        marginBottom:6,
+                        background:"white",
+                        borderRadius:10,
+                        border:"1px solid #e8d5ff",
+                        fontSize:"0.95em",
+                        lineHeight:1.6,
+                      }}>
+                        <span style={{fontWeight:700, color:"#6b4ba8", marginRight:8}}>{circled}</span>
+                        {c}
+                      </div>
+                    );
+                  })}
+                  {step.realAnswer && (
+                    <details style={{marginTop:10, fontSize:"0.85em", color:"#888"}}>
+                      <summary style={{cursor:"pointer"}}>🔍 진짜 수능 정답 보기 (먼저 풀어본 후!)</summary>
+                      <div style={{marginTop:6, padding:"6px 10px", background:"#fff8e1", borderRadius:8}}>
+                        정답: <strong style={{color:"#c87800"}}>{step.realAnswer}</strong>
+                      </div>
+                    </details>
+                  )}
+                </div>
+              )}
               {step.video_url && (
                 <div style={{margin:"16px 0", textAlign:"center"}}>
                   <video src={step.video_url} autoPlay loop muted playsInline controls style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
