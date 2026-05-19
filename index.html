@@ -617,8 +617,22 @@
           {step.type === "concept" && (
             <>
               <span className={`level-tag ${step.level}`}>🪜 {step.level}</span>
-              <div className="step-title">개념 사다리</div>
-              <div className="step-body">{step.body}</div>
+              <div className="step-title">{step.title || `${step.level} 개념`}</div>
+              <div style={{
+                fontSize: "1.05em",
+                lineHeight: 1.85,
+                whiteSpace: "pre-wrap",
+                background: step.level === "초등" ? "#fff5f7" : step.level === "중등" ? "#f5f0ff" : "#eef5ff",
+                padding: 16,
+                borderRadius: 14,
+                border: `2px solid ${step.level === "초등" ? "#ffb6c1" : step.level === "중등" ? "#c4a8ff" : "#86b3ff"}`,
+                marginTop: 8,
+              }}>{step.body}</div>
+              <p style={{marginTop:10, color:"#888", fontSize:"0.85em"}}>
+                {step.level === "초등" && "💡 시온이가 이미 아는 것 — 천천히 읽어봐"}
+                {step.level === "중등" && "💡 곧 배울 것 — 초등에 이름표만 붙인 거야"}
+                {step.level === "고등" && "💡 먼 미래에 만날 것 — 지금 외울 필요 없어, 그저 보기만"}
+              </p>
             </>
           )}
 
