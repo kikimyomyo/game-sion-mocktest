@@ -98,20 +98,48 @@
 
     // 각 사이클을 6 step으로 펼침 (학습 슬라이드)
     function expandCycleToSteps(p) {
-      if (!p.기출유사문제 && !p.개념사다리 && !p.풀이해설) {
-        // 구버전 단일 문제 = 1 step만
+      if (!p.기출유사문제 && !p.진짜수능본문 && !p.개념사다리 && !p.필요한_개념 && !p.풀이해설) {
         return [{ type: "quiz", data: p }];
       }
       const steps = [];
-      if (p.기출유사문제 || p.수능출처) {
-        steps.push({ type: "intro", title: "🎯 수능 기출 유사 문제", body: p.기출유사문제 || "", suneung: p.수능출처 || "", unit: p.unit });
+      // v3: 진짜 수능 문제 카드 (본문 + 선택지 + 정답)
+      if (p.진짜수능본문 || p.기출유사문제 || p.수능출처) {
+        const realBody = p.진짜수능본문 || p.기출유사문제 || "";
+        const realChoices = p.진짜수능선택지 || null;
+        const realAnswer = p.진짜수능정답 || null;
+        steps.push({
+          type: "intro",
+          title: p.진짜수능본문 ? "🎯 진짜 수능 문제" : "🎯 수능 기출 유사 문제",
+          body: realBody,
+          suneung: p.수능출처 || "",
+          unit: p.unit,
+          realChoices, realAnswer,
+        });
       }
+      // v3: 필요한_개념 (3개 학년 — 이 수능 문제 풀려면 어떤 개념이 필요한가)
+      const needed = p.필요한_개념 || {};
       const sadari = p.개념사다리 || {};
       ["초등","중등","고등"].forEach(level => {
-        if (sadari[level]) steps.push({ type: "concept", level, body: sadari[level] });
+        const body = needed[level] || sadari[level];
+        if (body) steps.push({
+          type: "concept",
+          level,
+          body,
+          title: needed[level] ? `🪜 ${level} 개념 — 이 문제에 필요` : `🪜 ${level}`,
+        });
       });
+      // v3: 통합 풀이법 (한 줄 기억법 + 단계 묶음 + 비유) ⭐
+      if (p.통합풀이법 || p.단계묶음 || p.비유) {
+        const bodyParts = [];
+        if (p.통합풀이법) bodyParts.push(`기억법: ${p.통합풀이법}`);
+        if (Array.isArray(p.단계묶음) && p.단계묶음.length) {
+          bodyParts.push(`\n단계:\n` + p.단계묶음.map((s,i) => `${i+1}. ${s}`).join("\n"));
+        }
+        if (p.비유) bodyParts.push(`\n비유: ${p.비유}`);
+        steps.push({ type: "integrated", title: "💡 통합 풀이법 (외우기 쉬운 한 줄)", body: bodyParts.join("\n") });
+      }
       if (p.풀이해설) steps.push({ type: "solution", title: "✏️ 풀이 해설", body: p.풀이해설 });
-      if (p.변형문제) steps.push({ type: "quiz", title: "🎲 변형 문제 — 이해했는지 확인!", data: { ...p.변형문제, id: p.id, unit: p.unit, subject: p.subject } });
+      if (p.변형문제) steps.push({ type: "quiz", title: "🎲 변형 문제 — 같은 풀이법 적용!", data: { ...p.변형문제, id: p.id, unit: p.unit, subject: p.subject } });
       return steps;
     }
 
@@ -503,6 +531,17 @@
                 </div>
               )}
               <p style={{marginTop:14, color:"#888", fontSize:"0.9em"}}>이 문제 풀이에 필요한 개념을 차근차근 배워보자.</p>
+            </>
+          )}
+
+          {step.type === "integrated" && (
+            <>
+              <div style={{display:"inline-block", background:"#fff0e0", color:"#c87800", padding:"4px 12px", borderRadius:14, fontSize:"0.92em", fontWeight:700, marginBottom:8}}>
+                💡 통합 풀이법 ⭐
+              </div>
+              <div className="step-title">{step.title || "💡 통합 풀이법"}</div>
+              <div className="step-body" style={{background:"#fffaf0", padding:14, borderRadius:14, border:"2px solid #ffd89c", whiteSpace:"pre-wrap"}}>{step.body}</div>
+              <p style={{marginTop:14, color:"#888", fontSize:"0.9em"}}>위 한 줄 기억법으로 같은 유형 다 풀 수 있어!</p>
             </>
           )}
 
