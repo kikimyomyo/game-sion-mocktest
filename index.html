@@ -97,23 +97,52 @@
     }
 
     // 각 사이클을 6 step으로 펼침 (학습 슬라이드)
+    // 본문 강조구간을 React 요소 배열로 변환 (노란 mark 하이라이트)
+    function renderWithEmphasis(text, emphasize) {
+      if (!text || !Array.isArray(emphasize) || emphasize.length === 0) return text;
+      // emphasize substring 중 본문에 실제 존재하는 것만 사용 (긴 순서)
+      const valid = emphasize.filter(e => typeof e === "string" && e.length >= 3 && text.includes(e))
+                              .sort((a, b) => b.length - a.length);
+      if (valid.length === 0) return text;
+      const parts = [{t: text, mark: false}];
+      for (const v of valid) {
+        for (let i = 0; i < parts.length; i++) {
+          if (parts[i].mark) continue;
+          const idx = parts[i].t.indexOf(v);
+          if (idx < 0) continue;
+          const before = parts[i].t.slice(0, idx);
+          const after = parts[i].t.slice(idx + v.length);
+          const inserts = [];
+          if (before) inserts.push({t: before, mark: false});
+          inserts.push({t: v, mark: true});
+          if (after) inserts.push({t: after, mark: false});
+          parts.splice(i, 1, ...inserts);
+          i += inserts.length - 1;
+        }
+      }
+      return parts.map((p, i) => p.mark
+        ? React.createElement("mark", {key: i, style: {background: "#fff59d", padding: "1px 3px", borderRadius: 3, fontWeight: 600}}, p.t)
+        : React.createElement(React.Fragment, {key: i}, p.t));
+    }
+
     function expandCycleToSteps(p) {
       if (!p.기출유사문제 && !p.진짜수능본문 && !p.개념사다리 && !p.필요한_개념 && !p.풀이해설) {
         return [{ type: "quiz", data: p }];
       }
       const steps = [];
-      // v3: 진짜 수능 문제 카드 (본문 + 선택지 + 정답)
+      // v3: 진짜 수능 문제 카드 (본문 + 선택지 + 정답 + 강조구간)
       if (p.진짜수능본문 || p.기출유사문제 || p.수능출처) {
         const realBody = p.진짜수능본문 || p.기출유사문제 || "";
         const realChoices = p.진짜수능선택지 || null;
         const realAnswer = p.진짜수능정답 || null;
+        const emphasize = Array.isArray(p.강조구간) ? p.강조구간 : null;
         steps.push({
           type: "intro",
           title: p.진짜수능본문 ? "🎯 진짜 수능 문제" : "🎯 수능 기출 유사 문제",
           body: realBody,
           suneung: p.수능출처 || "",
           unit: p.unit,
-          realChoices, realAnswer,
+          realChoices, realAnswer, emphasize,
         });
       }
       // v3: 필요한_개념 (3개 학년 — 이 수능 문제 풀려면 어떤 개념이 필요한가)
@@ -146,6 +175,7 @@
         realChoices: p.진짜수능선택지 || null,
         realAnswer: p.진짜수능정답 || null,
         steps: Array.isArray(p.단계묶음) ? p.단계묶음 : null,
+        emphasize: Array.isArray(p.강조구간) ? p.강조구간 : null,
       });
       if (p.변형문제) steps.push({ type: "quiz", title: "🎲 변형 문제 — 같은 풀이법 적용!", data: { ...p.변형문제, id: p.id, unit: p.unit, subject: p.subject } });
       return steps;
@@ -527,7 +557,7 @@
             <>
               {step.suneung && <div style={{marginBottom:10}}><span className="badge suneung">📌 참고 기출: {step.suneung}</span></div>}
               <div className="step-title">{step.title || "🎯 기출 문제"}</div>
-              <div className="step-body">{step.body}</div>
+              <div className="step-body">{renderWithEmphasis(step.body, step.emphasize)}</div>
               {/* v3: 진짜 수능 선택지 ①~⑤ 카드 — 시온이 진짜 수능 그대로 노출 */}
               {step.realChoices && step.realChoices.length >= 4 && (
                 <div style={{marginTop:18, background:"#faf6ff", padding:14, borderRadius:14}}>
@@ -598,8 +628,8 @@
               {/* 본문 재표시 + 발문 핵심 키워드 강조 */}
               {step.realBody && (
                 <details open style={{marginBottom:14, background:"#faf6ff", padding:12, borderRadius:12, border:"1px dashed #b48dff"}}>
-                  <summary style={{cursor:"pointer", fontWeight:700, color:"#6b4ba8", fontSize:"0.9em"}}>📄 진짜 수능 본문 다시 보기</summary>
-                  <div style={{marginTop:8, fontSize:"0.92em", lineHeight:1.7, whiteSpace:"pre-wrap"}}>{step.realBody}</div>
+                  <summary style={{cursor:"pointer", fontWeight:700, color:"#6b4ba8", fontSize:"0.9em"}}>📄 진짜 수능 본문 다시 보기 (정답 근거 노란 강조)</summary>
+                  <div style={{marginTop:8, fontSize:"0.92em", lineHeight:1.7, whiteSpace:"pre-wrap"}}>{renderWithEmphasis(step.realBody, step.emphasize)}</div>
                 </details>
               )}
               {/* 정답 시각 강조: ①~⑤ 카드 + 정답에 초록 배경+체크 */}
