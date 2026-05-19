@@ -149,8 +149,21 @@
       const needed = p.필요한_개념 || {};
       const sadari = p.개념사다리 || {};
       ["초등","중등","고등"].forEach(level => {
-        const body = needed[level] || sadari[level];
-        if (body) steps.push({
+        const raw = needed[level] || sadari[level];
+        if (!raw) return;
+        // v3.6: nested 4구조 object 우선, flat string fallback
+        let body;
+        if (typeof raw === "object" && raw !== null) {
+          const parts = [];
+          if (raw.개념풀이) parts.push(`① 개념 풀이\n${raw.개념풀이}`);
+          if (raw.풀이예시) parts.push(`② 풀이 예시\n${raw.풀이예시}`);
+          if (raw.다음단계다리) parts.push(`③ 다음 단계 다리\n${raw.다음단계다리}`);
+          if (raw.문제적용) parts.push(`④ 이 수능 문제에 적용\n${raw.문제적용}`);
+          body = parts.join("\n\n");
+        } else {
+          body = raw;
+        }
+        steps.push({
           type: "concept",
           level,
           body,
