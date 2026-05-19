@@ -138,7 +138,15 @@
         if (p.비유) bodyParts.push(`\n비유: ${p.비유}`);
         steps.push({ type: "integrated", title: "💡 통합 풀이법 (외우기 쉬운 한 줄)", body: bodyParts.join("\n") });
       }
-      if (p.풀이해설) steps.push({ type: "solution", title: "✏️ 풀이 해설", body: p.풀이해설 });
+      if (p.풀이해설) steps.push({
+        type: "solution",
+        title: "✏️ 풀이 해설",
+        body: p.풀이해설,
+        realBody: p.진짜수능본문 || p.기출유사문제 || "",
+        realChoices: p.진짜수능선택지 || null,
+        realAnswer: p.진짜수능정답 || null,
+        steps: Array.isArray(p.단계묶음) ? p.단계묶음 : null,
+      });
       if (p.변형문제) steps.push({ type: "quiz", title: "🎲 변형 문제 — 같은 풀이법 적용!", data: { ...p.변형문제, id: p.id, unit: p.unit, subject: p.subject } });
       return steps;
     }
@@ -587,6 +595,46 @@
           {step.type === "solution" && (
             <>
               <div className="step-title">{step.title || "✏️ 풀이 해설"}</div>
+              {/* 본문 재표시 + 발문 핵심 키워드 강조 */}
+              {step.realBody && (
+                <details open style={{marginBottom:14, background:"#faf6ff", padding:12, borderRadius:12, border:"1px dashed #b48dff"}}>
+                  <summary style={{cursor:"pointer", fontWeight:700, color:"#6b4ba8", fontSize:"0.9em"}}>📄 진짜 수능 본문 다시 보기</summary>
+                  <div style={{marginTop:8, fontSize:"0.92em", lineHeight:1.7, whiteSpace:"pre-wrap"}}>{step.realBody}</div>
+                </details>
+              )}
+              {/* 정답 시각 강조: ①~⑤ 카드 + 정답에 초록 배경+체크 */}
+              {step.realChoices && step.realChoices.length >= 4 && step.realAnswer && (
+                <div style={{marginBottom:14}}>
+                  <div style={{fontSize:"0.88em", color:"#888", marginBottom:6}}>선택지 (정답 강조)</div>
+                  {step.realChoices.map((c, i) => {
+                    const num = ["①","②","③","④","⑤"][i] || `${i+1}`;
+                    const isAnswer = (step.realAnswer || "").includes(num);
+                    return (
+                      <div key={i} style={{
+                        padding:"7px 11px", marginBottom:5, borderRadius:9,
+                        background: isAnswer ? "#d4f5d4" : "#f8f5ff",
+                        border: isAnswer ? "2px solid #4caf50" : "1px solid #e8d5ff",
+                        fontWeight: isAnswer ? 700 : 400,
+                        fontSize:"0.92em",
+                      }}>
+                        <span style={{color: isAnswer ? "#2a7a2a" : "#6b4ba8", marginRight:8}}>{isAnswer ? "✅ " : ""}{num}</span>
+                        {c}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+              {/* 단계묶음 체크리스트 (있으면 위에 시각화) */}
+              {step.steps && step.steps.length > 0 && (
+                <div style={{marginBottom:14, padding:12, background:"#fffaf0", borderRadius:12, border:"1px solid #ffd89c"}}>
+                  <div style={{fontSize:"0.88em", color:"#c87800", fontWeight:700, marginBottom:6}}>🪜 단계 따라 풀이</div>
+                  {step.steps.map((s, i) => (
+                    <div key={i} style={{padding:"4px 0", fontSize:"0.92em"}}>
+                      <span style={{color:"#c87800", fontWeight:700, marginRight:6}}>{i+1}.</span>{s}
+                    </div>
+                  ))}
+                </div>
+              )}
               {step.video_url && (
                 <div style={{margin:"10px 0", textAlign:"center"}}>
                   <video src={step.video_url} autoPlay loop muted playsInline controls style={{maxWidth:"90%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
@@ -597,7 +645,10 @@
                   <img src={step.image_url} alt="풀이 도식" style={{maxWidth:"80%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
                 </div>
               )}
-              <div className="step-body">{step.body}</div>
+              <div className="step-body" style={{padding:12, background:"#e8f7e8", borderRadius:12, border:"2px solid #4caf50"}}>
+                <strong style={{color:"#2a7a2a"}}>📝 핵심 풀이:</strong>
+                <div style={{marginTop:6, whiteSpace:"pre-wrap"}}>{step.body}</div>
+              </div>
             </>
           )}
 
