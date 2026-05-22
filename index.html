@@ -190,7 +190,13 @@
         steps: Array.isArray(p.단계묶음) ? p.단계묶음 : null,
         emphasize: Array.isArray(p.강조구간) ? p.강조구간 : null,
       });
-      if (p.변형문제) steps.push({ type: "quiz", title: "🎲 변형 문제 — 같은 풀이법 적용!", data: { ...p.변형문제, id: p.id, unit: p.unit, subject: p.subject } });
+      // 변형문제: 단일 객체 (구버전) 또는 변형문제_세트 배열 (v3.12+, 사이클당 2개) 모두 지원
+      const variants = Array.isArray(p.변형문제_세트) ? p.변형문제_세트
+                     : p.변형문제 ? [p.변형문제] : [];
+      variants.forEach((v, vi) => {
+        const label = variants.length > 1 ? `🎲 변형 문제 ${vi+1}/${variants.length} — 같은 풀이법 적용!` : "🎲 변형 문제 — 같은 풀이법 적용!";
+        steps.push({ type: "quiz", title: label, data: { ...v, id: `${p.id}-v${vi+1}`, unit: p.unit, subject: p.subject } });
+      });
       return steps;
     }
 
