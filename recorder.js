@@ -29,5 +29,5 @@
     }
   }
 
-  window.GameRecorder = { submit };
+  window.GameRecorder = { submit, send: submit };
 })();
