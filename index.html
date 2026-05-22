@@ -551,8 +551,25 @@
         }
         if (userAns === null || userAns === "") return;
         playSfx(isCorrect ? "ok" : "wrong");
-        setAnswers([...answers, { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, time: 0, correctAns }]);
+        const newAnswer = { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, time: 0, correctAns };
+        const newAnswers = [...answers, newAnswer];
+        setAnswers(newAnswers);
         setShowFeedback(true);
+        // 🆕 incremental save — 매 변형문제 풀이 직후 즉시 시트에 저장 (부분 풀이도 진도 추적 가능)
+        try {
+          const correctCount = newAnswers.filter(a => a.correct).length;
+          const dur = Math.round((Date.now() - startRef.current)/1000);
+          recordResult({
+            game: cfg.game,
+            sheet_tab: cfg.sheet_tab,
+            player: name,
+            score: correctCount,
+            total: newAnswers.length,
+            duration_sec: dur,
+            answers: newAnswers,
+            meta: { week: meta.week, weakness_focus: meta.weakness_focus, suneung: true, is_partial: newAnswers.length < problems.length, cycle_idx: cycleIdx },
+          });
+        } catch (e) { console.warn("incremental save failed", e); }
       }
 
       const cycleTotal = problems.length;
