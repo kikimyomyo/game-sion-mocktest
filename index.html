@@ -220,6 +220,16 @@
         const label = variants.length > 1 ? `🎲 변형 문제 ${vi+1}/${variants.length} — 같은 풀이법 적용!` : "🎲 변형 문제 — 같은 풀이법 적용!";
         steps.push({ type: "quiz", title: label, data: { ...v, id: `${p.id}-v${vi+1}`, unit: p.unit, subject: p.subject } });
       });
+      // Phase 4: 챌린지 추가 (선택 — "한 판 더!" 옵션). 풀이 시 +5 XP 보너스.
+      const challenges = Array.isArray(p.챌린지_추가) ? p.챌린지_추가 : [];
+      challenges.forEach((c, ci) => {
+        steps.push({
+          type: "quiz",
+          title: `⚡ 챌린지 ${ci+1}/${challenges.length} — 한 판 더! (+5 보너스 XP)`,
+          data: { ...c, id: `${p.id}-c${ci+1}`, unit: p.unit, subject: p.subject, is_challenge: true },
+          is_challenge: true,
+        });
+      });
       return steps;
     }
 
@@ -745,6 +755,37 @@
       const step = allSteps[stepIdx];
       const isLastStep = stepIdx + 1 >= allSteps.length;
 
+      // Phase 4: 챌린지 시작 step이면 "한 판 더?" 분기 화면 (이 사이클의 첫 챌린지인 경우)
+      const isFirstChallengeInCycle = step?.is_challenge && (
+        stepIdx === 0 || !allSteps[stepIdx-1]?.is_challenge ||
+        (allSteps[stepIdx-1]?.is_challenge && allSteps[stepIdx-1].data?.unit !== step.data?.unit)
+      );
+
+      // 챌린지 건너뛰기: 같은 사이클의 모든 챌린지 step 다음 사이클로 점프
+      function skipChallenges() {
+        let next = stepIdx + 1;
+        while (next < allSteps.length && allSteps[next].is_challenge &&
+               allSteps[next].data?.unit === step.data?.unit) {
+          next++;
+        }
+        if (next >= allSteps.length) {
+          // 마지막 사이클 챌린지 = 게임 끝
+          const correct = answers.filter(a => a.correct).length;
+          const dur = Math.round((Date.now() - startRef.current)/1000);
+          recordResult({
+            game: cfg.game, sheet_tab: cfg.sheet_tab, player: name,
+            score: correct, total: answers.length, duration_sec: dur,
+            answers: answers, meta: { week: meta.week, weakness_focus: meta.weakness_focus, suneung: true },
+          });
+          setDone(true);
+        } else {
+          setStepIdx(next);
+          setShowFeedback(false);
+          setPicked(null);
+          setShortText("");
+        }
+      }
+
       function goNext() {
         if (isLastStep) {
           const correct = answers.filter(a => a.correct).length;
@@ -792,12 +833,14 @@
         const newAnswers = [...answers, newAnswer];
         setAnswers(newAnswers);
         setShowFeedback(true);
-        // Phase 3: XP toast (정답 +10 XP, 도파민)
+        // Phase 3+4: XP toast — 변형 +10 / 챌린지 +5 (보너스). 도파민 차별화.
         if (isCorrect) {
           try {
             const toast = document.createElement("div");
             toast.className = "xp-toast";
-            toast.textContent = "+10 XP ✨";
+            const isChal = q.is_challenge;
+            toast.textContent = isChal ? "+5 XP ⚡" : "+10 XP ✨";
+            if (isChal) toast.style.background = "linear-gradient(135deg, #b48dff 0%, #7d3ce0 100%)";
             document.body.appendChild(toast);
             setTimeout(() => toast.remove(), 2000);
           } catch (e) {}
@@ -1004,8 +1047,20 @@
           )}
 
           <div className="actions">
+            {/* Phase 4: 첫 챌린지 step일 때 "패스 →" 버튼 추가 (이 사이클 챌린지 모두 스킵) */}
+            {step.type === "quiz" && step.is_challenge && isFirstChallengeInCycle && !showFeedback && (
+              <button
+                className="btn"
+                onClick={skipChallenges}
+                style={{background:"#e0d8ec", color:"#6b4ba8", marginRight:8}}
+              >
+                ⏭ 다음 사이클로
+              </button>
+            )}
             {step.type === "quiz" && !showFeedback ? (
-              <button className="btn" onClick={submitQuiz} disabled={step.data.type === "mcq" ? picked === null : !shortText.trim()} style={{marginLeft:"auto"}}>제출</button>
+              <button className="btn" onClick={submitQuiz} disabled={step.data.type === "mcq" ? picked === null : !shortText.trim()} style={{marginLeft:"auto"}}>
+                {step.is_challenge ? "도전 +5 ⚡" : "제출"}
+              </button>
             ) : (
               <button className="btn" onClick={goNext} style={{marginLeft:"auto"}}>{isLastStep ? "결과 보기 🎉" : "다음 ▶"}</button>
             )}
