@@ -1307,7 +1307,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "진행시제",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-10",
@@ -1315,7 +1315,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "완료시제",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-11",
@@ -1323,7 +1323,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "조동사",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-12",
@@ -1331,7 +1331,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "수동태",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-13",
@@ -1339,7 +1339,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "관계대명사",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-14",
@@ -1347,7 +1347,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "관계부사",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-15",
@@ -1355,7 +1355,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "부정사",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-16",
@@ -1363,7 +1363,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "동명사",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-17",
@@ -1371,7 +1371,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "분사",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-18",
@@ -1379,7 +1379,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "분사구문",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-19",
@@ -1387,7 +1387,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "비교급/최상급",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-20",
@@ -1395,7 +1395,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "가정법",
-        "grade": "초6",
+        "grade": "고1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-21",
@@ -1403,7 +1403,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "도치",
-        "grade": "초6",
+        "grade": "고1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-22",
@@ -1411,7 +1411,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "강조",
-        "grade": "초6",
+        "grade": "고1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-23",
@@ -1419,7 +1419,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "일치",
-        "grade": "초6",
+        "grade": "고1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-24",
@@ -1427,7 +1427,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "화법",
-        "grade": "초6",
+        "grade": "고1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-25",
@@ -1435,7 +1435,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "특수구문",
-        "grade": "초6",
+        "grade": "고1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-26",
@@ -1531,7 +1531,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "There is/are",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-38",
@@ -1539,7 +1539,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "일반동사",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-39",
@@ -1547,7 +1547,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "현재진행형",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-40",
@@ -1555,7 +1555,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "형용사",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-41",
@@ -1563,7 +1563,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "some/any/many/much",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-42",
@@ -1571,7 +1571,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "부사",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-43",
@@ -1579,7 +1579,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "비교",
-        "grade": "초6",
+        "grade": "중1",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-44",
@@ -1587,7 +1587,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "의문사+일반동사",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-45",
@@ -1595,7 +1595,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "의문사+be동사",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-46",
@@ -1603,7 +1603,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "의문대명사·의문형용사",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-47",
@@ -1611,7 +1611,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "의문부사",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-48",
@@ -1619,7 +1619,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "접속사·명령문",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-49",
@@ -1627,7 +1627,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "조동사 can/must",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-50",
@@ -1635,7 +1635,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "전치사",
-        "grade": "초6",
+        "grade": "중2",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-51",
@@ -1643,7 +1643,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "기수·서수",
-        "grade": "초6",
+        "grade": "중3",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-52",
@@ -1651,7 +1651,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "비인칭주어",
-        "grade": "초6",
+        "grade": "중3",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-53",
@@ -1659,7 +1659,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "과거형",
-        "grade": "초6",
+        "grade": "중3",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-54",
@@ -1667,7 +1667,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "과거진행형",
-        "grade": "초6",
+        "grade": "중3",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-55",
@@ -1675,7 +1675,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "미래형",
-        "grade": "초6",
+        "grade": "중3",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-56",
@@ -1683,7 +1683,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "감탄문",
-        "grade": "초6",
+        "grade": "중3",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-57",
@@ -1691,7 +1691,7 @@ window.GAME_CONFIG = {
       },
       {
         "name": "부정의문문·부가의문문",
-        "grade": "초6",
+        "grade": "중3",
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-58",
