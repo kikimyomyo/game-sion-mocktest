@@ -403,9 +403,9 @@ window.GAME_CONFIG = {
 },
   dashboard: {
   "grade": "초6",
-  "target_year": "2033학년도 수능",
-  "goal": "국내대학 수의학과 (자연계열)",
-  "overall_progress": 27,
+  "chapter": 1,
+  "chapter_total": 5,
+  "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
   "total_plays": 59,
@@ -503,52 +503,38 @@ window.GAME_CONFIG = {
   "roadmap": [
     {
       "grade": "초6",
-      "label": "초6",
-      "year": "2026",
+      "label": "Chapter 1",
+      "short": "초6",
       "status": "current",
-      "milestone": "5영역 진입"
+      "milestone": "🌱 모든 영역 모험 시작"
     },
     {
       "grade": "중1",
-      "label": "중1",
-      "year": "2027",
+      "label": "Chapter 2",
+      "short": "중1",
       "status": "locked",
-      "milestone": "기초 누적"
+      "milestone": "🌿 기초 스킬 트리 완성"
     },
     {
       "grade": "중2",
-      "label": "중2",
-      "year": "2028",
+      "label": "Chapter 3",
+      "short": "중2",
       "status": "locked",
-      "milestone": "응용 진입"
+      "milestone": "🌳 응용 챌린지 진입"
     },
     {
       "grade": "중3",
-      "label": "중3",
-      "year": "2029",
+      "label": "Chapter 4",
+      "short": "중3",
       "status": "locked",
-      "milestone": "수능 30% 범위"
+      "milestone": "⭐ 모든 단원 마스터 도전"
     },
     {
-      "grade": "고1",
-      "label": "고1",
-      "year": "2030",
+      "grade": "졸업",
+      "label": "🎓 엔딩",
+      "short": "🎓",
       "status": "locked",
-      "milestone": "수능 60% 범위"
-    },
-    {
-      "grade": "고2",
-      "label": "고2",
-      "year": "2031",
-      "status": "locked",
-      "milestone": "수능 90% 범위"
-    },
-    {
-      "grade": "고3",
-      "label": "고3·수능",
-      "year": "2032·11월",
-      "status": "locked",
-      "milestone": "🎯 수능"
+      "milestone": "🏆 5영역 완주 — 엔딩!"
     }
   ],
   "trophies": [

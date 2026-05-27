@@ -383,7 +383,7 @@
                     <div style={{display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:6}}>
                       <div>
                         <span style={{fontSize:"1.4em", fontWeight:900}}>Lv {dash.level}</span>
-                        <span style={{fontSize:"0.85em", marginLeft:8, opacity:0.85}}>시온이 ({dash.grade})</span>
+                        <span style={{fontSize:"0.85em", marginLeft:8, opacity:0.85}}>시온이 · Chapter {dash.chapter}</span>
                       </div>
                       <div style={{fontSize:"0.85em", opacity:0.9}}>
                         XP {dash.xp_total} · 🏆 {dash.master_units}
@@ -405,21 +405,20 @@
 
                 <div style={{textAlign:"center", marginBottom:14}}>
                   <div style={{fontSize:"1.15em", fontWeight:800, color:"#4a2d8a"}}>
-                    🎯 시온이의 수능 여정
+                    📖 시온이의 학습 모험
                   </div>
                   <div style={{fontSize:"0.82em", color:"#888", marginTop:3}}>
-                    {dash.target_year} · {dash.goal}
+                    Chapter {dash.chapter} / {dash.chapter_total} — 매일 한 걸음 🌱
                   </div>
                 </div>
 
-                {/* Phase 2: 9년 로드맵 노드 띠 (대칭화·모듈화) */}
+                {/* 5챕터 로드맵 (게임 챕터 메타포 — "수능"·"고3"·"9년" 단어 제거) */}
                 {dash.roadmap && (
                   <div style={{marginBottom:16}}>
                     <div style={{
                       display:"flex", justifyContent:"space-between", alignItems:"center",
                       position:"relative", padding:"4px 6px",
                     }}>
-                      {/* 연결선 */}
                       <div style={{
                         position:"absolute", top:"50%", left:"7%", right:"7%",
                         height:3, background:"linear-gradient(90deg, #b48dff 0%, #b48dff 50%, #e0e0e0 50%, #e0e0e0 100%)",
@@ -431,39 +430,39 @@
                                  : "#e0d8ec";
                         const ring = r.status==="current" ? "0 0 0 4px rgba(255,143,197,0.35), 0 0 14px rgba(255,143,197,0.6)" : "none";
                         return (
-                          <div key={r.grade} title={`${r.label} · ${r.year} · ${r.milestone}`} style={{
+                          <div key={r.grade} title={`${r.label} · ${r.milestone}`} style={{
                             position:"relative", zIndex:1, textAlign:"center",
                           }}>
                             <div style={{
-                              width:34, height:34, borderRadius:"50%",
+                              width:38, height:38, borderRadius:"50%",
                               background:bg, color:"#fff",
                               display:"flex", alignItems:"center", justifyContent:"center",
-                              fontWeight:800, fontSize:"0.78em",
+                              fontWeight:800, fontSize:"0.82em",
                               boxShadow:ring,
                               border:"2px solid #fff",
                               animation: r.status==="current" ? "pulse 2s infinite" : "none",
                             }}>
-                              {r.status==="done" ? "✓" : r.status==="current" ? "📍" : "🔒"}
+                              {r.status==="done" ? "✓" : r.status==="current" ? "📍" : (i===4 ? "🎓" : "🔒")}
                             </div>
-                            <div style={{fontSize:"0.62em", marginTop:3, color:"#555", fontWeight:600}}>
-                              {r.label}
+                            <div style={{fontSize:"0.66em", marginTop:3, color:"#555", fontWeight:700}}>
+                              {r.short}
                             </div>
                           </div>
                         );
                       })}
                     </div>
-                    <div style={{fontSize:"0.7em", color:"#888", textAlign:"center", marginTop:4}}>
+                    <div style={{fontSize:"0.78em", color:"#6b4ba8", textAlign:"center", marginTop:8, fontWeight:600}}>
                       {dash.roadmap.find(r=>r.status==="current")?.milestone || ""}
                     </div>
                   </div>
                 )}
 
-                {/* 전체 9년 진행 막대 */}
+                {/* 5챕터 전체 진행 막대 (큰 그림, 부담 단어 X) */}
                 <div style={{marginBottom:16}}>
                   <div style={{display:"flex", justifyContent:"space-between", fontSize:"0.78em", color:"#666", marginBottom:5}}>
-                    <span>초6 (현재 위치)</span>
+                    <span>📍 현재</span>
                     <span style={{fontWeight:800, color:"#4a2d8a", fontSize:"1.4em"}}>{dash.overall_progress}%</span>
-                    <span>고3 수능</span>
+                    <span>🎓 엔딩</span>
                   </div>
                   <div style={{height:14, background:"#f0e8ff", borderRadius:8, overflow:"hidden", position:"relative"}}>
                     <div style={{
