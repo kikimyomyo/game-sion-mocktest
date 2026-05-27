@@ -559,6 +559,291 @@ window.GAME_CONFIG = {
       "date": "2026-05-27",
       "accuracy": 100
     }
-  ]
+  ],
+  "skill_tree": {
+    "수학": [
+      {
+        "id": "5-1",
+        "name": "자연수·소수",
+        "track": "대수",
+        "grade": "초5",
+        "status": "done"
+      },
+      {
+        "id": "5-2",
+        "name": "분수·소수의 곱셈",
+        "track": "대수",
+        "grade": "초5",
+        "status": "done"
+      },
+      {
+        "id": "6-1",
+        "name": "분수의 나눗셈",
+        "track": "대수",
+        "grade": "초6",
+        "status": "current"
+      },
+      {
+        "id": "6-2",
+        "name": "비례·도형",
+        "track": "분기",
+        "grade": "초6",
+        "status": "locked"
+      },
+      {
+        "id": "중1-1",
+        "name": "정수·일차방정식",
+        "track": "대수",
+        "grade": "중1",
+        "status": "locked"
+      },
+      {
+        "id": "중1-2",
+        "name": "평면도형·통계",
+        "track": "기하",
+        "grade": "중1",
+        "status": "locked"
+      },
+      {
+        "id": "중2",
+        "name": "유리수·도형·확률",
+        "track": "분기",
+        "grade": "중2",
+        "status": "locked"
+      },
+      {
+        "id": "중3",
+        "name": "제곱근·이차함수·원",
+        "track": "분기",
+        "grade": "중3",
+        "status": "locked"
+      },
+      {
+        "id": "공통수학1",
+        "name": "다항식·방정식",
+        "track": "대수",
+        "grade": "고1",
+        "status": "locked"
+      },
+      {
+        "id": "공통수학2",
+        "name": "도형·좌표",
+        "track": "융합",
+        "grade": "고1",
+        "status": "locked"
+      },
+      {
+        "id": "대수",
+        "name": "지수·로그·삼각함수",
+        "track": "대수",
+        "grade": "고2",
+        "status": "locked"
+      },
+      {
+        "id": "미적분Ⅰ",
+        "name": "미적분 입문",
+        "track": "융합",
+        "grade": "고2",
+        "status": "locked"
+      },
+      {
+        "id": "확통",
+        "name": "확률과 통계",
+        "track": "통계",
+        "grade": "고3",
+        "status": "locked"
+      }
+    ],
+    "국어": [
+      {
+        "id": "5학년",
+        "name": "기초 문해",
+        "track": "공통",
+        "grade": "초5",
+        "status": "done"
+      },
+      {
+        "id": "6학년",
+        "name": "문학·비문학 입문",
+        "track": "공통",
+        "grade": "초6",
+        "status": "current"
+      },
+      {
+        "id": "중1",
+        "name": "갈래·표현",
+        "track": "문학",
+        "grade": "중1",
+        "status": "locked"
+      },
+      {
+        "id": "중2",
+        "name": "문법·매체",
+        "track": "비문학",
+        "grade": "중2",
+        "status": "locked"
+      },
+      {
+        "id": "중3",
+        "name": "독서·작문",
+        "track": "비문학",
+        "grade": "중3",
+        "status": "locked"
+      },
+      {
+        "id": "공통국어",
+        "name": "수능 독서·문학",
+        "track": "융합",
+        "grade": "고1+",
+        "status": "locked"
+      }
+    ],
+    "영어": [
+      {
+        "id": "GJ1",
+        "name": "명사·동사 기초",
+        "track": "문법",
+        "grade": "초6",
+        "status": "current"
+      },
+      {
+        "id": "GJ2",
+        "name": "시제·조동사",
+        "track": "문법",
+        "grade": "중1",
+        "status": "locked"
+      },
+      {
+        "id": "GJ3",
+        "name": "to부정사·동명사",
+        "track": "문법",
+        "grade": "중2",
+        "status": "locked"
+      },
+      {
+        "id": "GJ4",
+        "name": "관계대명사·접속사",
+        "track": "문법",
+        "grade": "중3",
+        "status": "locked"
+      },
+      {
+        "id": "독해기초",
+        "name": "단문 독해",
+        "track": "독해",
+        "grade": "중3",
+        "status": "locked"
+      },
+      {
+        "id": "독해중급",
+        "name": "단락 독해",
+        "track": "독해",
+        "grade": "고1",
+        "status": "locked"
+      },
+      {
+        "id": "수능독해",
+        "name": "빈칸·순서·삽입",
+        "track": "수능",
+        "grade": "고2",
+        "status": "locked"
+      },
+      {
+        "id": "수능듣기",
+        "name": "수능 듣기",
+        "track": "수능",
+        "grade": "고2+",
+        "status": "locked"
+      }
+    ],
+    "통합과학": [
+      {
+        "id": "초6자연",
+        "name": "관찰·실험 입문",
+        "track": "공통",
+        "grade": "초6",
+        "status": "current"
+      },
+      {
+        "id": "중1과학",
+        "name": "힘·물질·생명",
+        "track": "공통",
+        "grade": "중1",
+        "status": "locked"
+      },
+      {
+        "id": "중2과학",
+        "name": "전기·소화·천체",
+        "track": "공통",
+        "grade": "중2",
+        "status": "locked"
+      },
+      {
+        "id": "중3과학",
+        "name": "화학반응·유전",
+        "track": "공통",
+        "grade": "중3",
+        "status": "locked"
+      },
+      {
+        "id": "고1-1",
+        "name": "물질·시스템",
+        "track": "통과",
+        "grade": "고1",
+        "status": "locked"
+      },
+      {
+        "id": "고1-2",
+        "name": "변화·환경",
+        "track": "통과",
+        "grade": "고1",
+        "status": "locked"
+      }
+    ],
+    "통합사회": [
+      {
+        "id": "초6사회",
+        "name": "자료·비율 입문",
+        "track": "공통",
+        "grade": "초6",
+        "status": "current"
+      },
+      {
+        "id": "중1사회",
+        "name": "지리·역사 입문",
+        "track": "공통",
+        "grade": "중1",
+        "status": "locked"
+      },
+      {
+        "id": "중2사회",
+        "name": "민주주의·경제",
+        "track": "공통",
+        "grade": "중2",
+        "status": "locked"
+      },
+      {
+        "id": "중3사회",
+        "name": "한국·세계 근현대",
+        "track": "공통",
+        "grade": "중3",
+        "status": "locked"
+      },
+      {
+        "id": "고1-1",
+        "name": "행복·자연·문화",
+        "track": "통사",
+        "grade": "고1",
+        "status": "locked"
+      },
+      {
+        "id": "고1-2",
+        "name": "인권·시장·미래",
+        "track": "통사",
+        "grade": "고1",
+        "status": "locked"
+      }
+    ]
+  }
 }
 };
