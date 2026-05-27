@@ -544,7 +544,7 @@ window.GAME_CONFIG = {
       "unit": "6-2 문학(시·소설 기초)",
       "date": "2026-05-27",
       "accuracy": 100,
-      "track": "공통"
+      "track": "초6"
     },
     {
       "subject": "수학",
@@ -552,7 +552,7 @@ window.GAME_CONFIG = {
       "unit": "6-1 분수의 나눗셈",
       "date": "2026-05-27",
       "accuracy": 100,
-      "track": "대수"
+      "track": "초6"
     },
     {
       "subject": "통합사회",
@@ -560,307 +560,1731 @@ window.GAME_CONFIG = {
       "unit": "초6 자료 읽기·비율 입문 (매일 수능 학습 진입)",
       "date": "2026-05-27",
       "accuracy": 100,
-      "track": "공통"
+      "track": "초6"
     }
   ],
   "skill_tree": {
-    "수학": [
+    "국어": [
       {
-        "id": "5-1",
-        "name": "자연수·소수",
-        "track": "공통",
-        "grade": "초5",
-        "row": "center",
-        "branch": "start",
-        "status": "done"
-      },
-      {
-        "id": "5-2",
-        "name": "분수·곱셈",
-        "track": "대수",
-        "grade": "초5",
-        "row": 0,
-        "status": "done"
-      },
-      {
-        "id": "6-1",
-        "name": "분수의 나눗셈",
-        "track": "대수",
+        "name": "문학",
         "grade": "초6",
-        "row": 0,
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-00",
         "status": "current"
       },
       {
-        "id": "6-2",
-        "name": "비례·도형",
-        "track": "기하",
+        "name": "읽기",
         "grade": "초6",
-        "row": 1,
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-01",
         "status": "locked"
       },
       {
-        "id": "중1-1",
-        "name": "정수·일차방정식",
-        "track": "대수",
+        "name": "쓰기",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-02",
+        "status": "locked"
+      },
+      {
+        "name": "문법",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-03",
+        "status": "locked"
+      },
+      {
+        "name": "듣기·말하기",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-04",
+        "status": "locked"
+      },
+      {
+        "name": "문학",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-05",
+        "status": "locked"
+      },
+      {
+        "name": "읽기",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-06",
+        "status": "locked"
+      },
+      {
+        "name": "쓰기",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-07",
+        "status": "locked"
+      },
+      {
+        "name": "문법",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-08",
+        "status": "locked"
+      },
+      {
+        "name": "듣기·말하기",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-09",
+        "status": "locked"
+      },
+      {
+        "name": "문학(시·소설·수필)",
         "grade": "중1",
-        "row": 0,
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-10",
         "status": "locked"
       },
       {
-        "id": "중1-2",
-        "name": "평면도형·통계",
-        "track": "기하",
+        "name": "비문학 독해",
         "grade": "중1",
-        "row": 1,
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-11",
         "status": "locked"
       },
       {
-        "id": "중2",
-        "name": "유리수·도형·확률",
-        "track": "통계",
+        "name": "문법(품사·문장)",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-12",
+        "status": "locked"
+      },
+      {
+        "name": "쓰기·말하기",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-13",
+        "status": "locked"
+      },
+      {
+        "name": "문학(고전·현대)",
         "grade": "중2",
-        "row": "center",
-        "branch": "통계가지",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-14",
         "status": "locked"
       },
       {
-        "id": "중3",
-        "name": "제곱근·이차함수·원",
-        "track": "기하",
+        "name": "비문학 독해",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-15",
+        "status": "locked"
+      },
+      {
+        "name": "문법(어휘·의미)",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-16",
+        "status": "locked"
+      },
+      {
+        "name": "매체",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-17",
+        "status": "locked"
+      },
+      {
+        "name": "문학(통합)",
         "grade": "중3",
-        "row": 1,
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-18",
         "status": "locked"
       },
       {
-        "id": "공통수학1",
-        "name": "다항식·방정식",
-        "track": "대수",
-        "grade": "고1",
-        "row": 0,
+        "name": "비문학 독해",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-19",
         "status": "locked"
       },
       {
-        "id": "공통수학2",
-        "name": "도형·좌표",
-        "track": "기하",
-        "grade": "고1",
-        "row": 1,
+        "name": "문법(통합)",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-20",
         "status": "locked"
       },
       {
-        "id": "대수",
-        "name": "지수·로그·삼각함수",
-        "track": "대수",
-        "grade": "고2",
-        "row": 0,
+        "name": "매체",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "국어-21",
         "status": "locked"
       },
       {
-        "id": "미적분Ⅰ",
-        "name": "미적분 입문",
-        "track": "융합",
-        "grade": "고2",
-        "row": "center",
-        "branch": "merge",
+        "name": "화법과 작문",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "국어-22",
         "status": "locked"
       },
       {
-        "id": "확통",
-        "name": "확률과 통계",
-        "track": "통계",
-        "grade": "고3",
-        "row": "center",
-        "branch": "final",
+        "name": "독서(비문학)",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "국어-23",
+        "status": "locked"
+      },
+      {
+        "name": "문학",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "국어-24",
+        "status": "locked"
+      },
+      {
+        "name": "언어와 매체",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "국어-25",
         "status": "locked"
       }
     ],
-    "국어": [
+    "수학": [
       {
-        "id": "5학년",
-        "name": "기초 문해",
-        "track": "공통",
-        "grade": "초5",
+        "name": "자연수의 혼합 계산",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-00",
         "status": "done"
       },
       {
-        "id": "6학년",
-        "name": "문학·비문학 입문",
-        "track": "공통",
+        "name": "약수와 배수",
         "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-01",
+        "status": "done"
+      },
+      {
+        "name": "규칙과 대응",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-02",
+        "status": "done"
+      },
+      {
+        "name": "약분과 통분",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-03",
+        "status": "done"
+      },
+      {
+        "name": "분수의 덧셈과 뺄셈",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-04",
+        "status": "done"
+      },
+      {
+        "name": "다각형의 둘레와 넓이",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-05",
+        "status": "done"
+      },
+      {
+        "name": "수의 범위와 어림하기",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-06",
+        "status": "done"
+      },
+      {
+        "name": "분수의 곱셈",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-07",
+        "status": "done"
+      },
+      {
+        "name": "합동과 대칭",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-08",
+        "status": "done"
+      },
+      {
+        "name": "소수의 곱셈",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-09",
+        "status": "done"
+      },
+      {
+        "name": "직육면체",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-10",
+        "status": "done"
+      },
+      {
+        "name": "평균과 가능성",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-11",
+        "status": "done"
+      },
+      {
+        "name": "분수의 나눗셈",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-12",
         "status": "current"
       },
       {
-        "id": "중1",
-        "name": "갈래·표현",
-        "track": "문학",
+        "name": "각기둥과 각뿔",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-13",
+        "status": "locked"
+      },
+      {
+        "name": "소수의 나눗셈",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-14",
+        "status": "locked"
+      },
+      {
+        "name": "비와 비율",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-15",
+        "status": "locked"
+      },
+      {
+        "name": "여러 가지 그래프",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-16",
+        "status": "locked"
+      },
+      {
+        "name": "직육면체의 부피와 겉넓이",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-17",
+        "status": "locked"
+      },
+      {
+        "name": "분수의 나눗셈",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-18",
+        "status": "locked"
+      },
+      {
+        "name": "소수의 나눗셈",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-19",
+        "status": "locked"
+      },
+      {
+        "name": "공간과 입체",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-20",
+        "status": "locked"
+      },
+      {
+        "name": "비례식과 비례배분",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-21",
+        "status": "locked"
+      },
+      {
+        "name": "원의 넓이",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-22",
+        "status": "locked"
+      },
+      {
+        "name": "원기둥·원뿔·구",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-23",
+        "status": "locked"
+      },
+      {
+        "name": "소인수분해",
         "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-24",
         "status": "locked"
       },
       {
-        "id": "중2",
-        "name": "문법·매체",
-        "track": "비문학",
+        "name": "정수와 유리수",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-25",
+        "status": "locked"
+      },
+      {
+        "name": "문자와 식",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-26",
+        "status": "locked"
+      },
+      {
+        "name": "일차방정식",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-27",
+        "status": "locked"
+      },
+      {
+        "name": "좌표평면과 그래프",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-28",
+        "status": "locked"
+      },
+      {
+        "name": "기본 도형",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-29",
+        "status": "locked"
+      },
+      {
+        "name": "평면도형의 성질",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-30",
+        "status": "locked"
+      },
+      {
+        "name": "입체도형의 성질",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-31",
+        "status": "locked"
+      },
+      {
+        "name": "통계",
+        "grade": "중1",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-32",
+        "status": "locked"
+      },
+      {
+        "name": "유리수와 순환소수",
         "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-33",
         "status": "locked"
       },
       {
-        "id": "중3",
-        "name": "독서·작문",
-        "track": "비문학",
+        "name": "식의 계산",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-34",
+        "status": "locked"
+      },
+      {
+        "name": "일차부등식",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-35",
+        "status": "locked"
+      },
+      {
+        "name": "연립일차방정식",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-36",
+        "status": "locked"
+      },
+      {
+        "name": "일차함수와 그래프",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-37",
+        "status": "locked"
+      },
+      {
+        "name": "일차함수와 일차방정식의 관계",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-38",
+        "status": "locked"
+      },
+      {
+        "name": "도형의 성질 (삼각형·사각형)",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-39",
+        "status": "locked"
+      },
+      {
+        "name": "도형의 닮음",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-40",
+        "status": "locked"
+      },
+      {
+        "name": "피타고라스 정리",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-41",
+        "status": "locked"
+      },
+      {
+        "name": "확률",
+        "grade": "중2",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-42",
+        "status": "locked"
+      },
+      {
+        "name": "제곱근과 실수",
         "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-43",
         "status": "locked"
       },
       {
-        "id": "공통국어",
-        "name": "수능 독서·문학",
-        "track": "융합",
-        "grade": "고1+",
+        "name": "다항식의 곱셈과 인수분해",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-44",
+        "status": "locked"
+      },
+      {
+        "name": "이차방정식",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-45",
+        "status": "locked"
+      },
+      {
+        "name": "이차함수",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-46",
+        "status": "locked"
+      },
+      {
+        "name": "삼각비",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-47",
+        "status": "locked"
+      },
+      {
+        "name": "원의 성질",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-48",
+        "status": "locked"
+      },
+      {
+        "name": "대푯값과 산포도",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-49",
+        "status": "locked"
+      },
+      {
+        "name": "상관관계",
+        "grade": "중3",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "수학-50",
+        "status": "locked"
+      },
+      {
+        "name": "여러 가지 함수의 미분",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "수학-51",
+        "status": "locked"
+      },
+      {
+        "name": "여러 가지 적분",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "수학-52",
+        "status": "locked"
+      },
+      {
+        "name": "이차곡선",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "수학-53",
+        "status": "locked"
+      },
+      {
+        "name": "평면벡터",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "수학-54",
+        "status": "locked"
+      },
+      {
+        "name": "공간도형과 공간좌표",
+        "grade": "초6",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "수학-55",
         "status": "locked"
       }
     ],
     "영어": [
       {
-        "id": "GJ1",
-        "name": "명사·동사 기초",
-        "track": "문법",
+        "name": "셀 수 있는 명사 (복수형)",
         "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-00",
         "status": "current"
       },
       {
-        "id": "GJ2",
-        "name": "시제·조동사",
-        "track": "문법",
-        "grade": "중1",
+        "name": "셀 수 없는 명사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-01",
         "status": "locked"
       },
       {
-        "id": "GJ3",
-        "name": "to부정사·동명사",
-        "track": "문법",
-        "grade": "중2",
+        "name": "관사 (a/an/the)",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-02",
         "status": "locked"
       },
       {
-        "id": "GJ4",
-        "name": "관계대명사·접속사",
-        "track": "문법",
-        "grade": "중3",
+        "name": "인칭대명사와 지시대명사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-03",
         "status": "locked"
       },
       {
-        "id": "독해기초",
-        "name": "단문 독해",
-        "track": "독해",
-        "grade": "중3",
+        "name": "be동사의 긍정문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-04",
         "status": "locked"
       },
       {
-        "id": "독해중급",
-        "name": "단락 독해",
-        "track": "독해",
-        "grade": "고1",
+        "name": "be동사의 부정문/의문문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-05",
         "status": "locked"
       },
       {
-        "id": "수능독해",
-        "name": "빈칸·순서·삽입",
-        "track": "수능",
-        "grade": "고2",
+        "name": "일반동사의 긍정문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-06",
         "status": "locked"
       },
       {
-        "id": "수능듣기",
-        "name": "수능 듣기",
-        "track": "수능",
-        "grade": "고2+",
+        "name": "일반동사의 부정문/의문문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-07",
+        "status": "locked"
+      },
+      {
+        "name": "현재/과거/미래 시제",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-08",
+        "status": "locked"
+      },
+      {
+        "name": "의문문 종합",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-09",
+        "status": "locked"
+      },
+      {
+        "name": "진행시제",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-10",
+        "status": "locked"
+      },
+      {
+        "name": "완료시제",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-11",
+        "status": "locked"
+      },
+      {
+        "name": "조동사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-12",
+        "status": "locked"
+      },
+      {
+        "name": "수동태",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-13",
+        "status": "locked"
+      },
+      {
+        "name": "관계대명사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-14",
+        "status": "locked"
+      },
+      {
+        "name": "관계부사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-15",
+        "status": "locked"
+      },
+      {
+        "name": "부정사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-16",
+        "status": "locked"
+      },
+      {
+        "name": "동명사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-17",
+        "status": "locked"
+      },
+      {
+        "name": "분사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-18",
+        "status": "locked"
+      },
+      {
+        "name": "분사구문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-19",
+        "status": "locked"
+      },
+      {
+        "name": "비교급/최상급",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-20",
+        "status": "locked"
+      },
+      {
+        "name": "가정법",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-21",
+        "status": "locked"
+      },
+      {
+        "name": "도치",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-22",
+        "status": "locked"
+      },
+      {
+        "name": "강조",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-23",
+        "status": "locked"
+      },
+      {
+        "name": "일치",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-24",
+        "status": "locked"
+      },
+      {
+        "name": "화법",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-25",
+        "status": "locked"
+      },
+      {
+        "name": "특수구문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-26",
+        "status": "locked"
+      },
+      {
+        "name": "Unit 01 셀 수 있는 명사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-27",
+        "status": "locked"
+      },
+      {
+        "name": "Unit 02 셀 수 없는 명사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-28",
+        "status": "locked"
+      },
+      {
+        "name": "Unit 03 관사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-29",
+        "status": "locked"
+      },
+      {
+        "name": "Unit 04 인칭대명사·지시대명사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-30",
+        "status": "locked"
+      },
+      {
+        "name": "Unit 05 be동사 긍정문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-31",
+        "status": "locked"
+      },
+      {
+        "name": "Unit 06 be동사 부정문/의문문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-32",
+        "status": "locked"
+      },
+      {
+        "name": "Unit 07 일반동사 긍정문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-33",
+        "status": "locked"
+      },
+      {
+        "name": "Unit 08 일반동사 부정문/의문문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-34",
+        "status": "locked"
+      },
+      {
+        "name": "Review Test 1·2",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-35",
+        "status": "locked"
+      },
+      {
+        "name": "내신대비 1·2",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-36",
+        "status": "locked"
+      },
+      {
+        "name": "종합문제",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-37",
+        "status": "locked"
+      },
+      {
+        "name": "There is/are",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-38",
+        "status": "locked"
+      },
+      {
+        "name": "일반동사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-39",
+        "status": "locked"
+      },
+      {
+        "name": "현재진행형",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-40",
+        "status": "locked"
+      },
+      {
+        "name": "형용사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-41",
+        "status": "locked"
+      },
+      {
+        "name": "some/any/many/much",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-42",
+        "status": "locked"
+      },
+      {
+        "name": "부사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-43",
+        "status": "locked"
+      },
+      {
+        "name": "비교",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-44",
+        "status": "locked"
+      },
+      {
+        "name": "의문사+일반동사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-45",
+        "status": "locked"
+      },
+      {
+        "name": "의문사+be동사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-46",
+        "status": "locked"
+      },
+      {
+        "name": "의문대명사·의문형용사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-47",
+        "status": "locked"
+      },
+      {
+        "name": "의문부사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-48",
+        "status": "locked"
+      },
+      {
+        "name": "접속사·명령문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-49",
+        "status": "locked"
+      },
+      {
+        "name": "조동사 can/must",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-50",
+        "status": "locked"
+      },
+      {
+        "name": "전치사",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-51",
+        "status": "locked"
+      },
+      {
+        "name": "기수·서수",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-52",
+        "status": "locked"
+      },
+      {
+        "name": "비인칭주어",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-53",
+        "status": "locked"
+      },
+      {
+        "name": "과거형",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-54",
+        "status": "locked"
+      },
+      {
+        "name": "과거진행형",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-55",
+        "status": "locked"
+      },
+      {
+        "name": "미래형",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-56",
+        "status": "locked"
+      },
+      {
+        "name": "감탄문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-57",
+        "status": "locked"
+      },
+      {
+        "name": "부정의문문·부가의문문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "영어-58",
         "status": "locked"
       }
     ],
     "통합과학": [
       {
-        "id": "초6자연",
-        "name": "관찰·실험 입문",
-        "track": "공통",
+        "name": "초6 자연·실험 입문 (매일 수능 학습 진입)",
         "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "통합과학-00",
+        "status": "done"
+      },
+      {
+        "name": "변인·관찰·실험 입문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "통합과학-01",
         "status": "current"
       },
       {
-        "id": "중1과학",
-        "name": "힘·물질·생명",
-        "track": "공통",
+        "name": "기록·자료 정리",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "통합과학-02",
+        "status": "locked"
+      },
+      {
+        "name": "지권의 변화 (지구·지각)",
         "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합과학-03",
         "status": "locked"
       },
       {
-        "id": "중2과학",
-        "name": "전기·소화·천체",
-        "track": "공통",
+        "name": "여러 가지 힘 (중력·마찰·탄성)",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합과학-04",
+        "status": "locked"
+      },
+      {
+        "name": "생물의 다양성",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합과학-05",
+        "status": "locked"
+      },
+      {
+        "name": "기체의 성질 (압력·온도·부피)",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합과학-06",
+        "status": "locked"
+      },
+      {
+        "name": "물질의 상태 변화",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합과학-07",
+        "status": "locked"
+      },
+      {
+        "name": "빛과 파동",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합과학-08",
+        "status": "locked"
+      },
+      {
+        "name": "물질의 구성 (원소·원자·분자)",
         "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합과학-09",
         "status": "locked"
       },
       {
-        "id": "중3과학",
-        "name": "화학반응·유전",
-        "track": "공통",
+        "name": "전기와 자기 (회로·자기장)",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합과학-10",
+        "status": "locked"
+      },
+      {
+        "name": "태양계 (행성·달)",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합과학-11",
+        "status": "locked"
+      },
+      {
+        "name": "식물과 에너지 (광합성·호흡)",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합과학-12",
+        "status": "locked"
+      },
+      {
+        "name": "동물과 에너지 (소화·호흡·순환·배설)",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합과학-13",
+        "status": "locked"
+      },
+      {
+        "name": "물질의 특성 (밀도·녹는점·끓는점)",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합과학-14",
+        "status": "locked"
+      },
+      {
+        "name": "수권과 해수의 순환",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합과학-15",
+        "status": "locked"
+      },
+      {
+        "name": "화학 반응 (산·염기·중화)",
         "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합과학-16",
         "status": "locked"
       },
       {
-        "id": "고1-1",
-        "name": "물질·시스템",
-        "track": "통과",
-        "grade": "고1",
+        "name": "기권과 날씨 (대기·강수·기단)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합과학-17",
         "status": "locked"
       },
       {
-        "id": "고1-2",
-        "name": "변화·환경",
-        "track": "통과",
+        "name": "운동과 에너지 (등속·자유낙하·역학)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합과학-18",
+        "status": "locked"
+      },
+      {
+        "name": "자극과 반응 (감각·신경·항상성)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합과학-19",
+        "status": "locked"
+      },
+      {
+        "name": "생식과 유전 (세포 분열·멘델 유전)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합과학-20",
+        "status": "locked"
+      },
+      {
+        "name": "에너지 전환과 보존 (열·전기·일)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합과학-21",
+        "status": "locked"
+      },
+      {
+        "name": "별과 우주 (별의 진화·우주 팽창)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합과학-22",
+        "status": "locked"
+      },
+      {
+        "name": "물질과 규칙성 (원자·주기율·결합)",
         "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합과학-23",
+        "status": "locked"
+      },
+      {
+        "name": "시스템과 상호작용 (지구·생명·역학)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합과학-24",
+        "status": "locked"
+      },
+      {
+        "name": "변화와 다양성 (화학반응·진화·생태)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합과학-25",
+        "status": "locked"
+      },
+      {
+        "name": "환경과 에너지 (에너지·기후·미래기술)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합과학-26",
         "status": "locked"
       }
     ],
     "통합사회": [
       {
-        "id": "초6사회",
-        "name": "자료·비율 입문",
-        "track": "공통",
+        "name": "초6 자료 읽기·비율 입문 (매일 수능 학습 진입)",
         "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "통합사회-00",
         "status": "current"
       },
       {
-        "id": "중1사회",
-        "name": "지리·역사 입문",
-        "track": "공통",
+        "name": "지도와 자료 읽기 (그래프·표)",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "통합사회-01",
+        "status": "locked"
+      },
+      {
+        "name": "공정 분배·비율 활용",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "통합사회-02",
+        "status": "locked"
+      },
+      {
+        "name": "내가 사는 세계 (위치·지도)",
         "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합사회-03",
         "status": "locked"
       },
       {
-        "id": "중2사회",
-        "name": "민주주의·경제",
-        "track": "공통",
+        "name": "우리와 다른 기후·다른 생활",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합사회-04",
+        "status": "locked"
+      },
+      {
+        "name": "자연으로 떠나는 여행",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합사회-05",
+        "status": "locked"
+      },
+      {
+        "name": "다양한 세계, 다양한 문화",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합사회-06",
+        "status": "locked"
+      },
+      {
+        "name": "지구촌과 더불어 사는 우리",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합사회-07",
+        "status": "locked"
+      },
+      {
+        "name": "인권과 헌법 (기본권)",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합사회-08",
+        "status": "locked"
+      },
+      {
+        "name": "헌법과 국가기관",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "통합사회-09",
+        "status": "locked"
+      },
+      {
+        "name": "민주 정치와 선거",
         "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합사회-10",
         "status": "locked"
       },
       {
-        "id": "중3사회",
-        "name": "한국·세계 근현대",
-        "track": "공통",
+        "name": "정치 과정과 시민 참여",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합사회-11",
+        "status": "locked"
+      },
+      {
+        "name": "일상생활과 법 (가족·재산)",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합사회-12",
+        "status": "locked"
+      },
+      {
+        "name": "사회 변동과 사회 문제",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합사회-13",
+        "status": "locked"
+      },
+      {
+        "name": "현대 사회와 시민 (다양성·관용)",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합사회-14",
+        "status": "locked"
+      },
+      {
+        "name": "경제생활과 합리적 선택",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합사회-15",
+        "status": "locked"
+      },
+      {
+        "name": "시장 경제와 가격",
+        "grade": "중2",
+        "track": "중2",
+        "color": "#3b82f6",
+        "id": "통합사회-16",
+        "status": "locked"
+      },
+      {
+        "name": "국민 경제와 경제 성장",
         "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합사회-17",
         "status": "locked"
       },
       {
-        "id": "고1-1",
-        "name": "행복·자연·문화",
-        "track": "통사",
-        "grade": "고1",
+        "name": "국제 경제와 무역",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합사회-18",
         "status": "locked"
       },
       {
-        "id": "고1-2",
-        "name": "인권·시장·미래",
-        "track": "통사",
+        "name": "국제 사회와 국제 정치",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합사회-19",
+        "status": "locked"
+      },
+      {
+        "name": "지속 가능한 환경과 자원",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합사회-20",
+        "status": "locked"
+      },
+      {
+        "name": "통일 한국의 미래",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합사회-21",
+        "status": "locked"
+      },
+      {
+        "name": "더불어 사는 세계 (지역 문제 해결)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "통합사회-22",
+        "status": "locked"
+      },
+      {
+        "name": "행복과 정의 (행복·정의의 의미)",
         "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합사회-23",
+        "status": "locked"
+      },
+      {
+        "name": "자연환경과 인간 (자연관·환경 문제)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합사회-24",
+        "status": "locked"
+      },
+      {
+        "name": "문화와 다양성 (문화 상대주의)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합사회-25",
+        "status": "locked"
+      },
+      {
+        "name": "인권 보장 (인권의 의미·실현)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합사회-26",
+        "status": "locked"
+      },
+      {
+        "name": "시장과 자원 (시장·금융·자원 배분)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합사회-27",
+        "status": "locked"
+      },
+      {
+        "name": "지속가능한 미래 (사회 문제·세계화)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "통합사회-28",
+        "status": "locked"
+      }
+    ],
+    "한국사": [
+      {
+        "name": "고려·조선 시대 기초",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "한국사-00",
+        "status": "current"
+      },
+      {
+        "name": "근현대사 입문",
+        "grade": "초6",
+        "track": "초6",
+        "color": "#ff8fc5",
+        "id": "한국사-01",
+        "status": "locked"
+      },
+      {
+        "name": "선사·고대 (구석기·신석기·고조선)",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "한국사-02",
+        "status": "locked"
+      },
+      {
+        "name": "삼국 시대 (고구려·백제·신라)",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "한국사-03",
+        "status": "locked"
+      },
+      {
+        "name": "통일신라·발해",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "한국사-04",
+        "status": "locked"
+      },
+      {
+        "name": "고려 시대 (정치·문화)",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "한국사-05",
+        "status": "locked"
+      },
+      {
+        "name": "조선 전기 (건국·세종·임진왜란)",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "한국사-06",
+        "status": "locked"
+      },
+      {
+        "name": "조선 후기 (실학·세도정치)",
+        "grade": "중1",
+        "track": "중1",
+        "color": "#5ba0ff",
+        "id": "한국사-07",
+        "status": "locked"
+      },
+      {
+        "name": "개항기 (강화도조약·갑오개혁)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "한국사-08",
+        "status": "locked"
+      },
+      {
+        "name": "일제강점기 (3·1운동·독립운동)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "한국사-09",
+        "status": "locked"
+      },
+      {
+        "name": "광복과 대한민국 정부 수립",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "한국사-10",
+        "status": "locked"
+      },
+      {
+        "name": "6·25 전쟁과 분단",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "한국사-11",
+        "status": "locked"
+      },
+      {
+        "name": "민주화·산업화 (1960~80년대)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "한국사-12",
+        "status": "locked"
+      },
+      {
+        "name": "현대 한국 (1990~현재)",
+        "grade": "중3",
+        "track": "중3",
+        "color": "#1d4ed8",
+        "id": "한국사-13",
+        "status": "locked"
+      },
+      {
+        "name": "전근대 한국사 (선사~조선)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "한국사-14",
+        "status": "locked"
+      },
+      {
+        "name": "근대 한국사 (개항~일제강점기)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "한국사-15",
+        "status": "locked"
+      },
+      {
+        "name": "현대 한국사 (광복~현재)",
+        "grade": "고1",
+        "track": "고1",
+        "color": "#10b981",
+        "id": "한국사-16",
         "status": "locked"
       }
     ]

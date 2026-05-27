@@ -548,8 +548,9 @@
                         "문학":"#f472b6","비문학":"#818cf8","공통":subjColor,"통과":"#5ed5a0","통사":"#ffc861"
                       };
 
-                      // Phase 6b: 수학은 분기 진화 2줄 SVG, 그 외는 단일 가로 띠
-                      if (subj === "수학" && nodes.some(n=>typeof n.row==="number")) {
+                      // Phase 8: 모든 영역 통일 형식 (대칭화 + 모듈화 + 가로 스크롤)
+                      // 수학 분기 SVG는 SION_SKILL_TREE_MODE=legacy 일 때만 (현재 제외)
+                      if (false && subj === "수학" && nodes.some(n=>typeof n.row==="number")) {
                         // 수학 전용: 두 줄 분기 진화
                         const nodeW = 30, gap = 16, totalW = nodes.length * (nodeW + gap);
                         const yTop = 28, yMid = 60, yBot = 92;
@@ -621,44 +622,90 @@
                           </div>
                         );
                       }
-                      // 다른 영역: 기존 단일 가로 띠
+                      // Phase 8: 모든 영역 통일 가로 스크롤 (대칭화·모듈화·세분화)
+                      // 학년 그룹 segment 자동 구분 (초5/초6/중1/중2/중3/고1)
+                      const gradeOrder = ["초5","초6","중1","중2","중3","고1","고2","고3"];
+                      const gradeColors = {
+                        "초5":"#fda4af","초6":"#ff8fc5","중1":"#5ba0ff","중2":"#3b82f6","중3":"#1d4ed8",
+                        "고1":"#10b981","고2":"#059669","고3":"#047857"
+                      };
+                      const curNode = nodes.find(n=>n.status==="current");
+                      const curIdx = curNode ? nodes.indexOf(curNode) : -1;
+                      const doneCount = nodes.filter(n=>n.status==="done").length;
 
                       return (
-                        <div key={subj} style={{marginBottom:10}}>
+                        <div key={subj} style={{marginBottom:12}}>
                           <div style={{
+                            display:"flex", justifyContent:"space-between", alignItems:"center",
                             fontSize:"0.7em", fontWeight:700, color:subjColor,
                             marginBottom:4, paddingLeft:2,
-                          }}>{subj}</div>
+                          }}>
+                            <span>{subj}</span>
+                            <span style={{color:"#888", fontWeight:500, fontSize:"0.9em"}}>
+                              {doneCount} / {nodes.length} 모듈 ✓
+                            </span>
+                          </div>
+                          {/* 학년 segment 라벨 (위에 작게) */}
+                          <div style={{
+                            display:"flex", overflowX:"auto", padding:"2px 0", marginBottom:2,
+                            gap:0, fontSize:"0.55em", color:"#666", fontWeight:600,
+                          }}>
+                            {(() => {
+                              const segs = [];
+                              let lastG = "";
+                              let segStart = 0;
+                              nodes.forEach((n, i) => {
+                                if (n.grade !== lastG) {
+                                  if (lastG) segs.push({grade: lastG, count: i - segStart, start: segStart});
+                                  lastG = n.grade; segStart = i;
+                                }
+                              });
+                              segs.push({grade: lastG, count: nodes.length - segStart, start: segStart});
+                              return segs.map((s, i) => (
+                                <div key={i} style={{
+                                  minWidth: s.count * 28,
+                                  textAlign:"center",
+                                  color: gradeColors[s.grade] || "#888",
+                                  flexShrink: 0,
+                                }}>
+                                  {s.grade} ({s.count})
+                                </div>
+                              ));
+                            })()}
+                          </div>
+                          {/* 노드 가로 스크롤 띠 */}
                           <div style={{
                             display:"flex", overflowX:"auto", gap:0,
-                            alignItems:"center", padding:"2px 0",
+                            alignItems:"center", padding:"4px 0",
+                            scrollSnapType:"x mandatory",
                           }}>
                             {nodes.map((n, i) => {
                               const bg = n.status==="done" ? "#5ed5a0"
                                        : n.status==="current" ? "#ff8fc5"
                                        : "#e8e0f0";
-                              const ring = n.status==="current" ? "0 0 8px rgba(255,143,197,0.7)" : "none";
-                              const trackC = trackColors[n.track] || "#ccc";
+                              const ring = n.status==="current" ? "0 0 10px rgba(255,143,197,0.8)" : "none";
+                              const trackC = n.color || gradeColors[n.grade] || "#ccc";
                               return (
                                 <React.Fragment key={n.id}>
-                                  <div title={`${n.name} · ${n.grade} · ${n.track}`} style={{
-                                    minWidth: n.status==="current" ? 28 : 22,
-                                    height: n.status==="current" ? 28 : 22,
+                                  <div title={`${n.name} · ${n.grade}`} style={{
+                                    minWidth: n.status==="current" ? 22 : 14,
+                                    height: n.status==="current" ? 22 : 14,
                                     borderRadius:"50%", background:bg,
                                     border:`2px solid ${trackC}`,
                                     display:"flex", alignItems:"center", justifyContent:"center",
-                                    fontSize: n.status==="current" ? "0.7em" : "0.55em",
+                                    fontSize: n.status==="current" ? "0.62em" : "0.45em",
                                     fontWeight:800, color:"#fff",
                                     boxShadow:ring, flexShrink:0,
                                     animation: n.status==="current" ? "pulse 2s infinite" : "none",
+                                    scrollSnapAlign:"start",
                                   }}>
                                     {n.status==="done" ? "✓" : n.status==="current" ? "📍" : ""}
                                   </div>
                                   {i < nodes.length - 1 && (
                                     <div style={{
-                                      flex:"0 0 auto", minWidth:8, height:2,
+                                      flex:"0 0 auto", minWidth:6, height:2,
                                       background: nodes[i].status==="done"
-                                        ? "linear-gradient(90deg, #5ed5a0, " + (nodes[i+1].status==="current" ? "#ff8fc5" : "#5ed5a0") + ")"
+                                        ? (nodes[i+1].status==="current" ? "linear-gradient(90deg, #5ed5a0, #ff8fc5)" : "#5ed5a0")
                                         : "#e0d8ec",
                                     }}></div>
                                   )}
@@ -666,15 +713,12 @@
                               );
                             })}
                           </div>
-                          {/* 현재 노드 이름 표시 */}
-                          {(() => {
-                            const cur = nodes.find(n=>n.status==="current");
-                            return cur ? (
-                              <div style={{fontSize:"0.65em", color:"#666", marginTop:2, paddingLeft:2}}>
-                                📍 <b>{cur.name}</b> ({cur.grade}) · 다음: {nodes[nodes.indexOf(cur)+1]?.name || "엔딩"}
-                              </div>
-                            ) : null;
-                          })()}
+                          {/* 현재 + 다음 노드 명 */}
+                          {curNode && (
+                            <div style={{fontSize:"0.65em", color:"#666", marginTop:3, paddingLeft:2}}>
+                              📍 <b>{curNode.name}</b> ({curNode.grade}) · 다음: {nodes[curIdx+1]?.name || "엔딩"}
+                            </div>
+                          )}
                         </div>
                       );
                     })}
@@ -682,7 +726,7 @@
                       fontSize:"0.62em", color:"#888", marginTop:6, textAlign:"center",
                       fontStyle:"italic",
                     }}>
-                      각 노드 = 단원 모듈. 테두리 색 = 진화 가지 (대수·기하·융합·독해 등)
+                      각 노드 = 1개 단원 모듈 (1개념 1주제) · 좌우 스크롤로 학년 진보 확인
                     </div>
                   </div>
                 )}
