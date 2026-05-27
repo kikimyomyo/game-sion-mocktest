@@ -548,8 +548,8 @@
                         "문학":"#f472b6","비문학":"#818cf8","공통":subjColor,"통과":"#5ed5a0","통사":"#ffc861"
                       };
 
-                      // Phase 8: 모든 영역 통일 형식 (대칭화 + 모듈화 + 가로 스크롤)
-                      // 수학 분기 SVG는 SION_SKILL_TREE_MODE=legacy 일 때만 (현재 제외)
+                      // Phase 9: 학년 표시 제거 — 시온이 시점 부담 단어 0
+                      // 노드 = 개념·주제만 (모듈화 순수성)
                       if (false && subj === "수학" && nodes.some(n=>typeof n.row==="number")) {
                         // 수학 전용: 두 줄 분기 진화
                         const nodeW = 30, gap = 16, totalW = nodes.length * (nodeW + gap);
@@ -622,13 +622,10 @@
                           </div>
                         );
                       }
-                      // Phase 8: 모든 영역 통일 가로 스크롤 (대칭화·모듈화·세분화)
-                      // 학년 그룹 segment 자동 구분 (초5/초6/중1/중2/중3/고1)
-                      const gradeOrder = ["초5","초6","중1","중2","중3","고1","고2","고3"];
-                      const gradeColors = {
-                        "초5":"#fda4af","초6":"#ff8fc5","중1":"#5ba0ff","중2":"#3b82f6","중3":"#1d4ed8",
-                        "고1":"#10b981","고2":"#059669","고3":"#047857"
-                      };
+                      // Phase 9: 학년 표시 가림 — 개념·주제만 (부담 단어 0). 색은 단계별 농도로만 차별.
+                      // 단계 색 = 시각 차이만 유지 (의미는 시온이에게 노출 X)
+                      const stageColors = ["#fce4ec","#fda4af","#5ba0ff","#3b82f6","#1d4ed8","#10b981","#059669","#047857"];
+                      const gradeToStage = {"초5":0,"초6":1,"중1":2,"중2":3,"중3":4,"고1":5,"고2":6,"고3":7};
                       const curNode = nodes.find(n=>n.status==="current");
                       const curIdx = curNode ? nodes.indexOf(curNode) : -1;
                       const doneCount = nodes.filter(n=>n.status==="done").length;
@@ -645,35 +642,7 @@
                               {doneCount} / {nodes.length} 모듈 ✓
                             </span>
                           </div>
-                          {/* 학년 segment 라벨 (위에 작게) */}
-                          <div style={{
-                            display:"flex", overflowX:"auto", padding:"2px 0", marginBottom:2,
-                            gap:0, fontSize:"0.55em", color:"#666", fontWeight:600,
-                          }}>
-                            {(() => {
-                              const segs = [];
-                              let lastG = "";
-                              let segStart = 0;
-                              nodes.forEach((n, i) => {
-                                if (n.grade !== lastG) {
-                                  if (lastG) segs.push({grade: lastG, count: i - segStart, start: segStart});
-                                  lastG = n.grade; segStart = i;
-                                }
-                              });
-                              segs.push({grade: lastG, count: nodes.length - segStart, start: segStart});
-                              return segs.map((s, i) => (
-                                <div key={i} style={{
-                                  minWidth: s.count * 28,
-                                  textAlign:"center",
-                                  color: gradeColors[s.grade] || "#888",
-                                  flexShrink: 0,
-                                }}>
-                                  {s.grade} ({s.count})
-                                </div>
-                              ));
-                            })()}
-                          </div>
-                          {/* 노드 가로 스크롤 띠 */}
+                          {/* 노드 가로 스크롤 띠 — 학년 라벨 X, 개념만 */}
                           <div style={{
                             display:"flex", overflowX:"auto", gap:0,
                             alignItems:"center", padding:"4px 0",
@@ -684,10 +653,11 @@
                                        : n.status==="current" ? "#ff8fc5"
                                        : "#e8e0f0";
                               const ring = n.status==="current" ? "0 0 10px rgba(255,143,197,0.8)" : "none";
-                              const trackC = n.color || gradeColors[n.grade] || "#ccc";
+                              const stage = gradeToStage[n.grade] || 0;
+                              const trackC = stageColors[stage] || "#ccc";
                               return (
                                 <React.Fragment key={n.id}>
-                                  <div title={`${n.name} · ${n.grade}`} style={{
+                                  <div title={n.name} style={{
                                     minWidth: n.status==="current" ? 22 : 14,
                                     height: n.status==="current" ? 22 : 14,
                                     borderRadius:"50%", background:bg,
@@ -713,10 +683,10 @@
                               );
                             })}
                           </div>
-                          {/* 현재 + 다음 노드 명 */}
+                          {/* 현재 + 다음 모듈명 (학년 표시 X) */}
                           {curNode && (
                             <div style={{fontSize:"0.65em", color:"#666", marginTop:3, paddingLeft:2}}>
-                              📍 <b>{curNode.name}</b> ({curNode.grade}) · 다음: {nodes[curIdx+1]?.name || "엔딩"}
+                              📍 <b>{curNode.name}</b> · 다음 모듈: {nodes[curIdx+1]?.name || "🎓 엔딩"}
                             </div>
                           )}
                         </div>
@@ -726,7 +696,7 @@
                       fontSize:"0.62em", color:"#888", marginTop:6, textAlign:"center",
                       fontStyle:"italic",
                     }}>
-                      각 노드 = 1개 단원 모듈 (1개념 1주제) · 좌우 스크롤로 학년 진보 확인
+                      각 노드 = 1개 단원 모듈 (1개념 1주제) · 좌우 스크롤로 모듈 진보 확인
                     </div>
                   </div>
                 )}
