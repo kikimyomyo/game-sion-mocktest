@@ -27,6 +27,25 @@
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.12); }
     }
+    @keyframes trophy-shine {
+      0%, 100% { box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+      50% { box-shadow: 0 4px 14px rgba(255,193,7,0.4); }
+    }
+    @keyframes xp-popup {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      20% { transform: translateY(-30px) scale(1.2); opacity: 1; }
+      80% { transform: translateY(-80px) scale(1); opacity: 1; }
+      100% { transform: translateY(-120px) scale(0.9); opacity: 0; }
+    }
+    .xp-toast {
+      position: fixed; top: 30%; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, #ffd700 0%, #ffaa3a 100%);
+      color: #4a2d00; padding: 16px 28px; border-radius: 16px;
+      font-size: 1.6em; font-weight: 900;
+      box-shadow: 0 8px 24px rgba(255,170,58,0.5);
+      z-index: 9999; pointer-events: none;
+      animation: xp-popup 2s ease-out forwards;
+    }
     .step-meta { color: #888; font-size: 0.85em; margin-bottom: 8px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
     .badge { display: inline-block; background: #f0e8ff; color: #6b4ba8; border-radius: 14px; padding: 3px 10px; font-size: 0.82em; }
     .badge.suneung { background: #fff0e0; color: #c87800; font-weight: 700; }
@@ -499,6 +518,46 @@
                   ⚔️ <b>{dash.영역별.reduce((s,a)=>s+a.weak_count,0)}</b>개 약점 보스 클리어 대기 ·
                   🏆 <b>{dash.영역별.reduce((s,a)=>s+a.strong_count,0)}</b>개 마스터 스킬 획득
                 </div>
+
+                {/* Phase 3: 트로피 진열장 */}
+                {dash.trophies && dash.trophies.length > 0 && (
+                  <div style={{
+                    marginTop:12, padding:"14px 12px",
+                    background:"linear-gradient(135deg, #fffbeb 0%, #fff4d6 100%)",
+                    borderRadius:14, border:"2px solid #ffd76b",
+                  }}>
+                    <div style={{
+                      fontSize:"0.85em", fontWeight:800, color:"#9c6b00",
+                      marginBottom:10, textAlign:"center",
+                    }}>
+                      🏆 트로피 진열장 ({dash.trophies.length})
+                    </div>
+                    <div style={{
+                      display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(140px, 1fr))",
+                      gap:8,
+                    }}>
+                      {dash.trophies.map((t, i) => (
+                        <div key={i} style={{
+                          background:"#fff", borderRadius:10, padding:"8px 10px",
+                          borderLeft:`4px solid ${t.color}`,
+                          boxShadow:"0 2px 6px rgba(0,0,0,0.05)",
+                          animation: "trophy-shine 3s ease-in-out infinite",
+                        }}>
+                          <div style={{fontSize:"1.4em", marginBottom:2}}>🏆</div>
+                          <div style={{fontSize:"0.78em", fontWeight:800, color:t.color}}>
+                            {t.subject}
+                          </div>
+                          <div style={{fontSize:"0.7em", color:"#666", marginTop:2}}>
+                            {t.unit.slice(0,20)}
+                          </div>
+                          <div style={{fontSize:"0.66em", color:"#999", marginTop:3}}>
+                            {t.accuracy}% · {t.date.slice(5).replace('-','/')}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 
@@ -733,6 +792,16 @@
         const newAnswers = [...answers, newAnswer];
         setAnswers(newAnswers);
         setShowFeedback(true);
+        // Phase 3: XP toast (정답 +10 XP, 도파민)
+        if (isCorrect) {
+          try {
+            const toast = document.createElement("div");
+            toast.className = "xp-toast";
+            toast.textContent = "+10 XP ✨";
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+          } catch (e) {}
+        }
         // 🆕 incremental save — 매 변형문제 풀이 직후 즉시 시트에 저장 (부분 풀이도 진도 추적 가능)
         try {
           const correctCount = newAnswers.filter(a => a.correct).length;

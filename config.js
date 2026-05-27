@@ -550,6 +550,29 @@ window.GAME_CONFIG = {
       "status": "locked",
       "milestone": "🎯 수능"
     }
+  ],
+  "trophies": [
+    {
+      "subject": "국어",
+      "color": "#ff8fc5",
+      "unit": "6-2 문학(시·소설 기초)",
+      "date": "2026-05-27",
+      "accuracy": 100
+    },
+    {
+      "subject": "수학",
+      "color": "#5ba0ff",
+      "unit": "6-1 분수의 나눗셈",
+      "date": "2026-05-27",
+      "accuracy": 100
+    },
+    {
+      "subject": "통합사회",
+      "color": "#ffc861",
+      "unit": "초6 자료 읽기·비율 입문 (매일 수능 학습 진입)",
+      "date": "2026-05-27",
+      "accuracy": 100
+    }
   ]
 }
 };
