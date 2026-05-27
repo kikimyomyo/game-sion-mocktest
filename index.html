@@ -325,10 +325,102 @@
           const mm = Math.floor(a.dur/60), ss = a.dur%60;
           return `${emoji} ${a.score}/${a.total} (${mm}:${String(ss).padStart(2,'0')})`;
         };
+        const dash = cfg.dashboard || null;
         return (
           <div className="card">
             <h1 className="title">📚 시온이 학습 허브</h1>
             <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
+
+            {/* Phase 1 대시보드 — 시온이의 수능 여정 (9년 로드맵) */}
+            {dash && dash.영역별 && (
+              <div style={{
+                margin:"14px 0 20px",
+                background:"linear-gradient(135deg, #fef3ff 0%, #e8efff 60%, #f0fff4 100%)",
+                borderRadius:20,
+                padding:"18px 16px",
+                border:"2px solid #d4c5ff",
+              }}>
+                <div style={{textAlign:"center", marginBottom:14}}>
+                  <div style={{fontSize:"1.15em", fontWeight:800, color:"#4a2d8a"}}>
+                    🎯 시온이의 수능 여정
+                  </div>
+                  <div style={{fontSize:"0.82em", color:"#888", marginTop:3}}>
+                    {dash.target_year} · {dash.goal}
+                  </div>
+                </div>
+
+                {/* 전체 9년 진행 막대 */}
+                <div style={{marginBottom:16}}>
+                  <div style={{display:"flex", justifyContent:"space-between", fontSize:"0.78em", color:"#666", marginBottom:5}}>
+                    <span>초6 (현재 위치)</span>
+                    <span style={{fontWeight:800, color:"#4a2d8a", fontSize:"1.4em"}}>{dash.overall_progress}%</span>
+                    <span>고3 수능</span>
+                  </div>
+                  <div style={{height:14, background:"#f0e8ff", borderRadius:8, overflow:"hidden", position:"relative"}}>
+                    <div style={{
+                      width:`${dash.overall_progress}%`,
+                      height:"100%",
+                      background:"linear-gradient(90deg, #ff8fc5, #b48dff, #5ba0ff)",
+                      transition:"width 0.6s",
+                    }}></div>
+                  </div>
+                </div>
+
+                {/* streak·풀이 통계 */}
+                <div style={{
+                  display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8,
+                  textAlign:"center", marginBottom:14, fontSize:"0.85em",
+                }}>
+                  <div style={{background:"#fff", borderRadius:10, padding:"8px 4px"}}>
+                    <div style={{fontSize:"1.4em", fontWeight:800, color:"#ff6b35"}}>🔥 {dash.streak_days}</div>
+                    <div style={{fontSize:"0.78em", color:"#888"}}>연속일 (최장 {dash.longest_streak})</div>
+                  </div>
+                  <div style={{background:"#fff", borderRadius:10, padding:"8px 4px"}}>
+                    <div style={{fontSize:"1.4em", fontWeight:800, color:"#4a90e2"}}>💪 {dash.accuracy}%</div>
+                    <div style={{fontSize:"0.78em", color:"#888"}}>정답률 ({dash.total_correct}/{dash.total_plays})</div>
+                  </div>
+                  <div style={{background:"#fff", borderRadius:10, padding:"8px 4px"}}>
+                    <div style={{fontSize:"1.4em", fontWeight:800, color:"#6b4ba8"}}>📅 {dash.last_date.slice(5).replace('-','/')}</div>
+                    <div style={{fontSize:"0.78em", color:"#888"}}>마지막 풀이</div>
+                  </div>
+                </div>
+
+                {/* 5영역 진행 게이지 (대칭화) */}
+                <div style={{fontSize:"0.75em", color:"#666", fontWeight:700, marginBottom:6}}>📊 5영역 진행도 (대칭화)</div>
+                {dash.영역별.filter(s => s.subject !== "한국사" || s.progress > 0).map(s => {
+                  const masterIcon = s.recent_accuracy.length >= 3 && s.recent_accuracy.slice(-3).every(r => r >= 0.9) ? " ⭐" : "";
+                  return (
+                    <div key={s.subject} style={{marginBottom:8}}>
+                      <div style={{display:"flex", justifyContent:"space-between", fontSize:"0.82em", marginBottom:3}}>
+                        <span style={{fontWeight:700, color:s.color}}>
+                          {s.subject}{masterIcon}
+                          {s.weak_count > 0 && <span style={{color:"#e94545", fontSize:"0.85em", marginLeft:5}}>⚠️{s.weak_count}</span>}
+                          {s.strong_count > 0 && <span style={{color:"#f5b91a", fontSize:"0.85em", marginLeft:3}}>⭐{s.strong_count}</span>}
+                        </span>
+                        <span style={{color:"#555", fontSize:"0.9em"}}>{s.progress}% · {s.current_unit.slice(0,18)}</span>
+                      </div>
+                      <div style={{height:8, background:"#f5f0fa", borderRadius:5, overflow:"hidden"}}>
+                        <div style={{
+                          width:`${s.progress}%`, height:"100%",
+                          background:`linear-gradient(90deg, ${s.color}aa, ${s.color})`,
+                          transition:"width 0.5s",
+                        }}></div>
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* 약점 보스 + 강점 스킬 요약 */}
+                <div style={{
+                  marginTop:14, padding:"10px 12px",
+                  background:"rgba(255,255,255,0.6)", borderRadius:10,
+                  fontSize:"0.82em", color:"#555", textAlign:"center",
+                }}>
+                  ⚔️ <b>{dash.영역별.reduce((s,a)=>s+a.weak_count,0)}</b>개 약점 보스 클리어 대기 ·
+                  🏆 <b>{dash.영역별.reduce((s,a)=>s+a.strong_count,0)}</b>개 마스터 스킬 획득
+                </div>
+              </div>
+            )}
 
             {stats && (
               <div style={{

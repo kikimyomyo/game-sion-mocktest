@@ -396,13 +396,99 @@ window.GAME_CONFIG = {
   }
 ],
   meta: {
-  "generated_at": "2026-05-27",
+  "generated_at": "2026-05-28",
   "week": "2026-W22",
-  "weakness_focus": [
-    "수능 기출 학습",
-    "중점 연결 단계 추적 (1단계만 적용, 반복 누락) — 5/10 발견 + 5/11 재현 ⚠️",
-    "각뿔 둘레 변의 수 계산 실수 — 5/11"
-  ],
+  "weakness_focus": [],
   "grade": "초6"
+},
+  dashboard: {
+  "grade": "초6",
+  "target_year": "2033학년도 수능",
+  "goal": "국내대학 수의학과 (자연계열)",
+  "overall_progress": 27,
+  "streak_days": 1,
+  "longest_streak": 3,
+  "total_plays": 59,
+  "total_correct": 51,
+  "accuracy": 86,
+  "last_date": "2026-05-27",
+  "영역별": [
+    {
+      "subject": "국어",
+      "color": "#ff8fc5",
+      "progress": 32,
+      "current_unit": "6-2 문학(시·소설 기초)",
+      "weak_count": 0,
+      "strong_count": 1,
+      "recent_accuracy": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "subject": "수학",
+      "color": "#5ba0ff",
+      "progress": 52,
+      "current_unit": "6-1 분수의 나눗셈",
+      "weak_count": 3,
+      "strong_count": 6,
+      "recent_accuracy": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "subject": "영어",
+      "color": "#b48dff",
+      "progress": 20,
+      "current_unit": "Grammar Joy 1 Unit 01~04",
+      "weak_count": 6,
+      "strong_count": 2,
+      "recent_accuracy": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subject": "통합과학",
+      "color": "#5ed5a0",
+      "progress": 2,
+      "current_unit": "변인·관찰·실험 입문",
+      "weak_count": 2,
+      "strong_count": 1,
+      "recent_accuracy": [
+        0.33,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "subject": "통합사회",
+      "color": "#ffc861",
+      "progress": 2,
+      "current_unit": "초6 자료 읽기·비율 입문 (매일 수능 학습 진입)",
+      "weak_count": 1,
+      "strong_count": 1,
+      "recent_accuracy": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "subject": "한국사",
+      "color": "#ff9d6b",
+      "progress": 0,
+      "current_unit": "미시작",
+      "weak_count": 0,
+      "strong_count": 0,
+      "recent_accuracy": [
+        1.0
+      ]
+    }
+  ]
 }
 };
