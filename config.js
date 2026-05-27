@@ -543,21 +543,24 @@ window.GAME_CONFIG = {
       "color": "#ff8fc5",
       "unit": "6-2 문학(시·소설 기초)",
       "date": "2026-05-27",
-      "accuracy": 100
+      "accuracy": 100,
+      "track": "공통"
     },
     {
       "subject": "수학",
       "color": "#5ba0ff",
       "unit": "6-1 분수의 나눗셈",
       "date": "2026-05-27",
-      "accuracy": 100
+      "accuracy": 100,
+      "track": "대수"
     },
     {
       "subject": "통합사회",
       "color": "#ffc861",
       "unit": "초6 자료 읽기·비율 입문 (매일 수능 학습 진입)",
       "date": "2026-05-27",
-      "accuracy": 100
+      "accuracy": 100,
+      "track": "공통"
     }
   ],
   "skill_tree": {
