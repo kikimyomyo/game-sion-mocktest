@@ -23,6 +23,10 @@
     .subtitle { text-align: center; color: #888; font-size: 0.93em; margin-bottom: 14px; }
     .progress { background: #f0e8ff; height: 8px; border-radius: 6px; overflow: hidden; margin-bottom: 16px; }
     .progress-bar { background: linear-gradient(90deg, #ff8fc5, #b48dff); height: 100%; transition: width 0.4s; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
     .step-meta { color: #888; font-size: 0.85em; margin-bottom: 8px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
     .badge { display: inline-block; background: #f0e8ff; color: #6b4ba8; border-radius: 14px; padding: 3px 10px; font-size: 0.82em; }
     .badge.suneung { background: #fff0e0; color: #c87800; font-weight: 700; }
@@ -331,7 +335,7 @@
             <h1 className="title">📚 시온이 학습 허브</h1>
             <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
 
-            {/* Phase 1 대시보드 — 시온이의 수능 여정 (9년 로드맵) */}
+            {/* Phase 1+2 대시보드 — 시온이의 수능 여정 (9년 로드맵 + XP/레벨) */}
             {dash && dash.영역별 && (
               <div style={{
                 margin:"14px 0 20px",
@@ -340,6 +344,36 @@
                 padding:"18px 16px",
                 border:"2px solid #d4c5ff",
               }}>
+                {/* Phase 2: Lv N + XP 막대 (도파민 트리거) */}
+                {dash.level && (
+                  <div style={{
+                    background:"linear-gradient(135deg, #4a2d8a 0%, #7d3ce0 100%)",
+                    color:"#fff", borderRadius:14, padding:"10px 14px",
+                    marginBottom:14, boxShadow:"0 4px 12px rgba(125,60,224,0.3)",
+                  }}>
+                    <div style={{display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:6}}>
+                      <div>
+                        <span style={{fontSize:"1.4em", fontWeight:900}}>Lv {dash.level}</span>
+                        <span style={{fontSize:"0.85em", marginLeft:8, opacity:0.85}}>시온이 ({dash.grade})</span>
+                      </div>
+                      <div style={{fontSize:"0.85em", opacity:0.9}}>
+                        XP {dash.xp_total} · 🏆 {dash.master_units}
+                      </div>
+                    </div>
+                    <div style={{height:8, background:"rgba(255,255,255,0.2)", borderRadius:5, overflow:"hidden"}}>
+                      <div style={{
+                        width:`${dash.xp_in_level}%`, height:"100%",
+                        background:"linear-gradient(90deg, #ffd700, #ffaa3a)",
+                        boxShadow:"0 0 8px rgba(255,215,0,0.6)",
+                        transition:"width 0.6s",
+                      }}></div>
+                    </div>
+                    <div style={{fontSize:"0.72em", opacity:0.85, marginTop:4, textAlign:"right"}}>
+                      다음 레벨까지 {100-dash.xp_in_level} XP
+                    </div>
+                  </div>
+                )}
+
                 <div style={{textAlign:"center", marginBottom:14}}>
                   <div style={{fontSize:"1.15em", fontWeight:800, color:"#4a2d8a"}}>
                     🎯 시온이의 수능 여정
@@ -348,6 +382,52 @@
                     {dash.target_year} · {dash.goal}
                   </div>
                 </div>
+
+                {/* Phase 2: 9년 로드맵 노드 띠 (대칭화·모듈화) */}
+                {dash.roadmap && (
+                  <div style={{marginBottom:16}}>
+                    <div style={{
+                      display:"flex", justifyContent:"space-between", alignItems:"center",
+                      position:"relative", padding:"4px 6px",
+                    }}>
+                      {/* 연결선 */}
+                      <div style={{
+                        position:"absolute", top:"50%", left:"7%", right:"7%",
+                        height:3, background:"linear-gradient(90deg, #b48dff 0%, #b48dff 50%, #e0e0e0 50%, #e0e0e0 100%)",
+                        zIndex:0,
+                      }}></div>
+                      {dash.roadmap.map((r, i) => {
+                        const bg = r.status==="done" ? "#5ed5a0"
+                                 : r.status==="current" ? "#ff8fc5"
+                                 : "#e0d8ec";
+                        const ring = r.status==="current" ? "0 0 0 4px rgba(255,143,197,0.35), 0 0 14px rgba(255,143,197,0.6)" : "none";
+                        return (
+                          <div key={r.grade} title={`${r.label} · ${r.year} · ${r.milestone}`} style={{
+                            position:"relative", zIndex:1, textAlign:"center",
+                          }}>
+                            <div style={{
+                              width:34, height:34, borderRadius:"50%",
+                              background:bg, color:"#fff",
+                              display:"flex", alignItems:"center", justifyContent:"center",
+                              fontWeight:800, fontSize:"0.78em",
+                              boxShadow:ring,
+                              border:"2px solid #fff",
+                              animation: r.status==="current" ? "pulse 2s infinite" : "none",
+                            }}>
+                              {r.status==="done" ? "✓" : r.status==="current" ? "📍" : "🔒"}
+                            </div>
+                            <div style={{fontSize:"0.62em", marginTop:3, color:"#555", fontWeight:600}}>
+                              {r.label}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div style={{fontSize:"0.7em", color:"#888", textAlign:"center", marginTop:4}}>
+                      {dash.roadmap.find(r=>r.status==="current")?.milestone || ""}
+                    </div>
+                  </div>
+                )}
 
                 {/* 전체 9년 진행 막대 */}
                 <div style={{marginBottom:16}}>

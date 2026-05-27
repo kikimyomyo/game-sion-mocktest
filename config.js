@@ -424,7 +424,8 @@ window.GAME_CONFIG = {
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "is_master": true
     },
     {
       "subject": "수학",
@@ -437,7 +438,8 @@ window.GAME_CONFIG = {
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "is_master": true
     },
     {
       "subject": "영어",
@@ -450,7 +452,8 @@ window.GAME_CONFIG = {
         1.0,
         0.0,
         0.0
-      ]
+      ],
+      "is_master": false
     },
     {
       "subject": "통합과학",
@@ -463,7 +466,8 @@ window.GAME_CONFIG = {
         0.33,
         1.0,
         1.0
-      ]
+      ],
+      "is_master": false
     },
     {
       "subject": "통합사회",
@@ -476,7 +480,8 @@ window.GAME_CONFIG = {
         1.0,
         1.0,
         1.0
-      ]
+      ],
+      "is_master": true
     },
     {
       "subject": "한국사",
@@ -487,7 +492,63 @@ window.GAME_CONFIG = {
       "strong_count": 0,
       "recent_accuracy": [
         1.0
-      ]
+      ],
+      "is_master": false
+    }
+  ],
+  "level": 9,
+  "xp_total": 810,
+  "xp_in_level": 10,
+  "master_units": 3,
+  "roadmap": [
+    {
+      "grade": "초6",
+      "label": "초6",
+      "year": "2026",
+      "status": "current",
+      "milestone": "5영역 진입"
+    },
+    {
+      "grade": "중1",
+      "label": "중1",
+      "year": "2027",
+      "status": "locked",
+      "milestone": "기초 누적"
+    },
+    {
+      "grade": "중2",
+      "label": "중2",
+      "year": "2028",
+      "status": "locked",
+      "milestone": "응용 진입"
+    },
+    {
+      "grade": "중3",
+      "label": "중3",
+      "year": "2029",
+      "status": "locked",
+      "milestone": "수능 30% 범위"
+    },
+    {
+      "grade": "고1",
+      "label": "고1",
+      "year": "2030",
+      "status": "locked",
+      "milestone": "수능 60% 범위"
+    },
+    {
+      "grade": "고2",
+      "label": "고2",
+      "year": "2031",
+      "status": "locked",
+      "milestone": "수능 90% 범위"
+    },
+    {
+      "grade": "고3",
+      "label": "고3·수능",
+      "year": "2032·11월",
+      "status": "locked",
+      "milestone": "🎯 수능"
     }
   ]
 }
