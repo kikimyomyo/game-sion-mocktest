@@ -547,6 +547,82 @@
                         "분기":"#f9a8d4","문법":"#60a5fa","독해":"#34d399","수능":"#fb923c",
                         "문학":"#f472b6","비문학":"#818cf8","공통":subjColor,"통과":"#5ed5a0","통사":"#ffc861"
                       };
+
+                      // Phase 6b: 수학은 분기 진화 2줄 SVG, 그 외는 단일 가로 띠
+                      if (subj === "수학" && nodes.some(n=>typeof n.row==="number")) {
+                        // 수학 전용: 두 줄 분기 진화
+                        const nodeW = 30, gap = 16, totalW = nodes.length * (nodeW + gap);
+                        const yTop = 28, yMid = 60, yBot = 92;
+                        const positions = nodes.map((n, i) => {
+                          const x = i * (nodeW + gap) + nodeW/2;
+                          const y = n.row === 0 ? yTop : n.row === 1 ? yBot : yMid;
+                          return {x, y, n, i};
+                        });
+                        return (
+                          <div key={subj} style={{marginBottom:12}}>
+                            <div style={{
+                              fontSize:"0.7em", fontWeight:700, color:subjColor,
+                              marginBottom:4, paddingLeft:2,
+                            }}>{subj} — 🌱 자연수 → ⚡대수 줄기 / 📐기하 줄기 → 🌈 합류 (미적분·통계)</div>
+                            <div style={{overflowX:"auto", paddingBottom:4}}>
+                              <svg width={totalW} height={120} style={{minWidth:totalW}}>
+                                {/* 분기/합류 연결선 */}
+                                {positions.map((p, i) => {
+                                  if (i === positions.length - 1) return null;
+                                  const next = positions[i+1];
+                                  const isDone = p.n.status === "done";
+                                  const color = isDone ? "#5ed5a0" :
+                                                next.n.status==="current" ? "#ff8fc5" : "#d4c5ff";
+                                  return (
+                                    <line key={`l${i}`}
+                                      x1={p.x} y1={p.y} x2={next.x} y2={next.y}
+                                      stroke={color} strokeWidth={isDone ? 3 : 2}
+                                      strokeDasharray={isDone ? "" : "4,3"}
+                                    />
+                                  );
+                                })}
+                                {/* 노드 */}
+                                {positions.map((p) => {
+                                  const bg = p.n.status==="done" ? "#5ed5a0"
+                                           : p.n.status==="current" ? "#ff8fc5"
+                                           : "#e8e0f0";
+                                  const trackC = trackColors[p.n.track] || "#ccc";
+                                  const isBranch = p.n.branch === "merge" || p.n.branch === "start" || p.n.branch === "final";
+                                  const r = p.n.status==="current" ? 13 : isBranch ? 12 : 10;
+                                  return (
+                                    <g key={p.n.id}>
+                                      <circle cx={p.x} cy={p.y} r={r} fill={bg}
+                                        stroke={trackC} strokeWidth={isBranch?3:2}/>
+                                      {p.n.status==="done" && (
+                                        <text x={p.x} y={p.y+4} textAnchor="middle"
+                                          fontSize="11" fill="#fff" fontWeight="800">✓</text>
+                                      )}
+                                      {p.n.status==="current" && (
+                                        <text x={p.x} y={p.y+4} textAnchor="middle"
+                                          fontSize="11">📍</text>
+                                      )}
+                                    </g>
+                                  );
+                                })}
+                                {/* 줄기 라벨 */}
+                                <text x={2} y={yTop+4} fontSize="8" fill="#888" fontWeight="700">⚡대수</text>
+                                <text x={2} y={yBot+4} fontSize="8" fill="#888" fontWeight="700">📐기하</text>
+                              </svg>
+                            </div>
+                            {(() => {
+                              const cur = nodes.find(n=>n.status==="current");
+                              const curIdx = nodes.indexOf(cur);
+                              return cur ? (
+                                <div style={{fontSize:"0.65em", color:"#666", marginTop:2, paddingLeft:2}}>
+                                  📍 <b>{cur.name}</b> ({cur.grade}, {cur.track} 가지) · 다음: {nodes[curIdx+1]?.name || "엔딩"}
+                                </div>
+                              ) : null;
+                            })()}
+                          </div>
+                        );
+                      }
+                      // 다른 영역: 기존 단일 가로 띠
+
                       return (
                         <div key={subj} style={{marginBottom:10}}>
                           <div style={{

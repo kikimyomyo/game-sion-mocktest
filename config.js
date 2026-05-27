@@ -568,15 +568,18 @@ window.GAME_CONFIG = {
       {
         "id": "5-1",
         "name": "자연수·소수",
-        "track": "대수",
+        "track": "공통",
         "grade": "초5",
+        "row": "center",
+        "branch": "start",
         "status": "done"
       },
       {
         "id": "5-2",
-        "name": "분수·소수의 곱셈",
+        "name": "분수·곱셈",
         "track": "대수",
         "grade": "초5",
+        "row": 0,
         "status": "done"
       },
       {
@@ -584,13 +587,15 @@ window.GAME_CONFIG = {
         "name": "분수의 나눗셈",
         "track": "대수",
         "grade": "초6",
+        "row": 0,
         "status": "current"
       },
       {
         "id": "6-2",
         "name": "비례·도형",
-        "track": "분기",
+        "track": "기하",
         "grade": "초6",
+        "row": 1,
         "status": "locked"
       },
       {
@@ -598,6 +603,7 @@ window.GAME_CONFIG = {
         "name": "정수·일차방정식",
         "track": "대수",
         "grade": "중1",
+        "row": 0,
         "status": "locked"
       },
       {
@@ -605,20 +611,24 @@ window.GAME_CONFIG = {
         "name": "평면도형·통계",
         "track": "기하",
         "grade": "중1",
+        "row": 1,
         "status": "locked"
       },
       {
         "id": "중2",
         "name": "유리수·도형·확률",
-        "track": "분기",
+        "track": "통계",
         "grade": "중2",
+        "row": "center",
+        "branch": "통계가지",
         "status": "locked"
       },
       {
         "id": "중3",
         "name": "제곱근·이차함수·원",
-        "track": "분기",
+        "track": "기하",
         "grade": "중3",
+        "row": 1,
         "status": "locked"
       },
       {
@@ -626,13 +636,15 @@ window.GAME_CONFIG = {
         "name": "다항식·방정식",
         "track": "대수",
         "grade": "고1",
+        "row": 0,
         "status": "locked"
       },
       {
         "id": "공통수학2",
         "name": "도형·좌표",
-        "track": "융합",
+        "track": "기하",
         "grade": "고1",
+        "row": 1,
         "status": "locked"
       },
       {
@@ -640,6 +652,7 @@ window.GAME_CONFIG = {
         "name": "지수·로그·삼각함수",
         "track": "대수",
         "grade": "고2",
+        "row": 0,
         "status": "locked"
       },
       {
@@ -647,6 +660,8 @@ window.GAME_CONFIG = {
         "name": "미적분 입문",
         "track": "융합",
         "grade": "고2",
+        "row": "center",
+        "branch": "merge",
         "status": "locked"
       },
       {
@@ -654,6 +669,8 @@ window.GAME_CONFIG = {
         "name": "확률과 통계",
         "track": "통계",
         "grade": "고3",
+        "row": "center",
+        "branch": "final",
         "status": "locked"
       }
     ],
