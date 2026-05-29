@@ -608,13 +608,9 @@ window.GAME_CONFIG = {
   }
 ],
   meta: {
-  "generated_at": "2026-05-28",
+  "generated_at": "2026-05-29",
   "week": "2026-W22",
-  "weakness_focus": [
-    "수능 기출 학습",
-    "중점 연결 단계 추적 (1단계만 적용, 반복 누락) — 5/10 발견 + 5/11 재현 ⚠️",
-    "각뿔 둘레 변의 수 계산 실수 — 5/11"
-  ],
+  "weakness_focus": [],
   "grade": "초6"
 },
   dashboard: {
@@ -624,18 +620,46 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 59,
-  "total_correct": 51,
-  "accuracy": 86,
-  "last_date": "2026-05-27",
+  "total_plays": 154,
+  "total_correct": 128,
+  "accuracy": 83,
+  "last_date": "2026-05-29",
   "영역별": [
     {
       "subject": "국어",
       "color": "#ff8fc5",
       "progress": 32,
       "current_unit": "6-2 문학(시·소설 기초)",
-      "weak_count": 0,
+      "weak_count": 1,
       "strong_count": 1,
+      "recent_accuracy": [
+        1.0,
+        0.8,
+        1.0
+      ],
+      "is_master": false
+    },
+    {
+      "subject": "수학",
+      "color": "#5ba0ff",
+      "progress": 52,
+      "current_unit": "6-1 비와 비율",
+      "weak_count": 5,
+      "strong_count": 6,
+      "recent_accuracy": [
+        0.5,
+        0.6,
+        0.8
+      ],
+      "is_master": false
+    },
+    {
+      "subject": "영어",
+      "color": "#b48dff",
+      "progress": 20,
+      "current_unit": "Grammar Joy 1 Unit 01~04",
+      "weak_count": 4,
+      "strong_count": 2,
       "recent_accuracy": [
         1.0,
         1.0,
@@ -644,40 +668,16 @@ window.GAME_CONFIG = {
       "is_master": true
     },
     {
-      "subject": "수학",
-      "color": "#5ba0ff",
-      "progress": 52,
-      "current_unit": "6-1 비와 비율",
-      "weak_count": 3,
-      "strong_count": 6,
-      "recent_accuracy": [],
-      "is_master": false
-    },
-    {
-      "subject": "영어",
-      "color": "#b48dff",
-      "progress": 20,
-      "current_unit": "Grammar Joy 1 Unit 01~04",
-      "weak_count": 6,
-      "strong_count": 2,
-      "recent_accuracy": [
-        1.0,
-        0.0,
-        0.0
-      ],
-      "is_master": false
-    },
-    {
       "subject": "통합과학",
       "color": "#5ed5a0",
       "progress": 2,
       "current_unit": "변인·관찰·실험 입문",
-      "weak_count": 2,
+      "weak_count": 6,
       "strong_count": 1,
       "recent_accuracy": [
-        0.33,
         1.0,
-        1.0
+        0.8,
+        0.8
       ],
       "is_master": false
     },
@@ -686,9 +686,12 @@ window.GAME_CONFIG = {
       "color": "#ffc861",
       "progress": 2,
       "current_unit": "자료 읽기 입문",
-      "weak_count": 1,
+      "weak_count": 2,
       "strong_count": 1,
-      "recent_accuracy": [],
+      "recent_accuracy": [
+        0.5,
+        1.0
+      ],
       "is_master": false
     },
     {
@@ -696,17 +699,19 @@ window.GAME_CONFIG = {
       "color": "#ff9d6b",
       "progress": 0,
       "current_unit": "미시작",
-      "weak_count": 0,
+      "weak_count": 2,
       "strong_count": 0,
       "recent_accuracy": [
-        1.0
+        1.0,
+        0.8,
+        0.8
       ],
       "is_master": false
     }
   ],
-  "level": 7,
-  "xp_total": 610,
-  "xp_in_level": 10,
+  "level": 14,
+  "xp_total": 1380,
+  "xp_in_level": 80,
   "master_units": 1,
   "roadmap": [
     {
@@ -747,10 +752,10 @@ window.GAME_CONFIG = {
   ],
   "trophies": [
     {
-      "subject": "국어",
-      "color": "#ff8fc5",
-      "unit": "6-2 문학(시·소설 기초)",
-      "date": "2026-05-27",
+      "subject": "영어",
+      "color": "#b48dff",
+      "unit": "Grammar Joy 1 Unit 01~04",
+      "date": "2026-05-29",
       "accuracy": 100,
       "track": "초6"
     }
@@ -2481,5 +2486,14 @@ window.GAME_CONFIG = {
       }
     ]
   }
+},
+  copywork: {
+  "title": "영어 필사 100일의 기적",
+  "book_key": "영어100일",
+  "page": 2,
+  "total": 232,
+  "image": "./copywork/today.jpg",
+  "weekday": "금",
+  "date": "2026-05-29"
 }
 };

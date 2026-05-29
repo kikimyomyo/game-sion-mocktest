@@ -359,10 +359,39 @@
           return `${emoji} ${a.score}/${a.total} (${mm}:${String(ss).padStart(2,'0')})`;
         };
         const dash = cfg.dashboard || null;
+        const cw = cfg.copywork || null;
         return (
           <div className="card">
             <h1 className="title">📚 시온이 학습 허브</h1>
             <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
+
+            {/* ✍️ 오늘의 필사 — 허브 최상단. 보고 공책에 적기 (인쇄 불필요) */}
+            {cw && cw.image && (
+              <div style={{
+                margin:"14px 0 18px", padding:"14px",
+                background:"linear-gradient(135deg, #fffaf0 0%, #fff5e6 100%)",
+                borderRadius:18, border:"2px solid #ffd9a0",
+              }}>
+                <div style={{display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:10}}>
+                  <div style={{fontSize:"1.05em", fontWeight:800, color:"#b8741a"}}>
+                    ✍️ 오늘의 필사
+                  </div>
+                  <div style={{fontSize:"0.78em", color:"#999"}}>
+                    {cw.page} / {cw.total} 쪽
+                  </div>
+                </div>
+                <div style={{fontSize:"0.82em", color:"#888", marginBottom:8}}>
+                  📖 {cw.title}
+                </div>
+                <img src={`${cw.image}?v=${cw.date}`} alt="오늘의 필사"
+                  style={{width:"100%", borderRadius:12, border:"1px solid #eedcc0", display:"block"}}
+                  onError={(e)=>{e.target.style.display="none";}}
+                />
+                <div style={{fontSize:"0.72em", color:"#aa8855", marginTop:8, textAlign:"center", fontStyle:"italic"}}>
+                  화면을 보고 공책에 또박또박 따라 써 보자 ✏️
+                </div>
+              </div>
+            )}
 
             {/* Phase 1+2 대시보드 — 시온이의 수능 여정 (9년 로드맵 + XP/레벨) */}
             {dash && dash.영역별 && (
