@@ -2490,8 +2490,8 @@ window.GAME_CONFIG = {
   copywork: {
   "title": "영어 필사 100일의 기적",
   "book_key": "영어100일",
-  "page": 2,
-  "total": 232,
+  "page": 1,
+  "total": 219,
   "image": "./copywork/today.jpg",
   "weekday": "금",
   "date": "2026-05-29"
