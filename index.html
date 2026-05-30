@@ -366,7 +366,10 @@
             <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
 
             {/* ✍️ 오늘의 필사 — 허브 최상단. 보고 공책에 적기 (인쇄 불필요) */}
-            {cw && cw.image && (
+            {/* 영어책은 본문+해석 2장 함께 표시 (images 배열) */}
+            {cw && (cw.images?.length || cw.image) && (() => {
+              const imgs = cw.images && cw.images.length ? cw.images : [cw.image];
+              return (
               <div style={{
                 margin:"14px 0 18px", padding:"14px",
                 background:"linear-gradient(135deg, #fffaf0 0%, #fff5e6 100%)",
@@ -377,21 +380,24 @@
                     ✍️ 오늘의 필사
                   </div>
                   <div style={{fontSize:"0.78em", color:"#999"}}>
-                    {cw.page} / {cw.total} 쪽
+                    {cw.page} / {cw.total} 쪽{imgs.length > 1 ? ` (${imgs.length}장)` : ""}
                   </div>
                 </div>
                 <div style={{fontSize:"0.82em", color:"#888", marginBottom:8}}>
-                  📖 {cw.title}
+                  📖 {cw.title}{imgs.length > 1 ? "  ·  본문 + 해석" : ""}
                 </div>
-                <img src={`${cw.image}?v=${cw.date}`} alt="오늘의 필사"
-                  style={{width:"100%", borderRadius:12, border:"1px solid #eedcc0", display:"block"}}
-                  onError={(e)=>{e.target.style.display="none";}}
-                />
+                {imgs.map((im, i) => (
+                  <img key={i} src={`${im}?v=${cw.date}`} alt={`오늘의 필사 ${i+1}`}
+                    style={{width:"100%", borderRadius:12, border:"1px solid #eedcc0", display:"block", marginBottom: i < imgs.length-1 ? 10 : 0}}
+                    onError={(e)=>{e.target.style.display="none";}}
+                  />
+                ))}
                 <div style={{fontSize:"0.72em", color:"#aa8855", marginTop:8, textAlign:"center", fontStyle:"italic"}}>
-                  화면을 보고 공책에 또박또박 따라 써 보자 ✏️
+                  {imgs.length > 1 ? "영어 원문을 보고 적은 뒤, 해석으로 뜻을 확인해 ✏️" : "화면을 보고 공책에 또박또박 따라 써 보자 ✏️"}
                 </div>
               </div>
-            )}
+              );
+            })()}
 
             {/* Phase 1+2 대시보드 — 시온이의 수능 여정 (9년 로드맵 + XP/레벨) */}
             {dash && dash.영역별 && (

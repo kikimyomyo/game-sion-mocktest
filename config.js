@@ -605,11 +605,7 @@ window.GAME_CONFIG = {
   meta: {
   "generated_at": "2026-05-30",
   "week": "2026-W22",
-  "weakness_focus": [
-    "수능 기출 학습",
-    "평행선·정삼각형·비율 추적 (2026-05-28 오답, DE는 BC와 평행이 아니며 길이비도 없다.→AD:AB=1:2이고, AE:AC=1:2이므로 △ADE와 △ABC는 닮음이다.)",
-    "평행선·정삼각형·비율 추적 (2026-05-28 오답, 12cm→18cm)"
-  ],
+  "weakness_focus": [],
   "grade": "초6"
 },
   dashboard: {
@@ -656,7 +652,7 @@ window.GAME_CONFIG = {
       "subject": "영어",
       "color": "#b48dff",
       "progress": 20,
-      "current_unit": "Grammar Joy 1 Unit 05~08 (be동사·일반동사)",
+      "current_unit": "Grammar Joy 1 Unit 09~16",
       "weak_count": 4,
       "strong_count": 2,
       "recent_accuracy": [],
@@ -1414,7 +1410,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-00",
-        "status": "done"
+        "status": "current"
       },
       {
         "name": "셀 수 없는 명사",
@@ -1422,7 +1418,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-01",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "관사 (a/an/the)",
@@ -1430,7 +1426,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-02",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "인칭대명사와 지시대명사",
@@ -1438,7 +1434,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-03",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "be동사의 긍정문",
@@ -1446,7 +1442,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-04",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "be동사의 부정문/의문문",
@@ -1454,7 +1450,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-05",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "일반동사의 긍정문",
@@ -1462,7 +1458,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-06",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "일반동사의 부정문/의문문",
@@ -1470,7 +1466,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-07",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "현재/과거/미래 시제",
@@ -1478,7 +1474,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-08",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "의문문 종합",
@@ -1486,7 +1482,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-09",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "진행시제",
@@ -1494,7 +1490,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-10",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "완료시제",
@@ -1502,7 +1498,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-11",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "조동사",
@@ -1510,7 +1506,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-12",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "수동태",
@@ -1518,7 +1514,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-13",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "관계대명사",
@@ -1526,7 +1522,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-14",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "관계부사",
@@ -1534,7 +1530,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-15",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "부정사",
@@ -1542,7 +1538,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-16",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "동명사",
@@ -1550,7 +1546,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-17",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "분사",
@@ -1558,7 +1554,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-18",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "분사구문",
@@ -1566,7 +1562,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-19",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "비교급/최상급",
@@ -1574,7 +1570,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-20",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "가정법",
@@ -1582,7 +1578,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-21",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "도치",
@@ -1590,7 +1586,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-22",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "강조",
@@ -1598,7 +1594,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-23",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "일치",
@@ -1606,7 +1602,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-24",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "화법",
@@ -1614,7 +1610,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-25",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "특수구문",
@@ -1622,7 +1618,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-26",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Unit 01 셀 수 있는 명사",
@@ -1630,7 +1626,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-27",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Unit 02 셀 수 없는 명사",
@@ -1638,7 +1634,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-28",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Unit 03 관사",
@@ -1646,7 +1642,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-29",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Unit 04 인칭대명사·지시대명사",
@@ -1654,7 +1650,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-30",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Unit 05 be동사 긍정문",
@@ -1662,7 +1658,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-31",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Unit 06 be동사 부정문/의문문",
@@ -1670,7 +1666,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-32",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Unit 07 일반동사 긍정문",
@@ -1678,7 +1674,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-33",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Unit 08 일반동사 부정문/의문문",
@@ -1686,7 +1682,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-34",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "Review Test 1·2",
@@ -1694,7 +1690,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-35",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "내신대비 1·2",
@@ -1702,7 +1698,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-36",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "종합문제",
@@ -1710,7 +1706,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-37",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "There is/are",
@@ -1718,7 +1714,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-38",
-        "status": "done"
+        "status": "locked"
       },
       {
         "name": "일반동사",
@@ -1726,7 +1722,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "영어-39",
-        "status": "current"
+        "status": "locked"
       },
       {
         "name": "현재진행형",
@@ -2476,6 +2472,10 @@ window.GAME_CONFIG = {
   copywork: {
   "title": "어린 왕자 영어 필사",
   "book_key": "어린왕자영어",
+  "images": [
+    "./copywork/today.jpg",
+    "./copywork/today_2.jpg"
+  ],
   "page": 1,
   "total": 267,
   "image": "./copywork/today.jpg",
