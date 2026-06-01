@@ -305,6 +305,49 @@
           .catch(() => {});
       }, []);
 
+      // 💌 소통 — 시온이↔아빠 메시지 (sion-messages 탭)
+      const [messages, setMessages] = useState([]);
+      const [myMsg, setMyMsg] = useState("");
+      const [msgSent, setMsgSent] = useState(false);
+      const loadMessages = React.useCallback(() => {
+        const ep = cfg.endpoint;
+        if (!ep || ep.includes("PLACEHOLDER")) return;
+        fetch(`${ep}?action=get&tab=sion-messages&v=${Date.now()}`)
+          .then(r => r.ok ? r.json() : null)
+          .then(j => {
+            if (!j || !j.ok || !Array.isArray(j.rows)) return;
+            // row: [timestamp, player, score, total, duration, answers_json, meta_json, game]
+            // 메시지는 answers_json[0]에 텍스트, player=시온/아빠
+            const msgs = j.rows.slice(1).map(r => {
+              let text = "";
+              try { const a = JSON.parse(r[5] || "[]"); text = Array.isArray(a) ? (a[0]?.text || a[0] || "") : ""; } catch(e) {}
+              return { ts: r[0], who: r[1], text: String(text) };
+            }).filter(m => m.text);
+            setMessages(msgs.slice(-8));  // 최근 8개
+          })
+          .catch(() => {});
+      }, []);
+      useEffect(() => { loadMessages(); }, [loadMessages]);
+
+      function sendMyMessage() {
+        const t = myMsg.trim();
+        if (!t) return;
+        const ep = cfg.endpoint;
+        if (!ep) return;
+        const payload = {
+          game: "sion-messages", sheet_tab: "sion-messages",
+          timestamp: new Date().toISOString(),
+          player: "시온", answers: [{ text: t }],
+        };
+        try {
+          if (window.GameRecorder?.send) window.GameRecorder.send(payload);
+          else fetch(ep, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain"}, body: JSON.stringify(payload) });
+          setMsgSent(true);
+          setMyMsg("");
+          setTimeout(() => { loadMessages(); }, 1500);
+        } catch (e) {}
+      }
+
       function loadDay(date) {
         fetch(`./archive/${date}.json?v=${Date.now()}`)
           .then(r => r.json())
@@ -365,7 +408,77 @@
             <h1 className="title">📚 시온이 학습 허브</h1>
             <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
 
-            {/* ✍️ 오늘의 필사 — 허브 최상단. 보고 공책에 적기 (인쇄 불필요) */}
+            {/* 💌 소통 — 시온이↔아빠 매일 한 마디 (허브 최상단) */}
+            <div style={{
+              margin:"14px 0 18px", padding:"16px 14px",
+              background:"linear-gradient(135deg, #fff0f6 0%, #ffe8f0 100%)",
+              borderRadius:18, border:"2px solid #ffb3d1",
+            }}>
+              <div style={{fontSize:"1.05em", fontWeight:800, color:"#d6336c", marginBottom:10}}>
+                💌 아빠랑 한 마디
+              </div>
+
+              {/* 최근 대화 (아빠 답장 포함) */}
+              {messages.length > 0 && (
+                <div style={{
+                  marginBottom:12, maxHeight:180, overflowY:"auto",
+                  display:"flex", flexDirection:"column", gap:6,
+                }}>
+                  {messages.map((m, i) => {
+                    const isSion = m.who === "시온";
+                    return (
+                      <div key={i} style={{
+                        alignSelf: isSion ? "flex-end" : "flex-start",
+                        maxWidth:"82%",
+                        background: isSion ? "#ffd6e7" : "#d6e4ff",
+                        color:"#333", borderRadius:14,
+                        padding:"7px 12px", fontSize:"0.88em", lineHeight:1.5,
+                        borderBottomRightRadius: isSion ? 4 : 14,
+                        borderBottomLeftRadius: isSion ? 14 : 4,
+                      }}>
+                        <div style={{fontSize:"0.72em", fontWeight:700, color: isSion ? "#d6336c" : "#3b5bdb", marginBottom:2}}>
+                          {isSion ? "시온이" : "💙 아빠"}
+                        </div>
+                        {m.text}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* 시온이 입력 */}
+              {msgSent ? (
+                <div style={{textAlign:"center", color:"#d6336c", fontWeight:700, padding:"8px 0"}}>
+                  💝 아빠에게 전했어! 답장을 기다려보자.
+                </div>
+              ) : (
+                <div style={{display:"flex", gap:8, alignItems:"flex-end"}}>
+                  <textarea
+                    value={myMsg}
+                    onChange={e => setMyMsg(e.target.value)}
+                    placeholder="오늘 아빠에게 하고 싶은 말을 적어줘 ✍️"
+                    rows={2}
+                    style={{
+                      flex:1, borderRadius:12, border:"1px solid #ffb3d1",
+                      padding:"8px 10px", fontSize:"0.9em", resize:"none",
+                      fontFamily:"inherit",
+                    }}
+                  />
+                  <button
+                    onClick={sendMyMessage}
+                    disabled={!myMsg.trim()}
+                    style={{
+                      background: myMsg.trim() ? "#d6336c" : "#f0c0d4",
+                      color:"#fff", border:"none", borderRadius:12,
+                      padding:"10px 16px", fontWeight:800, fontSize:"0.9em",
+                      cursor: myMsg.trim() ? "pointer" : "default", flexShrink:0,
+                    }}
+                  >보내기</button>
+                </div>
+              )}
+            </div>
+
+            {/* ✍️ 오늘의 필사 — 보고 공책에 적기 (인쇄 불필요) */}
             {/* 영어책은 본문+해석 2장 함께 표시 (images 배열) */}
             {cw && (cw.images?.length || cw.image) && (() => {
               const imgs = cw.images && cw.images.length ? cw.images : [cw.image];
