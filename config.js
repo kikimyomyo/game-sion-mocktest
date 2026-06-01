@@ -612,11 +612,7 @@ window.GAME_CONFIG = {
   meta: {
   "generated_at": "2026-06-01",
   "week": "2026-W23",
-  "weakness_focus": [
-    "수능 기출 학습",
-    "평행선·정삼각형·비율 추적 (2026-05-28 오답, DE는 BC와 평행이 아니며 길이비도 없다.→AD:AB=1:2이고, AE:AC=1:2이므로 △ADE와 △ABC는 닮음이다.)",
-    "평행선·정삼각형·비율 추적 (2026-05-28 오답, 12cm→18cm)"
-  ],
+  "weakness_focus": [],
   "grade": "초6"
 },
   dashboard: {
@@ -629,7 +625,7 @@ window.GAME_CONFIG = {
   "total_plays": 154,
   "total_correct": 128,
   "accuracy": 83,
-  "last_date": "2026-05-31",
+  "last_date": "2026-06-01",
   "영역별": [
     {
       "subject": "국어",
@@ -2486,7 +2482,7 @@ window.GAME_CONFIG = {
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 1,
+  "page": 2,
   "total": 64,
   "image": "./copywork/today.jpg",
   "weekday": "월",
