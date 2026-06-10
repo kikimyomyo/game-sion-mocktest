@@ -447,12 +447,12 @@
       // 🧪 조작형 위젯 레지스트리 — 단원·약점 키워드 매칭으로 해당 step에 인라인 노출
       const [labWidgets, setLabWidgets] = useState([]);
       useEffect(() => {
-        fetch("./diagrams/widgets.json").then(r => r.ok ? r.json() : null)
+        fetch("./diagrams/widgets.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null)
           .then(d => { if (d && d.widgets) setLabWidgets(d.widgets); }).catch(() => {});
       }, []);
       const matchWidget = (step) => {
         if (!labWidgets.length || !step) return null;
-        const hay = [step.title, step.subject, step.data && step.data["단원"], step.data && step.data.unit, step.data && step.data.name]
+        const hay = [step.title, step.subject, step.unit, step.data && step.data["단원"], step.data && step.data.unit, step.data && step.data.name]
           .filter(Boolean).join(" ");
         return labWidgets.find(w =>
           (!w.subject || (step.subject || "").includes(w.subject) || hay.includes(w.subject)) &&
