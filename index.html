@@ -476,14 +476,26 @@
         data: { ...c, is_vocab: true },
         cycleIdx: -2,
       }));
-      // 📖 이번 주 책 (P6) — reading_quiz.py가 만든 진짜 책 독해 문항
+      // 📖 이번 주 책 (P6) — 지문을 화면에 직접 보여주고 → 그 자리에서 읽고 → 문제 풀기
       const readingCfg = (todaySet && cfg.reading && Array.isArray(cfg.reading.cards) && cfg.reading.cards.length) ? cfg.reading : null;
-      const readingSteps = (readingCfg ? readingCfg.cards : []).map((c, i) => ({
+      const readingQuizSteps = (readingCfg ? readingCfg.cards : []).map((c, i) => ({
         type: "quiz",
-        title: `📖 이번 주 책 「${readingCfg.book}」 ${i+1}/${readingCfg.cards.length}`,
+        title: `📖 「${readingCfg.book}」 문제 ${i+1}/${readingCfg.cards.length}`,
         data: { ...c },
         cycleIdx: -4,
+        passage: readingCfg.passage || null,  // 문제 화면에서 "지문 다시 보기"
       }));
+      const readingSteps = readingCfg ? [
+        ...(readingCfg.passage ? [{
+          type: "passage",
+          cycleIdx: -4,
+          book: readingCfg.book,
+          range: readingCfg.range || "",
+          intro: readingCfg.passage_intro || "",
+          passage: readingCfg.passage,
+        }] : []),
+        ...readingQuizSteps,
+      ] : [];
       const explainSteps = todaySet ? [{ type: "explain", cycleIdx: -3 }] : [];
 
       // 모든 사이클을 평탄화된 step 리스트로 (+ 복수전/책/단어/자기설명)
@@ -506,6 +518,22 @@
       const startRef = useRef(Date.now());
 
       useEffect(() => { setPicked(null); setShortText(""); setShowFeedback(false); }, [stepIdx]);
+
+      // 🔧 QA 점프 — URL 해시 #goto=passage|reading|vocab|revenge|explain (검수용, 해시 없으면 무동작)
+      useEffect(() => {
+        const m = (location.hash || "").match(/goto=(\w+)/);
+        if (!m) return;
+        const target = m[1];
+        const findIdx = {
+          passage: () => allSteps.findIndex(s => s.type === "passage"),
+          reading: () => allSteps.findIndex(s => s.cycleIdx === -4),
+          vocab:   () => allSteps.findIndex(s => s.cycleIdx === -2),
+          revenge: () => allSteps.findIndex(s => s.cycleIdx === -1),
+          explain: () => allSteps.findIndex(s => s.type === "explain"),
+        }[target];
+        const idx = findIdx ? findIdx() : -1;
+        if (idx >= 0) { setHubMode(false); setStarted(true); setStepIdx(idx); }
+      }, []);
 
       // gated step 숨김 — 변형1을 맞히면 그 사이클의 사다리·해설 자동 건너뜀
       function isStepHidden(s) { return !!(s && s.gated && v1Pass[s.cycleIdx] === true); }
@@ -1523,6 +1551,29 @@
             </>
           )}
 
+          {/* 📖 P6 지문 — 책 발췌를 화면에서 직접 읽고 문제로 */}
+          {step.type === "passage" && (
+            <>
+              <div className="step-title">📖 이번 주 책 — 「{step.book}」</div>
+              {step.range && <div style={{marginBottom:8}}><span className="badge">{step.range}</span></div>}
+              {step.intro && (
+                <div style={{fontSize:"0.92em", color:"#9c6b00", background:"#fff8e1",
+                  padding:"9px 13px", borderRadius:10, marginBottom:12, fontWeight:700}}>
+                  💡 {step.intro}
+                </div>
+              )}
+              <div style={{
+                background:"#fffdf7", border:"2px solid #e8dcc0", borderRadius:16,
+                padding:"18px 16px", maxHeight:"58vh", overflowY:"auto",
+                fontSize:"1.04em", lineHeight:1.95, whiteSpace:"pre-wrap",
+                fontFamily:"'Nanum Gothic', sans-serif", color:"#33302a",
+              }}>{step.passage}</div>
+              <p style={{marginTop:12, color:"#888", fontSize:"0.88em", textAlign:"center"}}>
+                천천히 읽고 — 다 읽으면 다음 ▶ (문제 3개가 기다려!)
+              </p>
+            </>
+          )}
+
           {/* 🏆 P1 피날레 — 사이클 클리어, 수능 앵커를 보상 위치로 */}
           {step.type === "finale" && (
             <div style={{textAlign:"center", padding:"20px 6px"}}>
@@ -1700,6 +1751,19 @@
           {step.type === "quiz" && (
             <>
               <div className="step-title">{step.title || "🎲 변형 문제"}</div>
+              {/* 📖 책 문제 — 지문 다시 보기 (접이식) */}
+              {step.passage && (
+                <details style={{marginBottom:12, background:"#fffdf7", border:"1px dashed #d4c5a0",
+                  borderRadius:12, padding:"10px 13px"}}>
+                  <summary style={{cursor:"pointer", fontWeight:700, color:"#9c6b00", fontSize:"0.9em"}}>
+                    📖 지문 다시 보기
+                  </summary>
+                  <div style={{marginTop:8, maxHeight:"40vh", overflowY:"auto",
+                    fontSize:"0.95em", lineHeight:1.85, whiteSpace:"pre-wrap", color:"#33302a"}}>
+                    {step.passage}
+                  </div>
+                </details>
+              )}
               <div className="quiz-box">
                 <div className="step-body" style={{marginBottom:14, fontWeight:700}}>{step.data.question}</div>
                 {step.data.type === "mcq" ? (
