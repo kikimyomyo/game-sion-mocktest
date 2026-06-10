@@ -263,6 +263,33 @@
       return steps;
     }
 
+    // 🧪 조작형 위젯 embed — diagrams/widgets.json 레지스트리 기반 (2026-06-10 농도실험실 첫 사례)
+    function WidgetBox({ widget }) {
+      const [open, setOpen] = useState(false);
+      if (!widget) return null;
+      return (
+        <div style={{margin:"14px 0", textAlign:"center"}}>
+          {!open ? (
+            <button onClick={() => setOpen(true)} style={{
+              background:"linear-gradient(90deg, #ff8fc5, #b48dff)", color:"white", border:"none",
+              borderRadius:16, padding:"13px 22px", fontSize:"1.0em", fontWeight:800,
+              cursor:"pointer", boxShadow:"0 6px 16px rgba(180,141,255,0.35)", fontFamily:"inherit",
+            }}>🧪 {widget.title} — 직접 움직여봐!</button>
+          ) : (
+            <div>
+              <iframe src={"./diagrams/" + widget.file} title={widget.title}
+                style={{width:"100%", height:580, border:"none", borderRadius:14, background:"white",
+                  boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
+              <div style={{marginTop:2}}>
+                <a href={"./diagrams/" + widget.file} target="_blank" rel="noreferrer"
+                  style={{fontSize:"0.82em", color:"#888"}}>↗ 전체 화면으로 크게 열기</a>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
     function App() {
       const cfg = window.GAME_CONFIG || {};
       const defaultProblems = cfg.problems || [];
@@ -416,6 +443,22 @@
       const [v1Pass, setV1Pass] = useState({});
       // ★ P3 자율성: 복수전 먼저 / 새 문제 먼저 — 시온이가 시작 화면에서 선택
       const [revengeFirst, setRevengeFirst] = useState(true);
+
+      // 🧪 조작형 위젯 레지스트리 — 단원·약점 키워드 매칭으로 해당 step에 인라인 노출
+      const [labWidgets, setLabWidgets] = useState([]);
+      useEffect(() => {
+        fetch("./diagrams/widgets.json").then(r => r.ok ? r.json() : null)
+          .then(d => { if (d && d.widgets) setLabWidgets(d.widgets); }).catch(() => {});
+      }, []);
+      const matchWidget = (step) => {
+        if (!labWidgets.length || !step) return null;
+        const hay = [step.title, step.subject, step.data && step.data["단원"], step.data && step.data.unit, step.data && step.data.name]
+          .filter(Boolean).join(" ");
+        return labWidgets.find(w =>
+          (!w.subject || (step.subject || "").includes(w.subject) || hay.includes(w.subject)) &&
+          (w.keywords || []).some(k => hay.includes(k))
+        ) || null;
+      };
 
       // 🔄 복수전·📚 단어·💬 자기설명 — 오늘 세트일 때만 (지난 날짜 따라잡기엔 미포함)
       const todaySet = selectedMeta === defaultMeta;
@@ -1170,6 +1213,21 @@
                 </div>
               </div>
             )}
+            {/* 🧪 실험실 — 조작형 위젯 상설 입구 (widgets.json) */}
+            {labWidgets.length > 0 && (
+              <div style={{textAlign:"center", margin:"14px 0 4px"}}>
+                <div style={{fontSize:"0.85em", color:"#666", marginBottom:8}}>🧪 실험실 — 게이지 움직이며 개념 익히기</div>
+                <div style={{display:"inline-flex", gap:8, flexWrap:"wrap", justifyContent:"center"}}>
+                  {labWidgets.map((w, i) => (
+                    <a key={i} href={"./diagrams/" + w.file} target="_blank" rel="noreferrer"
+                      style={{padding:"9px 16px", borderRadius:12, fontWeight:800, fontSize:"0.9em",
+                        textDecoration:"none", border:"2px solid #b48dff", background:"#f7f2ff", color:"#6b4ba8"}}>
+                      🧪 {w.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
             <div style={{margin:"22px 0", textAlign:"center"}}>
               <input className="short-input" style={{maxWidth:240, textAlign:"center"}} value={name} onChange={e => setName(e.target.value)} placeholder="이름" />
             </div>
@@ -1460,6 +1518,7 @@
                   <img src={step.image_url} alt="개념 도식" style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
                 </div>
               )}
+              <WidgetBox key={"wb1-" + stepIdx} widget={matchWidget(step)} />
               <p style={{marginTop:14, color:"#888", fontSize:"0.9em"}}>다음 ▶ 누르면 시온이 수준 문제로 먼저 도전! 맞히면 사다리는 건너뛰어 😎</p>
             </>
           )}
@@ -1630,6 +1689,7 @@
                   <img src={step.image_url} alt="풀이 도식" style={{maxWidth:"80%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
                 </div>
               )}
+              <WidgetBox key={"wb2-" + stepIdx} widget={matchWidget(step)} />
               <div className="step-body" style={{padding:12, background:"#e8f7e8", borderRadius:12, border:"2px solid #4caf50"}}>
                 <strong style={{color:"#2a7a2a"}}>📝 핵심 풀이:</strong>
                 <div style={{marginTop:6, whiteSpace:"pre-wrap"}}>{step.body}</div>
@@ -1683,6 +1743,7 @@
                       <strong>{answers[answers.length-1]?.correct ? "✅ 정답!" : `❌ 정답: ${answers[answers.length-1]?.correctAns ?? resolveAnswer(step.data)}`}</strong>
                       {step.data.explanation && <div style={{marginTop:6}}>{step.data.explanation}</div>}
                     </div>
+                    <WidgetBox key={"wb3-" + stepIdx} widget={matchWidget(step)} />
                   </>
                 )}
               </div>
