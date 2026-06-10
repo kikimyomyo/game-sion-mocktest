@@ -110,8 +110,11 @@
         osc.stop(ctx.currentTime + 0.32);
       } catch (e) {}
     }
+    // 로컬 프리뷰(개발 검증)에서는 실제 시트로 전송 금지 — 시온이 기록 오염 방지 (2026-06-10 사고 후 도입)
+    const IS_LOCAL_PREVIEW = ["localhost", "127.0.0.1", ""].includes(location.hostname);
     function recordResult(payload) {
       try {
+        if (IS_LOCAL_PREVIEW) { console.log("[local preview] record skip:", payload.score + "/" + payload.total); return; }
         if (window.GameRecorder?.send) return window.GameRecorder.send(payload);
         const cfg = window.GAME_CONFIG;
         if (!cfg.endpoint || cfg.endpoint.includes("PLACEHOLDER")) return;
@@ -380,7 +383,8 @@
           player: "시온", answers: [{ text: t }],
         };
         try {
-          if (window.GameRecorder?.send) window.GameRecorder.send(payload);
+          if (IS_LOCAL_PREVIEW) { console.log("[local preview] message skip"); }
+          else if (window.GameRecorder?.send) window.GameRecorder.send(payload);
           else fetch(ep, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain"}, body: JSON.stringify(payload) });
           setMsgSent(true);
           setMyMsg("");
@@ -1500,7 +1504,8 @@
                       timestamp: new Date().toISOString(),
                       player: "시온", answers: [{ text: "📣 오늘 배운 것: " + shortText.trim() }],
                     };
-                    if (window.GameRecorder?.send) window.GameRecorder.send(payload);
+                    if (IS_LOCAL_PREVIEW) console.log("[local preview] explain skip");
+                    else if (window.GameRecorder?.send) window.GameRecorder.send(payload);
                     else if (ep) fetch(ep, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain"}, body: JSON.stringify(payload) });
                   } catch (e) {}
                   playSfx("ok");
