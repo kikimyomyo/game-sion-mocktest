@@ -830,8 +830,8 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 243,
-  "total_correct": 196,
+  "total_plays": 253,
+  "total_correct": 205,
   "accuracy": 81,
   "last_date": "2026-06-10",
   "영역별": [
@@ -840,12 +840,12 @@ window.GAME_CONFIG = {
       "color": "#ff8fc5",
       "progress": 32,
       "current_unit": "6-2 비문학(설명문·논설문 입문)",
-      "weak_count": 2,
+      "weak_count": 3,
       "strong_count": 1,
       "recent_accuracy": [
-        0.88,
         1.0,
-        1.0
+        1.0,
+        0.67
       ],
       "is_master": false
     },
@@ -858,8 +858,8 @@ window.GAME_CONFIG = {
       "strong_count": 8,
       "recent_accuracy": [
         0.94,
-        0.94,
-        0.5
+        0.5,
+        1.0
       ],
       "is_master": false
     },
@@ -885,9 +885,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 1,
       "recent_accuracy": [
-        0.5,
         1.0,
-        0.5
+        0.5,
+        0.0
       ],
       "is_master": false
     },
@@ -920,9 +920,9 @@ window.GAME_CONFIG = {
       "is_master": false
     }
   ],
-  "level": 20,
-  "xp_total": 1960,
-  "xp_in_level": 60,
+  "level": 21,
+  "xp_total": 2050,
+  "xp_in_level": 50,
   "master_units": 0,
   "roadmap": [
     {
@@ -2706,63 +2706,63 @@ window.GAME_CONFIG = {
   "date": "2026-06-10",
   "items": [
     {
-      "id": "q0001",
+      "id": "q0004",
       "kind": "weakness",
       "label": "지난 오답",
-      "과목": "국어",
-      "단원": "2022학년도 수능 국어 32번 [문학]",
+      "과목": "한국사",
+      "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "이야기에서 인물의 마음(성격·기분)을 짐작하는 방법으로 알맞은 것은 무엇인가요?",
+        "question": "고려 광종이 인재를 시험으로 뽑기 위해 처음 실시한 제도는 무엇인가?",
         "choices": [
-          "인물의 말과 행동, 처한 상황을 함께 살펴본다.",
-          "이야기 속 쪽수가 몇 쪽인지 센다.",
-          "책의 표지 색깔만 본다.",
-          "글자 수가 많은지 적은지만 확인한다."
+          "과거제",
+          "음서제",
+          "독서삼품과",
+          "골품제"
         ],
-        "answer": "인물의 말과 행동, 처한 상황을 함께 살펴본다.",
-        "explanation": "인물의 마음은 그 인물이 한 말·행동과 처한 상황을 근거로 짐작한다. 쪽수, 표지 색깔, 글자 수는 인물의 마음과 관련 없는 정보이므로 모두 틀리다.",
-        "hint": "2022학년도 수능 국어 32번 [문학] — 지난 오답 복수전"
+        "answer": "과거제",
+        "explanation": "광종은 958년 쌍기의 건의로 과거제를 실시해 능력에 따라 관리를 뽑았어요.",
+        "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
     {
-      "id": "q0002",
+      "id": "q0005",
       "kind": "weakness",
       "label": "지난 오답",
       "과목": "수학",
-      "단원": "평행선·정삼각형·비율 추적",
+      "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "끝 길이 25.3cm인 리본을 4cm씩 자르면 4cm짜리 도막을 최대 6개 만들 수 있습니다. 이때 남는 리본의 길이(cm)는 얼마일까요? (25.3 ÷ 4의 나머지)",
+        "question": "옆면이 모두 직사각형이고, 그 직사각형 옆면이 정확히 6개인 입체도형이 있습니다. 이 입체도형의 모서리는 모두 몇 개일까요?",
         "choices": [
-          "1.3",
-          "2.3",
-          "0.3",
-          "6.3"
+          "12개",
+          "15개",
+          "18개",
+          "24개"
         ],
-        "answer": "1.3",
-        "explanation": "4cm짜리 6개는 4×6=24cm이고, 25.3−24=1.3cm가 남습니다. 2.3과 0.3은 뒌 계산 오류, 6.3은 5개 자르고 남긴 값(25.3−20)으로 문제가 요구한 6개 기준이 아니므로 오답입니다.",
-        "hint": "평행선·정삼각형·비율 추적 — 지난 오답 복수전"
+        "answer": "18개",
+        "explanation": "옆면이 직사각형이면 각기둥이고, 옆면이 6개이므로 밑면이 육각형인 육각기둥(n=6)입니다. 모서리 수는 3n=3×6=18개. 12개는 모서리를 2n으로 본 것, 15개는 오각기둥 모서리(3×5), 24개는 팔각기둥 모서리(3×8)와 혼동한 오답입니다.",
+        "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
     {
-      "id": "q0003",
+      "id": "q0006",
       "kind": "weakness",
       "label": "지난 오답",
-      "과목": "통합과학",
-      "단원": "보어 원자 모형·변인 관계",
+      "과목": "영어",
+      "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "햇빛(백색광)이 프리즘을 통과하면 여러 가지 색의 띠로 나뉘어 나타난다. 이렇게 나뉘어 보이는 색의 띠를 무엇이라고 하는가?",
+        "question": "빈칸에 알맞은 의문사를 고르세요.\n___ does she look so happy? — Because she won.",
         "choices": [
-          "스펙트럼",
-          "그림자",
-          "법선",
-          "파장"
+          "Where",
+          "When",
+          "Why",
+          "How"
         ],
-        "answer": "스펙트럼",
-        "explanation": "백색광은 여러 색의 빛이 섞인 것으로, 프리즘을 지나면 색깔별로 갈라져 무지개 같은 띠(스펙트럼)를 만든다.",
-        "hint": "보어 원자 모형·변인 관계 — 지난 오답 복수전"
+        "answer": "Why",
+        "explanation": "Because로 이유를 답하므로 이유를 묻는 Why가 알맞다.",
+        "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
@@ -2775,10 +2775,10 @@ window.GAME_CONFIG = {
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
+        "~을 이루다",
         "친밀함",
-        "어린 시절",
-        "애쓰다",
-        "정확한"
+        "가리다, 감추다",
+        "애쓰다"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2792,9 +2792,9 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "추상적인",
-        "셀피, 자기 사진",
         "정확한",
+        "어린 시절",
+        "가리다, 감추다",
         "~을 이루다"
       ],
       "answer": "정확한",
@@ -2809,10 +2809,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
-        "모순되지 않는",
         "정확한",
-        "친밀함"
+        "가리다, 감추다",
+        "~을 이루다",
+        "어린 시절"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2827,9 +2827,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
         "어린 시절",
-        "추상적인",
-        "가리다, 감추다",
-        "모순되지 않는"
+        "애쓰다",
+        "~을 이루다",
+        "친밀함"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2843,10 +2843,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
-        "~을 이루다",
-        "어린 시절",
-        "애쓰다"
+        "가리다, 감추다",
+        "지역",
+        "추상적인",
+        "셀피, 자기 사진"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2860,10 +2860,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
+        "모순되지 않는",
         "가리다, 감추다",
-        "정확한",
-        "친밀함",
-        "모순되지 않는"
+        "어린 시절",
+        "~을 이루다"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2877,10 +2877,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "지역",
-        "모순되지 않는",
+        "추상적인",
         "애쓰다",
-        "정확한"
+        "가리다, 감추다",
+        "지역"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2894,10 +2894,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
-        "정확한",
-        "애쓰다",
-        "~을 이루다"
+        "친밀함",
+        "셀피, 자기 사진",
+        "~을 이루다",
+        "모순되지 않는"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2911,9 +2911,9 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "모순되지 않는",
         "친밀함",
         "추상적인",
+        "~을 이루다",
         "셀피, 자기 사진"
       ],
       "answer": "친밀함",
@@ -2928,10 +2928,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
+        "셀피, 자기 사진",
         "모순되지 않는",
-        "~을 이루다",
         "추상적인",
-        "가리다, 감추다"
+        "애쓰다"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
@@ -2941,5 +2941,6 @@ window.GAME_CONFIG = {
       "is_vocab": true
     }
   ]
-}
+},
+  reading: {}
 };

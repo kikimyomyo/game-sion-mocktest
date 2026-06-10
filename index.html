@@ -433,16 +433,24 @@
         data: { ...c, is_vocab: true },
         cycleIdx: -2,
       }));
+      // 📖 이번 주 책 (P6) — reading_quiz.py가 만든 진짜 책 독해 문항
+      const readingCfg = (todaySet && cfg.reading && Array.isArray(cfg.reading.cards) && cfg.reading.cards.length) ? cfg.reading : null;
+      const readingSteps = (readingCfg ? readingCfg.cards : []).map((c, i) => ({
+        type: "quiz",
+        title: `📖 이번 주 책 「${readingCfg.book}」 ${i+1}/${readingCfg.cards.length}`,
+        data: { ...c },
+        cycleIdx: -4,
+      }));
       const explainSteps = todaySet ? [{ type: "explain", cycleIdx: -3 }] : [];
 
-      // 모든 사이클을 평탄화된 step 리스트로 (+ 복수전/단어/자기설명)
+      // 모든 사이클을 평탄화된 step 리스트로 (+ 복수전/책/단어/자기설명)
       const cycleSteps = problems.flatMap((p, idx) => {
         const steps = expandCycleToSteps(p);
         return steps.map(s => ({ ...s, cycleIdx: idx, cycleId: p.id, subject: s.subject || (s.data && s.data.subject) || p.subject, image_url: p.image_url, video_url: p.video_url }));
       });
       const allSteps = revengeFirst
-        ? [...revengeSteps, ...cycleSteps, ...vocabSteps, ...explainSteps]
-        : [...cycleSteps, ...revengeSteps, ...vocabSteps, ...explainSteps];
+        ? [...revengeSteps, ...cycleSteps, ...readingSteps, ...vocabSteps, ...explainSteps]
+        : [...cycleSteps, ...revengeSteps, ...readingSteps, ...vocabSteps, ...explainSteps];
 
       const [stepIdx, setStepIdx] = useState(0);
       const [answers, setAnswers] = useState([]);
@@ -1353,6 +1361,7 @@
         ? `사이클 ${cycleIdx} / ${cycleTotal}`
         : step.cycleIdx === -1 ? "⚔️ 복수전"
         : step.cycleIdx === -2 ? "📚 오늘의 단어"
+        : step.cycleIdx === -4 ? "📖 이번 주 책"
         : "💬 마무리";
 
       return (

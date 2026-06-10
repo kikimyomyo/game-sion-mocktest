@@ -1,0 +1,43 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "🧪 농도 실험실" [level=1] [ref=e4]
+      - paragraph [ref=e5]: 물과 소금을 직접 움직여봐!
+    - region "비커 시각화" [ref=e6]:
+      - img "농도 비커 소금물 전체 양은 높이, 농도는 색 진하기로 보입니다." [ref=e8]:
+        - generic [ref=e20]: 20.0%
+      - generic [ref=e21]:
+        - generic [ref=e22]: 전체 100g
+        - generic [ref=e23]: 소금 알갱이 4개
+    - region "소금 조절" [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]: 🧂 소금
+        - status [ref=e27]: 20g
+      - generic [ref=e28]:
+        - button "소금 10g 줄이기" [ref=e29] [cursor=pointer]: −10
+        - slider "🧂 소금" [ref=e30] [cursor=pointer]: "20"
+        - button "소금 10g 늘리기" [ref=e31] [cursor=pointer]: "+10"
+    - region "물 조절" [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]: 💧 물
+        - status [ref=e35]: 80g
+      - generic [ref=e36]:
+        - button "물 10g 줄이기" [ref=e37] [cursor=pointer]: −10
+        - slider "💧 물" [ref=e38] [cursor=pointer]: "80"
+        - button "물 10g 늘리기" [ref=e39] [cursor=pointer]: "+10"
+    - region "농도 공식" [ref=e40]:
+      - generic [ref=e41]: 농도(%) = 소금 ÷ 소금물 전체 × 100
+      - generic [ref=e42]:
+        - generic [ref=e43]: =
+        - generic [ref=e44]: 20g
+        - generic [ref=e45]: ÷
+        - generic [ref=e46]: (20+80)g
+        - generic [ref=e47]: × 100 =
+        - generic [ref=e48]: 20.0%
+      - generic [ref=e49]: 기준량은 소금물 전체! (물만이 아니야)
+    - generic "도전 미션" [ref=e51]:
+      - generic [ref=e52]: ✅ 소금 20g, 물 80g을 맞춰봐. 농도가 몇 %가 되지?
+      - generic [ref=e53]: 2. 소금은 그대로 두고, 물만 부어서 농도를 10%로 만들어봐
+      - generic [ref=e54]: 3. 이번엔 물을 증발시켜서(줄여서) 농도를 다시 20%로!
+    - paragraph [ref=e55]: 농도가 변한 건 소금이 변해서가 아니라, 전체 양이 변했기 때문이야.
+  - generic: ✅ 맞았어! 농도는 20.0%
