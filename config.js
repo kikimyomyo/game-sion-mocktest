@@ -835,7 +835,7 @@ window.GAME_CONFIG = {
   "total_plays": 271,
   "total_correct": 220,
   "accuracy": 81,
-  "last_date": "2026-06-12",
+  "last_date": "2026-06-13",
   "영역별": [
     {
       "subject": "국어",
@@ -2679,20 +2679,19 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린 왕자 영어 필사",
-  "book_key": "어린왕자영어",
+  "title": "어린이 사복음서 한 달 쓰기",
+  "book_key": "사복음서",
   "images": [
-    "./copywork/today.jpg",
-    "./copywork/today_2.jpg"
+    "./copywork/today.jpg"
   ],
   "page": 7,
-  "total": 199,
+  "total": 64,
   "image": "./copywork/today.jpg",
-  "weekday": "토",
-  "date": "2026-06-13"
+  "weekday": "일",
+  "date": "2026-06-14"
 },
   revenge: {
-  "date": "2026-06-13",
+  "date": "2026-06-14",
   "items": [
     {
       "id": "q0004",
@@ -2702,15 +2701,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "광복(1945년)부터 대한민국 정부 수립(1948년)까지의 기간은 몇 개월인가?",
+        "question": "1945년 8월 15일, 일본이 항복하면서 우리나라가 일제의 식민 지배에서 벗어난 날을 무엇이라고 하는가?",
         "choices": [
-          "36개월",
-          "24개월",
-          "12개월",
-          "48개월"
+          "광복절",
+          "개천절",
+          "한글날",
+          "제헌절"
         ],
-        "answer": "36개월",
-        "explanation": "1945년에서 1948년까지는 3년이고, 3년은 3×12=36개월이다.",
+        "answer": "광복절",
+        "explanation": "1945년 8월 15일 일제로부터 나라를 되찾은 날을 기념하는 것이 광복절이다. 개천절은 단군의 건국, 한글날은 훈민정음 반포, 제헌절은 헌법 공포를 기념하는 날이라 모두 의미가 달라 오답이다.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2722,15 +2721,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "한 항목의 비율이 전체에서 차지하는 정도를 비교하기에 가장 알맞은 그래프는 무엇입니까?",
+        "question": "리본 7/8 m를 7명이 똑같이 나누어 가졌습니다. 한 명이 가진 리본은 몇 m인가요?",
         "choices": [
-          "원그래프",
-          "막대그래프",
-          "꺾은선그래프",
-          "그림그래프"
+          "1/8 m",
+          "7/8 m",
+          "1/7 m",
+          "7/15 m"
         ],
-        "answer": "원그래프",
-        "explanation": "원그래프는 전체에 대한 각 부분의 비율을 부채꼴 크기로 보여 주어 비율 비교에 알맞습니다. 막대그래프는 양의 비교, 꺾은선그래프는 변화 추이, 그림그래프는 그림 수로 크기를 어림하는 그래프라 비율 비교에는 덜 알맞습니다.",
+        "answer": "1/8 m",
+        "explanation": "7/8 ÷ 7 = 7/(8×7) = 1/8 m. 분자와 분모의 7이 약분되어 1/8이 됩니다. '7/8'은 나누기를 안 한 값, '1/7'은 분모를 잘못 고른 오답, '7/15'는 분모에 7을 더한 오답입니다.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2742,31 +2741,31 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "can을 미래시제 '할 수 있을 것이다'로 바꿀 때 알맞은 것은? She will ___ swim.",
+        "question": "다음 문장의 빈칸에 알맞은 형용사는? 'The soup is ___.' (그 수프는 뜨겁다)",
         "choices": [
-          "be able to",
-          "can",
-          "cans",
-          "could"
+          "hot",
+          "hotly",
+          "heat",
+          "hotness"
         ],
-        "answer": "be able to",
-        "explanation": "조동사 두 개를 나란히 쓸 수 없으므로 will 뒤의 can은 be able to로 바꿔 will be able to로 쓴다.",
+        "answer": "hot",
+        "explanation": "be동사(is) 뒤에서 주어를 설명하는 자리에는 형용사 hot이 온다.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-06-13",
+  "date": "2026-06-14",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "지역",
+        "셀피, 자기 사진",
+        "친밀함",
         "가리다, 감추다",
-        "~을 이루다",
         "애쓰다"
       ],
       "answer": "애쓰다",
@@ -2782,9 +2781,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
         "정확한",
-        "애쓰다",
+        "~을 이루다",
         "어린 시절",
-        "추상적인"
+        "지역"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2798,10 +2797,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
-        "추상적인",
+        "가리다, 감추다",
+        "친밀함",
         "어린 시절",
-        "가리다, 감추다"
+        "정확한"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2816,9 +2815,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
         "어린 시절",
-        "정확한",
-        "친밀함",
-        "애쓰다"
+        "추상적인",
+        "모순되지 않는",
+        "~을 이루다"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2832,10 +2831,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "추상적인",
-        "친밀함",
+        "~을 이루다",
         "셀피, 자기 사진",
-        "어린 시절"
+        "가리다, 감추다",
+        "지역"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2849,10 +2848,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "정확한",
-        "모순되지 않는",
         "가리다, 감추다",
-        "~을 이루다"
+        "모순되지 않는",
+        "추상적인",
+        "애쓰다"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2866,10 +2865,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "추상적인",
+        "셀피, 자기 사진",
         "지역",
-        "~을 이루다",
-        "어린 시절"
+        "어린 시절",
+        "애쓰다"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2883,10 +2882,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "친밀함",
-        "모순되지 않는",
-        "가리다, 감추다",
-        "~을 이루다"
+        "~을 이루다",
+        "정확한",
+        "추상적인",
+        "모순되지 않는"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2900,10 +2899,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "친밀함",
-        "어린 시절",
-        "모순되지 않는",
-        "가리다, 감추다"
+        "~을 이루다",
+        "지역",
+        "가리다, 감추다",
+        "친밀함"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2917,10 +2916,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "지역",
-        "추상적인",
-        "가리다, 감추다",
-        "친밀함"
+        "모순되지 않는",
+        "애쓰다",
+        "어린 시절",
+        "추상적인"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
