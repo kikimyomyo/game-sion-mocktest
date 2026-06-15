@@ -501,7 +501,7 @@
       // 모든 사이클을 평탄화된 step 리스트로 (+ 복수전/책/단어/자기설명)
       const cycleSteps = problems.flatMap((p, idx) => {
         const steps = expandCycleToSteps(p);
-        return steps.map(s => ({ ...s, cycleIdx: idx, cycleId: p.id, subject: s.subject || (s.data && s.data.subject) || p.subject, image_url: p.image_url, video_url: p.video_url }));
+        return steps.map(s => ({ ...s, cycleIdx: idx, cycleId: p.id, subject: s.subject || (s.data && s.data.subject) || p.subject, image_url: p.image_url, video_url: p.video_url, book_diagram_url: p.book_diagram_url, book_diagram_source: p.book_diagram_source }));
       });
       const allSteps = revengeFirst
         ? [...revengeSteps, ...cycleSteps, ...readingSteps, ...vocabSteps, ...explainSteps]
@@ -1541,7 +1541,13 @@
                   <video src={step.video_url} autoPlay loop muted playsInline controls style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
                 </div>
               )}
-              {step.image_url && !step.video_url && (
+              {step.book_diagram_url && !step.video_url && (
+                <div style={{margin:"16px 0", textAlign:"center"}}>
+                  <img src={step.book_diagram_url} alt="책 도해" style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
+                  {step.book_diagram_source && <div style={{marginTop:6, fontSize:"0.78em", color:"#999"}}>{step.book_diagram_source}</div>}
+                </div>
+              )}
+              {step.image_url && !step.video_url && !step.book_diagram_url && (
                 <div style={{margin:"16px 0", textAlign:"center"}}>
                   <img src={step.image_url} alt="개념 도식" style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
                 </div>
@@ -1735,7 +1741,13 @@
                   <video src={step.video_url} autoPlay loop muted playsInline controls style={{maxWidth:"90%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
                 </div>
               )}
-              {step.image_url && !step.video_url && (
+              {step.book_diagram_url && !step.video_url && (
+                <div style={{margin:"10px 0", textAlign:"center"}}>
+                  <img src={step.book_diagram_url} alt="책 도해" style={{maxWidth:"80%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
+                  {step.book_diagram_source && <div style={{marginTop:6, fontSize:"0.78em", color:"#999"}}>{step.book_diagram_source}</div>}
+                </div>
+              )}
+              {step.image_url && !step.video_url && !step.book_diagram_url && (
                 <div style={{margin:"10px 0", textAlign:"center"}}>
                   <img src={step.image_url} alt="풀이 도식" style={{maxWidth:"80%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
                 </div>
