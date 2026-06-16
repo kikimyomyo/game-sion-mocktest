@@ -1536,15 +1536,15 @@
                   )}
                 </div>
               )}
-              {step.video_url && (
-                <div style={{margin:"16px 0", textAlign:"center"}}>
-                  <video src={step.video_url} autoPlay loop muted playsInline controls style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
-                </div>
-              )}
-              {step.book_diagram_url && !step.video_url && (
+              {step.book_diagram_url && (
                 <div style={{margin:"16px 0", textAlign:"center"}}>
                   <img src={step.book_diagram_url} alt="책 도해" style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
                   {step.book_diagram_source && <div style={{marginTop:6, fontSize:"0.78em", color:"#999"}}>{step.book_diagram_source}</div>}
+                </div>
+              )}
+              {step.video_url && !step.book_diagram_url && (
+                <div style={{margin:"16px 0", textAlign:"center"}}>
+                  <video src={step.video_url} autoPlay loop muted playsInline controls style={{maxWidth:"100%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.15)"}} />
                 </div>
               )}
               {step.image_url && !step.video_url && !step.book_diagram_url && (
@@ -1736,15 +1736,15 @@
                   ))}
                 </div>
               )}
-              {step.video_url && (
-                <div style={{margin:"10px 0", textAlign:"center"}}>
-                  <video src={step.video_url} autoPlay loop muted playsInline controls style={{maxWidth:"90%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
-                </div>
-              )}
-              {step.book_diagram_url && !step.video_url && (
+              {step.book_diagram_url && (
                 <div style={{margin:"10px 0", textAlign:"center"}}>
                   <img src={step.book_diagram_url} alt="책 도해" style={{maxWidth:"80%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
                   {step.book_diagram_source && <div style={{marginTop:6, fontSize:"0.78em", color:"#999"}}>{step.book_diagram_source}</div>}
+                </div>
+              )}
+              {step.video_url && !step.book_diagram_url && (
+                <div style={{margin:"10px 0", textAlign:"center"}}>
+                  <video src={step.video_url} autoPlay loop muted playsInline controls style={{maxWidth:"90%", borderRadius:14, boxShadow:"0 4px 12px rgba(120,80,200,0.12)"}} />
                 </div>
               )}
               {step.image_url && !step.video_url && !step.book_diagram_url && (
