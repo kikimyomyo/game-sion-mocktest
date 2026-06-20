@@ -516,8 +516,21 @@
       const [name, setName] = useState("시온");
       const [started, setStarted] = useState(false);
       const startRef = useRef(Date.now());
+      // ✍️ 오늘의 필사 완료 상태 (localStorage 기반 — 진도는 update_game.py가 매일 자동 전진)
+      const [cwDone, setCwDone] = useState(false);
+      const [cwStreak, setCwStreak] = useState(0);
 
       useEffect(() => { setPicked(null); setShortText(""); setShowFeedback(false); }, [stepIdx]);
+
+      // 필사 스트릭용 KST 날짜 (off일 전). UTC slice는 자정 경계서 하루 어긋남 → KST 보정
+      function kstDate(off) { return new Date(Date.now() + 9*3600*1000 - (off||0)*86400000).toISOString().slice(0,10); }
+      // 마운트 시 오늘 완료 여부 + 연속 스트릭 복원
+      useEffect(() => {
+        try {
+          setCwStreak(parseInt(localStorage.getItem("cwStreak") || "0", 10));
+          setCwDone(localStorage.getItem("cwLastDone") === kstDate(0));
+        } catch (e) {}
+      }, []);
 
       // 🔧 QA 점프 — URL 해시 #goto=passage|reading|vocab|revenge|explain (검수용, 해시 없으면 무동작)
       useEffect(() => {
@@ -544,6 +557,25 @@
       }
       // 🔮 선시도(찍기)는 점수에서 제외
       const scoredOf = arr => arr.filter(a => !a.is_prediction);
+
+      // ✍️ "오늘 필사 다 했어요" — 하루 1회, 연속 스트릭 갱신 + 별도 시트탭 기록 (진도와 무관)
+      function markCopyworkDone(cw) {
+        try {
+          const today = kstDate(0);
+          if (localStorage.getItem("cwLastDone") === today) return; // 하루 1회만
+          const prevStreak = parseInt(localStorage.getItem("cwStreak") || "0", 10);
+          const newStreak = (localStorage.getItem("cwLastDone") === kstDate(1)) ? prevStreak + 1 : 1; // 어제 했으면 +1, 끊겼으면 1
+          localStorage.setItem("cwLastDone", today);
+          localStorage.setItem("cwStreak", String(newStreak));
+          setCwDone(true); setCwStreak(newStreak);
+          if (window.GameSFX?.finish) window.GameSFX.finish();
+          recordResult({
+            game: cfg.game, sheet_tab: "sion-copywork", player: name,
+            score: 0, total: 0,
+            meta: { type: "copywork_done", date: today, page: cw?.page, total_pages: cw?.total, title: cw?.title, streak: newStreak },
+          });
+        } catch (e) {}
+      }
 
       // 허브 모드: 날짜 리스트 표시
       if (hubMode && archiveIndex && archiveIndex.days && archiveIndex.days.length > 0) {
@@ -688,6 +720,25 @@
                 <div style={{fontSize:"0.72em", color:"#aa8855", marginTop:8, textAlign:"center", fontStyle:"italic"}}>
                   {imgs.length > 1 ? "영어 원문을 보고 적은 뒤, 해석으로 뜻을 확인해 ✏️" : "화면을 보고 공책에 또박또박 따라 써 보자 ✏️"}
                 </div>
+                {/* ✍️ 완료 버튼 / 완료 상태 — 진도 전진 아님(매일 자동), 격려·스트릭·부모확인 */}
+                {cwDone ? (
+                  <div style={{
+                    marginTop:12, padding:"12px", borderRadius:14, textAlign:"center",
+                    background:"linear-gradient(135deg,#5ed5a0,#3bbf86)", color:"#fff", fontWeight:800,
+                    boxShadow:"0 4px 12px rgba(59,191,134,0.3)",
+                  }}>
+                    ✅ 오늘 필사 완료!{cwStreak > 1 ? `  🔥 ${cwStreak}일 연속` : ""}
+                  </div>
+                ) : (
+                  <button onClick={() => markCopyworkDone(cw)} style={{
+                    marginTop:12, width:"100%", padding:"13px", borderRadius:14, border:"none",
+                    background:"linear-gradient(135deg,#ffb347,#ff9020)", color:"#fff",
+                    fontSize:"1.05em", fontWeight:800, cursor:"pointer",
+                    boxShadow:"0 4px 12px rgba(255,144,32,0.35)",
+                  }}>
+                    ✍️ 오늘 필사 다 했어요!{cwStreak > 0 ? `  🔥 ${cwStreak}일 연속 도전 중` : ""}
+                  </button>
+                )}
               </div>
               );
             })()}
