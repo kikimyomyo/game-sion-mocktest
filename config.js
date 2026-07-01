@@ -687,7 +687,7 @@ window.GAME_CONFIG = {
   "total_plays": 359,
   "total_correct": 284,
   "accuracy": 79,
-  "last_date": "2026-06-30",
+  "last_date": "2026-07-01",
   "영역별": [
     {
       "subject": "국어",
@@ -2543,20 +2543,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린 왕자 영어 필사",
-  "book_key": "어린왕자영어",
+  "title": "어린이 사복음서 한 달 쓰기",
+  "book_key": "사복음서",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 9,
-  "total": 133,
+  "page": 13,
+  "total": 65,
   "image": "./copywork/today.jpg",
-  "weekday": "수",
-  "date": "2026-07-01",
+  "weekday": "목",
+  "date": "2026-07-02",
   "flagged": false
 },
   revenge: {
-  "date": "2026-07-01",
+  "date": "2026-07-02",
   "items": [
     {
       "id": "q0004",
@@ -2566,15 +2566,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "고구려를 세운 인물로 알맞은 것은?",
+        "question": "세종대왕은 조선의 네 번째 임금이다. 조선의 첫 번째 임금 태조부터 세종까지 임금은 모두 몇 명인가?",
         "choices": [
-          "주몽",
-          "온조",
-          "박혁거세",
-          "김수로"
+          "4명",
+          "3명",
+          "5명",
+          "6명"
         ],
-        "answer": "주몽",
-        "explanation": "고구려는 기원전 37년 주몽(동명성왕)이 졸본 지역에 세운 나라이다.",
+        "answer": "4명",
+        "explanation": "태조(1대)·정종(2대)·태종(3대)·세종(4대)으로, 첫 번째부터 네 번째까지 세면 모두 4명이다. 3명은 세종을 빼고 센 것, 5명·6명은 더 센 값이므로 오답.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2586,15 +2586,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "구각기둥의 꼭짓점은 모두 몇 개일까요?",
+        "question": "학생 42명을 남학생과 여학생이 4 : 3이 되도록 나누었습니다. 남학생은 여학생보다 몇 명 더 많습니까?",
         "choices": [
-          "9개",
-          "10개",
-          "18개",
-          "27개"
+          "6명",
+          "18명",
+          "24명",
+          "9명"
         ],
-        "answer": "18개",
-        "explanation": "n각기둥의 꼭짓점 수는 2n개입니다. 구각기둥은 n=9이므로 2×9=18개. 9개는 한 밑면만 센 것, 10개는 각뿔로 착각한 것(9+1), 27개는 모서리 수(3×9)와 혼동한 오답입니다.",
+        "answer": "6명",
+        "explanation": "비의 합은 4+3=7이므로 한 묶음은 42÷7=6명. 남학생 4묶음=24명, 여학생 3묶음=18명이라 차이는 24-18=6명입니다. '18명'은 여학생 수, '24명'은 남학생 수 자체, '9명'은 잘못된 차이로 답이 아닙니다.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2606,32 +2606,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "다음 중 셀 수 없는 명사 표현이 올바른 것은?",
+        "question": "빈칸에 알맞은 의문사를 고르세요.\n___ does she look so happy? — Because she won.",
         "choices": [
-          "three breads",
-          "a love",
-          "two waters",
-          "much time"
+          "Where",
+          "When",
+          "Why",
+          "How"
         ],
-        "answer": "much time",
-        "explanation": "time(시간)은 셀 수 없는 명사라서 much time(많은 시간)이 옳다. bread는 복수형(breads)으로 못 쓰고, love는 a를 못 붙이며, water는 two로 셀 수 없어 모두 틀렸다.",
+        "answer": "Why",
+        "explanation": "Because로 이유를 답하므로 이유를 묻는 Why가 알맞다.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-07-01",
+  "date": "2026-07-02",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "~을 이루다",
+        "애쓰다",
         "어린 시절",
-        "가리다, 감추다",
-        "애쓰다"
+        "~을 이루다",
+        "정확한"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2647,8 +2647,8 @@ window.GAME_CONFIG = {
       "choices": [
         "정확한",
         "가리다, 감추다",
-        "추상적인",
-        "~을 이루다"
+        "셀피, 자기 사진",
+        "지역"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2662,10 +2662,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "친밀함",
+        "정확한",
         "가리다, 감추다",
-        "추상적인",
-        "셀피, 자기 사진"
+        "어린 시절",
+        "애쓰다"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2679,10 +2679,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
-        "어린 시절",
         "추상적인",
-        "~을 이루다"
+        "어린 시절",
+        "모순되지 않는",
+        "셀피, 자기 사진"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2697,9 +2697,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
         "셀피, 자기 사진",
-        "지역",
-        "친밀함",
-        "모순되지 않는"
+        "추상적인",
+        "모순되지 않는",
+        "~을 이루다"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2713,10 +2713,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "친밀함",
-        "정확한",
+        "모순되지 않는",
+        "가리다, 감추다",
         "어린 시절",
-        "모순되지 않는"
+        "~을 이루다"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2730,10 +2730,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
-        "추상적인",
+        "친밀함",
+        "지역",
         "셀피, 자기 사진",
-        "지역"
+        "추상적인"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2747,10 +2747,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
-        "정확한",
         "~을 이루다",
-        "추상적인"
+        "모순되지 않는",
+        "셀피, 자기 사진",
+        "지역"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2764,10 +2764,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "추상적인",
-        "모순되지 않는",
+        "~을 이루다",
+        "어린 시절",
         "친밀함",
-        "애쓰다"
+        "모순되지 않는"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2781,10 +2781,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "모순되지 않는",
+        "추상적인",
         "~을 이루다",
         "지역",
-        "추상적인"
+        "친밀함"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
