@@ -682,7 +682,7 @@ window.GAME_CONFIG = {
   "total_plays": 359,
   "total_correct": 284,
   "accuracy": 79,
-  "last_date": "2026-07-01",
+  "last_date": "2026-07-02",
   "영역별": [
     {
       "subject": "국어",
@@ -2538,20 +2538,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린이 사복음서 한 달 쓰기",
-  "book_key": "사복음서",
+  "title": "영어 필사 100일의 기적",
+  "book_key": "영어100일",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 13,
-  "total": 65,
+  "page": 5,
+  "total": 100,
   "image": "./copywork/today.jpg",
-  "weekday": "목",
-  "date": "2026-07-02",
+  "weekday": "금",
+  "date": "2026-07-03",
   "flagged": false
 },
   revenge: {
-  "date": "2026-07-02",
+  "date": "2026-07-03",
   "items": [
     {
       "id": "q0004",
@@ -2561,15 +2561,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "고려 시대에 푸른빛이 아름다워 세계적으로 유명했던 도자기는 무엇인가?",
+        "question": "다음은 우리 근현대사의 주요 사건들이다. 가장 먼저 일어난 일부터 시간 순서대로 바르게 나열한 것은?",
         "choices": [
-          "고려청자",
-          "조선백자",
-          "분청사기",
-          "토기"
+          "3·1 운동 → 광복 → 6·25 전쟁",
+          "광복 → 3·1 운동 → 6·25 전쟁",
+          "6·25 전쟁 → 3·1 운동 → 광복",
+          "광복 → 6·25 전쟁 → 3·1 운동"
         ],
-        "answer": "고려청자",
-        "explanation": "고려청자는 맑은 푸른빛과 상감 기법으로 유명한 고려의 대표적인 예술품이에요.",
+        "answer": "3·1 운동 → 광복 → 6·25 전쟁",
+        "explanation": "3·1 운동(1919) → 광복(1945) → 6·25 전쟁(1950) 순서가 맞다. 광복(1945)은 3·1 운동(1919)보다 뒤이고, 6·25 전쟁(1950)은 가장 나중에 일어났으므로 나머지 세 순서는 연도가 뒤바뀌어 오답이다.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2581,15 +2581,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "사탕 24개를 형과 동생에게 3 : 5로 나누어 줄 때, 형이 받는 사탕은 몇 개입니까?",
+        "question": "반지름이 6 cm인 원의 넓이는 얼마입니까? (원주율은 3.14로 계산)",
         "choices": [
-          "8개",
-          "9개",
-          "15개",
-          "12개"
+          "113.04 cm²",
+          "37.68 cm²",
+          "18.84 cm²",
+          "452.16 cm²"
         ],
-        "answer": "9개",
-        "explanation": "전체 비의 합은 3+5=8이므로 형은 24×(3/8)=9개를 받습니다. '15개'는 동생 몫(5/8), '12개'는 절반, '8개'는 비의 합과 헷갈린 값으로 틀립니다.",
+        "answer": "113.04 cm²",
+        "explanation": "넓이 = 6 × 6 × 3.14 = 36 × 3.14 = 113.04 cm². 37.68은 둘레(지름 12×3.14), 18.84는 반지름×원주율, 452.16은 지름×지름×원주율로 잘못 계산한 값입니다.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2601,32 +2601,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "긍정 명령문으로 알맞은 것은?",
+        "question": "다음 빈칸에 알맞은 것은? \"There is ___ orange on the table.\"",
         "choices": [
-          "Open the window.",
-          "You open the window.",
-          "To open the window.",
-          "Opening the window."
+          "a",
+          "an",
+          "the",
+          "x (필요 없음)"
         ],
-        "answer": "Open the window.",
-        "explanation": "명령문은 주어 You를 생략하고 동사원형으로 시작한다. 'Open the window.'가 올바른 명령문이다.",
+        "answer": "an",
+        "explanation": "orange는 모음 소리(o)로 시작하므로 'an'을 쓴다. 'a'는 자음 소리 앞이라 틀림. 'the'는 특정 지칭이라 부적합. 셀 수 있는 단수명사라 관사를 빼면 틀림.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-07-02",
+  "date": "2026-07-03",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "모순되지 않는",
-        "~을 이루다",
+        "지역",
+        "친밀함",
         "애쓰다",
-        "셀피, 자기 사진"
+        "~을 이루다"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2640,10 +2640,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "애쓰다",
         "정확한",
-        "친밀함",
-        "지역"
+        "모순되지 않는",
+        "셀피, 자기 사진",
+        "가리다, 감추다"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2657,10 +2657,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "친밀함",
-        "추상적인",
-        "어린 시절",
-        "가리다, 감추다"
+        "정확한",
+        "모순되지 않는",
+        "가리다, 감추다",
+        "친밀함"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2675,8 +2675,8 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
         "모순되지 않는",
-        "지역",
-        "셀피, 자기 사진",
+        "추상적인",
+        "애쓰다",
         "어린 시절"
       ],
       "answer": "어린 시절",
@@ -2691,10 +2691,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
         "지역",
-        "애쓰다",
-        "가리다, 감추다"
+        "셀피, 자기 사진",
+        "어린 시절",
+        "애쓰다"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2708,10 +2708,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "추상적인",
+        "~을 이루다",
         "친밀함",
-        "모순되지 않는",
-        "어린 시절"
+        "애쓰다",
+        "모순되지 않는"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2725,10 +2725,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "~을 이루다",
+        "셀피, 자기 사진",
         "지역",
-        "추상적인",
-        "모순되지 않는"
+        "애쓰다",
+        "친밀함"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2742,10 +2742,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
+        "지역",
         "어린 시절",
-        "애쓰다",
-        "셀피, 자기 사진",
-        "~을 이루다"
+        "~을 이루다",
+        "모순되지 않는"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2759,10 +2759,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
+        "모순되지 않는",
         "친밀함",
-        "정확한",
-        "어린 시절",
-        "추상적인"
+        "추상적인",
+        "셀피, 자기 사진"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2776,10 +2776,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
+        "모순되지 않는",
         "추상적인",
-        "애쓰다",
         "친밀함",
-        "모순되지 않는"
+        "~을 이루다"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
