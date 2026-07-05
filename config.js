@@ -688,21 +688,17 @@ window.GAME_CONFIG = {
   "total_plays": 367,
   "total_correct": 288,
   "accuracy": 78,
-  "last_date": "2026-07-02",
+  "last_date": "2026-07-03",
   "영역별": [
     {
       "subject": "국어",
       "color": "#ff8fc5",
       "progress": 32,
-      "current_unit": "중1 비문학(과학·인문)",
+      "current_unit": "읽기",
       "weak_count": 4,
       "strong_count": 1,
-      "recent_accuracy": [
-        1.0,
-        1.0,
-        1.0
-      ],
-      "is_master": true
+      "recent_accuracy": [],
+      "is_master": false
     },
     {
       "subject": "수학",
@@ -774,10 +770,10 @@ window.GAME_CONFIG = {
       "is_master": true
     }
   ],
-  "level": 31,
-  "xp_total": 3080,
+  "level": 30,
+  "xp_total": 2980,
   "xp_in_level": 80,
-  "master_units": 2,
+  "master_units": 1,
   "roadmap": [
     {
       "grade": "초6",
@@ -817,18 +813,10 @@ window.GAME_CONFIG = {
   ],
   "trophies": [
     {
-      "subject": "국어",
-      "color": "#ff8fc5",
-      "unit": "중1 비문학(과학·인문)",
-      "date": "2026-07-02",
-      "accuracy": 100,
-      "track": "초6"
-    },
-    {
       "subject": "한국사",
       "color": "#ff9d6b",
       "unit": "미시작",
-      "date": "2026-07-02",
+      "date": "2026-07-03",
       "accuracy": 100,
       "track": "초6"
     }
@@ -841,7 +829,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "국어-00",
-        "status": "current"
+        "status": "done"
       },
       {
         "name": "읽기",
@@ -849,7 +837,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "국어-01",
-        "status": "locked"
+        "status": "current"
       },
       {
         "name": "쓰기",
@@ -2561,20 +2549,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "영어 필사 100일의 기적",
-  "book_key": "영어100일",
+  "title": "어린이 사복음서 한 달 쓰기",
+  "book_key": "사복음서",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 5,
-  "total": 100,
+  "page": 14,
+  "total": 65,
   "image": "./copywork/today.jpg",
-  "weekday": "금",
-  "date": "2026-07-03",
+  "weekday": "월",
+  "date": "2026-07-06",
   "flagged": false
 },
   revenge: {
-  "date": "2026-07-03",
+  "date": "2026-07-06",
   "items": [
     {
       "id": "q0004",
@@ -2584,15 +2572,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "거란의 침입 때 외교 담판으로 강동 6주를 얻어낸 고려의 인물은 누구인가?",
+        "question": "수도를 평양으로 옮기고 남쪽으로 영토를 넓힌 고구려의 왕은?",
         "choices": [
-          "서희",
-          "강감찬",
-          "윤관",
-          "최영"
+          "장수왕",
+          "광개토 대왕",
+          "미천왕",
+          "소수림왕"
         ],
-        "answer": "서희",
-        "explanation": "서희는 거란 장수 소손녕과 담판하여 싸우지 않고 강동 6주를 확보했어요.",
+        "answer": "장수왕",
+        "explanation": "장수왕은 427년 수도를 국내성에서 평양으로 옮기고 남진 정책을 펼쳤다.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2604,15 +2592,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "비례식 2 : 7 = □ : 35 에서 □에 알맞은 수는 얼마입니까?",
+        "question": "오각기둥의 면은 모두 몇 개일까요?",
         "choices": [
-          "5",
-          "10",
-          "14",
-          "70"
+          "5개",
+          "6개",
+          "7개",
+          "10개"
         ],
-        "answer": "10",
-        "explanation": "7에 5를 곱해 35가 되었으므로 2에도 5를 곱하면 10입니다. 외항의 곱 2×35=70, 내항의 곱 7×□이므로 □=70÷7=10. '5','14','70'은 이 식을 만족하지 않습니다.",
+        "answer": "7개",
+        "explanation": "n각기둥의 면 수는 (n+2)개입니다. 오각기둥은 n=5이므로 5+2=7개. 5개는 옆면만 센 것, 6개는 한 개 덜 센 것, 10개는 꼭짓점 수(2×5)와 혼동한 오답입니다.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2624,32 +2612,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "다음 빈칸에 알맞은 목적격은?\nI like Tom. I often play with ___.",
+        "question": "다음 중 일반동사 부정문이 올바르게 만들어진 것은? (주어가 I일 때)",
         "choices": [
-          "him",
-          "he",
-          "his",
-          "himself"
+          "I don't like carrots.",
+          "I not like carrots.",
+          "I doesn't like carrots.",
+          "I am not like carrots."
         ],
-        "answer": "him",
-        "explanation": "전치사 with 뒤에는 목적격이 오고, Tom(남자)을 받으므로 him이 정답이다. he는 주격, his는 소유격, himself는 재귀대명사라서 전치사 뒤 목적격 자리에 맞지 않아 오답이다.",
+        "answer": "I don't like carrots.",
+        "explanation": "I, you, we, they 주어는 일반동사 앞에 do not(=don't)을 쓴다. 'not like'는 do가 빠져서 틀림. 'doesn't'는 3인칭 단수(he/she/it)에만 쓰므로 I와 맞지 않음. 'am not like'는 be동사 부정문 형태라 일반동사 like와 함께 쓸 수 없음.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-07-03",
+  "date": "2026-07-06",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "추상적인",
-        "애쓰다",
-        "가리다, 감추다",
-        "셀피, 자기 사진"
+        "모순되지 않는",
+        "정확한",
+        "지역",
+        "애쓰다"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2663,10 +2651,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
+        "가리다, 감추다",
+        "친밀함",
         "정확한",
-        "어린 시절",
-        "추상적인",
-        "지역"
+        "모순되지 않는"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2680,10 +2668,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "추상적인",
-        "~을 이루다",
         "가리다, 감추다",
-        "정확한"
+        "애쓰다",
+        "~을 이루다",
+        "지역"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2697,10 +2685,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "친밀함",
-        "어린 시절",
         "정확한",
-        "가리다, 감추다"
+        "어린 시절",
+        "친밀함",
+        "모순되지 않는"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2714,10 +2702,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "정확한",
-        "셀피, 자기 사진",
-        "추상적인",
-        "~을 이루다"
+        "친밀함",
+        "애쓰다",
+        "지역",
+        "셀피, 자기 사진"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2731,10 +2719,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "정확한",
-        "어린 시절",
+        "지역",
+        "친밀함",
         "모순되지 않는",
-        "친밀함"
+        "추상적인"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2748,10 +2736,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "지역",
-        "애쓰다",
-        "~을 이루다",
-        "모순되지 않는"
+        "셀피, 자기 사진",
+        "모순되지 않는",
+        "친밀함",
+        "지역"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2765,8 +2753,8 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
+        "정확한",
         "~을 이루다",
-        "어린 시절",
         "모순되지 않는",
         "친밀함"
       ],
@@ -2783,9 +2771,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
         "셀피, 자기 사진",
+        "지역",
         "추상적인",
-        "친밀함",
-        "어린 시절"
+        "친밀함"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2799,10 +2787,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
+        "지역",
         "추상적인",
-        "친밀함",
-        "~을 이루다",
-        "정확한"
+        "정확한",
+        "셀피, 자기 사진"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
