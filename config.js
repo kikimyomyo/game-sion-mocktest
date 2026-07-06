@@ -173,7 +173,7 @@ window.GAME_CONFIG = {
         "hint": "각 지문의 평온한 묘사들을 종합해보세요."
       }
     ],
-    "image_url": "./images/2026-07-06_cycle_1.png"
+    "image_url": "./images/2026-07-07_cycle_1.png"
   },
   {
     "id": 2,
@@ -344,7 +344,7 @@ window.GAME_CONFIG = {
         "hint": "밑면넓이 = 6² = 36이고, 높이 = 9입니다."
       }
     ],
-    "book_diagram_url": "./diagrams/book/2026-07-06_cycle_2.jpg",
+    "book_diagram_url": "./diagrams/book/2026-07-07_cycle_2.jpg",
     "book_diagram_source": "출처: 최소한의 수학지식(EBSMath)"
   },
   {
@@ -516,7 +516,7 @@ window.GAME_CONFIG = {
         "hint": "진짜 주어를 찾아보세요."
       }
     ],
-    "image_url": "./images/2026-07-06_cycle_3.png"
+    "image_url": "./images/2026-07-07_cycle_3.png"
   },
   {
     "id": 4,
@@ -686,11 +686,11 @@ window.GAME_CONFIG = {
         "hint": "공정한 비교를 위해 어떤 것들을 통제해야 할까요?"
       }
     ],
-    "image_url": "./images/2026-07-06_cycle_4.png"
+    "image_url": "./images/2026-07-07_cycle_4.png"
   }
 ],
   meta: {
-  "generated_at": "2026-07-06",
+  "generated_at": "2026-07-07",
   "week": "2026-W28",
   "weakness_focus": [
     "수능 기출 학습",
@@ -2579,11 +2579,11 @@ window.GAME_CONFIG = {
   "total": 65,
   "image": "./copywork/today.jpg",
   "weekday": "월",
-  "date": "2026-07-06",
+  "date": "2026-07-07",
   "flagged": false
 },
   revenge: {
-  "date": "2026-07-06",
+  "date": "2026-07-07",
   "items": [
     {
       "id": "q0004",
@@ -2648,7 +2648,7 @@ window.GAME_CONFIG = {
   ]
 },
   vocab: {
-  "date": "2026-07-06",
+  "date": "2026-07-07",
   "cards": [
     {
       "type": "mcq",
