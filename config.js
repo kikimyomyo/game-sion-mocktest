@@ -706,19 +706,22 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 367,
+  "total_plays": 375,
   "total_correct": 288,
-  "accuracy": 78,
-  "last_date": "2026-07-03",
+  "accuracy": 77,
+  "last_date": "2026-07-07",
   "영역별": [
     {
       "subject": "국어",
       "color": "#ff8fc5",
       "progress": 32,
       "current_unit": "읽기",
-      "weak_count": 4,
+      "weak_count": 6,
       "strong_count": 1,
-      "recent_accuracy": [],
+      "recent_accuracy": [
+        0.0,
+        0.0
+      ],
       "is_master": false
     },
     {
@@ -729,7 +732,7 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 9,
       "recent_accuracy": [
-        0.538,
+        0.0,
         0.0,
         0.0
       ],
@@ -743,7 +746,7 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 2,
       "recent_accuracy": [
-        0.444,
+        0.0,
         0.0,
         0.0
       ],
@@ -757,9 +760,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 1,
       "recent_accuracy": [
-        1.0,
-        0.5,
-        0.6
+        0.6,
+        0.0,
+        0.0
       ],
       "is_master": false
     },
@@ -837,7 +840,7 @@ window.GAME_CONFIG = {
       "subject": "한국사",
       "color": "#ff9d6b",
       "unit": "미시작",
-      "date": "2026-07-03",
+      "date": "2026-07-07",
       "accuracy": 100,
       "track": "초6"
     }
@@ -2570,20 +2573,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린이 사복음서 한 달 쓰기",
-  "book_key": "사복음서",
+  "title": "어린 왕자 영어 필사",
+  "book_key": "어린왕자영어",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 14,
-  "total": 65,
+  "page": 10,
+  "total": 133,
   "image": "./copywork/today.jpg",
-  "weekday": "월",
-  "date": "2026-07-07",
+  "weekday": "수",
+  "date": "2026-07-08",
   "flagged": false
 },
   revenge: {
-  "date": "2026-07-07",
+  "date": "2026-07-08",
   "items": [
     {
       "id": "q0004",
@@ -2593,15 +2596,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "1919년 3월 1일, 전국에서 \"대한 독립 만세\"를 외치며 일어난 우리 민족의 독립운동을 무엇이라고 하는가?",
+        "question": "강화도조약은 올해(2026년) 기준으로 몇 년 전에 체결되었는가?",
         "choices": [
-          "3·1 운동",
-          "6·25 전쟁",
-          "동학 농민 운동",
-          "5·18 민주화 운동"
+          "150년",
+          "120년",
+          "100년",
+          "200년"
         ],
-        "answer": "3·1 운동",
-        "explanation": "1919년 3월 1일에 일어난 전국적인 만세 독립운동이 3·1 운동이다. 6·25 전쟁(1950)은 남북 간 전쟁, 동학 농민 운동(1894)은 조선 말 농민 봉기, 5·18 민주화 운동(1980)은 민주화 운동이라 시기·성격이 모두 달라 오답이다.",
+        "answer": "150년",
+        "explanation": "2026년에서 1876년을 빼면 150년이므로 강화도조약은 올해 기준 150년 전에 체결되었다.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2613,15 +2616,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "반원 모양의 종이를 지름을 축으로 하여 한 바퀴 돌렸다. 만들어진 입체도형을 위에서 똑바로 내려다본 모양은 무엇인가? 알맞은 것은?",
+        "question": "높이가 12cm인 원기둥 모양의 음료수 캔이 있다. 이 캔의 옆면을 가위로 잘라 펼쳤더니 가로가 25cm인 직사각형이 되었다. 이 직사각형의 넓이는 몇 cm²인가?",
         "choices": [
-          "원",
-          "삼각형",
-          "직사각형",
-          "반원"
+          "300cm²",
+          "37cm²",
+          "150cm²",
+          "288cm²"
         ],
-        "answer": "원",
-        "explanation": "반원을 지름을 축으로 돌리면 구가 만들어지고, 구를 위에서 본 모양은 원이다. 구를 위에서 봐도 옆에서 봐도 항상 원으로 보이므로 삼각형·직사각형은 오답. 회전 후에는 더 이상 반원 모양이 아니므로 반원도 오답.",
+        "answer": "300cm²",
+        "explanation": "옆면 전개도 직사각형의 세로는 캔의 높이 12cm, 가로는 25cm이므로 넓이=25×12=300(cm²)이다. 37은 25+12로 더한 값이라 오답. 150은 25×12÷2로 삼각형처럼 계산한 값이라 오답. 288은 24×12로 가로를 잘못 본 값이라 오답.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2633,32 +2636,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "빈칸에 알맞은 be동사는? \"Who ___ that boy?\" (저 소년은 누구니?)",
+        "question": "단위 표현이 잘못 짝지어진 것은?",
         "choices": [
-          "is",
-          "are",
-          "am",
-          "do"
+          "a piece of paper",
+          "a loaf of bread",
+          "a glass of juice",
+          "a slice of water"
         ],
-        "answer": "is",
-        "explanation": "주어 that boy가 3인칭 단수이므로 is를 쓴다.",
+        "answer": "a slice of water",
+        "explanation": "water(물)는 잔에 담아 a glass of water로 세지, slice(얇은 조각)로 셀 수 없어 'a slice of water'가 틀린 짝이다. paper-piece, bread-loaf, juice-glass는 모두 올바른 단위 짝이다.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-07-07",
+  "date": "2026-07-08",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
-        "추상적인",
         "애쓰다",
-        "모순되지 않는"
+        "모순되지 않는",
+        "친밀함",
+        "셀피, 자기 사진"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2674,8 +2677,8 @@ window.GAME_CONFIG = {
       "choices": [
         "추상적인",
         "정확한",
-        "어린 시절",
-        "~을 이루다"
+        "친밀함",
+        "애쓰다"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2689,10 +2692,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "어린 시절",
-        "추상적인",
         "가리다, 감추다",
-        "모순되지 않는"
+        "애쓰다",
+        "추상적인",
+        "정확한"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2706,10 +2709,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
+        "~을 이루다",
         "어린 시절",
-        "셀피, 자기 사진",
-        "지역",
-        "~을 이루다"
+        "추상적인",
+        "모순되지 않는"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2723,10 +2726,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
+        "지역",
         "~을 이루다",
-        "친밀함",
-        "정확한",
-        "셀피, 자기 사진"
+        "셀피, 자기 사진",
+        "가리다, 감추다"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2740,10 +2743,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
+        "어린 시절",
         "모순되지 않는",
-        "가리다, 감추다",
-        "지역",
-        "정확한"
+        "친밀함",
+        "애쓰다"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2757,10 +2760,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
+        "지역",
         "정확한",
-        "셀피, 자기 사진",
-        "친밀함",
-        "지역"
+        "추상적인",
+        "어린 시절"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2774,10 +2777,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "지역",
-        "정확한",
         "~을 이루다",
-        "가리다, 감추다"
+        "모순되지 않는",
+        "가리다, 감추다",
+        "정확한"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2791,10 +2794,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "추상적인",
-        "모순되지 않는",
+        "지역",
         "친밀함",
-        "~을 이루다"
+        "가리다, 감추다",
+        "애쓰다"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2808,10 +2811,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
+        "셀피, 자기 사진",
         "추상적인",
         "친밀함",
-        "애쓰다",
-        "모순되지 않는"
+        "어린 시절"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
