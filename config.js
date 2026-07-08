@@ -2573,20 +2573,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린 왕자 영어 필사",
-  "book_key": "어린왕자영어",
+  "title": "어린이 사복음서 한 달 쓰기",
+  "book_key": "사복음서",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 10,
-  "total": 133,
+  "page": 15,
+  "total": 65,
   "image": "./copywork/today.jpg",
-  "weekday": "수",
-  "date": "2026-07-08",
+  "weekday": "목",
+  "date": "2026-07-09",
   "flagged": false
 },
   revenge: {
-  "date": "2026-07-08",
+  "date": "2026-07-09",
   "items": [
     {
       "id": "q0004",
@@ -2596,15 +2596,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "강화도조약은 올해(2026년) 기준으로 몇 년 전에 체결되었는가?",
+        "question": "광복 직후 통일 정부 수립을 위해 김구가 북한을 방문하여 협상을 시도한 활동을 무엇이라 하는가?",
         "choices": [
-          "150년",
-          "120년",
-          "100년",
-          "200년"
+          "남북 협상",
+          "갑신정변",
+          "위정척사 운동",
+          "물산 장려 운동"
         ],
-        "answer": "150년",
-        "explanation": "2026년에서 1876년을 빼면 150년이므로 강화도조약은 올해 기준 150년 전에 체결되었다.",
+        "answer": "남북 협상",
+        "explanation": "김구는 남북 분단을 막고 통일 정부를 세우기 위해 1948년 북한을 방문하여 남북 협상을 시도하였다.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2616,15 +2616,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "높이가 12cm인 원기둥 모양의 음료수 캔이 있다. 이 캔의 옆면을 가위로 잘라 펼쳤더니 가로가 25cm인 직사각형이 되었다. 이 직사각형의 넓이는 몇 cm²인가?",
+        "question": "칠각뿔의 면은 모두 몇 개일까요?",
         "choices": [
-          "300cm²",
-          "37cm²",
-          "150cm²",
-          "288cm²"
+          "7개",
+          "8개",
+          "9개",
+          "14개"
         ],
-        "answer": "300cm²",
-        "explanation": "옆면 전개도 직사각형의 세로는 캔의 높이 12cm, 가로는 25cm이므로 넓이=25×12=300(cm²)이다. 37은 25+12로 더한 값이라 오답. 150은 25×12÷2로 삼각형처럼 계산한 값이라 오답. 288은 24×12로 가로를 잘못 본 값이라 오답.",
+        "answer": "8개",
+        "explanation": "n각뿔의 면 수는 (n+1)개입니다. 칠각뿔은 n=7이므로 7+1=8개(옆면 7 + 밑면 1). 7개는 옆면만 센 것, 9개는 칠각기둥의 면(7+2)과 혼동한 것, 14개는 모서리 수(2×7)와 혼동한 오답입니다.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2636,32 +2636,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "단위 표현이 잘못 짝지어진 것은?",
+        "question": "틀린 부분을 바르게 고친 문장은? \"What are this?\" (이것은 무엇이니?)",
         "choices": [
-          "a piece of paper",
-          "a loaf of bread",
-          "a glass of juice",
-          "a slice of water"
+          "What is this?",
+          "What are these?",
+          "Who is this?",
+          "What this is?"
         ],
-        "answer": "a slice of water",
-        "explanation": "water(물)는 잔에 담아 a glass of water로 세지, slice(얇은 조각)로 셀 수 없어 'a slice of water'가 틀린 짝이다. paper-piece, bread-loaf, juice-glass는 모두 올바른 단위 짝이다.",
+        "answer": "What is this?",
+        "explanation": "주어 this가 단수이므로 be동사는 are가 아니라 is로 고쳐야 한다.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-07-08",
+  "date": "2026-07-09",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "애쓰다",
         "모순되지 않는",
-        "친밀함",
-        "셀피, 자기 사진"
+        "추상적인",
+        "~을 이루다",
+        "애쓰다"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2675,10 +2675,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "추상적인",
-        "정확한",
         "친밀함",
-        "애쓰다"
+        "어린 시절",
+        "정확한",
+        "셀피, 자기 사진"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2692,10 +2692,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
+        "정확한",
         "가리다, 감추다",
         "애쓰다",
-        "추상적인",
-        "정확한"
+        "지역"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2709,10 +2709,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "~을 이루다",
-        "어린 시절",
         "추상적인",
-        "모순되지 않는"
+        "정확한",
+        "어린 시절",
+        "셀피, 자기 사진"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2726,10 +2726,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "지역",
-        "~을 이루다",
         "셀피, 자기 사진",
-        "가리다, 감추다"
+        "추상적인",
+        "애쓰다",
+        "지역"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2743,10 +2743,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "어린 시절",
         "모순되지 않는",
-        "친밀함",
-        "애쓰다"
+        "추상적인",
+        "지역",
+        "정확한"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2761,9 +2761,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
         "지역",
+        "애쓰다",
         "정확한",
-        "추상적인",
-        "어린 시절"
+        "셀피, 자기 사진"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2777,10 +2777,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "~을 이루다",
-        "모순되지 않는",
-        "가리다, 감추다",
-        "정확한"
+        "정확한",
+        "어린 시절",
+        "추상적인",
+        "~을 이루다"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2794,10 +2794,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "지역",
         "친밀함",
-        "가리다, 감추다",
-        "애쓰다"
+        "정확한",
+        "추상적인",
+        "가리다, 감추다"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2811,10 +2811,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
-        "추상적인",
+        "어린 시절",
         "친밀함",
-        "어린 시절"
+        "셀피, 자기 사진",
+        "추상적인"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
