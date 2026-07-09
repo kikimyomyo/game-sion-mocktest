@@ -1409,10 +1409,21 @@
       }
 
       function resolveAnswer(q) {
-        // answer가 "1"~"4" 번호 형식이면 choices[N-1]로 변환 (Codex 출제 흔한 패턴)
-        if (q.type === "mcq" && q.choices && /^[1-4]$/.test(String(q.answer).trim())) {
-          const idx = parseInt(q.answer) - 1;
-          if (q.choices[idx] !== undefined) return q.choices[idx];
+        if (q.type === "mcq" && q.choices) {
+          const raw = String(q.answer).trim();
+          // 전문 일치 우선 — 숫자 선택지 문제에서 answer "4"(값)를 인덱스로 오해해 변조 방지
+          if (q.choices.includes(raw)) return raw;
+          const circled = {"①":0, "②":1, "③":2, "④":3, "⑤":4};
+          let idx = circled[raw];
+          if (idx === undefined && /^[1-5]$/.test(raw)) idx = parseInt(raw, 10) - 1;
+          if (idx !== undefined && q.choices[idx] !== undefined) return q.choices[idx];
+          console.error("resolveAnswer failed:", { id: q.id, answer: q.answer });
+          const cleaned = raw
+            .replace(/^정답\s*[:：]\s*/, "")
+            .replace(/[①②③④⑤]/g, "")
+            .trim();
+          const match = q.choices.find(c => String(c).trim() === cleaned);
+          if (match !== undefined) return match;
         }
         return q.answer;
       }
