@@ -235,6 +235,16 @@
         steps: Array.isArray(p.단계묶음) ? p.단계묶음 : null,
         emphasize: Array.isArray(p.강조구간) ? p.강조구간 : null,
       });
+      // 5.5) 🔁 재도전 — gated: 변형1 정답이면 자동 건너뜀. 변형1 있을 때만 생성.
+      if (variants[0]) {
+        steps.push({
+          type: "quiz",
+          title: "🔁 재도전 — 이번엔 맞힐 수 있어!",
+          gated: true,
+          is_retry: true,
+          data: { ...variants[0], id: `${p.id}-v1-retry`, unit: p.unit, subject: p.subject },
+        });
+      }
       // 6) 🎲 변형 2+ — 풀이법 장착 후 재검증
       variants.slice(1).forEach((v, vi) => {
         steps.push({
@@ -521,6 +531,58 @@
       const [cwStreak, setCwStreak] = useState(0);
 
       useEffect(() => { setPicked(null); setShortText(""); setShowFeedback(false); }, [stepIdx]);
+
+      // ★ P3: 사다리 체류 게이트 — concept 스텝 "다음" 8초 비활성 (한번 통과하면 재카운트 안함)
+      const [gateRemaining, setGateRemaining] = useState(0);
+      const gateTimerRef = useRef(null);
+      const gatePassedRef = useRef(new Set());
+      useEffect(() => {
+        if (gateTimerRef.current) { clearInterval(gateTimerRef.current); gateTimerRef.current = null; }
+        const s = allSteps[stepIdx];
+        if (s && s.type === "concept") {
+          const key = `${s.cycleIdx}-${s.level}`;
+          if (gatePassedRef.current.has(key)) {
+            setGateRemaining(0);
+          } else {
+            setGateRemaining(8);
+            gateTimerRef.current = setInterval(() => {
+              setGateRemaining(prev => {
+                if (prev <= 1) {
+                  clearInterval(gateTimerRef.current);
+                  gateTimerRef.current = null;
+                  gatePassedRef.current.add(key);
+                  return 0;
+                }
+                return prev - 1;
+              });
+            }, 1000);
+          }
+        } else {
+          setGateRemaining(0);
+        }
+        return () => { if (gateTimerRef.current) { clearInterval(gateTimerRef.current); gateTimerRef.current = null; } };
+      }, [stepIdx]);
+
+      // ★ P3: 문항 실소요 시간 — 스텝 표시 시각 기록
+      const quizStartRef = useRef(Date.now());
+      useEffect(() => { quizStartRef.current = Date.now(); }, [stepIdx]);
+
+      // ★ P3: 사다리 열람 dwell 로깅 — concept 스텝 이탈 시 {cycle, level, dwell_sec} 누적
+      const ladderViewsRef = useRef([]);
+      const conceptEnterRef = useRef(null);
+      useEffect(() => {
+        const s = allSteps[stepIdx];
+        if (s && s.type === "concept") {
+          conceptEnterRef.current = { cycle: s.cycleIdx, level: s.level, ts: Date.now() };
+        }
+        return () => {
+          if (conceptEnterRef.current) {
+            const { cycle, level, ts } = conceptEnterRef.current;
+            ladderViewsRef.current.push({ cycle, level, dwell_sec: Math.round((Date.now() - ts) / 1000) });
+            conceptEnterRef.current = null;
+          }
+        };
+      }, [stepIdx]);
 
       // 필사 스트릭용 KST 날짜 (off일 전). UTC slice는 자정 경계서 하루 어긋남 → KST 보정
       function kstDate(off) { return new Date(Date.now() + 9*3600*1000 - (off||0)*86400000).toISOString().slice(0,10); }
@@ -1354,7 +1416,7 @@
                 {wrongUnits.map((u,i) => <span key={i} className="focus-tag">{u}</span>)}
               </div>
             )}
-            <button className="btn" onClick={() => { setStepIdx(0); setAnswers([]); setDone(false); setStarted(false); }}>다시 보기 🔁</button>
+            <button className="btn" onClick={() => { setStepIdx(0); setAnswers([]); setDone(false); setStarted(false); ladderViewsRef.current = []; }}>다시 보기 🔁</button>
           </div>
         );
       }
@@ -1371,7 +1433,7 @@
         recordResult({
           game: cfg.game, sheet_tab: cfg.sheet_tab, player: name,
           score: correct, total: scored.length, duration_sec: dur,
-          answers: arr, meta: { week: meta.week, weakness_focus: meta.weakness_focus, suneung: true },
+          answers: arr, meta: { week: meta.week, weakness_focus: meta.weakness_focus, suneung: true, ladder_views: ladderViewsRef.current },
         });
         setDone(true);
       }
@@ -1442,7 +1504,8 @@
         }
         if (userAns === null || userAns === "") return;
         playSfx(isCorrect ? "ok" : "wrong");
-        const newAnswer = { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, subject: q.subject || step.subject, time: 0, correctAns };
+        const elapsedSec = Math.max(0, Math.round((Date.now() - quizStartRef.current) / 1000));
+        const newAnswer = { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, subject: q.subject || step.subject, time: elapsedSec, correctAns, ...(step.is_retry ? { is_retry: true } : {}) };
         const newAnswers = [...answers, newAnswer];
         setAnswers(newAnswers);
         setShowFeedback(true);
@@ -1465,6 +1528,9 @@
             } else if (q.is_challenge) {
               toast.textContent = "+5 XP ⚡";
               toast.style.background = "linear-gradient(135deg, #b48dff 0%, #7d3ce0 100%)";
+            } else if (step.is_retry) {
+              toast.textContent = "✨ 사다리 보너스 +10 XP";
+              toast.style.background = "linear-gradient(135deg, #ffb84d 0%, #ff8c1a 100%)";
             } else {
               toast.textContent = "+10 XP ✨";
             }
@@ -1825,6 +1891,11 @@
           {step.type === "quiz" && (
             <>
               <div className="step-title">{step.title || "🎲 변형 문제"}</div>
+              {step.is_retry && (
+                <div style={{marginBottom:12, padding:"10px 14px", borderRadius:12, background:"#fff0e0", border:"2px solid #ffb84d", fontSize:"0.9em", color:"#9c5700", fontWeight:700}}>
+                  🪜 사다리 타고 왔으니 한 번 더! 아까 그 문제, 이번엔 맞힐 수 있어.
+                </div>
+              )}
               {/* 📖 책 문제 — 지문 다시 보기 (접이식) */}
               {step.passage && (
                 <details style={{marginBottom:12, background:"#fffdf7", border:"1px dashed #d4c5a0",
@@ -1905,7 +1976,9 @@
                 {step.data.is_revenge ? "복수 +15 ⚔️" : step.is_challenge ? "도전 +5 ⚡" : "제출"}
               </button>
             ) : (
-              <button className="btn" onClick={goNext} style={{marginLeft:"auto"}}>{isLastStep ? "결과 보기 🎉" : "다음 ▶"}</button>
+              <button className="btn" onClick={goNext} disabled={step.type === "concept" && gateRemaining > 0} style={{marginLeft:"auto"}}>
+                {step.type === "concept" && gateRemaining > 0 ? `다음 ▶ (${gateRemaining})` : (isLastStep ? "결과 보기 🎉" : "다음 ▶")}
+              </button>
             )}
           </div>
           )}
