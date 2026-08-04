@@ -680,10 +680,10 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 470,
-  "total_correct": 360,
+  "total_plays": 480,
+  "total_correct": 368,
   "accuracy": 77,
-  "last_date": "2026-08-03",
+  "last_date": "2026-08-04",
   "영역별": [
     {
       "subject": "국어",
@@ -692,7 +692,10 @@ window.GAME_CONFIG = {
       "current_unit": "듣기·말하기",
       "weak_count": 6,
       "strong_count": 1,
-      "recent_accuracy": [],
+      "recent_accuracy": [
+        1.0,
+        1.0
+      ],
       "is_master": false
     },
     {
@@ -703,9 +706,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 9,
       "recent_accuracy": [
-        1.0,
+        0.538,
         0.5,
-        0.538
+        0.625
       ],
       "is_master": false
     },
@@ -717,9 +720,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 2,
       "recent_accuracy": [
-        0.0,
         1.0,
-        1.0
+        0.5,
+        0.6
       ],
       "is_master": false
     },
@@ -741,14 +744,10 @@ window.GAME_CONFIG = {
       "subject": "통합사회",
       "color": "#ffc861",
       "progress": 2,
-      "current_unit": "1단원 인간·사회: 사회 변동",
+      "current_unit": "지도와 자료 읽기 (그래프·표)",
       "weak_count": 6,
       "strong_count": 1,
-      "recent_accuracy": [
-        0.556,
-        1.0,
-        1.0
-      ],
+      "recent_accuracy": [],
       "is_master": false
     },
     {
@@ -767,8 +766,8 @@ window.GAME_CONFIG = {
     }
   ],
   "level": 38,
-  "xp_total": 3700,
-  "xp_in_level": 0,
+  "xp_total": 3780,
+  "xp_in_level": 80,
   "master_units": 1,
   "roadmap": [
     {
@@ -812,7 +811,7 @@ window.GAME_CONFIG = {
       "subject": "한국사",
       "color": "#ff9d6b",
       "unit": "미시작",
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "accuracy": 100,
       "track": "초6"
     }
@@ -2177,7 +2176,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "통합사회-00",
-        "status": "current"
+        "status": "done"
       },
       {
         "name": "지도와 자료 읽기 (그래프·표)",
@@ -2185,7 +2184,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "통합사회-01",
-        "status": "locked"
+        "status": "current"
       },
       {
         "name": "공정 분배·비율 활용",
@@ -2545,20 +2544,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "고정욱의 인문학 필사수업",
-  "book_key": "인문학필사",
+  "title": "어린 왕자 영어 필사",
+  "book_key": "어린왕자영어",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 10,
-  "total": 119,
+  "page": 14,
+  "total": 133,
   "image": "./copywork/today.jpg",
-  "weekday": "화",
-  "date": "2026-08-04",
+  "weekday": "수",
+  "date": "2026-08-05",
   "flagged": false
 },
   revenge: {
-  "date": "2026-08-04",
+  "date": "2026-08-05",
   "items": [
     {
       "id": "q0004",
@@ -2568,15 +2567,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "강화도조약(1876년)이 갑오개혁(1894년)보다 몇 년 먼저 일어났는가?",
+        "question": "광복은 1945년, 5·10 총선거는 1948년에 있었다. 광복부터 5·10 총선거까지는 몇 년이 걸렸는가?",
         "choices": [
-          "18년",
-          "8년",
-          "28년",
-          "12년"
+          "3년",
+          "2년",
+          "5년",
+          "8년"
         ],
-        "answer": "18년",
-        "explanation": "1894년에서 1876년을 빼면 18년이므로, 강화도조약은 갑오개혁보다 18년 앞서 일어났다.",
+        "answer": "3년",
+        "explanation": "1948년에서 1945년을 빼면 3년이다.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2588,15 +2587,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "물체를 보는 방향에 대한 설명으로 옳은 것은 무엇일까요?",
+        "question": "소수의 나눈셈에 대한 설명으로 알맞은 것은?",
         "choices": [
-          "위에서 보면 물체의 높이를 가장 잘 알 수 있다",
-          "앞에서 보면 물체의 가로 길이와 높이를 알 수 있다",
-          "옆에서 본 모양과 앞에서 본 모양은 항상 똑같다",
-          "어느 방향에서 보아도 모양은 모두 똑같다"
+          "3.6 ÷ 0.4는 36 ÷ 4와 몼이 같다",
+          "8.4 ÷ 4 = 21이다",
+          "나누는 수가 1보다 작은 소수이면 몼은 나누어지는 수보다 작다",
+          "소수를 소수로 나눌 때는 몼도 항상 소수이다"
         ],
-        "answer": "앞에서 보면 물체의 가로 길이와 높이를 알 수 있다",
-        "explanation": "앞에서 보면 물체의 가로 길이와 높이를 알 수 있어 옳습니다. 위에서 보면 가로·세로(바닥 모양)를 알 수 있고 높이는 알기 어려워 첫 번째는 틀립니다. 옆과 앞 모양은 물체에 따라 다를 수 있어 '항상 똑같다'는 틀립니다. 방향마다 모양이 다를 수 있으므로 마지막도 틀립니다.",
+        "answer": "3.6 ÷ 0.4는 36 ÷ 4와 몼이 같다",
+        "explanation": "나누지는 수와 나누는 수에 같은 수를 곱해도 몼은 변하지 않으므로 3.6÷0.4는 36÷4와 같아 정답입니다. 8.4÷4=2.1이므로 둘째는 오답, 1보다 작은 수로 나누면 몼은 오히려 커지므로 셋째도 오답, 4.8÷0.6=8처럼 몼이 자연수가 될 수도 있으므로 넓째도 오답입니다.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2608,32 +2607,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "빈칸에 알맞은 말을 고르시오. ___ does she live? — In Seoul.",
+        "question": "빈칸에 알맞은 말끼리 짝지은 것은? I have ___ pens but I don't have ___ erasers.",
         "choices": [
-          "Where",
-          "Who",
-          "What",
-          "How"
+          "any - some",
+          "some - any",
+          "much - many",
+          "many - much"
         ],
-        "answer": "Where",
-        "explanation": "장소(In Seoul)를 묻는 의문사는 Where(어디서)이다.",
+        "answer": "some - any",
+        "explanation": "긍정문에는 some, 부정문(don't have)에는 any를 쓴다. pens·erasers 모두 셀 수 있으니 much는 안 된다.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-04",
+  "date": "2026-08-05",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "친밀함",
-        "셀피, 자기 사진",
-        "추상적인",
-        "애쓰다"
+        "~을 이루다",
+        "애쓰다",
+        "지역",
+        "정확한"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2647,10 +2646,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "정확한",
-        "모순되지 않는",
-        "추상적인",
-        "셀피, 자기 사진"
+        "어린 시절",
+        "친밀함",
+        "가리다, 감추다",
+        "정확한"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2664,10 +2663,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "~을 이루다",
         "가리다, 감추다",
         "셀피, 자기 사진",
-        "지역"
+        "추상적인",
+        "애쓰다"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2681,10 +2680,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "애쓰다",
+        "~을 이루다",
         "어린 시절",
-        "정확한",
-        "친밀함"
+        "모순되지 않는",
+        "애쓰다"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2698,10 +2697,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
-        "가리다, 감추다",
         "추상적인",
-        "지역"
+        "~을 이루다",
+        "정확한",
+        "셀피, 자기 사진"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2715,9 +2714,9 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "추상적인",
         "모순되지 않는",
-        "셀피, 자기 사진",
+        "친밀함",
+        "애쓰다",
         "지역"
       ],
       "answer": "모순되지 않는",
@@ -2732,10 +2731,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
-        "추상적인",
-        "모순되지 않는",
-        "지역"
+        "애쓰다",
+        "지역",
+        "~을 이루다",
+        "친밀함"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2749,10 +2748,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "추상적인",
-        "지역",
-        "어린 시절",
-        "~을 이루다"
+        "정확한",
+        "모순되지 않는",
+        "~을 이루다",
+        "애쓰다"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2766,9 +2765,9 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "지역",
         "친밀함",
-        "추상적인",
+        "지역",
+        "애쓰다",
         "모순되지 않는"
       ],
       "answer": "친밀함",
@@ -2783,9 +2782,9 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "~을 이루다",
-        "셀피, 자기 사진",
+        "애쓰다",
         "정확한",
+        "지역",
         "추상적인"
       ],
       "answer": "추상적인",
