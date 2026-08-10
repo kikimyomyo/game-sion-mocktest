@@ -688,7 +688,7 @@ window.GAME_CONFIG = {
   "total_plays": 499,
   "total_correct": 382,
   "accuracy": 77,
-  "last_date": "2026-08-08",
+  "last_date": "2026-08-10",
   "영역별": [
     {
       "subject": "국어",
@@ -817,7 +817,7 @@ window.GAME_CONFIG = {
       "subject": "한국사",
       "color": "#ff9d6b",
       "unit": "미시작",
-      "date": "2026-08-08",
+      "date": "2026-08-10",
       "accuracy": 100,
       "track": "초6"
     }
@@ -2550,20 +2550,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린이 사복음서 한 달 쓰기",
-  "book_key": "사복음서",
+  "title": "고정욱의 인문학 필사수업",
+  "book_key": "인문학필사",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 23,
-  "total": 65,
+  "page": 11,
+  "total": 119,
   "image": "./copywork/today.jpg",
-  "weekday": "월",
-  "date": "2026-08-10",
+  "weekday": "화",
+  "date": "2026-08-11",
   "flagged": false
 },
   revenge: {
-  "date": "2026-08-10",
+  "date": "2026-08-11",
   "items": [
     {
       "id": "q0004",
@@ -2573,15 +2573,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "조선 시대에 백성이 억울한 일을 임금에게 직접 알릴 수 있도록 궁궐 앞에 매달아 둔 북의 이름은 무엇인가?",
+        "question": "태조 왕건은 918년에 고려를 세웠다. 고려가 936년에 후삼국을 통일했다면, 건국부터 통일까지 걸린 햇수는 몇 년인가?",
         "choices": [
-          "신문고",
-          "자격루",
-          "측우기",
-          "앙부일구"
+          "18년",
+          "16년",
+          "20년",
+          "28년"
         ],
-        "answer": "신문고",
-        "explanation": "신문고는 백성의 억울함을 임금에게 알리도록 설치한 북이다. 자격루는 물시계, 측우기는 비의 양을 재는 기구, 앙부일구는 해시계이므로 모두 오답(기구지 북이 아님).",
+        "answer": "18년",
+        "explanation": "936 - 918 = 18년이 걸렸어요.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2593,15 +2593,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "끈 1 1/5 m를 2/5 m씩 잘랐습니다. 끈은 모두 몇 도막이 되나요?",
+        "question": "8.4 ￦를 4로 나눈 몼은 얼마일까요? (8.4 ÷ 4)",
         "choices": [
-          "3도막",
-          "2도막",
-          "6도막",
-          "5도막"
+          "1.1",
+          "2.1",
+          "2.4",
+          "21"
         ],
-        "answer": "3도막",
-        "explanation": "1 1/5 = 6/5 이므로 6/5 ÷ 2/5 = 6 ÷ 2 = 3(분모가 같으면 분자끼리 나눕니다). '2'는 분자 6을 무시하고 분모로 나눈 오답, '6'은 분자만 답으로 쓴 오답, '5'는 분모를 답으로 쓴 오답입니다.",
+        "answer": "2.1",
+        "explanation": "84 ÷ 4 = 21이고, 8.4는 84의 1/10이므로 몼도 1/10인 2.1입니다. 1.1은 계산 오류, 2.4는 숨자 바꿈 오류, 21은 소수점 위치를 틀린 값입니다.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2613,32 +2613,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "다음 중 현재진행형 문장으로 옳은 것은?",
+        "question": "다음 빈칸에 들어갈 알맞은 be동사는?\n\nYou ____ very kind.",
         "choices": [
-          "I am play soccer.",
-          "They are playing soccer.",
-          "He is plays soccer.",
-          "We are play soccer."
+          "are",
+          "am",
+          "is",
+          "be"
         ],
-        "answer": "They are playing soccer.",
-        "explanation": "현재진행형은 be동사 + 동사원형ing. 'are playing'만 올바른 형태다.",
+        "answer": "are",
+        "explanation": "주어 You는 단수든 복수든 항상 are를 쓴다. am은 I에만, is는 3인칭 단수에 쓰므로 틀리고, be는 원형이라 그대로 쓸 수 없어 틀리다.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-10",
+  "date": "2026-08-11",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "친밀함",
-        "모순되지 않는",
+        "정확한",
+        "애쓰다",
         "셀피, 자기 사진",
-        "애쓰다"
+        "추상적인"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2652,10 +2652,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "추상적인",
-        "어린 시절",
+        "친밀함",
+        "모순되지 않는",
         "정확한",
-        "~을 이루다"
+        "지역"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2669,10 +2669,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "~을 이루다",
-        "셀피, 자기 사진",
-        "추상적인",
-        "가리다, 감추다"
+        "지역",
+        "가리다, 감추다",
+        "정확한",
+        "친밀함"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2686,10 +2686,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "추상적인",
-        "모순되지 않는",
+        "지역",
+        "어린 시절",
         "정확한",
-        "어린 시절"
+        "가리다, 감추다"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2703,10 +2703,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "애쓰다",
-        "친밀함",
         "정확한",
-        "셀피, 자기 사진"
+        "셀피, 자기 사진",
+        "지역",
+        "어린 시절"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2720,10 +2720,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "지역",
+        "친밀함",
         "모순되지 않는",
-        "셀피, 자기 사진",
-        "가리다, 감추다"
+        "가리다, 감추다",
+        "~을 이루다"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2737,9 +2737,9 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
+        "~을 이루다",
         "지역",
-        "가리다, 감추다",
-        "정확한",
+        "모순되지 않는",
         "셀피, 자기 사진"
       ],
       "answer": "지역",
@@ -2754,10 +2754,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "추상적인",
+        "어린 시절",
+        "셀피, 자기 사진",
         "~을 이루다",
-        "애쓰다",
-        "모순되지 않는"
+        "친밀함"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2771,10 +2771,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
+        "셀피, 자기 사진",
+        "모순되지 않는",
         "어린 시절",
-        "친밀함",
-        "추상적인",
-        "셀피, 자기 사진"
+        "친밀함"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2788,10 +2788,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "친밀함",
         "추상적인",
-        "~을 이루다",
-        "셀피, 자기 사진"
+        "셀피, 자기 사진",
+        "애쓰다",
+        "어린 시절"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
