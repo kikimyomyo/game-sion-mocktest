@@ -118,8 +118,12 @@
         if (window.GameRecorder?.send) return window.GameRecorder.send(payload);
         const cfg = window.GAME_CONFIG;
         if (!cfg.endpoint || cfg.endpoint.includes("PLACEHOLDER")) return;
-        fetch(cfg.endpoint, { method: "POST", headers: {"Content-Type":"text/plain"}, body: JSON.stringify(payload) }).catch(() => {});
-      } catch (e) {}
+        // recorder.js가 없을 때만 오는 경로. mode:"no-cors"는 다른 두 전송부와 통일한 값
+        // (2026-08-11). recorder가 send를 노출하게 되면서 평소엔 여기까지 오지 않는다.
+        console.warn("[record] recorder.js 없음 — fallback 전송 (확인·재시도 없음)");
+        fetch(cfg.endpoint, { method: "POST", mode: "no-cors", headers: {"Content-Type":"text/plain"}, body: JSON.stringify(payload) })
+          .catch((e) => console.warn("[record] fallback 전송 실패", e));
+      } catch (e) { console.warn("[record] 예외", e); }
     }
 
     // 각 사이클을 6 step으로 펼침 (학습 슬라이드)
@@ -310,6 +314,29 @@
       const [hubMode, setHubMode] = useState(true);
       const [archiveIndex, setArchiveIndex] = useState(null);
       const [solveStats, setSolveStats] = useState(null);  // 시트에서 가져온 풀이 결과 {byDate, totals}
+
+      // 📡 기록 전송 상태 — 조용한 유실 방지용 (recorder.js가 gamerecorder:status 이벤트로 알림)
+      const [pendingCount, setPendingCount] = useState(0);  // localStorage 큐에 쌓인 미확인 기록 수
+      const [recordStatus, setRecordStatus] = useState(null);  // null | "sending" | "confirmed" | "queued" — 방금 푼 결과의 전송 상태
+
+      // 로드 시 큐 자동 재전송 + 상태 이벤트 구독 (배지·배너용)
+      useEffect(() => {
+        if (IS_LOCAL_PREVIEW) return;
+        setPendingCount(window.GameRecorder?.getQueueCount?.() || 0);
+        window.GameRecorder?.flushQueue?.().then((r) => {
+          if (r) console.info("[App] queue flush —", r.flushed, "성공,", r.remaining, "남음");
+        });
+        function onStatus(e) {
+          const d = e.detail || {};
+          if (typeof d.queueCount === "number") setPendingCount(d.queueCount);
+          const isFinalResult = d.payload && d.payload.sheet_tab === cfg.sheet_tab && !(d.payload.meta && d.payload.meta.is_partial);
+          if (isFinalResult) {
+            setRecordStatus(d.status === "confirmed" ? "confirmed" : d.status === "queued" ? "queued" : null);
+          }
+        }
+        window.addEventListener("gamerecorder:status", onStatus);
+        return () => window.removeEventListener("gamerecorder:status", onStatus);
+      }, []);
 
       // 허브: archive/index.json 가져오기
       useEffect(() => {
@@ -660,6 +687,11 @@
           <div className="card">
             <h1 className="title">📚 시온이 학습 허브</h1>
             <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
+            {pendingCount > 0 && (
+              <p style={{textAlign:"center", margin:"0 0 10px"}}>
+                <span className="badge">💾 저장 대기 {pendingCount}건</span>
+              </p>
+            )}
 
             {/* 💌 소통 — 시온이↔아빠 매일 한 마디 (허브 최상단) */}
             <div style={{
@@ -1318,6 +1350,11 @@
             )}
             <h1 className="title">📚 {cfg.title || "시온이 학습"}</h1>
             <p className="subtitle">{selectedDate || meta.generated_at} · {cycles}사이클 · 수능 기출 학습</p>
+            {pendingCount > 0 && (
+              <p style={{textAlign:"center", margin:"0 0 10px"}}>
+                <span className="badge">💾 저장 대기 {pendingCount}건</span>
+              </p>
+            )}
             {meta.weakness_focus && meta.weakness_focus.length > 0 && (
               <div style={{textAlign:"center", marginBottom:16}}>
                 <div style={{fontSize:"0.9em", color:"#666", marginBottom:6}}>오늘의 집중</div>
@@ -1398,6 +1435,17 @@
             <h1 className="title">🎉 수고했어 시온!</h1>
             <div className="result-score">{correct}<span style={{fontSize:"0.5em", color:"#888"}}>/{total}</span></div>
             <p className="subtitle">{pct}점 · {Math.floor(dur/60)}분 {dur%60}초</p>
+            {recordStatus === "sending" && (
+              <p className="subtitle" style={{marginTop:2}}>저장 확인 중…</p>
+            )}
+            {recordStatus === "confirmed" && (
+              <p className="feedback ok" style={{marginTop:10, textAlign:"center"}}>✅ 기록 저장됨</p>
+            )}
+            {recordStatus === "queued" && (
+              <p className="feedback" style={{marginTop:10, textAlign:"center"}}>
+                📶 아직 저장 안 됐어. 인터넷 되는 곳에서 화면 다시 열면 자동으로 저장돼!
+              </p>
+            )}
             {(revengeWins > 0 || vocabWins > 0) && (
               <p style={{fontSize:"0.95em", color:"#6b4ba8", fontWeight:700, marginTop:4}}>
                 {revengeWins > 0 && `⚔️ 복수전 ${revengeWins}승 `}
@@ -1416,7 +1464,7 @@
                 {wrongUnits.map((u,i) => <span key={i} className="focus-tag">{u}</span>)}
               </div>
             )}
-            <button className="btn" onClick={() => { setStepIdx(0); setAnswers([]); setDone(false); setStarted(false); ladderViewsRef.current = []; }}>다시 보기 🔁</button>
+            <button className="btn" onClick={() => { setStepIdx(0); setAnswers([]); setDone(false); setStarted(false); setRecordStatus(null); ladderViewsRef.current = []; }}>다시 보기 🔁</button>
           </div>
         );
       }
@@ -1430,6 +1478,7 @@
         const scored = scoredOf(arr);
         const correct = scored.filter(a => a.correct).length;
         const dur = Math.round((Date.now() - startRef.current)/1000);
+        setRecordStatus(IS_LOCAL_PREVIEW ? null : "sending");
         recordResult({
           game: cfg.game, sheet_tab: cfg.sheet_tab, player: name,
           score: correct, total: scored.length, duration_sec: dur,
