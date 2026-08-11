@@ -2542,20 +2542,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "고정욱의 인문학 필사수업",
-  "book_key": "인문학필사",
+  "title": "어린 왕자 영어 필사",
+  "book_key": "어린왕자영어",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 11,
-  "total": 119,
+  "page": 15,
+  "total": 133,
   "image": "./copywork/today.jpg",
-  "weekday": "화",
-  "date": "2026-08-11",
+  "weekday": "수",
+  "date": "2026-08-12",
   "flagged": false
 },
   revenge: {
-  "date": "2026-08-11",
+  "date": "2026-08-12",
   "items": [
     {
       "id": "q0004",
@@ -2565,15 +2565,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "고려 시대에 푸른빛이 아름다워 세계적으로 유명했던 도자기는 무엇인가?",
+        "question": "조선의 신분 제도에서 가장 높은 신분으로, 글공부를 하고 관리가 될 수 있었던 계층은 무엇인가?",
         "choices": [
-          "고려청자",
-          "조선백자",
-          "분청사기",
-          "토기"
+          "양반",
+          "상민",
+          "천민",
+          "노비"
         ],
-        "answer": "고려청자",
-        "explanation": "고려청자는 맑은 푸른빛과 상감 기법으로 유명한 고려의 대표적인 예술품이에요.",
+        "answer": "양반",
+        "explanation": "양반은 조선 신분제에서 가장 높은 계층으로 과거를 보아 관리가 되었다. 상민(농민·상인)은 세금을 내는 평민, 천민과 노비는 가장 낮은 신분이므로 오답.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2585,15 +2585,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "반지름이 3 cm인 동전 모양 쿠키의 넓이는 얼마입니까? (원주율은 3으로 계산)",
+        "question": "한 모서리의 길이가 6cm인 정육면체의 부피는 몇 cm³입니까?",
         "choices": [
-          "18 cm²",
-          "27 cm²",
-          "9 cm²",
-          "54 cm²"
+          "216cm³",
+          "36cm³",
+          "18cm³",
+          "144cm³"
         ],
-        "answer": "27 cm²",
-        "explanation": "넓이 = 반지름 × 반지름 × 원주율 = 3 × 3 × 3 = 27 cm². 18은 둘레(지름×원주율=6×3), 9는 반지름×반지름만 한 값, 54는 지름×지름×원주율로 잘못 계산한 값입니다.",
+        "answer": "216cm³",
+        "explanation": "정육면체의 부피 = 한 모서리×한 모서리×한 모서리 = 6×6×6 = 216cm³. 36cm³는 한 면의 넓이(6×6), 18cm³는 6×3, 144cm³는 잘못된 계산으로 모두 부피가 아닌 오답.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2605,32 +2605,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "다음 대화의 빈칸에 알맞은 대답은? A: Is your sister sleeping now? B: Yes, ___.",
+        "question": "빈칸에 알맞은 의문대명사는? \"___ wants to go first?\" (누가 먼저 가고 싶니?)",
         "choices": [
-          "she is",
-          "she does",
-          "she sleeps",
-          "she are"
+          "What",
+          "Who",
+          "Which",
+          "Whose"
         ],
-        "answer": "she is",
-        "explanation": "be동사 의문문의 긍정 대답은 'Yes, 주어 + be동사'. she is가 맞다.",
+        "answer": "Who",
+        "explanation": "사람이 주어로 '누가'를 물을 때는 Who를 쓰며, 단수 취급하여 동사 wants가 온다.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-11",
+  "date": "2026-08-12",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "추상적인",
-        "모순되지 않는",
-        "애쓰다",
-        "정확한"
+        "정확한",
+        "가리다, 감추다",
+        "~을 이루다",
+        "애쓰다"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2644,10 +2644,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "모순되지 않는",
-        "지역",
+        "정확한",
         "~을 이루다",
-        "정확한"
+        "가리다, 감추다",
+        "어린 시절"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2661,10 +2661,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "추상적인",
         "가리다, 감추다",
+        "정확한",
         "~을 이루다",
-        "모순되지 않는"
+        "지역"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2678,10 +2678,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "모순되지 않는",
-        "정확한",
-        "추상적인",
-        "어린 시절"
+        "어린 시절",
+        "가리다, 감추다",
+        "~을 이루다",
+        "친밀함"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2695,10 +2695,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
+        "추상적인",
         "지역",
         "셀피, 자기 사진",
-        "추상적인",
-        "애쓰다"
+        "~을 이루다"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2712,10 +2712,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "모순되지 않는",
-        "~을 이루다",
-        "셀피, 자기 사진",
-        "추상적인"
+        "친밀함",
+        "어린 시절",
+        "애쓰다",
+        "모순되지 않는"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2729,10 +2729,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "지역",
-        "~을 이루다",
         "가리다, 감추다",
-        "애쓰다"
+        "추상적인",
+        "지역",
+        "셀피, 자기 사진"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2746,10 +2746,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
+        "셀피, 자기 사진",
+        "지역",
         "~을 이루다",
-        "정확한",
-        "가리다, 감추다",
-        "친밀함"
+        "가리다, 감추다"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2763,10 +2763,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "~을 이루다",
-        "모순되지 않는",
-        "애쓰다",
-        "친밀함"
+        "친밀함",
+        "지역",
+        "추상적인",
+        "어린 시절"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2780,10 +2780,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
+        "지역",
         "추상적인",
-        "어린 시절",
-        "정확한",
-        "지역"
+        "~을 이루다",
+        "정확한"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
