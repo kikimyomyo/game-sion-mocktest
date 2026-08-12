@@ -72,18 +72,34 @@
     });
   }
 
+  // ★ 2026-08-12: 조회 재시도. Apps Script doGet이 간헐적으로 404·타임아웃을 낸다
+  // (실측 8회 중 7회 실패, 재시도하면 성공). 단발 조회로 판정하면 실제로 저장된
+  // 기록도 "저장 안 됨"으로 몰려 큐에 쌓이고, 다음 접속에 다시 전송돼 같은 기록이
+  // 두 줄 생긴다. 확인에 실패했다고 저장에 실패한 것이 아니다.
+  const READBACK_TRIES = 3;
+  const READBACK_GAP_MS = 2000;
+
+  async function fetchRowsOnce(tab) {
+    const res = await window.fetch(`${ENDPOINT}?action=get&tab=${encodeURIComponent(tab)}&v=${Date.now()}`);
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const j = await res.json();
+    if (!j || !j.ok || !Array.isArray(j.rows)) throw new Error("bad payload");
+    return j.rows;
+  }
+
   async function readBackConfirm(tab, ts) {
     if (!ENDPOINT || !tab || !ts) return false;
-    try {
-      const res = await window.fetch(`${ENDPOINT}?action=get&tab=${encodeURIComponent(tab)}&v=${Date.now()}`);
-      if (!res.ok) return false;
-      const j = await res.json();
-      if (!j || !j.ok || !Array.isArray(j.rows)) return false;
-      return j.rows.some((row) => Array.isArray(row) && String(row[0]) === ts);
-    } catch (e) {
-      console.warn("[recorder] read-back failed", e);
-      return false;
+    for (let i = 0; i < READBACK_TRIES; i++) {
+      try {
+        const rows = await fetchRowsOnce(tab);
+        if (rows.some((row) => Array.isArray(row) && String(row[0]) === ts)) return true;
+        // 조회는 됐는데 아직 안 보임 — 반영 지연일 수 있어 한 번 더 본다
+      } catch (e) {
+        console.warn("[recorder] read-back try", i + 1, "failed:", e.message || e);
+      }
+      if (i < READBACK_TRIES - 1) await sleep(READBACK_GAP_MS);
     }
+    return false;
   }
 
   function queueAndBroadcast(body, reason) {

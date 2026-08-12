@@ -350,8 +350,20 @@
       useEffect(() => {
         const ep = cfg.endpoint;
         if (!ep || ep.includes("PLACEHOLDER")) return;
-        fetch(`${ep}?action=get&tab=sion-mocktest&v=${Date.now()}`)
-          .then(r => r.ok ? r.json() : null)
+        // ★ 2026-08-12: 조회 재시도. doGet이 간헐 404를 내는데(실측 8회 중 7회 실패)
+        // 단발 조회가 실패하면 완료 표시가 통째로 빈 화면이 된다. 아이 눈에는
+        // 지금까지 푼 게 전부 사라진 것처럼 보인다 — 실제로 그 신고가 들어왔다.
+        (async function fetchWithRetry(tries) {
+          for (let i = 0; i < tries; i++) {
+            try {
+              const r = await fetch(`${ep}?action=get&tab=sion-mocktest&v=${Date.now()}`);
+              if (r.ok) return await r.json();
+            } catch (e) { console.warn("[hub] 결과 조회 실패", i + 1, e); }
+            if (i < tries - 1) await new Promise(s => setTimeout(s, 1500));
+          }
+          console.warn("[hub] 결과 조회 " + tries + "회 모두 실패 — 완료 표시 생략");
+          return null;
+        })(4)
           .then(j => {
             if (!j || !j.ok || !Array.isArray(j.rows)) return;
             const rows = j.rows.slice(1);  // skip header
