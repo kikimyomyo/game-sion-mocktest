@@ -683,8 +683,8 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 499,
-  "total_correct": 382,
+  "total_plays": 508,
+  "total_correct": 389,
   "accuracy": 77,
   "last_date": "2026-08-12",
   "영역별": [
@@ -696,9 +696,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 1,
       "recent_accuracy": [
-        1.0,
-        1.0,
-        0.5
+        0.5,
+        0.5,
+        0.63
       ],
       "is_master": false
     },
@@ -706,28 +706,20 @@ window.GAME_CONFIG = {
       "subject": "수학",
       "color": "#5ba0ff",
       "progress": 52,
-      "current_unit": "6-1 직육면체의 부피와 겉넓이",
+      "current_unit": "6-2 분수의 나눗셈",
       "weak_count": 6,
       "strong_count": 9,
-      "recent_accuracy": [
-        0.625,
-        0.0,
-        1.0
-      ],
+      "recent_accuracy": [],
       "is_master": false
     },
     {
       "subject": "영어",
       "color": "#b48dff",
       "progress": 20,
-      "current_unit": "Grammar Joy 2 Unit 09~16",
+      "current_unit": "Grammar Joy 3 전체",
       "weak_count": 6,
       "strong_count": 2,
-      "recent_accuracy": [
-        0.6,
-        0.5,
-        1.0
-      ],
+      "recent_accuracy": [],
       "is_master": false
     },
     {
@@ -738,9 +730,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 1,
       "recent_accuracy": [
+        1.0,
         0.5,
-        0.6,
-        1.0
+        0.6
       ],
       "is_master": false
     },
@@ -770,8 +762,8 @@ window.GAME_CONFIG = {
     }
   ],
   "level": 40,
-  "xp_total": 3920,
-  "xp_in_level": 20,
+  "xp_total": 3990,
+  "xp_in_level": 90,
   "master_units": 1,
   "roadmap": [
     {
@@ -1118,7 +1110,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "수학-10",
-        "status": "current"
+        "status": "done"
       },
       {
         "name": "평균과 가능성",
@@ -1126,7 +1118,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "수학-11",
-        "status": "locked"
+        "status": "done"
       },
       {
         "name": "분수의 나눗셈",
@@ -1134,7 +1126,7 @@ window.GAME_CONFIG = {
         "track": "초6",
         "color": "#ff8fc5",
         "id": "수학-12",
-        "status": "locked"
+        "status": "current"
       },
       {
         "name": "각기둥과 각뿔",
@@ -2548,20 +2540,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린 왕자 영어 필사",
-  "book_key": "어린왕자영어",
+  "title": "어린이 사복음서 한 달 쓰기",
+  "book_key": "사복음서",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 15,
-  "total": 133,
+  "page": 24,
+  "total": 65,
   "image": "./copywork/today.jpg",
-  "weekday": "수",
-  "date": "2026-08-12",
+  "weekday": "목",
+  "date": "2026-08-13",
   "flagged": false
 },
   revenge: {
-  "date": "2026-08-12",
+  "date": "2026-08-13",
   "items": [
     {
       "id": "q0004",
@@ -2571,15 +2563,15 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 한국사 7번",
       "problem": {
         "type": "mcq",
-        "question": "광복(1945년)부터 대한민국 정부 수립(1948년)까지의 기간은 몇 개월인가?",
+        "question": "1945년 8월 15일 우리 민족이 일본의 식민 지배에서 벗어나 되찾은 이 사건을 무엇이라 하는가?",
         "choices": [
-          "36개월",
-          "24개월",
-          "12개월",
-          "48개월"
+          "광복",
+          "갑오개혁",
+          "아관파천",
+          "을미사변"
         ],
-        "answer": "36개월",
-        "explanation": "1945년에서 1948년까지는 3년이고, 3년은 3×12=36개월이다.",
+        "answer": "광복",
+        "explanation": "1945년 8월 15일 일제의 패망으로 우리 민족은 식민 지배에서 벗어나 광복을 맞이했다.",
         "hint": "2021학년도 수능 한국사 7번 — 지난 오답 복수전"
       }
     },
@@ -2591,15 +2583,15 @@ window.GAME_CONFIG = {
       "단원": "닮음·평행선 선분비",
       "problem": {
         "type": "mcq",
-        "question": "3/5 ÷ 1/4 을 계산한 값은?",
+        "question": "비례식 8 : □ = 24 : 15 에서 □에 알맞은 수는 얼마입니까?",
         "choices": [
-          "12/5",
-          "3/20",
-          "12/20",
-          "5/12"
+          "3",
+          "5",
+          "9",
+          "45"
         ],
-        "answer": "12/5",
-        "explanation": "3/5 ÷ 1/4 = 3/5 × 4/1 = 12/5. '3/20'은 뒤집지 않고 그대로 곱한 오답, '12/20'은 분모를 잘못 곱한 오답, '5/12'는 정답을 거꾸로 뒤집은 오답입니다.",
+        "answer": "5",
+        "explanation": "외항의 곱 8×15=120, 내항의 곱 □×24이므로 □=120÷24=5입니다. (8에 3을 곱해 24가 되므로 □×3=15, □=5로도 풀립니다) '3','9','45'는 □×24=120을 만족하지 않습니다.",
         "hint": "닮음·평행선 선분비 — 지난 오답 복수전"
       }
     },
@@ -2611,32 +2603,32 @@ window.GAME_CONFIG = {
       "단원": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명",
       "problem": {
         "type": "mcq",
-        "question": "밑줄 친 부분이 틀린 문장은?",
+        "question": "대화의 빈칸에 알맞은 의문사를 고르세요.\nA: ___ much is this bag? B: It's ten dollars.",
         "choices": [
-          "She can plays the piano.",
-          "He can run fast.",
-          "I can read books.",
-          "They can sing well."
+          "How",
+          "What",
+          "Where",
+          "When"
         ],
-        "answer": "She can plays the piano.",
-        "explanation": "can 뒤에는 동사원형이 와야 하므로 plays가 아니라 play가 옳다.",
+        "answer": "How",
+        "explanation": "가격을 물을 때는 How much(얼마)를 쓴다.",
         "hint": "2021학년도 수능 영어 23번 [읽기] + Grammar Joy 1 명 — 지난 오답 복수전"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-12",
+  "date": "2026-08-13",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "애쓰다",
-        "모순되지 않는",
-        "정확한",
-        "~을 이루다"
+        "친밀함",
+        "추상적인",
+        "어린 시절",
+        "애쓰다"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2650,10 +2642,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "어린 시절",
+        "정확한",
         "애쓰다",
-        "추상적인",
-        "정확한"
+        "친밀함",
+        "가리다, 감추다"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2668,9 +2660,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
         "모순되지 않는",
-        "애쓰다",
         "가리다, 감추다",
-        "지역"
+        "지역",
+        "정확한"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2684,9 +2676,9 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
-        "애쓰다",
-        "친밀함",
+        "정확한",
+        "셀피, 자기 사진",
+        "~을 이루다",
         "어린 시절"
       ],
       "answer": "어린 시절",
@@ -2701,10 +2693,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
-        "친밀함",
         "추상적인",
-        "정확한"
+        "모순되지 않는",
+        "가리다, 감추다",
+        "셀피, 자기 사진"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2718,10 +2710,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "추상적인",
         "어린 시절",
-        "모순되지 않는",
-        "가리다, 감추다"
+        "추상적인",
+        "정확한",
+        "모순되지 않는"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2735,10 +2727,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "~을 이루다",
+        "정확한",
+        "어린 시절",
         "지역",
-        "가리다, 감추다",
-        "친밀함"
+        "애쓰다"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2752,10 +2744,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "어린 시절",
-        "~을 이루다",
+        "지역",
         "애쓰다",
-        "추상적인"
+        "~을 이루다",
+        "모순되지 않는"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2769,10 +2761,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "친밀함",
         "~을 이루다",
-        "모순되지 않는",
-        "정확한"
+        "애쓰다",
+        "추상적인",
+        "친밀함"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2786,10 +2778,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "추상적인",
         "셀피, 자기 사진",
-        "모순되지 않는",
-        "~을 이루다"
+        "~을 이루다",
+        "어린 시절",
+        "추상적인"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
