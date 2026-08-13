@@ -155,11 +155,145 @@
         : React.createElement(React.Fragment, {key: i}, p.t));
     }
 
+    const LADDER_STEP_ORDER = ["E", "M", "H"];
+
+    function isMainLadderCycle(p) {
+      return !!(p && p.역할 === "메인" && Array.isArray(p.사다리_문항));
+    }
+
+    function getLineageTitle(p) {
+      if (!p) return "오늘의 계보";
+      const raw = p.계보이름 || p.계보명 || p.unit || p.단원 || p.계보id || p.subject || "오늘";
+      const label = String(raw).trim();
+      return /계보$/.test(label) ? label : `${label} 계보`;
+    }
+
+    function LadderProgress({ currentStep }) {
+      const currentIdx = Math.max(0, LADDER_STEP_ORDER.indexOf(currentStep));
+      const nodes = [...LADDER_STEP_ORDER, "S"];
+      return (
+        <div style={{display:"flex", alignItems:"center", justifyContent:"center", gap:7, margin:"16px 0 4px"}} aria-label={`현재 ${currentStep} 관문`}>
+          {nodes.map((node, i) => {
+            const isBoss = node === "S";
+            const isPast = !isBoss && i < currentIdx;
+            const isCurrent = !isBoss && i === currentIdx;
+            return (
+              <React.Fragment key={node}>
+                {i > 0 && <span aria-hidden="true" style={{color:"#b9a8d8", fontWeight:900}}>→</span>}
+                <span style={{
+                  minWidth: isBoss ? 42 : 34, height:34, padding:"0 8px", borderRadius:17,
+                  display:"inline-flex", alignItems:"center", justifyContent:"center",
+                  background: isCurrent ? "#6b4ba8" : isPast ? "#dff7e9" : isBoss ? "#fff0df" : "#f3eefb",
+                  border: isCurrent ? "2px solid #6b4ba8" : isPast ? "2px solid #5ed5a0" : isBoss ? "2px solid #ffb84d" : "2px solid #ddd2ef",
+                  color: isCurrent ? "#fff" : isPast ? "#247a50" : isBoss ? "#9c5700" : "#8877a6",
+                  fontWeight:900, boxShadow: isCurrent ? "0 0 0 4px rgba(107,75,168,0.13)" : "none",
+                }}>
+                  {isPast ? `${node} ✓` : isBoss ? "⚔️" : node}
+                </span>
+              </React.Fragment>
+            );
+          })}
+        </div>
+      );
+    }
+
+    function expandMainCycleToLadderSteps(p) {
+      const currentStep = LADDER_STEP_ORDER.includes(p.현재스텝) ? p.현재스텝 : "E";
+      const currentIdx = LADDER_STEP_ORDER.indexOf(currentStep);
+      const lineageId = p.계보id || null;
+      const lineageTitle = getLineageTitle(p);
+      const byStep = { E: [], M: [], H: [] };
+
+      p.사다리_문항.forEach((q) => {
+        if (!q || typeof q !== "object") return;
+        const ladderStep = String(q.스텝 || q.step || "").toUpperCase();
+        if (byStep[ladderStep]) byStep[ladderStep].push(q);
+      });
+
+      const steps = [{
+        type: "ladder_intro",
+        title: `🪜 ${lineageTitle}`,
+        lineageTitle,
+        lineageId,
+        currentStep,
+        suneung: p.수능출처 || "",
+        unit: p.unit,
+      }];
+
+      LADDER_STEP_ORDER.forEach((ladderStep, levelIdx) => {
+        const candidates = byStep[ladderStep];
+        const take = levelIdx === currentIdx ? 2 : 1;
+        const selected = candidates.slice(0, take);
+        selected.forEach((q, questionIdx) => {
+          const isCurrent = levelIdx === currentIdx;
+          const isRetry = isCurrent && questionIdx === 1;
+          const isReview = levelIdx < currentIdx;
+          const isBonus = levelIdx > currentIdx;
+          const suffix = `${ladderStep.toLowerCase()}-${questionIdx + 1}`;
+          steps.push({
+            type: "quiz",
+            title: isReview
+              ? `🪜 ${ladderStep} 빠른 복습`
+              : isRetry
+                ? `🔁 ${ladderStep} 관문 재도전`
+                : isCurrent
+                  ? `🪜 ${ladderStep} 관문 1/${Math.max(1, selected.length)}`
+                  : `✨ ${ladderStep} 보너스 도전`,
+            data: {
+              ...q,
+              id: q.id || `${p.id}-ladder-${suffix}`,
+              unit: q.unit || p.unit,
+              subject: q.subject || p.subject,
+            },
+            is_ladder: true,
+            is_ladder_review: isReview,
+            is_ladder_gate_primary: isCurrent && questionIdx === 0,
+            is_retry: isRetry,
+            gate_has_retry: isCurrent && selected.length > 1,
+            skip_when_gate_passed: isRetry,
+            requires_gate_pass: isBonus,
+            ladderStep,
+            lineageId,
+            lineageTitle,
+            currentStep,
+          });
+        });
+      });
+
+      const boss = p.보스전;
+      if (boss && typeof boss === "object" && Array.isArray(boss.진짜수능선택지)) {
+        steps.push({
+          type: "quiz",
+          title: "⚔️ 보스전 — 진짜 수능",
+          data: {
+            type: "mcq",
+            id: `${p.id}-boss`,
+            question: boss.발문 || boss.question || "위 문제의 정답을 고르세요.",
+            choices: boss.진짜수능선택지,
+            answer: boss.진짜수능정답,
+            explanation: boss.보스전_해설,
+            unit: p.unit,
+            subject: p.subject,
+          },
+          is_boss: true,
+          bossBody: boss.진짜수능본문 || "",
+          emphasize: Array.isArray(boss.강조구간) ? boss.강조구간 : null,
+          suneung: p.수능출처 || "",
+          ladderStep: "S",
+          lineageId,
+          lineageTitle,
+          currentStep,
+        });
+      }
+      return steps;
+    }
+
     // ★ P1 풀이-먼저 전환 (2026-06-10 학습방식 재검토):
     //   순서 = 🔮 선시도(찍어봐, 무부담) → 🎲 변형1 먼저 도전 → (틀렸을 때만) 🪜 사다리·✏️ 해설
     //          → 💡 풀이법(항상) → 🎲 변형2 재검증 → ⚡ 챌린지 → 🏆 피날레
     //   사다리·해설은 gated — 변형1을 맞히면 자동 건너뜀 ("필요한 순간의 설명"이 흡수율이 높다).
     function expandCycleToSteps(p) {
+      if (isMainLadderCycle(p)) return expandMainCycleToLadderSteps(p);
       if (!p.기출유사문제 && !p.진짜수능본문 && !p.개념사다리 && !p.필요한_개념 && !p.풀이해설) {
         return [{ type: "quiz", data: p }];
       }
@@ -487,6 +621,10 @@
 
       const problems = selectedProblems;
       const meta = selectedMeta;
+      const mainLadderCycle = problems.find(isMainLadderCycle) || null;
+      const mainLadderTitle = mainLadderCycle ? getLineageTitle(mainLadderCycle) : "";
+      const mainLadderStep = mainLadderCycle && LADDER_STEP_ORDER.includes(mainLadderCycle.현재스텝)
+        ? mainLadderCycle.현재스텝 : "E";
 
       // ★ P1 (2026-06-10): 변형1 정답 여부 — 사다리·해설 gated 건너뛰기 {cycleIdx: bool}
       const [v1Pass, setV1Pass] = useState({});
@@ -550,7 +688,12 @@
       // 모든 사이클을 평탄화된 step 리스트로 (+ 복수전/책/단어/자기설명)
       const cycleSteps = problems.flatMap((p, idx) => {
         const steps = expandCycleToSteps(p);
-        return steps.map(s => ({ ...s, cycleIdx: idx, cycleId: p.id, subject: s.subject || (s.data && s.data.subject) || p.subject, image_url: p.image_url, video_url: p.video_url, book_diagram_url: p.book_diagram_url, book_diagram_source: p.book_diagram_source }));
+        return steps.map(s => {
+          const mapped = { ...s, cycleIdx: idx, cycleId: p.id, subject: s.subject || (s.data && s.data.subject) || p.subject, image_url: p.image_url, video_url: p.video_url, book_diagram_url: p.book_diagram_url, book_diagram_source: p.book_diagram_source };
+          if (!s.is_ladder && !s.is_boss && s.type !== "ladder_intro") return mapped;
+          const runKey = `${selectedDate || meta.generated_at || "today"}:${idx}:${s.lineageId || p.id}`;
+          return { ...mapped, gateKey: runKey, answerKey: `${runKey}:${s.ladderStep || "intro"}:${s.data?.id || s.type}` };
+        });
       });
       const allSteps = revengeFirst
         ? [...revengeSteps, ...cycleSteps, ...readingSteps, ...vocabSteps, ...explainSteps]
@@ -561,6 +704,9 @@
       const [picked, setPicked] = useState(null);
       const [shortText, setShortText] = useState("");
       const [showFeedback, setShowFeedback] = useState(false);
+      const [ladderGateStatus, setLadderGateStatus] = useState({});
+      const [openHints, setOpenHints] = useState({});
+      const hintOpenedRef = useRef({});
       const [done, setDone] = useState(false);
       const [name, setName] = useState("시온");
       const [started, setStarted] = useState(false);
@@ -650,11 +796,22 @@
       }, []);
 
       // gated step 숨김 — 변형1을 맞히면 그 사이클의 사다리·해설 자동 건너뜀
-      function isStepHidden(s) { return !!(s && s.gated && v1Pass[s.cycleIdx] === true); }
+      function isStepHidden(s) {
+        if (!s) return false;
+        if (s.gated && v1Pass[s.cycleIdx] === true) return true;
+        if (s.skip_when_gate_passed && ladderGateStatus[s.gateKey] === "passed") return true;
+        if (s.requires_gate_pass && ladderGateStatus[s.gateKey] !== "passed") return true;
+        return false;
+      }
       function nextVisibleIdx(from) {
         let n = from + 1;
         while (n < allSteps.length && isStepHidden(allSteps[n])) n++;
         return n;
+      }
+      function setHintOpen(answerKey, isOpen) {
+        if (!answerKey) return;
+        if (isOpen) hintOpenedRef.current[answerKey] = true;
+        setOpenHints(prev => prev[answerKey] === isOpen ? prev : { ...prev, [answerKey]: isOpen });
       }
       // 🔮 선시도(찍기)는 점수에서 제외
       const scoredOf = arr => arr.filter(a => !a.is_prediction);
@@ -699,6 +856,11 @@
           <div className="card">
             <h1 className="title">📚 시온이 학습 허브</h1>
             <p className="subtitle">오늘 자료 + 빼먹은 날 따라잡기</p>
+            {mainLadderCycle && (
+              <div style={{textAlign:"center", margin:"-2px 0 12px", color:"#6b4ba8", fontWeight:800, fontSize:"0.94em"}}>
+                🪜 {mainLadderTitle} — {mainLadderStep} 관문
+              </div>
+            )}
             {pendingCount > 0 && (
               <p style={{textAlign:"center", margin:"0 0 10px"}}>
                 <span className="badge">💾 저장 대기 {pendingCount}건</span>
@@ -1362,6 +1524,11 @@
             )}
             <h1 className="title">📚 {cfg.title || "시온이 학습"}</h1>
             <p className="subtitle">{selectedDate || meta.generated_at} · {cycles}사이클 · 수능 기출 학습</p>
+            {mainLadderCycle && (
+              <div style={{textAlign:"center", margin:"-2px 0 12px", color:"#6b4ba8", fontWeight:800, fontSize:"0.94em"}}>
+                🪜 {mainLadderTitle} — {mainLadderStep} 관문
+              </div>
+            )}
             {pendingCount > 0 && (
               <p style={{textAlign:"center", margin:"0 0 10px"}}>
                 <span className="badge">💾 저장 대기 {pendingCount}건</span>
@@ -1425,9 +1592,15 @@
               <button className="btn" onClick={() => { setStarted(true); startRef.current = Date.now(); }}>시작하기 ▶</button>
             </div>
             <p style={{textAlign:"center", marginTop:14, color:"#888", fontSize:"0.88em"}}>
-              {revengeItems.length > 0 && `⚔️ 복수전 ${revengeItems.length} · `}
-              🎯 찍어보기 → 🎲 먼저 도전 → (틀리면) 🪜 사다리 → 🎲 재도전
-              {vocabCards.length > 0 && ` · 📚 단어 ${vocabCards.length}`}
+              {mainLadderCycle ? (
+                <>🪜 빠른 복습 → {mainLadderStep} 관문 → 보너스 도전 → ⚔️ 보스전</>
+              ) : (
+                <>
+                  {revengeItems.length > 0 && `⚔️ 복수전 ${revengeItems.length} · `}
+                  🎯 찍어보기 → 🎲 먼저 도전 → (틀리면) 🪜 사다리 → 🎲 재도전
+                  {vocabCards.length > 0 && ` · 📚 단어 ${vocabCards.length}`}
+                </>
+              )}
             </p>
           </div>
         );
@@ -1566,10 +1739,24 @@
         if (userAns === null || userAns === "") return;
         playSfx(isCorrect ? "ok" : "wrong");
         const elapsedSec = Math.max(0, Math.round((Date.now() - quizStartRef.current) / 1000));
-        const newAnswer = { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, subject: q.subject || step.subject, time: elapsedSec, correctAns, ...(step.is_retry ? { is_retry: true } : {}) };
+        const autoOpenHint = !!(step.is_ladder_gate_primary && !isCorrect && q.hint);
+        const hintWasOpened = !!hintOpenedRef.current[step.answerKey] || autoOpenHint;
+        const ladderPayload = (step.is_ladder || step.is_boss) ? {
+          lineage_id: step.lineageId,
+          step: step.is_boss ? "S" : step.ladderStep,
+          hint_opened: hintWasOpened,
+        } : {};
+        const newAnswer = { id: q.id, picked: userAns, correct: isCorrect, unit: q.unit, subject: q.subject || step.subject, time: elapsedSec, correctAns, ...(step.is_retry ? { is_retry: true } : {}), ...ladderPayload };
         const newAnswers = [...answers, newAnswer];
         setAnswers(newAnswers);
         setShowFeedback(true);
+        if (autoOpenHint) setHintOpen(step.answerKey, true);
+        if (step.is_ladder_gate_primary) {
+          const status = isCorrect ? "passed" : step.gate_has_retry ? "retry" : "failed";
+          setLadderGateStatus(prev => ({ ...prev, [step.gateKey]: status }));
+        } else if (step.is_ladder && step.is_retry) {
+          setLadderGateStatus(prev => ({ ...prev, [step.gateKey]: isCorrect ? "passed" : "failed" }));
+        }
         // ★ P1: 변형1 결과 → 사다리·해설 gated 결정 (맞히면 건너뜀)
         if (step.is_variant1) {
           setV1Pass(prev => ({ ...prev, [step.cycleIdx]: isCorrect }));
@@ -1646,6 +1833,24 @@
             <span>{step.unit && <span className="badge">{step.unit}</span>}</span>
           </div>
           <div className="progress"><div className="progress-bar" style={{width: `${((stepIdx+1)/allSteps.length)*100}%`}}></div></div>
+
+          {step.type === "ladder_intro" && (
+            <div style={{textAlign:"center", padding:"16px 4px 8px"}}>
+              <div style={{fontSize:"2.7em", lineHeight:1, marginBottom:12}}>🪜</div>
+              <div className="step-title" style={{marginBottom:8}}>{step.lineageTitle}</div>
+              {step.suneung && (
+                <div style={{marginBottom:10}}><span className="badge suneung">📌 계보 정점: {step.suneung}</span></div>
+              )}
+              <div style={{fontSize:"0.94em", color:"#6b4ba8", fontWeight:800}}>
+                오늘은 {step.currentStep} 관문을 넘는 날
+              </div>
+              <LadderProgress currentStep={step.currentStep} />
+              <p style={{marginTop:14, color:"#888", fontSize:"0.9em", lineHeight:1.65}}>
+                지난 칸은 빠르게 복습하고, 관문을 넘으면 다음 칸에 보너스로 도전해.<br/>
+                마지막에는 진짜 수능 보스가 기다려 ⚔️
+              </p>
+            </div>
+          )}
 
           {step.type === "intro" && (
             <>
@@ -1954,8 +2159,27 @@
               <div className="step-title">{step.title || "🎲 변형 문제"}</div>
               {step.is_retry && (
                 <div style={{marginBottom:12, padding:"10px 14px", borderRadius:12, background:"#fff0e0", border:"2px solid #ffb84d", fontSize:"0.9em", color:"#9c5700", fontWeight:700}}>
-                  🪜 사다리 타고 왔으니 한 번 더! 아까 그 문제, 이번엔 맞힐 수 있어.
+                  {step.is_ladder
+                    ? `💡 힌트를 무기로 ${step.ladderStep} 관문 두 번째 문제에 도전!`
+                    : "🪜 사다리 타고 왔으니 한 번 더! 아까 그 문제, 이번엔 맞힐 수 있어."}
                 </div>
+              )}
+              {step.is_boss && (
+                <>
+                  {step.suneung && <div style={{marginBottom:10}}><span className="badge suneung">📌 {step.suneung}</span></div>}
+                  <div style={{
+                    background:"#fffdf7", border:"2px solid #e8dcc0", borderRadius:16,
+                    padding:"18px 16px", maxHeight:"48vh", overflowY:"auto",
+                    fontSize:"1.02em", lineHeight:1.9, whiteSpace:"pre-wrap", color:"#33302a",
+                  }}>
+                    {showFeedback ? renderWithEmphasis(step.bossBody, step.emphasize) : step.bossBody}
+                  </div>
+                  {!showFeedback && (
+                    <div style={{margin:"10px 0 12px", color:"#9c5700", fontSize:"0.84em", fontWeight:700, textAlign:"center"}}>
+                      정답과 해설은 제출한 뒤에만 열려.
+                    </div>
+                  )}
+                </>
               )}
               {/* 📖 책 문제 — 지문 다시 보기 (접이식) */}
               {step.passage && (
@@ -1972,6 +2196,16 @@
               )}
               <div className="quiz-box">
                 <div className="step-body" style={{marginBottom:14, fontWeight:700}}>{step.data.question}</div>
+                {step.is_ladder && step.data.hint && (
+                  <details
+                    open={!!openHints[step.answerKey]}
+                    onToggle={(e) => setHintOpen(step.answerKey, e.currentTarget.open)}
+                    style={{margin:"0 0 14px", background:"#fffaf0", border:"1px solid #ffd89c", borderRadius:12, padding:"9px 12px"}}
+                  >
+                    <summary style={{cursor:"pointer", color:"#9c6b00", fontWeight:800, fontSize:"0.9em"}}>▸ 힌트 보기</summary>
+                    <div style={{marginTop:8, color:"#6f5420", fontSize:"0.92em", lineHeight:1.65}}>💡 {step.data.hint}</div>
+                  </details>
+                )}
                 {step.data.type === "mcq" ? (
                   <div className="choices">
                     {(step.data.choices || []).map((c, i) => {
@@ -2001,7 +2235,7 @@
                       <div style={{fontSize:"0.85em", lineHeight:1.7, color:"#3a2a6b"}}>
                         <div>📚 <b>영역</b>: {step.subject || step.data.subject || "-"}</div>
                         <div>🎯 <b>모듈 (단원)</b>: {step.unit || step.data.unit || "이번 단원"}</div>
-                        {step.data.hint && (
+                        {step.data.hint && !step.is_ladder && (
                           <div>💡 <b>핵심 개념·풀이법</b>: {step.data.hint}</div>
                         )}
                         <div style={{marginTop:6, fontSize:"0.85em", color:"#6b4ba8", fontStyle:"italic"}}>
@@ -2010,8 +2244,17 @@
                       </div>
                     </div>
                     <div className={"feedback " + (answers[answers.length-1]?.correct ? "ok" : "")}>
-                      <strong>{answers[answers.length-1]?.correct ? "✅ 정답!" : `❌ 정답: ${answers[answers.length-1]?.correctAns ?? resolveAnswer(step.data)}`}</strong>
-                      {step.data.explanation && <div style={{marginTop:6}}>{step.data.explanation}</div>}
+                      <strong>{step.is_ladder_gate_primary && !answers[answers.length-1]?.correct
+                        ? "💡 힌트가 열렸어 — 두 번째 문제로 다시 도전!"
+                        : answers[answers.length-1]?.correct
+                          ? "✅ 정답!"
+                          : `❌ 정답: ${answers[answers.length-1]?.correctAns ?? resolveAnswer(step.data)}`}</strong>
+                      {step.data.explanation && !(step.is_ladder_gate_primary && !answers[answers.length-1]?.correct) && (
+                        <div style={{marginTop:6}}>{step.data.explanation}</div>
+                      )}
+                      {step.is_ladder && step.is_retry && !answers[answers.length-1]?.correct && (
+                        <div style={{marginTop:8, fontWeight:700}}>관문은 내일 다시 도전하고, 오늘은 보스전으로 직행!</div>
+                      )}
                     </div>
                     <WidgetBox key={"wb3-" + stepIdx} widget={matchWidget(step)} />
                   </>
