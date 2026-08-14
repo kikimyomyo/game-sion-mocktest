@@ -294,14 +294,25 @@
     //   사다리·해설은 gated — 변형1을 맞히면 자동 건너뜀 ("필요한 순간의 설명"이 흡수율이 높다).
     function expandCycleToSteps(p) {
       if (isMainLadderCycle(p)) return expandMainCycleToLadderSteps(p);
-      if (!p.기출유사문제 && !p.진짜수능본문 && !p.개념사다리 && !p.필요한_개념 && !p.풀이해설) {
+      // ★ 레거시 폴백 = "p 자체가 한 문제"인 경우에만. v5 서브 사이클(변형문제_세트·챌린지만 보유)이
+      //   여기 걸리면 question 없는 빈 문제 + 주관식 입력창이 뜬다 (2026-08-14 회귀).
+      const hasOwnQuestion = !!(p.question && (p.choices || p.answer !== undefined));
+      const hasSubItems = Array.isArray(p.변형문제_세트) ? p.변형문제_세트.length > 0
+                        : !!p.변형문제 || (Array.isArray(p.챌린지_추가) && p.챌린지_추가.length > 0);
+      if (!p.기출유사문제 && !p.진짜수능본문 && !p.개념사다리 && !p.필요한_개념 && !p.풀이해설 && !hasSubItems) {
+        if (!hasOwnQuestion) {
+          console.error("expandCycleToSteps: 문제 없는 사이클 — 스킵", { id: p.id, subject: p.subject });
+          return [];
+        }
         return [{ type: "quiz", data: p }];
       }
       const steps = [];
       const variants = Array.isArray(p.변형문제_세트) ? p.변형문제_세트
                      : p.변형문제 ? [p.변형문제] : [];
       // 1) 진짜 수능 문제 + 🔮 찍어보기 (pretesting — 맞아도 틀려도 점수 무관)
-      if (p.진짜수능본문 || p.기출유사문제 || p.수능출처) {
+      // ★ 수능출처(메타 문자열)만 있고 본문이 없으면 intro를 만들지 않는다 — 본문 없는 빈 카드 방지.
+      //   수능 앵커는 피날레 스텝에서 어차피 다시 보여준다.
+      if (p.진짜수능본문 || p.기출유사문제) {
         const realBody = p.진짜수능본문 || p.기출유사문제 || "";
         const realChoices = p.진짜수능선택지 || null;
         const realAnswer = p.진짜수능정답 || null;
