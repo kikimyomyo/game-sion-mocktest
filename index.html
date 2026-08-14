@@ -662,9 +662,17 @@
       const todaySet = selectedMeta === defaultMeta;
       const revengeItems = (todaySet && cfg.revenge && Array.isArray(cfg.revenge.items)) ? cfg.revenge.items : [];
       const vocabCards = (todaySet && cfg.vocab && Array.isArray(cfg.vocab.cards)) ? cfg.vocab.cards : [];
+      // kind별 제목 — v5 웜업에 "복수전 … 무찌르기"를 붙이면 지난 오답이 아닌 문항이
+      // 오답 복습으로 보인다. warmup_fill(은행 결손 보충)은 복습이 아님을 특히 분명히 한다.
+      const revengeTitle = (it, i, n) => {
+        const unit = it.단원 ? ` — ${it.단원}` : "";
+        if (it.kind === "warmup_fill") return `🌱 오늘 단원 워밍업 ${i+1}/${n}${unit} (+15 XP)`;
+        if (it.kind === "warmup") return `🪜 빠른 복습 ${i+1}/${n}${unit} (+15 XP)`;
+        return `🔄 복수전 ${i+1}/${n} — ${it.label || "지난 오답"} 무찌르기! (+15 XP)`;
+      };
       const revengeSteps = revengeItems.map((it, i) => ({
         type: "quiz",
-        title: `🔄 복수전 ${i+1}/${revengeItems.length} — ${it.label || "지난 오답"} 무찌르기! (+15 XP)`,
+        title: revengeTitle(it, i, revengeItems.length),
         data: { ...it.problem, id: `rev-${it.id}`, unit: it.단원, subject: it.과목, is_revenge: true },
         cycleIdx: -1,
       }));
