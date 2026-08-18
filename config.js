@@ -7,86 +7,140 @@ window.GAME_CONFIG = {
   {
     "id": 1,
     "cycle": 1,
-    "subject": "국어",
-    "역할": "서브",
-    "수능출처": "2023학년도 수능 국어 3번 독서·말하기 유형 변형",
-    "unit": "듣기·말하기",
-    "통합풀이법": "대화 전 생각과 근거를 들은 뒤의 생각을 비교한다. 바뀐 부분이 곧 대화의 효과다.",
-    "변형문제_세트": [
+    "subject": "통합사회",
+    "역할": "메인",
+    "계보id": "L260819-soc-data-reading",
+    "현재스텝": "E",
+    "수능출처": "2028학년도 수능 통합사회 예시문항 19번",
+    "unit": "지도와 자료 읽기(표)·기회비용",
+    "module_core": "표의 기준을 확인하고 포기한 대안 중 편익이 가장 큰 것을 찾는다.",
+    "사다리_문항": [
       {
+        "스텝": "E",
         "type": "mcq",
-        "question": "민서: 고양이가 지루하지 않도록 사료 브랜드를 자주 바꾸자. 지우: 수의사 인터뷰를 보니 갑자기 사료를 바꾸면 배탈이 날 수 있대. 같은 시간에 알맞은 양을 주는 것이 건강한 몸무게 유지에 더 중요하대. 민서: 그 근거를 들으니 생각이 달라졌어. 규칙적인 급여를 먼저 지키고, 꼭 필요할 때만 천천히 바꾸자. 대화에 대한 이해로 가장 적절한 것은?",
+        "question": "수의대 체험 활동의 만족 점수는 강아지 진료 70점, 고양이 진료 90점, 토끼 돌봄 80점이다. 토끼 돌봄을 골랐을 때 포기한 활동 중 가장 큰 만족 점수는 얼마인가?",
         "choices": [
-          "민서는 대화 전후에 같은 생각을 유지했다.",
-          "민서는 친구의 근거를 듣고 처음 생각을 고쳐 이해를 넓혔다.",
-          "지우의 의견은 사료에 관한 글을 이해하는 일과 관련이 없다.",
-          "두 사람은 사료 브랜드를 자주 바꾸어야 한다고 결론 내렸다."
+          "70점",
+          "80점",
+          "90점",
+          "160점"
         ],
-        "answer": "민서는 친구의 근거를 듣고 처음 생각을 고쳐 이해를 넓혔다.",
-        "hint": "민서의 첫 말과 마지막 말을 나란히 놓아 봐. 지우가 제시한 수의사의 근거 뒤에 무엇이 달라졌을까?",
-        "explanation": "정답은 친구의 근거를 듣고 처음 생각을 고쳐 이해를 넓혔다는 설명이다. 민서는 처음에는 사료를 자주 바꾸자고 했지만, 지우의 근거를 들은 뒤 규칙적인 급여를 우선하자고 바꿨다. 대화는 책의 뜻을 없애는 것이 아니라 놓친 근거를 보태 이해를 넓힐 수 있다.",
-        "개념키": "kor.writing"
+        "answer": "90점",
+        "hint": "선택한 토끼 돌봄은 지우고 남은 두 활동만 비교해 봐. 포기한 것들을 더하지 말고 가장 큰 하나를 찾는다.",
+        "explanation": "토끼 돌봄 80점은 이미 선택했으므로 제외한다. 포기한 강아지 진료 70점과 고양이 진료 90점 중 더 큰 값은 90점이다. 기회비용은 포기한 모든 값을 더한 160점이 아니라 가장 좋은 대안 하나의 가치다. 첫 관문을 정확히 넘었다.",
+        "개념키": "soc.data.reading"
       },
       {
+        "스텝": "E",
         "type": "mcq",
-        "question": "도윤: 글을 읽어 보니 길고양이는 모두 다른 장소로 옮겨야 한다는 뜻이야. 하린: 마지막 문장을 다시 봐. 위험한 곳에 있는 고양이만 옮기고, 안전한 쉼터는 그대로 둔다고 했어. 도윤: 그러네. ‘모두’가 아니라 ‘위험한 곳에 있는 고양이’라는 조건을 놓쳤어. 하린의 말이 대화에 한 역할로 가장 적절한 것은?",
+        "question": "동물보호소의 한 달 예산은 200만 원이고 사료 비율은 40%이다. 사료 예산은 얼마인가?",
         "choices": [
-          "글의 의미를 알 수 없게 만들었다.",
-          "근거를 들어 도윤의 지나친 일반화를 고치게 했다.",
-          "다른 사람의 의견은 읽기와 무관함을 보여 주었다.",
-          "도윤의 처음 해석이 옳다고 그대로 인정했다."
+          "8만 원",
+          "40만 원",
+          "80만 원",
+          "120만 원"
         ],
-        "answer": "근거를 들어 도윤의 지나친 일반화를 고치게 했다.",
-        "hint": "도윤의 ‘모두’와 하린이 찾아낸 ‘위험한 곳에 있는 고양이만’을 비교해 봐.",
-        "explanation": "하린은 글의 마지막 문장을 근거로 제시해 도윤이 ‘일부’를 ‘모두’로 넓혀 읽은 오류를 고치게 했다. 도윤도 놓친 조건을 인정하며 해석을 수정했다. 다른 사람의 말은 읽기와 무관한 방해가 아니라, 본문 근거를 다시 확인하게 하는 도구가 될 수 있다.",
-        "개념키": "kor.writing"
+        "answer": "80만 원",
+        "hint": "40%를 40만 원으로 바로 읽지 마. 40%를 0.4로 바꾼 뒤 전체 예산 200만 원에 곱해 봐.",
+        "explanation": "40%는 0.4이므로 200만 원×0.4=80만 원이다. 40만 원은 비율의 숫자를 금액으로 착각한 값이고, 120만 원은 남은 60%를 계산한 값이다. 표에서 비율을 읽은 뒤 전체 금액에 곱하는 순서를 지키면 된다.",
+        "개념키": "soc.data.reading"
+      },
+      {
+        "스텝": "M",
+        "type": "mcq",
+        "question": "활동 A, B, C의 편익이 각각 60점, 75점, 90점이고 별도의 비용은 없다. B를 선택할 때 기회비용은 얼마인가?",
+        "choices": [
+          "15점",
+          "60점",
+          "75점",
+          "90점"
+        ],
+        "answer": "90점",
+        "hint": "선택한 B는 지워. 남은 A와 C 중 편익이 더 큰 대안의 값이 기회비용이다. 두 값의 차이를 구하는 문제가 아니다.",
+        "explanation": "B를 선택하면 A와 C를 포기한다. 그중 가장 편익이 큰 대안은 C의 90점이므로 기회비용은 90점이다. 15점은 C와 B의 차이일 뿐이고, 75점은 선택한 B 자체의 편익이다. ‘포기한 것 중 최고’를 찾으면 된다.",
+        "개념키": "soc.data.reading"
+      },
+      {
+        "스텝": "H",
+        "type": "mcq",
+        "question": "금융 상품 A, B, C의 편익은 각각 70점, 85점, 100점이다. A는 이자 수익만, B는 시세 차익만, C는 이자 수익과 시세 차익이 있다. 옳은 설명은?",
+        "choices": [
+          "A는 배당 수익을 기대할 수 있다.",
+          "B는 A보다 일반적으로 안전성이 높다.",
+          "C는 이자 수익과 시세 차익을 모두 기대할 수 있는 채권이다.",
+          "C를 선택할 때 기회비용은 100점이다."
+        ],
+        "answer": "C는 이자 수익과 시세 차익을 모두 기대할 수 있는 채권이다.",
+        "hint": "이자만 있으면 정기 예금, 시세 차익만 있으면 주식, 둘 다 있으면 채권으로 연결해. 기회비용은 선택한 상품의 값이 아니다.",
+        "explanation": "A는 정기 예금, B는 주식, C는 채권이다. 따라서 이자 수익과 시세 차익을 모두 기대할 수 있는 C가 채권이라는 설명만 옳다. A에는 배당이 없고 주식 B는 예금 A보다 안전성이 낮다. C 선택의 기회비용은 남은 상품 중 최고인 B의 85점이다.",
+        "개념키": "soc.data.reading"
       }
     ],
+    "보스전": {
+      "진짜수능본문": "다음 자료에 대한 설명으로 옳은 것은? (단, A~C는 각각 정기 예금, 주식, 채권 중 하나임.) 표는 갑이 금융 상품 A, B, C 중 하나를 선택하여 투자하기 위해 작성한 것이다. 갑은 편익과 기회비용만을 고려하여 금융 상품을 선택하며 세 상품 모두 명시적 비용은 없다. 이때 편익은 수익성과 안전성 등을 고려하여 화폐 단위로 평가한 것이다. [자료: 금융 상품 비교 표. 편익(만 원): A 90, B 80, C 100. 이자 수익: A 있음, B 없음, C 있음. 시세 차익: A 없음, B 있음, C 있음]",
+      "진짜수능선택지": [
+        "A는 배당 수익을 기대할 수 있다.",
+        "C는 예금자 보호 제도의 적용을 받는다.",
+        "일반적으로 B는 A에 비해 안전성이 높다.",
+        "채권 선택의 암묵적 비용은 100만 원이다.",
+        "정기 예금 선택의 기회비용과 주식 선택의 기회비용은 같다."
+      ],
+      "진짜수능정답": "⑤",
+      "보스전_해설": "E에서 표의 값을 읽고, M에서 선택하면 포기한 대안 중 편익이 가장 큰 것이 기회비용임을 익혔다. 이자 수익은 있고 시세 차익은 없는 A는 정기 예금, 이자는 없고 시세 차익은 있는 B는 주식, 둘 다 있는 C는 채권이다. A를 고르면 가장 좋은 포기 대안은 C의 100만 원이고, B를 골라도 C의 100만 원이다. 따라서 두 기회비용은 같다. ① 예금에는 배당이 없고, ② 채권은 예금자 보호 대상이 아니다. ③ 주식은 예금보다 안전성이 낮으며, ④ 채권 C의 암묵적 비용은 A의 90만 원이다. 정답은 ⑤.",
+      "강조구간": [
+        "편익(만 원): A 90, B 80, C 100",
+        "이자 수익: A 있음, B 없음, C 있음",
+        "시세 차익: A 없음, B 있음, C 있음"
+      ]
+    },
+    "통합풀이법": "표의 기준을 먼저 확인하고, 선택한 항목을 지운 뒤 남은 대안 중 편익이 가장 큰 것을 찾는다.",
+    "이미지_묘사": "A·B·C 세 금융 상품 표 옆에 ‘하나 선택’ 화살표와 ‘포기한 것 중 최고 = 기회비용’ 상자를 배치한 초6용 도식.",
+    "image_url": "./images/2026-08-19_cycle_1.png",
     "챌린지_추가": [
       {
         "type": "mcq",
-        "question": "다음 글에서 글쓴이의 주장으로 알맞은 것은?\n\n\"음식을 남기면 그 음식을 버리는 데 돈과 자원이 들고, 쓰레기도 늘어난다. 또 음식을 만드느라 애쓴 분들의 정성도 헛되이 버려진다. 그러므로 우리는 먹을 만큼만 음식을 덜어 먹어야 한다.\"",
+        "question": "세계화로 나타나는 긍정적 영향으로 가장 알맞은 것은?",
         "choices": [
-          "먹을 만큼만 음식을 덜어 먹어야 한다.",
-          "음식은 무조건 많이 만들어야 한다.",
-          "쓰레기는 아무 데나 버려도 된다.",
-          "음식을 만드는 일은 쉬운 일이다."
+          "다양한 나라의 문화와 상품을 쉽게 접할 수 있다",
+          "나라 사이의 교류가 완전히 사라진다",
+          "외국 음식을 절대 먹을 수 없게 된다",
+          "인터넷을 사용할 수 없게 된다"
         ],
-        "answer": "먹을 만큼만 음식을 덜어 먹어야 한다.",
-        "explanation": "'그러므로'로 시작하는 마지막 문장이 글쓴이가 내세우는 주장이다. 앞부분은 그 주장을 뒷받침하는 까닭(근거)이다. '많이 만들어야'·'아무 데나 버려도'·'만드는 일은 쉽다'는 글의 내용과 반대되거나 나오지 않으므로 오답.",
-        "hint": "기본",
-        "_bank": "llm2",
-        "_unit": "읽기 (비문학·설명문·주장하는 글)"
+        "answer": "다양한 나라의 문화와 상품을 쉽게 접할 수 있다",
+        "explanation": "세계화는 여러 나라의 문화·상품·정보를 쉽게 접하게 해 주는 긍정적 측면이 있다.",
+        "hint": "응용",
+        "_bank": "llm",
+        "_unit": "사회 변동과 사회 문제 미리보기"
       },
       {
         "type": "mcq",
-        "question": "다음 문단에서 뒷받침 문장에 해당하는 것은 무엇인가요? (중심 문장: \"운동은 우리 몸에 좋다.\")",
+        "question": "저출산·고령화 사회의 특징으로 옳은 것은?",
         "choices": [
-          "운동을 하면 근육이 튼튼해진다.",
-          "운동은 우리 몸에 좋다.",
-          "오늘은 날씨가 참 맑다.",
-          "내일 학교에 일찍 가야겠다."
+          "태어나는 아이는 줄고 노인 인구 비율은 높아진다",
+          "아이도 늘고 노인도 줄어든다",
+          "인구가 전혀 변하지 않는다",
+          "청년 인구만 빠르게 늘어난다"
         ],
-        "answer": "운동을 하면 근육이 튼튼해진다.",
-        "explanation": "뒷받침 문장은 중심 문장 '운동은 우리 몸에 좋다'를 자세히 설명해 주는 문장이어야 한다. '운동을 하면 근육이 튼튼해진다'는 운동이 몸에 좋은 이유를 설명하므로 정답이다. 두 번째는 중심 문장 그 자체라 틀리고, 나머지 둘은 운동과 관련 없는 내용이라 틀리다.",
+        "answer": "태어나는 아이는 줄고 노인 인구 비율은 높아진다",
+        "explanation": "저출산은 출생아 감소, 고령화는 노인 인구 비율 증가를 뜻하며 우리 사회의 대표적 인구 문제다.",
         "hint": "기본",
-        "_bank": "llm2",
-        "_unit": "쓰기 (문단·글의 짜임)"
+        "_bank": "llm",
+        "_unit": "사회 변동과 사회 문제 미리보기"
       },
       {
         "type": "mcq",
-        "question": "앞 문장과 뒤 문장을 자연스럽게 이어 주는 '이어 주는 말(접속어)'의 쓰임으로 알맞은 것은 무엇인가요?",
+        "question": "사회 문제에 대한 설명으로 옳은 것은?",
         "choices": [
-          "비가 왔다. 그래서 운동회가 미뤄졌다.",
-          "비가 왔다. 그래서 운동회를 그대로 했다.",
-          "비가 왔다. 그러나 운동회가 미뤄졌다.",
-          "비가 왔다. 왜냐하면 운동회가 미뤄졌다."
+          "많은 사람들에게 영향을 주어 해결이 필요한 문제",
+          "한 사람만 겪고 끝나는 사소한 일",
+          "항상 저절로 사라지는 문제",
+          "사회와 관계없는 개인의 취미"
         ],
-        "answer": "비가 왔다. 그래서 운동회가 미뤄졌다.",
-        "explanation": "'그래서'는 앞 내용이 원인, 뒤 내용이 결과일 때 쓴다. '비가 와서 운동회가 미뤄졌다'는 원인-결과가 맞아 정답이다. 두 번째는 비가 왔는데 그대로 했다니 결과가 어색하고, 세 번째 '그러나'는 반대 내용을 이을 때 써서 틀리며, 네 번째 '왜냐하면' 뒤에는 까닭이 와야 하는데 결과가 와서 틀리다.",
+        "answer": "많은 사람들에게 영향을 주어 해결이 필요한 문제",
+        "explanation": "사회 문제는 여러 사람에게 영향을 미치고 사회적 노력으로 해결해야 하는 문제를 말한다.",
         "hint": "기본",
-        "_bank": "llm2",
-        "_unit": "쓰기 (문단·글의 짜임)"
+        "_bank": "llm",
+        "_unit": "사회 변동과 사회 문제 미리보기"
       }
     ]
   },
@@ -95,86 +149,86 @@ window.GAME_CONFIG = {
     "cycle": 2,
     "subject": "수학",
     "역할": "서브",
-    "수능출처": "초6 분수의 나눗셈·중3 닮음비와 부피비 통합 변형",
-    "unit": "6-2 분수의 나눗셈",
-    "통합풀이법": "몇 묶음인지 물으면 나눗셈. 닮은 입체의 길이가 k배면 부피는 k³배다.",
+    "수능출처": "6-2 분수의 나눗셈·닮음비와 부피비 약점 변형",
+    "unit": "6-2 분수의 나눗셈·부피비",
+    "통합풀이법": "분수 나눗셈은 뒤집어 곱한다. 닮은 입체의 부피비는 닮음비의 세제곱이다.",
     "변형문제_세트": [
       {
         "type": "mcq",
-        "question": "주스 3/4 L를 한 컵에 1/8 L씩 똑같이 따른다. 가득 채울 수 있는 컵은 몇 개인가?",
+        "question": "주스 3/4L를 한 컵에 1/8L씩 나눈다. 모두 몇 컵인가?",
         "choices": [
-          "4개",
-          "5개",
-          "6개",
-          "8개"
+          "3컵",
+          "4컵",
+          "6컵",
+          "8컵"
         ],
-        "answer": "6개",
-        "hint": "3/4 L 안에 1/8 L가 몇 번 들어가는지 묻는 문제야. 3/4을 분모가 8인 분수로 먼저 바꿔 봐.",
-        "explanation": "3/4 L는 6/8 L이다. 여기에 1/8 L짜리 컵이 몇 개 들어가는지 구하면 6/8÷1/8=6이므로 6개다. 분수의 나눗셈은 ‘전체 안에 한 묶음이 몇 번 들어가는가’로 생각하면 된다. 분모가 같아지면 1/8짜리 조각의 개수를 바로 셀 수 있다.",
+        "answer": "6컵",
+        "hint": "전체 3/4L 안에 1/8L가 몇 번 들어가는지 구해. 나누는 분수 1/8을 뒤집어 곱하고 단위를 확인해.",
+        "explanation": "3/4÷1/8=3/4×8/1=6이므로 6컵이다. 3/4×1/8로 계산하면 나눗셈의 방향을 놓친 것이다. 작은 컵으로 나누면 컵 수가 전체 양보다 큰 수가 될 수 있다. ‘몇 묶음 들어가나’는 나눗셈이라는 뜻부터 잡으면 된다.",
         "개념키": "math.fraction.division"
       },
       {
         "type": "mcq",
-        "question": "닮은 두 정육면체의 한 모서리 길이의 비가 작은 것과 큰 것의 순서로 1:2이다. 큰 정육면체의 부피가 160 cm³일 때 작은 정육면체의 부피는 얼마인가?",
+        "question": "닮은 두 직육면체의 닮음비가 작은 것:큰 것=1:2이다. 큰 것의 부피가 36cm³일 때 작은 것의 부피는 얼마인가?",
         "choices": [
-          "80 cm³",
-          "40 cm³",
-          "20 cm³",
-          "10 cm³"
+          "9/2cm³",
+          "9cm³",
+          "18cm³",
+          "288cm³"
         ],
-        "answer": "20 cm³",
-        "hint": "길이비 1:2를 부피비로 바꿀 때 세제곱해. 큰 것의 부피가 주어졌으므로 몇 배로 나눌지도 확인해.",
-        "explanation": "길이비가 1:2이므로 부피비는 1³:2³=1:8이다. 큰 정육면체가 160 cm³이므로 작은 것은 160÷8=20 cm³이다. 80은 길이비만 적용한 값, 40은 제곱한 값이다. 부피는 세제곱이며 큰 것에서 작은 것을 구할 때는 8로 나눈다.",
+        "answer": "9/2cm³",
+        "hint": "길이가 2배면 가로·세로·높이가 모두 2배라 부피는 2×2×2배다. 큰 부피 36을 그 배수로 나눠.",
+        "explanation": "닮음비 1:2이면 부피비는 1:2³=1:8이다. 따라서 작은 부피는 36÷8=9/2cm³. 9는 세제곱 대신 제곱하여 4로 나눈 값, 18은 닮음비 2만 적용한 값이다. 288은 크고 작은 방향을 뒤집어 8을 곱한 값이다.",
         "개념키": "math.similarity.volume_cube"
       }
     ],
-    "book_diagram_url": "./diagrams/book/2026-08-18_cycle_2.jpg",
+    "book_diagram_url": "./diagrams/book/2026-08-19_cycle_2.jpg",
     "book_diagram_source": "출처: eomaeomahan suhag_su",
     "챌린지_추가": [
       {
         "type": "mcq",
-        "question": "8.4를 4로 나눈 몫은 얼마일까요? (8.4 ÷ 4)",
+        "question": "12.5 ÷ 2.5 의 몫은 얼마일까요?",
         "choices": [
-          "1.1",
-          "2.1",
-          "2.4",
-          "21"
+          "5",
+          "4",
+          "0.5",
+          "50"
         ],
-        "answer": "2.1",
-        "explanation": "84 ÷ 4 = 21이고, 8.4는 84의 1/10이므로 몫도 1/10인 2.1입니다. 1.1은 계산 오류, 2.4는 숫자 바꿈 오류, 21은 소수점 위치를 틀린 값입니다.",
+        "answer": "5",
+        "explanation": "둘 다 10배 하면 125 ÷ 25 = 5입니다. 2.5×5=12.5로 맞습니다. 4는 2.5×4=10으로 오답, 0.5와 50은 소수점 위치 오류입니다.",
         "hint": "기본",
         "_bank": "llm2",
         "_unit": "소수의 나눗셈"
       },
       {
         "type": "mcq",
-        "question": "높이가 10cm인 원기둥을 펼쳤더니 옆면이 직사각형 모양이었다. 이 직사각형의 세로의 길이는 몇 cm인가?",
+        "question": "사각뿔의 모서리는 모두 몇 개일까요?",
         "choices": [
-          "10cm",
-          "20cm",
-          "5cm",
-          "31.4cm"
+          "4개",
+          "5개",
+          "8개",
+          "12개"
         ],
-        "answer": "10cm",
-        "explanation": "원기둥 옆면 전개도(직사각형)에서 세로의 길이는 원기둥의 높이와 같으므로 10cm이다. 가로가 밑면의 둘레인데 세로와 헷갈려 20cm·31.4cm를 고르면 오답. 5cm는 높이의 절반이라 오답.",
+        "answer": "8개",
+        "explanation": "n각뿔의 모서리 수는 2n개입니다. 사각뿔은 n=4이므로 2×4=8개(밑면 4 + 옆모서리 4). 4개는 밑면 변만 센 것, 5개는 꼭짓점 수(4+1), 12개는 사각기둥의 모서리(3×4)와 혼동한 오답입니다.",
         "hint": "기본",
         "_bank": "llm2",
-        "_unit": "원기둥·원뿔·구"
+        "_unit": "각기둥과 각뿔"
       },
       {
         "type": "mcq",
-        "question": "반지름이 3 cm인 동전 모양 쿠키의 넓이는 얼마입니까? (원주율은 3으로 계산)",
+        "question": "구각기둥의 꼭짓점은 모두 몇 개일까요?",
         "choices": [
-          "18 cm²",
-          "27 cm²",
-          "9 cm²",
-          "54 cm²"
+          "9개",
+          "10개",
+          "18개",
+          "27개"
         ],
-        "answer": "27 cm²",
-        "explanation": "넓이 = 반지름 × 반지름 × 원주율 = 3 × 3 × 3 = 27 cm². 18은 둘레(지름×원주율=6×3), 9는 반지름×반지름만 한 값, 54는 지름×지름×원주율로 잘못 계산한 값입니다.",
+        "answer": "18개",
+        "explanation": "n각기둥의 꼭짓점 수는 2n개입니다. 구각기둥은 n=9이므로 2×9=18개. 9개는 한 밑면만 센 것, 10개는 각뿔로 착각한 것(9+1), 27개는 모서리 수(3×9)와 혼동한 오답입니다.",
         "hint": "기본",
         "_bank": "llm2",
-        "_unit": "원의 넓이"
+        "_unit": "각기둥과 각뿔"
       }
     ]
   },
@@ -182,246 +236,78 @@ window.GAME_CONFIG = {
     "id": 3,
     "cycle": 3,
     "subject": "영어",
-    "역할": "메인",
-    "계보id": "L260818-en-agreement-music",
-    "현재스텝": "E",
-    "수능출처": "2020학년도 수능 영어 34번",
-    "unit": "Grammar Joy 3 전체 — 주어-동사 수 일치·명사 복수형·빈칸 추론",
-    "사다리_문항": [
-      {
-        "스텝": "E",
-        "type": "mcq",
-        "question": "A puppy ___ its head when music starts. 빈칸에 알맞은 것은?",
-        "choices": [
-          "turn",
-          "turns",
-          "turning",
-          "turned"
-        ],
-        "answer": "turns",
-        "hint": "주어는 puppy 한 마리야. 현재의 반복 행동을 말할 때 3인칭 단수 주어 뒤 동사는 어떤 모양이 될까?",
-        "explanation": "A puppy는 강아지 한 마리인 3인칭 단수 주어다. 현재의 반복 행동이므로 동사 turn에 -s를 붙여 turns가 된다. turn은 복수 주어에 쓰고, turning은 앞에 be동사가 필요하며, turned는 과거형이다. 지난번 sitting 대신 sits가 필요했던 이유도 같은 규칙이다.",
-        "개념키": "en.agreement.subject_verb"
-      },
-      {
-        "스텝": "E",
-        "type": "mcq",
-        "question": "Two puppies ___ their heads when music starts. 빈칸에 알맞은 것은?",
-        "choices": [
-          "turns",
-          "turn",
-          "is turning",
-          "turned"
-        ],
-        "answer": "turn",
-        "hint": "puppies는 puppy가 둘 이상인 복수형이야. 복수 주어의 현재형 동사에서는 -s를 붙일까, 뗄까?",
-        "explanation": "Two puppies는 둘 이상의 강아지를 나타내는 복수 주어다. 복수 주어의 현재형 동사는 원형 turn을 쓴다. turns는 단수 주어용이고, is turning은 복수 주어에 맞지 않아 are turning이어야 한다. 단수 명사에는 복수 표시가 없지만 동사에 -s, 복수 명사에는 동사의 -s가 없다는 반대 움직임을 기억하자.",
-        "개념키": "en.noun.plural"
-      },
-      {
-        "스텝": "M",
-        "type": "mcq",
-        "question": "There ___ many attempts to define what music is. 빈칸에 알맞은 것은?",
-        "choices": [
-          "is",
-          "was",
-          "has been",
-          "have been"
-        ],
-        "answer": "have been",
-        "hint": "There가 주어처럼 보여도 진짜 주어는 뒤의 many attempts야. 복수 주어와 현재완료에 맞는 형태를 찾아봐.",
-        "explanation": "There 뒤의 진짜 주어는 many attempts이며 복수다. 과거부터 지금까지 음악을 정의하려는 시도가 이어졌다는 뜻이므로 현재완료 have been이 맞다. has been은 단수 주어용이다. what music is는 질문 어순이 아니라 ‘음악이 무엇인지’라는 명사절이다. 이 문장은 보스전 첫 문장과 같다.",
-        "개념키": "en.grammar.general"
-      },
-      {
-        "스텝": "H",
-        "type": "mcq",
-        "question": "‘고정된 음높이는 많은 음악 문화에서 중요하지만 모든 음악을 정의하지는 않는다.’라는 의미와 어법에 모두 맞는 문장은?",
-        "choices": [
-          "Fixed pitches is important in many musical cultures, but it do not define all music.",
-          "A fixed pitch are important in many musical cultures, but they does not define all music.",
-          "Fixed pitches are important in many musical cultures, but they do not define all music.",
-          "Fixed pitches are important in many musical cultures, but it does not defines all music."
-        ],
-        "answer": "Fixed pitches are important in many musical cultures, but they do not define all music.",
-        "hint": "Fixed pitches는 복수 주어야. 앞의 be동사와 뒤에서 이를 받는 대명사·일반동사가 모두 복수에 맞는지 확인해.",
-        "explanation": "Fixed pitches는 복수이므로 are가 오고, 이를 받는 대명사는 they이며, 부정문은 do not define이 된다. 따라서 세 요소가 모두 일치하는 세 번째 문장만 옳다. 동시에 고정 음높이가 흔한 특징이지만 모든 음악의 정의는 아니라는 글의 핵심도 담고 있다. 어법과 의미를 함께 확인해야 정답에 도달한다.",
-        "개념키": "en.agreement.subject_verb"
-      }
-    ],
-    "보스전": {
-      "진짜수능본문": "다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오. [3점]\n\nThere have been many attempts to define what music is in terms of the specific attributes of musical sounds. The famous nineteenth-century critic Eduard Hanslick regarded ‘the measurable tone’ as ‘the primary and essential condition of all music’. Musical sounds, he was saying, can be distinguished from those of nature by the fact that they involve the use of fixed pitches, whereas virtually all natural sounds consist of constantly fluctuating frequencies. And a number of twentieth-century writers have assumed, like Hanslick, that fixed pitches are among the defining features of music. Now it is true that in most of the world’s musical cultures, pitches are ______. However, this is a generalization about music and not a definition of it, for it is easy to put forward counter-examples. Japanese shakuhachi music and the sanjo music of Korea, for instance, fluctuate constantly around the notional pitches in terms of which the music is organized.",
-      "진짜수능선택지": [
-        "not so much artificially fixed as naturally fluctuating",
-        "not only fixed, but organized into a series of discrete steps",
-        "hardly considered a primary compositional element of music",
-        "highly diverse and complicated, and thus are immeasurable",
-        "a vehicle for carrying unique and various cultural features"
-      ],
-      "진짜수능정답": "②",
-      "보스전_해설": "정답은 ②다. 글은 먼저 한스리크와 여러 학자가 고정된 음높이를 음악의 핵심 특징으로 보았다고 설명한다. 빈칸 뒤의 However부터는 이것이 일반적 특징일 뿐 모든 음악의 정의는 아니라고 반박하고, 음높이가 계속 흔들리는 샤쿠하치와 산조를 예로 든다. 따라서 빈칸에는 많은 문화에서 음높이가 고정되어 있고 일정한 단계로 조직된다는 내용이 들어가야 한다. ①은 자연스럽게 흔들린다는 뜻이라 뒤의 반례와 충돌한다. E에서 단수·복수 동사를 구별하고, M에서 There have been의 진짜 주어를 찾고, H에서 Fixed pitches are의 문장 뼈대를 잡은 것이 긴 지문의 흐름을 읽는 발판이다.",
-      "강조구간": [
-        "There have been many attempts to define what music is",
-        "fixed pitches are among the defining features of music",
-        "this is a generalization about music and not a definition of it"
-      ]
-    },
-    "통합풀이법": "주어의 중심 명사와 동사를 먼저 연결한 뒤, However 앞의 일반 주장과 뒤의 반례가 대조되는지 본다.",
-    "한국어_해석": "음악이 무엇인지 정하려는 시도는 많았다. 한 비평가는 음악의 핵심 조건이 측정 가능한 고정된 음이라고 보았다. 자연의 소리는 주파수가 계속 흔들리지만 음악은 고정된 음높이를 쓴다는 생각이다. 실제로 많은 문화에서 음높이는 중요하다. 그러나 이것은 일반적 특징일 뿐 정의는 아니다. 일본 샤쿠하치 음악과 한국 산조처럼 음이 기준 음높이 주변에서 계속 흔들리는 예가 있기 때문이다.",
-    "핵심_단어": [
-      "attempt=시도",
-      "define=정의하다",
-      "attribute=속성·특징",
-      "measurable=측정할 수 있는",
-      "primary=주된",
-      "essential=필수적인",
-      "distinguish=구별하다",
-      "fluctuate=흔들리다·변동하다"
-    ],
-    "문법_포인트": [
-      "There have been many attempts: 과거부터 지금까지 이어진 많은 시도를 나타내는 현재완료",
-      "what music is: 의문문이 아니라 음악이 무엇인지라는 뜻의 명사절"
-    ],
-    "학년별_적정활용": "초6은 한국어 해석으로 글의 대조 구조를 이해하고, 영어 본문에서는 핵심 단어 5개와 주어-동사 연결만 찾는다.",
-    "이미지_묘사": "강아지 한 마리 turns와 강아지 두 마리 turn을 나란히 놓고, 단수 동사의 -s와 복수 명사의 -s가 반대로 움직임을 보여 주는 도식.",
-    "image_url": "./images/2026-08-18_cycle_3.png",
-    "챌린지_추가": [
-      {
-        "type": "mcq",
-        "question": "다음 빈칸에 공통으로 들어갈 수 있는 be동사는?\n\nThe cats ____ cute.\nMy parents ____ at home.",
-        "choices": [
-          "are",
-          "am",
-          "is",
-          "be"
-        ],
-        "answer": "are",
-        "explanation": "The cats(고양이들)와 My parents(부모님)는 모두 복수 주어이므로 두 문장 다 are가 들어간다. am은 I에만, is는 단수에 쓰므로 두 문장에 공통으로 맞지 않아 틀리고, be는 원형이라 그대로 쓸 수 없어 틀리다.",
-        "hint": "응용",
-        "_bank": "llm",
-        "_unit": "Grammar Joy 1 Unit 05 be동사 긍정문"
-      },
-      {
-        "type": "mcq",
-        "question": "다음 중 빈칸에 'There is'가 들어갈 수 없는 문장은?",
-        "choices": [
-          "___ many cars on the road.",
-          "___ a pencil in my bag.",
-          "___ some bread on the plate.",
-          "___ a girl in the park."
-        ],
-        "answer": "___ many cars on the road.",
-        "explanation": "many cars는 복수라서 'There are'를 써야 합니다. 나머지는 단수/셀 수 없는 명사라 'There is'가 맞습니다.",
-        "hint": "응용",
-        "_bank": "llm",
-        "_unit": "Grammar Joy 2 There is/are"
-      },
-      {
-        "type": "mcq",
-        "question": "밑줄 친 의문사의 뜻이 바르게 짝지어진 것은?",
-        "choices": [
-          "When — 어디서",
-          "Where — 언제",
-          "Why — 왜",
-          "How — 누구"
-        ],
-        "answer": "Why — 왜",
-        "explanation": "When=언제, Where=어디서, Why=왜, How=어떻게. 따라서 'Why — 왜'만 옳다.",
-        "hint": "기본",
-        "_bank": "llm",
-        "_unit": "Grammar Joy 3 의문부사"
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "cycle": 4,
-    "subject": "통합사회",
     "역할": "서브",
-    "수능출처": "2028학년도 수능 통합사회 예시문항 12번 자료 해석 톤 변형",
-    "unit": "지도와 자료 읽기 (그래프·표)",
-    "통합풀이법": "금액은 전체×비율. 나머지 항목은 먼저 100%에서 알려진 비율의 합을 뺀다.",
+    "수능출처": "Grammar Joy 3 전체 (초6 스텝다운)",
+    "unit": "주어-동사 수 일치",
+    "난이도모드": "스텝다운",
+    "통합풀이법": "of·with 꾸러미를 가리고 앞의 진짜 주어가 하나면 is·동사 -s, 여럿이면 are·동사 원형.",
     "변형문제_세트": [
       {
         "type": "mcq",
-        "question": "어느 지역의 동물 복지 예산은 모두 240만 원이다. 이 중 35%를 유기 동물 진료에 배정했다. 유기 동물 진료 예산은 얼마인가?",
+        "question": "The basket of apples ___ by the door.",
         "choices": [
-          "35만 원",
-          "72만 원",
-          "84만 원",
-          "156만 원"
+          "is",
+          "are",
+          "be",
+          "being"
         ],
-        "answer": "84만 원",
-        "hint": "35%를 0.35로 바꾼 뒤 전체 예산 240만 원에 곱해. 35라는 비율을 금액으로 바로 읽지 마.",
-        "explanation": "35%=0.35이므로 240만 원×0.35=84만 원이다. 35만 원은 비율을 그대로 금액으로 읽은 값이고, 72만 원은 30%만 계산한 값이다. 자료의 비율을 실제 금액으로 바꿀 때는 언제나 ‘전체×비율’을 쓴다. 전체가 무엇인지 먼저 표시하면 환산 방향을 놓치지 않는다.",
-        "개념키": "soc.data.reading"
-      },
-      {
-        "type": "mcq",
-        "question": "동물 보호 예산 400만 원 중 A 진료 지원이 25%, B 보호소 개선이 35%, C 입양 교육이 나머지일 때 C 입양 교육 예산은 얼마인가?",
-        "choices": [
-          "100만 원",
-          "140만 원",
-          "160만 원",
-          "240만 원"
-        ],
-        "answer": "160만 원",
-        "hint": "A와 B의 비율을 먼저 더한 뒤 100%에서 빼 C의 비율을 구해. 그다음 전체 400만 원에 곱해.",
-        "explanation": "A와 B의 비율은 25%+35%=60%다. 따라서 C는 100%-60%=40%이고, 400만 원×0.4=160만 원이다. 100만 원과 140만 원은 A와 B의 금액이며, 240만 원은 사용된 60%의 금액이다. 표에서는 먼저 항목별 비율을 구분한 뒤 묻는 항목만 금액으로 바꾼다.",
-        "개념키": "soc.data.reading"
+        "answer": "is",
+        "hint": "of apples를 괄호로 가려 봐. 남는 진짜 주어 basket은 바구니 하나야. 하나와 어울리는 be동사를 고른다.",
+        "explanation": "진짜 주어는 apples가 아니라 basket이다. basket은 바구니 하나인 단수이므로 is가 맞다. of apples는 바구니 안의 내용을 설명할 뿐 주어의 수를 바꾸지 않는다. apples가 복수라는 이유로 are를 고르는 것이 지난 오답과 같은 함정이다.",
+        "개념키": "en.agreement.subject_verb"
       }
     ],
     "챌린지_추가": [
       {
         "type": "mcq",
-        "question": "한 도시의 출생아 수가 작년 1500명에서 올해 1200명으로 줄었다. 줄어든 출생아 수는 몇 명인가?",
+        "question": "빈칸에 알맞은 접속사를 고르시오: It was raining, ___ I took an umbrella.",
         "choices": [
-          "300명",
-          "200명",
-          "400명",
-          "250명"
+          "so",
+          "but",
+          "or",
+          "because"
         ],
-        "answer": "300명",
-        "explanation": "1500 - 1200 = 300명이 줄어들었다.",
-        "hint": "응용",
+        "answer": "so",
+        "explanation": "비가 와서(원인) 우산을 챙겼다(결과)는 뜻이므로 so(그래서)가 알맞다.",
+        "hint": "기본",
         "_bank": "llm",
-        "_unit": "사회 변동과 사회 문제 미리보기"
+        "_unit": "Grammar Joy 3 접속사·명령문"
       },
       {
         "type": "mcq",
-        "question": "사회 변동의 의미로 가장 알맞은 것은?",
+        "question": "빈칸에 알맞은 의문사는? \"___ are you so happy?\" (왜 그렇게 행복하니?)",
         "choices": [
-          "사회의 모습과 구조가 시간이 지나면서 바뀌는 것",
-          "개인의 키와 몸무게가 자라는 것",
-          "계절이 봄에서 여름으로 바뀌는 것",
-          "하루 동안 날씨가 변하는 것"
+          "Why",
+          "What",
+          "Who",
+          "Which"
         ],
-        "answer": "사회의 모습과 구조가 시간이 지나면서 바뀌는 것",
-        "explanation": "사회 변동은 정치·경제·문화 등 사회 전반의 구조와 생활 모습이 시간에 따라 변화하는 것을 뜻한다.",
+        "answer": "Why",
+        "explanation": "이유를 물을 때는 Why를 쓴다.",
         "hint": "기본",
         "_bank": "llm",
-        "_unit": "사회 변동과 사회 문제 미리보기"
+        "_unit": "Grammar Joy 3 의문사+be동사"
       },
       {
         "type": "mcq",
-        "question": "세계화에 대한 설명으로 가장 알맞은 것은?",
+        "question": "다음 빈칸에 들어갈 알맞은 be동사는?\n\nThe apples ____ on the table.",
         "choices": [
-          "나라 간 교류가 활발해져 하나의 생활권처럼 되는 것",
-          "한 나라 안에서만 물건을 사고파는 것",
-          "외국과의 교류를 완전히 끊는 것",
-          "사람들이 이사를 가지 않는 것"
+          "are",
+          "is",
+          "am",
+          "be"
         ],
-        "answer": "나라 간 교류가 활발해져 하나의 생활권처럼 되는 것",
-        "explanation": "세계화는 교통·통신 발달로 국가 간 교류가 늘어 전 세계가 긴밀하게 연결되는 현상이다.",
+        "answer": "are",
+        "explanation": "주어 The apples는 복수(사과 여러 개)이므로 are를 쓴다. is는 단수에 쓰고, am은 I에만 쓰므로 틀리며, be는 원형이라 그대로 쓸 수 없어 틀리다.",
         "hint": "기본",
         "_bank": "llm",
-        "_unit": "사회 변동과 사회 문제 미리보기"
+        "_unit": "Grammar Joy 1 Unit 05 be동사 긍정문"
       }
     ]
   }
 ],
   meta: {
-  "generated_at": "2026-08-18",
+  "generated_at": "2026-08-19",
   "week": "2026-W34",
   "weakness_focus": [
     "수능 기출 학습",
@@ -437,10 +323,10 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 524,
-  "total_correct": 400,
+  "total_plays": 534,
+  "total_correct": 407,
   "accuracy": 76,
-  "last_date": "2026-08-17",
+  "last_date": "2026-08-18",
   "영역별": [
     {
       "subject": "국어",
@@ -450,9 +336,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 1,
       "recent_accuracy": [
-        0.63,
-        0.5,
-        0.529
+        0.529,
+        1.0,
+        1.0
       ],
       "is_master": false
     },
@@ -465,8 +351,8 @@ window.GAME_CONFIG = {
       "strong_count": 9,
       "recent_accuracy": [
         0.5,
-        0.538,
-        0.5
+        1.0,
+        1.0
       ],
       "is_master": false
     },
@@ -478,9 +364,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 2,
       "recent_accuracy": [
-        0.5,
-        0.556,
-        1.0
+        1.0,
+        0.25,
+        0.318
       ],
       "is_master": false
     },
@@ -505,7 +391,10 @@ window.GAME_CONFIG = {
       "current_unit": "지도와 자료 읽기 (그래프·표)",
       "weak_count": 6,
       "strong_count": 1,
-      "recent_accuracy": [],
+      "recent_accuracy": [
+        1.0,
+        1.0
+      ],
       "is_master": false
     },
     {
@@ -524,8 +413,8 @@ window.GAME_CONFIG = {
     }
   ],
   "level": 42,
-  "xp_total": 4100,
-  "xp_in_level": 0,
+  "xp_total": 4170,
+  "xp_in_level": 70,
   "master_units": 1,
   "roadmap": [
     {
@@ -569,7 +458,7 @@ window.GAME_CONFIG = {
       "subject": "한국사",
       "color": "#ff9d6b",
       "unit": "미시작",
-      "date": "2026-08-17",
+      "date": "2026-08-18",
       "accuracy": 100,
       "track": "초6"
     }
@@ -2302,20 +2191,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "고정욱의 인문학 필사수업",
-  "book_key": "인문학필사",
+  "title": "어린 왕자 영어 필사",
+  "book_key": "어린왕자영어",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 12,
-  "total": 119,
+  "page": 16,
+  "total": 133,
   "image": "./copywork/today.jpg",
-  "weekday": "화",
-  "date": "2026-08-18",
+  "weekday": "수",
+  "date": "2026-08-19",
   "flagged": false
 },
   revenge: {
-  "date": "2026-08-18",
+  "date": "2026-08-19",
   "items": [
     {
       "id": "warm-math.ratio.basic",
@@ -2326,16 +2215,16 @@ window.GAME_CONFIG = {
       "개념키": "math.ratio.basic",
       "problem": {
         "type": "mcq",
-        "question": "강아지 사료 한 포대 정가가 20000원인데 5000원을 깎아서 팔아. 할인율은 몇 %일까? (할인율 = 할인액 ÷ 정가)",
+        "question": "경주마가 4시간 동안 48km를 달렸어. 이 말의 속력은 시속 몇 km일까? (속력 = 거리 ÷ 시간)",
         "choices": [
-          "4%",
-          "25%",
-          "75%",
-          "400%"
+          "12km",
+          "44km",
+          "52km",
+          "192km"
         ],
-        "answer": "25%",
-        "explanation": "기준량(나누는 수)은 정가 20000이야 — 할인액 5000을 정가로 나눠! 5000÷20000=0.25=25%, 정답 ②. ①4%는 20000÷5000으로 거꾸로, ③75%는 깎고 남은 가격의 비율, ④400%는 정가÷할인액이야. 핵심: '정가 대비'의 정가가 기준량.",
-        "hint": "비와 비율 — 67일 밀린 간격 복습"
+        "answer": "12km",
+        "explanation": "기준량(나누는 수)은 시간 4야 — 거리 48을 시간 4로 나눠! 48÷4=12, 정답 ①. ④192km는 48×4로 곱한 실수, ②44·③52는 48에서 4를 빼거나 더한 착각이야. 핵심: '시속(=한 시간당)'이니까 시간 4가 기준량.",
+        "hint": "비와 비율 — 68일 밀린 간격 복습"
       }
     },
     {
@@ -2346,15 +2235,15 @@ window.GAME_CONFIG = {
       "단원": "분수의 나눗셈",
       "problem": {
         "type": "mcq",
-        "question": "3/5 ÷ 1/4 을 계산한 값은?",
+        "question": "리본 7/8 m를 7명이 똑같이 나누어 가졌습니다. 한 명이 가진 리본은 몇 m인가요?",
         "choices": [
-          "12/5",
-          "3/20",
-          "12/20",
-          "5/12"
+          "1/8 m",
+          "7/8 m",
+          "1/7 m",
+          "7/15 m"
         ],
-        "answer": "12/5",
-        "explanation": "3/5 ÷ 1/4 = 3/5 × 4/1 = 12/5. '3/20'은 뒤집지 않고 그대로 곱한 오답, '12/20'은 분모를 잘못 곱한 오답, '5/12'는 정답을 거꾸로 뒤집은 오답입니다.",
+        "answer": "1/8 m",
+        "explanation": "7/8 ÷ 7 = 7/(8×7) = 1/8 m. 분자와 분모의 7이 약분되어 1/8이 됩니다. '7/8'은 나누기를 안 한 값, '1/7'은 분모를 잘못 고른 오답, '7/15'는 분모에 7을 더한 오답입니다.",
         "hint": "분수의 나눗셈 — 지금 배우는 단원 워밍업"
       }
     },
@@ -2366,32 +2255,32 @@ window.GAME_CONFIG = {
       "단원": "기록·자료 정리",
       "problem": {
         "type": "mcq",
-        "question": "시온이가 일주일 동안 읽은 책 쪽수를 표로 정리했다. 월요일 12쪽, 화요일 8쪽, 수요일 15쪽이다. 세 날 동안 읽은 쪽수의 합계는 몇 쪽인가?",
+        "question": "온도를 시간 순서대로 기록하여 점을 찍고 선으로 이어 변화를 나타낸 그래프를 무엇이라고 하는가?",
         "choices": [
-          "33쪽",
-          "35쪽",
-          "30쪽",
-          "27쪽"
+          "꺾은선그래프",
+          "막대그래프",
+          "원그래프",
+          "그림그래프"
         ],
-        "answer": "35쪽",
-        "explanation": "12 + 8 + 15 = 35쪽이다. 표의 자료를 더해 합계를 구한다. 33은 12+15+6처럼 화요일을 잘못 본 값, 30은 12+8+10처럼 수요일을 잘못 본 값, 27은 12+15만 더한 값이라 모두 틀리다.",
+        "answer": "꺾은선그래프",
+        "explanation": "시간에 따른 연속적인 변화는 점을 선으로 이은 꺾은선그래프로 나타낸다. 막대그래프는 항목별 수량 비교, 원그래프는 비율, 그림그래프는 그림 개수로 나타내므로 시간 변화 표현에는 맞지 않는다.",
         "hint": "기록·자료 정리 — 지금 배우는 단원 워밍업"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-18",
+  "date": "2026-08-19",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "~을 이루다",
+        "모순되지 않는",
         "애쓰다",
-        "정확한",
-        "셀피, 자기 사진"
+        "셀피, 자기 사진",
+        "지역"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2405,10 +2294,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "지역",
         "정확한",
-        "모순되지 않는",
-        "어린 시절"
+        "셀피, 자기 사진",
+        "친밀함",
+        "가리다, 감추다"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2422,10 +2311,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "애쓰다",
+        "가리다, 감추다",
         "친밀함",
-        "정확한",
-        "가리다, 감추다"
+        "셀피, 자기 사진",
+        "어린 시절"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2440,9 +2329,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
         "친밀함",
-        "셀피, 자기 사진",
-        "추상적인",
-        "어린 시절"
+        "어린 시절",
+        "지역",
+        "정확한"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2456,9 +2345,9 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
         "정확한",
         "추상적인",
+        "친밀함",
         "셀피, 자기 사진"
       ],
       "answer": "셀피, 자기 사진",
@@ -2473,10 +2362,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
+        "친밀함",
         "모순되지 않는",
-        "어린 시절",
         "정확한",
-        "~을 이루다"
+        "지역"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2490,10 +2379,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "추상적인",
+        "~을 이루다",
         "지역",
-        "가리다, 감추다",
-        "어린 시절"
+        "애쓰다",
+        "셀피, 자기 사진"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2507,10 +2396,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "애쓰다",
-        "지역",
-        "어린 시절",
-        "~을 이루다"
+        "~을 이루다",
+        "정확한",
+        "모순되지 않는",
+        "어린 시절"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2524,10 +2413,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
+        "모순되지 않는",
+        "친밀함",
         "지역",
-        "어린 시절",
-        "~을 이루다",
-        "친밀함"
+        "어린 시절"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2541,10 +2430,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
         "추상적인",
+        "어린 시절",
         "모순되지 않는",
-        "가리다, 감추다"
+        "지역"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
