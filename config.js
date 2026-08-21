@@ -334,10 +334,10 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 543,
-  "total_correct": 410,
+  "total_plays": 551,
+  "total_correct": 416,
   "accuracy": 76,
-  "last_date": "2026-08-19",
+  "last_date": "2026-08-20",
   "영역별": [
     {
       "subject": "국어",
@@ -361,9 +361,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 9,
       "recent_accuracy": [
-        1.0,
         0.5,
-        0.556
+        0.5,
+        0.5
       ],
       "is_master": false
     },
@@ -375,11 +375,11 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 2,
       "recent_accuracy": [
-        0.318,
-        0.0,
-        0.4
+        1.0,
+        1.0,
+        1.0
       ],
-      "is_master": false
+      "is_master": true
     },
     {
       "subject": "통합과학",
@@ -424,10 +424,10 @@ window.GAME_CONFIG = {
       "is_master": true
     }
   ],
-  "level": 43,
-  "xp_total": 4200,
-  "xp_in_level": 0,
-  "master_units": 1,
+  "level": 44,
+  "xp_total": 4360,
+  "xp_in_level": 60,
+  "master_units": 2,
   "roadmap": [
     {
       "grade": "초6",
@@ -467,10 +467,18 @@ window.GAME_CONFIG = {
   ],
   "trophies": [
     {
+      "subject": "영어",
+      "color": "#b48dff",
+      "unit": "Grammar Joy 3 전체",
+      "date": "2026-08-20",
+      "accuracy": 100,
+      "track": "초6"
+    },
+    {
       "subject": "한국사",
       "color": "#ff9d6b",
       "unit": "미시작",
-      "date": "2026-08-19",
+      "date": "2026-08-20",
       "accuracy": 100,
       "track": "초6"
     }
@@ -2203,20 +2211,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린이 사복음서 한 달 쓰기",
-  "book_key": "사복음서",
+  "title": "영어 필사 100일의 기적",
+  "book_key": "영어100일",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 26,
-  "total": 65,
+  "page": 12,
+  "total": 100,
   "image": "./copywork/today.jpg",
-  "weekday": "목",
-  "date": "2026-08-20",
+  "weekday": "금",
+  "date": "2026-08-21",
   "flagged": false
 },
   revenge: {
-  "date": "2026-08-20",
+  "date": "2026-08-21",
   "items": [
     {
       "id": "warm-math.ratio.basic",
@@ -2227,16 +2235,16 @@ window.GAME_CONFIG = {
       "개념키": "math.ratio.basic",
       "problem": {
         "type": "mcq",
-        "question": "경주마가 4시간 동안 48km를 달렸어. 이 말의 속력은 시속 몇 km일까? (속력 = 거리 ÷ 시간)",
+        "question": "비율을 분수나 소수, 백분율로 나타낸 것 중 옳은 것은 무엇입니까?",
         "choices": [
-          "12km",
-          "44km",
-          "52km",
-          "192km"
+          "0.7 = 7%",
+          "1/2 = 5%",
+          "0.3 = 30%",
+          "1/4 = 40%"
         ],
-        "answer": "12km",
-        "explanation": "기준량(나누는 수)은 시간 4야 — 거리 48을 시간 4로 나눠! 48÷4=12, 정답 ①. ④192km는 48×4로 곱한 실수, ②44·③52는 48에서 4를 빼거나 더한 착각이야. 핵심: '시속(=한 시간당)'이니까 시간 4가 기준량.",
-        "hint": "비와 비율 — 69일 밀린 간격 복습"
+        "answer": "0.3 = 30%",
+        "explanation": "0.3×100 = 30%로 옳습니다. 오답: 0.7은 70%(7% 아님), 1/2=0.5=50%(5% 아님), 1/4=0.25=25%(40% 아님)로 모두 틀립니다.",
+        "hint": "비와 비율 — 70일 밀린 간격 복습"
       }
     },
     {
@@ -2247,15 +2255,15 @@ window.GAME_CONFIG = {
       "단원": "분수의 나눗셈",
       "problem": {
         "type": "mcq",
-        "question": "리본 7/8 m를 7명이 똑같이 나누어 가졌습니다. 한 명이 가진 리본은 몇 m인가요?",
+        "question": "식 5/6 ÷ 2/3 을 곱셈으로 바르게 바꾼 것은?",
         "choices": [
-          "1/8 m",
-          "7/8 m",
-          "1/7 m",
-          "7/15 m"
+          "5/6 × 3/2",
+          "5/6 × 2/3",
+          "6/5 × 2/3",
+          "5/6 ÷ 3/2"
         ],
-        "answer": "1/8 m",
-        "explanation": "7/8 ÷ 7 = 7/(8×7) = 1/8 m. 분자와 분모의 7이 약분되어 1/8이 됩니다. '7/8'은 나누기를 안 한 값, '1/7'은 분모를 잘못 고른 오답, '7/15'는 분모에 7을 더한 오답입니다.",
+        "answer": "5/6 × 3/2",
+        "explanation": "나누기는 나누는 수 2/3를 뒤집은 3/2를 곱하는 것과 같으므로 5/6 × 3/2가 맞습니다. '5/6 × 2/3'은 뒤집지 않은 오답, '6/5 × 2/3'은 나누는 수가 아니라 나누어지는 수를 뒤집은 오답, '5/6 ÷ 3/2'는 여전히 나눗셈이라 변환이 안 된 오답입니다.",
         "hint": "분수의 나눗셈 — 지금 배우는 단원 워밍업"
       }
     },
@@ -2267,32 +2275,32 @@ window.GAME_CONFIG = {
       "단원": "기록·자료 정리",
       "problem": {
         "type": "mcq",
-        "question": "같은 자료를 그래프로 나타낼 때, 어떤 그래프를 골라야 하는지에 대한 설명으로 알맞은 것은?",
+        "question": "달리기 기록을 표로 만들 때 정한 규칙을 영어 단어로 살펴보자. 표의 가로줄과 세로줄이 만나는 칸을 'cell(셀)'이라 한다. 다음 중 표의 구성 요소를 가리키는 영어 단어로 알맞은 것은?",
         "choices": [
-          "시간에 따른 연속적인 변화는 꺾은선그래프로 나타내는 것이 좋다",
-          "항목별 수량 비교는 항상 원그래프로만 나타내야 한다",
-          "어떤 자료든 막대그래프 하나로만 나타내야 정확하다",
-          "그래프 종류는 자료의 내용과 상관없이 마음대로 정한다"
+          "row는 가로줄을 뜻한다",
+          "row는 표의 제목을 뜻한다",
+          "row는 세로줄을 뜻한다",
+          "row는 표 안의 그림을 뜻한다"
         ],
-        "answer": "시간에 따른 연속적인 변화는 꺾은선그래프로 나타내는 것이 좋다",
-        "explanation": "자료의 성격에 맞는 그래프를 골라야 한다. 시간 변화는 꺾은선그래프가 알맞다. 항목 비교는 막대그래프도 쓰고, 모든 자료를 막대 하나로만 쓰지 않으며, 자료 내용에 맞게 골라야 하므로 나머지는 틀리다.",
+        "answer": "row는 가로줄을 뜻한다",
+        "explanation": "영어에서 row는 가로줄(행), column은 세로줄(열)을 뜻한다. 표 제목은 title, 세로줄은 column, 그림은 picture이므로 나머지 세 설명은 틀리다.",
         "hint": "기록·자료 정리 — 지금 배우는 단원 워밍업"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-20",
+  "date": "2026-08-21",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "애쓰다",
+        "가리다, 감추다",
+        "정확한",
         "~을 이루다",
-        "셀피, 자기 사진",
-        "어린 시절"
+        "애쓰다"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2306,10 +2314,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "정확한",
         "추상적인",
-        "~을 이루다",
-        "지역"
+        "정확한",
+        "지역",
+        "친밀함"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2323,10 +2331,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
+        "지역",
         "애쓰다",
-        "셀피, 자기 사진",
-        "친밀함",
-        "가리다, 감추다"
+        "가리다, 감추다",
+        "모순되지 않는"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2340,10 +2348,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "모순되지 않는",
-        "추상적인",
+        "셀피, 자기 사진",
+        "가리다, 감추다",
         "어린 시절",
-        "지역"
+        "애쓰다"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2358,9 +2366,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
         "셀피, 자기 사진",
-        "정확한",
-        "지역",
-        "애쓰다"
+        "~을 이루다",
+        "어린 시절",
+        "정확한"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2374,9 +2382,9 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
-        "애쓰다",
-        "가리다, 감추다",
+        "친밀함",
+        "~을 이루다",
+        "어린 시절",
         "모순되지 않는"
       ],
       "answer": "모순되지 않는",
@@ -2391,10 +2399,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "지역",
-        "셀피, 자기 사진",
+        "정확한",
         "~을 이루다",
-        "애쓰다"
+        "모순되지 않는",
+        "지역"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2408,10 +2416,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "친밀함",
+        "가리다, 감추다",
         "~을 이루다",
-        "추상적인",
-        "모순되지 않는"
+        "어린 시절",
+        "추상적인"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2425,9 +2433,9 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "지역",
+        "가리다, 감추다",
+        "모순되지 않는",
         "친밀함",
-        "정확한",
         "~을 이루다"
       ],
       "answer": "친밀함",
@@ -2442,10 +2450,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
+        "친밀함",
         "지역",
-        "셀피, 자기 사진",
-        "추상적인"
+        "추상적인",
+        "어린 시절"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
