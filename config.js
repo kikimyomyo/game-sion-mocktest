@@ -333,10 +333,10 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 551,
-  "total_correct": 416,
-  "accuracy": 76,
-  "last_date": "2026-08-20",
+  "total_plays": 560,
+  "total_correct": 422,
+  "accuracy": 75,
+  "last_date": "2026-08-21",
   "영역별": [
     {
       "subject": "국어",
@@ -361,8 +361,8 @@ window.GAME_CONFIG = {
       "strong_count": 9,
       "recent_accuracy": [
         0.5,
-        0.5,
-        0.5
+        1.0,
+        1.0
       ],
       "is_master": false
     },
@@ -375,10 +375,10 @@ window.GAME_CONFIG = {
       "strong_count": 2,
       "recent_accuracy": [
         1.0,
-        1.0,
-        1.0
+        0.5,
+        0.556
       ],
-      "is_master": true
+      "is_master": false
     },
     {
       "subject": "통합과학",
@@ -413,20 +413,20 @@ window.GAME_CONFIG = {
       "color": "#ff9d6b",
       "progress": 0,
       "current_unit": "미시작",
-      "weak_count": 2,
+      "weak_count": 4,
       "strong_count": 0,
       "recent_accuracy": [
         1.0,
-        1.0,
-        1.0
+        0.5,
+        0.5
       ],
-      "is_master": true
+      "is_master": false
     }
   ],
-  "level": 44,
-  "xp_total": 4360,
-  "xp_in_level": 60,
-  "master_units": 2,
+  "level": 43,
+  "xp_total": 4220,
+  "xp_in_level": 20,
+  "master_units": 0,
   "roadmap": [
     {
       "grade": "초6",
@@ -464,24 +464,7 @@ window.GAME_CONFIG = {
       "milestone": "🏆 5영역 완주 — 엔딩!"
     }
   ],
-  "trophies": [
-    {
-      "subject": "영어",
-      "color": "#b48dff",
-      "unit": "Grammar Joy 3 전체",
-      "date": "2026-08-20",
-      "accuracy": 100,
-      "track": "초6"
-    },
-    {
-      "subject": "한국사",
-      "color": "#ff9d6b",
-      "unit": "미시작",
-      "date": "2026-08-20",
-      "accuracy": 100,
-      "track": "초6"
-    }
-  ],
+  "trophies": [],
   "skill_tree": {
     "국어": [
       {
@@ -2210,20 +2193,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "영어 필사 100일의 기적",
-  "book_key": "영어100일",
+  "title": "어린 왕자 영어 필사",
+  "book_key": "어린왕자영어",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 12,
-  "total": 100,
+  "page": 17,
+  "total": 133,
   "image": "./copywork/today.jpg",
-  "weekday": "금",
-  "date": "2026-08-21",
+  "weekday": "토",
+  "date": "2026-08-22",
   "flagged": false
 },
   revenge: {
-  "date": "2026-08-21",
+  "date": "2026-08-24",
   "items": [
     {
       "id": "warm-math.ratio.basic",
@@ -2234,16 +2217,16 @@ window.GAME_CONFIG = {
       "개념키": "math.ratio.basic",
       "problem": {
         "type": "mcq",
-        "question": "경주마가 4시간 동안 48km를 달렸어. 이 말의 속력은 시속 몇 km일까? (속력 = 거리 ÷ 시간)",
+        "question": "작년에 5000마리이던 멸종위기 동물이 올해 200마리 줄었어. 감소율은 몇 %일까? (감소율 = 줄어든 수 ÷ 작년 수)",
         "choices": [
-          "12km",
-          "44km",
-          "52km",
-          "192km"
+          "4%",
+          "25%",
+          "40%",
+          "96%"
         ],
-        "answer": "12km",
-        "explanation": "기준량(나누는 수)은 시간 4야 — 거리 48을 시간 4로 나눠! 48÷4=12, 정답 ①. ④192km는 48×4로 곱한 실수, ②44·③52는 48에서 4를 빼거나 더한 착각이야. 핵심: '시속(=한 시간당)'이니까 시간 4가 기준량.",
-        "hint": "비와 비율 — 70일 밀린 간격 복습"
+        "answer": "4%",
+        "explanation": "기준량(나누는 수)은 작년 5000이야 — 줄어든 200을 작년 수로 나눠! 200÷5000=0.04=4%, 정답 ①. ②25%는 5000÷200으로 거꾸로, ③40%는 0을 잘못 센 것, ④96%는 남은 동물의 비율이야. 핵심: '작년 대비'의 작년이 기준량.",
+        "hint": "비와 비율 — 73일 밀린 간격 복습"
       }
     },
     {
@@ -2254,15 +2237,15 @@ window.GAME_CONFIG = {
       "단원": "분수의 나눗셈",
       "problem": {
         "type": "mcq",
-        "question": "3/5 ÷ 1/4 을 계산한 값은?",
+        "question": "식 5/6 ÷ 2/3 을 곱셈으로 바르게 바꾼 것은?",
         "choices": [
-          "12/5",
-          "3/20",
-          "12/20",
-          "5/12"
+          "5/6 × 3/2",
+          "5/6 × 2/3",
+          "6/5 × 2/3",
+          "5/6 ÷ 3/2"
         ],
-        "answer": "12/5",
-        "explanation": "3/5 ÷ 1/4 = 3/5 × 4/1 = 12/5. '3/20'은 뒤집지 않고 그대로 곱한 오답, '12/20'은 분모를 잘못 곱한 오답, '5/12'는 정답을 거꾸로 뒤집은 오답입니다.",
+        "answer": "5/6 × 3/2",
+        "explanation": "나누기는 나누는 수 2/3를 뒤집은 3/2를 곱하는 것과 같으므로 5/6 × 3/2가 맞습니다. '5/6 × 2/3'은 뒤집지 않은 오답, '6/5 × 2/3'은 나누는 수가 아니라 나누어지는 수를 뒤집은 오답, '5/6 ÷ 3/2'는 여전히 나눗셈이라 변환이 안 된 오답입니다.",
         "hint": "분수의 나눗셈 — 지금 배우는 단원 워밍업"
       }
     },
@@ -2274,32 +2257,32 @@ window.GAME_CONFIG = {
       "단원": "기록·자료 정리",
       "problem": {
         "type": "mcq",
-        "question": "반 학생 30명이 좋아하는 운동을 조사해 원그래프로 나타냈다. 축구가 전체의 절반(50%)을 차지했다면, 축구를 좋아하는 학생은 몇 명인가?",
+        "question": "온도를 시간 순서대로 기록하여 점을 찍고 선으로 이어 변화를 나타낸 그래프를 무엇이라고 하는가?",
         "choices": [
-          "15명",
-          "50명",
-          "20명",
-          "10명"
+          "꺾은선그래프",
+          "막대그래프",
+          "원그래프",
+          "그림그래프"
         ],
-        "answer": "15명",
-        "explanation": "전체 30명의 절반인 50%는 30 ÷ 2 = 15명이다. 50은 퍼센트 숫자를 그대로 인원으로 본 값, 20은 30의 약 67%, 10은 30의 약 33%여서 절반이 아니므로 모두 틀리다.",
+        "answer": "꺾은선그래프",
+        "explanation": "시간에 따른 연속적인 변화는 점을 선으로 이은 꺾은선그래프로 나타낸다. 막대그래프는 항목별 수량 비교, 원그래프는 비율, 그림그래프는 그림 개수로 나타내므로 시간 변화 표현에는 맞지 않는다.",
         "hint": "기록·자료 정리 — 지금 배우는 단원 워밍업"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-21",
+  "date": "2026-08-22",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "정확한",
+        "모순되지 않는",
+        "지역",
         "애쓰다",
-        "~을 이루다",
-        "셀피, 자기 사진"
+        "어린 시절"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2313,10 +2296,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "애쓰다",
-        "어린 시절",
-        "친밀함",
-        "정확한"
+        "정확한",
+        "추상적인",
+        "~을 이루다",
+        "어린 시절"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2330,10 +2313,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "정확한",
+        "어린 시절",
+        "가리다, 감추다",
         "애쓰다",
-        "지역",
-        "가리다, 감추다"
+        "추상적인"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2347,10 +2330,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "지역",
-        "셀피, 자기 사진",
         "어린 시절",
-        "친밀함"
+        "모순되지 않는",
+        "지역",
+        "~을 이루다"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2364,10 +2347,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
+        "셀피, 자기 사진",
         "지역",
-        "가리다, 감추다",
-        "친밀함",
-        "셀피, 자기 사진"
+        "정확한",
+        "어린 시절"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2382,9 +2365,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
         "모순되지 않는",
-        "친밀함",
         "셀피, 자기 사진",
-        "지역"
+        "가리다, 감추다",
+        "친밀함"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2398,10 +2381,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "어린 시절",
-        "셀피, 자기 사진",
-        "지역",
-        "추상적인"
+        "~을 이루다",
+        "모순되지 않는",
+        "추상적인",
+        "지역"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2416,9 +2399,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
         "~을 이루다",
-        "추상적인",
-        "친밀함",
-        "정확한"
+        "정확한",
+        "셀피, 자기 사진",
+        "애쓰다"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2432,9 +2415,9 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "지역",
-        "추상적인",
         "셀피, 자기 사진",
+        "지역",
+        "~을 이루다",
         "친밀함"
       ],
       "answer": "친밀함",
@@ -2449,10 +2432,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "모순되지 않는",
-        "정확한",
         "추상적인",
-        "어린 시절"
+        "애쓰다",
+        "정확한",
+        "~을 이루다"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
