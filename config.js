@@ -338,7 +338,7 @@ window.GAME_CONFIG = {
   "total_plays": 560,
   "total_correct": 422,
   "accuracy": 75,
-  "last_date": "2026-08-21",
+  "last_date": "2026-08-24",
   "영역별": [
     {
       "subject": "국어",
@@ -471,7 +471,7 @@ window.GAME_CONFIG = {
       "subject": "수학",
       "color": "#5ba0ff",
       "unit": "6-2 분수의 나눗셈",
-      "date": "2026-08-21",
+      "date": "2026-08-24",
       "accuracy": 100,
       "track": "초6"
     }
@@ -2204,16 +2204,16 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린 왕자 영어 필사",
-  "book_key": "어린왕자영어",
+  "title": "어린이 사복음서 한 달 쓰기",
+  "book_key": "사복음서",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 17,
-  "total": 133,
+  "page": 27,
+  "total": 65,
   "image": "./copywork/today.jpg",
-  "weekday": "토",
-  "date": "2026-08-22",
+  "weekday": "월",
+  "date": "2026-08-24",
   "flagged": false
 },
   revenge: {
@@ -2228,15 +2228,15 @@ window.GAME_CONFIG = {
       "개념키": "math.ratio.basic",
       "problem": {
         "type": "mcq",
-        "question": "비율을 분수나 소수, 백분율로 나타낸 것 중 옳은 것은 무엇입니까?",
+        "question": "비 6:8과 비율이 같은 비가 9:□일 때, □에 알맞은 수는 얼마입니까?",
         "choices": [
-          "0.7 = 7%",
-          "1/2 = 5%",
-          "0.3 = 30%",
-          "1/4 = 40%"
+          "10",
+          "11",
+          "12",
+          "14"
         ],
-        "answer": "0.3 = 30%",
-        "explanation": "0.3×100 = 30%로 옳습니다. 오답: 0.7은 70%(7% 아님), 1/2=0.5=50%(5% 아님), 1/4=0.25=25%(40% 아님)로 모두 틀립니다.",
+        "answer": "12",
+        "explanation": "6:8을 간단히 하면 3:4이고, 9는 3의 3배이므로 □ = 4×3 = 12. 검산: 9:12를 간단히 하면 3:4로 같습니다. 오답: 10·11·14는 9:□를 3:4로 줄일 수 없어 비율이 달라집니다.",
         "hint": "비와 비율 — 73일 밀린 간격 복습"
       }
     },
@@ -2248,15 +2248,15 @@ window.GAME_CONFIG = {
       "단원": "분수의 나눗셈",
       "problem": {
         "type": "mcq",
-        "question": "끈 1 1/5 m를 2/5 m씩 잘랐습니다. 끈은 모두 몇 도막이 되나요?",
+        "question": "주스 2 1/2 L를 한 병에 1/2 L씩 나누어 담으려고 합니다. 병은 모두 몇 개 필요한가요?",
         "choices": [
-          "3도막",
-          "2도막",
-          "6도막",
-          "5도막"
+          "5개",
+          "4개",
+          "2개",
+          "10개"
         ],
-        "answer": "3도막",
-        "explanation": "1 1/5 = 6/5 이므로 6/5 ÷ 2/5 = 6 ÷ 2 = 3(분모가 같으면 분자끼리 나눕니다). '2'는 분자 6을 무시하고 분모로 나눈 오답, '6'은 분자만 답으로 쓴 오답, '5'는 분모를 답으로 쓴 오답입니다.",
+        "answer": "5개",
+        "explanation": "2 1/2 = 5/2 이므로 5/2 ÷ 1/2 = 5/2 × 2/1 = 5개. '4'는 정수 부분만 본 오답, '2'는 분모만 본 오답, '10'은 5/2 × 2를 두 번 곱한 오답입니다.",
         "hint": "분수의 나눗셈 — 지금 배우는 단원 워밍업"
       }
     },
@@ -2268,32 +2268,32 @@ window.GAME_CONFIG = {
       "단원": "기록·자료 정리",
       "problem": {
         "type": "mcq",
-        "question": "시온이가 일주일 동안 읽은 책 쪽수를 표로 정리했다. 월요일 12쪽, 화요일 8쪽, 수요일 15쪽이다. 세 날 동안 읽은 쪽수의 합계는 몇 쪽인가?",
+        "question": "강낭콩의 키를 5월 1일 3cm, 5월 8일 7cm로 측정해 꺾은선그래프로 그렸다. 일주일 동안 강낭콩이 자란 키는 몇 cm인가?",
         "choices": [
-          "33쪽",
-          "35쪽",
-          "30쪽",
-          "27쪽"
+          "4cm",
+          "10cm",
+          "7cm",
+          "3cm"
         ],
-        "answer": "35쪽",
-        "explanation": "12 + 8 + 15 = 35쪽이다. 표의 자료를 더해 합계를 구한다. 33은 12+15+6처럼 화요일을 잘못 본 값, 30은 12+8+10처럼 수요일을 잘못 본 값, 27은 12+15만 더한 값이라 모두 틀리다.",
+        "answer": "4cm",
+        "explanation": "나중 값에서 처음 값을 빼면 변화량이 나온다. 7 - 3 = 4cm이다. 10은 두 값을 더한 값, 7은 나중 키만 적은 값, 3은 처음 키만 적은 값이라 자란 정도가 아니므로 모두 틀리다.",
         "hint": "기록·자료 정리 — 지금 배우는 단원 워밍업"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-22",
+  "date": "2026-08-24",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "모순되지 않는",
-        "~을 이루다",
+        "가리다, 감추다",
         "애쓰다",
-        "추상적인"
+        "~을 이루다",
+        "모순되지 않는"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2307,10 +2307,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
+        "애쓰다",
+        "모순되지 않는",
         "정확한",
-        "친밀함",
-        "지역"
+        "~을 이루다"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2324,10 +2324,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "어린 시절",
-        "추상적인",
+        "지역",
         "가리다, 감추다",
-        "정확한"
+        "~을 이루다",
+        "추상적인"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2341,10 +2341,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "지역",
+        "가리다, 감추다",
         "셀피, 자기 사진",
         "어린 시절",
-        "애쓰다"
+        "지역"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2358,10 +2358,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
+        "어린 시절",
+        "가리다, 감추다",
         "셀피, 자기 사진",
-        "정확한",
-        "추상적인",
-        "친밀함"
+        "지역"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2375,10 +2375,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
+        "추상적인",
         "모순되지 않는",
-        "어린 시절",
-        "~을 이루다",
-        "셀피, 자기 사진"
+        "가리다, 감추다",
+        "지역"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2393,9 +2393,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
         "추상적인",
-        "가리다, 감추다",
-        "친밀함",
-        "지역"
+        "애쓰다",
+        "지역",
+        "~을 이루다"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2409,10 +2409,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "추상적인",
-        "모순되지 않는",
+        "애쓰다",
         "~을 이루다",
-        "애쓰다"
+        "가리다, 감추다",
+        "추상적인"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2426,10 +2426,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "셀피, 자기 사진",
+        "애쓰다",
         "가리다, 감추다",
         "친밀함",
-        "~을 이루다"
+        "모순되지 않는"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2443,10 +2443,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
         "추상적인",
-        "애쓰다",
-        "셀피, 자기 사진"
+        "~을 이루다",
+        "지역",
+        "어린 시절"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
