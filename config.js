@@ -7,324 +7,323 @@ window.GAME_CONFIG = {
   {
     "id": 1,
     "cycle": 1,
-    "subject": "수학",
+    "subject": "영어",
     "역할": "메인",
-    "계보id": "L260817-math-simvol",
-    "현재스텝": "E",
-    "수능출처": "2021학년도 수능 수학 14번",
-    "unit": "닮음비·부피비",
+    "계보id": "L260818-en-agreement-music",
+    "현재스텝": "M",
+    "수능출처": "2020학년도 수능 영어 34번",
+    "unit": "주어-동사 수 일치·명사 복수형 (음악·음높이 소재)",
     "사다리_문항": [
       {
         "스텝": "E",
         "type": "mcq",
-        "question": "한 모서리가 2 cm인 작은 정육면체와 한 모서리가 6 cm인 큰 정육면체가 있다. 큰 정육면체의 부피는 작은 정육면체 부피의 몇 배인가?",
+        "question": "빈칸에 알맞은 것은? The black cat ____ sleeping on my bed.",
         "choices": [
-          "3배",
-          "9배",
-          "27배",
-          "216배"
+          "is",
+          "are",
+          "were",
+          "am"
         ],
-        "answer": "27배",
-        "hint": "먼저 모서리끼리 몇 배인지 봐. 6÷2였지? 부피는 그 배수를 세 번 곱해.",
-        "explanation": "모서리 닮음비 = 6÷2 = 3. 부피는 가로×세로×높이라 닮음비를 세 번 곱한다 → 3×3×3 = 27배. 9배는 세제곱 대신 제곱(넓이비)을 쓴 실수, 3배는 닮음비를 그대로 쓴 실수다. 부피는 항상 세제곱! 작은 큐브 27개를 쌓아보면 눈으로 확인돼.",
-        "개념키": "math.similarity.volume_cube"
-      },
-      {
-        "스텝": "E",
-        "type": "mcq",
-        "question": "강아지 사료 상자 두 개가 서로 닮음이다. 작은 상자의 한 모서리는 5 cm, 큰 상자의 한 모서리는 10 cm이다. 큰 상자에 담기는 사료의 부피는 작은 상자의 몇 배인가?",
-        "choices": [
-          "2배",
-          "4배",
-          "6배",
-          "8배"
-        ],
-        "answer": "8배",
-        "hint": "닮음비부터. 10÷5 = 2. 부피는 이 2를 몇 번 곱할까? 넓이면 두 번, 부피면 세 번.",
-        "explanation": "닮음비 = 10÷5 = 2. 부피비 = 2×2×2 = 8배. 4배는 제곱(넓이·겉면적)일 때 값이라 부피에 쓰면 틀린다 — 이게 어제 놓친 함정이다. 부피는 세제곱이라 반드시 한 번 더 곱한다. 사료가 8배나 들어가니 큰 상자가 훨씬 이득!",
-        "개념키": "math.similarity.volume_cube"
+        "answer": "is",
+        "hint": "주어가 무엇인지 먼저 찾아. The black cat = 고양이 한 마리. 한 마리면 동사도 하나짜리 모양이야.",
+        "explanation": "주어는 The black cat, 즉 고양이 한 마리(단수)라서 단수 동사 is가 맞아. are는 여럿일 때, am은 I 전용이야. 색깔(black)이 붙어도 마리 수는 하나 그대로. 주어의 수만 보면 바로 풀려. 잘했어, 이게 모든 수 일치의 뼈대야.",
+        "개념키": "en.agreement.subject_verb"
       },
       {
         "스텝": "M",
         "type": "mcq",
-        "question": "두 정육면체의 닮음비가 1 : 3이다. 두 정육면체의 부피비는?",
+        "question": "어법상 옳은 문장은?",
         "choices": [
-          "1 : 3",
-          "1 : 6",
-          "1 : 9",
-          "1 : 27"
+          "Fixed pitches is important in music.",
+          "Fixed pitches are important in music.",
+          "Fixed pitch are important in music.",
+          "A fixed pitches are important in music."
         ],
-        "answer": "1 : 27",
-        "hint": "부피비 = 닮음비를 세제곱. 3을 세 번 곱하면? 3의 제곱이 아니라 3의 세제곱이야.",
-        "explanation": "부피비 = (닮음비)³ = 1³ : 3³ = 1 : 27. 1:9는 제곱(3²)만 해서 나온 넓이비라 부피에는 틀린다 — 지난번 바로 이 1:9로 실수했지. 1:3은 닮음비를 그대로 옮긴 실수. 부피는 세제곱이 규칙, 예외 없다.",
-        "개념키": "math.similarity.volume_cube"
+        "answer": "Fixed pitches are important in music.",
+        "hint": "pitches는 -s가 붙은 복수야. 여럿이면 동사는 are. 그리고 A + 복수(pitches)는 함께 못 써.",
+        "explanation": "주어 Fixed pitches는 -s가 붙은 복수라서 동사는 are. ①은 복수에 is라 틀리고, ③은 pitch가 단수인데 are라 안 맞아, ④는 A(한 개)와 pitches(여럿)가 충돌해. 복수 주어 → 복수 동사 are 하나로 정리돼.",
+        "개념키": "en.noun.plural"
+      },
+      {
+        "스텝": "M",
+        "type": "mcq",
+        "question": "어법상 옳은 문장은? (어제 A fixed pitch are / they does 로 넘어진 문장)",
+        "choices": [
+          "A fixed pitch are important, but they does not define all music.",
+          "A fixed pitch is important, but they do not define all music.",
+          "A fixed pitches is important, but it do not define all music.",
+          "A fixed pitch is important, but they does not define all music."
+        ],
+        "answer": "A fixed pitch is important, but they do not define all music.",
+        "hint": "앞 주어 A fixed pitch = 한 개 → is. 뒤 주어 they = 여럿 → do. 어제는 여기서 are와 does로 뒤집혔어.",
+        "explanation": "A fixed pitch는 한 개(단수)라 is, they는 여럿(복수)이라 do가 맞아. 어제 고른 are·does는 정확히 반대로 붙인 실수였어. 단수엔 is/does, 복수엔 are/do — 주어의 수를 먼저 찾으면 자동으로 갈려. 이번엔 제대로 뒤집었네, 이게 오늘의 관문이었어.",
+        "개념키": "en.agreement.subject_verb"
       },
       {
         "스텝": "H",
         "type": "mcq",
-        "question": "서로 닮음인 두 원뿔이 있다. 작은 원뿔의 부피는 10 cm³이고, 작은 원뿔과 큰 원뿔의 닮음비는 1 : 2이다. 큰 원뿔의 부피는?",
+        "question": "빈칸에 알맞은 것은? The variety of pitches used across different cultures ____ often greater than we expect.",
         "choices": [
-          "20 cm³",
-          "40 cm³",
-          "80 cm³",
-          "160 cm³"
+          "is",
+          "are",
+          "were",
+          "have been"
         ],
-        "answer": "80 cm³",
-        "hint": "부피비 = 1 : 2의 세제곱. 작은 부피에 2³을 곱해. 2³은 얼마?",
-        "explanation": "닮음비 1:2 → 부피비 1:2³ = 1:8. 큰 원뿔 부피 = 10×8 = 80 cm³. 40은 제곱(2²=4)만 곱한 실수, 20은 닮음비(2)만 곱한 실수, 160은 세제곱을 한 번 더 곱한 과잉이다. 정확히 세제곱 = 8배!",
-        "개념키": "math.similarity.volume_cube"
+        "answer": "is",
+        "hint": "진짜 주어는 The variety(다양함, 한 덩어리). of pitches는 꾸며주는 곁가지일 뿐이야. 곁가지의 -s에 속지 마.",
+        "explanation": "핵심 주어는 The variety(단수)이고 of pitches는 앞을 꾸미는 전치사구라 동사는 is. 바로 옆 pitches, cultures의 -s를 보고 are로 끌려가는 게 수능이 파놓은 함정이야. 주어와 동사 사이 곁가지를 손으로 가리고 보면 The variety ... is 하나만 남아. 이게 수능 어법의 단골 트릭이야.",
+        "개념키": "en.grammar.general"
       }
     ],
     "보스전": {
-      "진짜수능본문": "그림과 같이 밑면이 정사각형인 사각뿔 P-ABCD가 있다. 이 사각뿔을 밑면에 평행한 평면으로 잘라, 꼭짓점 P를 포함하는 작은 사각뿔과 그 아래의 뿔대로 나눈다. 잘라 낸 작은 사각뿔과 처음 사각뿔 P-ABCD의 닮음비가 1 : 3일 때, 뿔대의 부피는 처음 사각뿔 P-ABCD의 부피의 몇 배인가?",
+      "진짜수능본문": "In most of the Western classical tradition, pitches are treated as a set of fixed and clearly defined points. A piano, for example, offers a finite number of keys, and each key produces a single, unchanging pitch that a performer is trained to strike precisely. In many other musical cultures, however, voices and instruments such as the sitar slide continuously from one note to the next, so that the borders between neighboring pitches blur. To a listener raised only on the piano, such music can sound out of tune. But this reaction mistakes one cultural habit for a law of nature. Fixed pitches are important in many musical cultures, but they do not define all music. What truly makes a system musical is not that its tones are physically produced in one particular way, but that the community of listeners has agreed the sounds are ________.",
       "진짜수능선택지": [
-        "1/27",
-        "1/9",
-        "8/27",
-        "26/27",
-        "2/3"
+        "randomly generated without any lasting pattern",
+        "naturally fluctuating rather than deliberately fixed",
+        "meaningful only when written down in notation",
+        "identical in every culture across the world",
+        "organized into a shared series of understood steps"
       ],
-      "진짜수능정답": "④",
-      "보스전_해설": "작은 사각뿔과 처음 사각뿔의 닮음비 1:3 → 부피비 = 1³ : 3³ = 1 : 27 (E스텝에서 본 세제곱 그대로!). 작은 사각뿔 부피 = 처음의 1/27. 뿔대는 전체에서 작은 뿔을 뺀 부분이니 1 - 1/27 = 26/27배. ②1/9는 M스텝에서 조심한 제곱 함정, ③8/27은 닮음비를 2:3으로 잘못 읽은 값, ①1/27은 뿔대가 아니라 잘라 낸 작은 뿔의 값이다. 부피는 세제곱, 그리고 뿔대는 '전체에서 빼기'까지 한 걸음 더 가야 정답이 나온다.",
+      "진짜수능정답": "⑤",
+      "보스전_해설": "빈칸 앞이 열쇠야. 글은 처음부터 끝까지 '음악을 음악답게 만드는 건 소리 자체가 아니라, 사람들이 그 소리를 어떻게 정리하기로 약속했느냐'라고 말해. 그래서 정답은 ⑤ organized into a shared series of understood steps(함께 이해하는 단계로 정리됨). ②는 어제 시온이가 골랐던 함정 — naturally fluctuating(그냥 미끄러진다)은 오히려 글이 반박한 쪽이야. M 스텝에서 본 Fixed pitches are, they do not처럼 여기서도 주어의 수를 보며 문장을 정확히 읽어야 흐름이 잡혀. ①④는 글에 없는 극단, ③은 악보 얘기라 벗어나. '소리가 아니라 약속' — 이 한 줄이 정답으로 가는 사다리였어.",
       "강조구간": [
-        "닮음비가 1 : 3",
-        "뿔대의 부피는 처음 사각뿔 P-ABCD의 부피의 몇 배"
+        "Fixed pitches are important in many musical cultures, but they do not define all music",
+        "the community of listeners has agreed the sounds are"
       ]
     },
-    "통합풀이법": "부피비 = 닮음비 × 닮음비 × 닮음비 (세제곱)",
-    "이미지_묘사": "한 모서리 2cm 작은 정육면체 옆에 6cm 큰 정육면체. 큰 것 안에 작은 큐브 27개가 반투명 격자로 채워지는 그림.",
-    "book_diagram_url": "./diagrams/book/2026-08-24_cycle_1.jpg",
-    "book_diagram_source": "출처: 최소한의 수학지식(EBSMath)",
+    "통합풀이법": "동사 고르기 전에 진짜 주어부터 손가락으로 짚어라 — 곁가지 -s는 무시.",
+    "이미지_묘사": "왼쪽 피아노 건반은 딱딱 끊긴 점들, 오른쪽 시타르 줄은 부드럽게 미끄러지는 곡선. 가운데 화살표가 '같은 음악'이라 잇는 대비 도식 1장.",
+    "image_url": "./images/2026-08-25_cycle_1.png",
     "챌린지_추가": [
       {
         "type": "mcq",
-        "question": "그림그래프에서 큰 그림 1개는 100그루, 작은 그림 1개는 10그루를 나타냅니다. 큰 그림 3개와 작은 그림 4개로 표시된 나무는 모두 몇 그루입니까?",
+        "question": "다음 중 복수형이 단수형과 모양이 같은(변하지 않는) 명사는? (불규칙 복수형)",
         "choices": [
-          "340그루",
-          "304그루",
-          "70그루",
-          "430그루"
+          "fish",
+          "child",
+          "tooth",
+          "foot"
         ],
-        "answer": "340그루",
-        "explanation": "100×3+10×4=300+40=340그루. 304그루는 자릿값을 바꿔 쓴 오답, 70그루는 3+4만 더한 값, 430그루는 큰·작은 그림 개수를 바꿔 계산한 오답입니다.",
-        "hint": "기본",
-        "_bank": "llm2",
-        "_unit": "여러 가지 그래프"
+        "answer": "fish",
+        "explanation": "fish는 단수와 복수의 모양이 같은 불변 명사로 one fish, two fish처럼 쓴다. child → children, tooth → teeth, foot → feet은 모두 모양이 바뀌는 불규칙 복수형이라 오답.",
+        "hint": "응용",
+        "_bank": "llm",
+        "_unit": "Grammar Joy 1 Unit 01 셀 수 있는 명사"
       },
       {
         "type": "mcq",
-        "question": "리본 7/8 m를 7명이 똑같이 나누어 가졌습니다. 한 명이 가진 리본은 몇 m인가요?",
+        "question": "빵 두 조각을 영어로 바르게 나타낸 것은?",
         "choices": [
-          "1/8 m",
-          "7/8 m",
-          "1/7 m",
-          "7/15 m"
+          "two breads",
+          "two pieces of bread",
+          "a bread two",
+          "two of bread"
         ],
-        "answer": "1/8 m",
-        "explanation": "7/8 ÷ 7 = 7/(8×7) = 1/8 m. 분자와 분모의 7이 약분되어 1/8이 됩니다. '7/8'은 나누기를 안 한 값, '1/7'은 분모를 잘못 고른 오답, '7/15'는 분모에 7을 더한 오답입니다.",
-        "hint": "기본",
-        "_bank": "llm2",
-        "_unit": "분수의 나눗셈"
+        "answer": "two pieces of bread",
+        "explanation": "bread는 셀 수 없는 명사라 직접 숫자를 붙이지 못하고 'two pieces of bread'처럼 단위를 빌려 센다. two breads는 복수형 오류, 나머지 둘은 어순·표현이 틀렸다.",
+        "hint": "응용",
+        "_bank": "llm",
+        "_unit": "Grammar Joy 1 Unit 02 셀 수 없는 명사"
       },
       {
         "type": "mcq",
-        "question": "8000원짜리 물건을 15% 할인하면 할인되는 금액은 얼마입니까?",
+        "question": "다음 중 셀 수 없는 명사(uncountable noun)는 무엇인가?",
         "choices": [
-          "800원",
-          "1200원",
-          "1500원",
-          "6800원"
+          "apple",
+          "book",
+          "water",
+          "pencil"
         ],
-        "answer": "1200원",
-        "explanation": "할인 금액 = 8000×0.15 = 1200원. 오답: 800원은 10%만 계산한 값, 1500원은 8000의 비율을 잘못 잡은 값, 6800원은 할인 후 내는 금액(할인액이 아님)입니다.",
+        "answer": "water",
+        "explanation": "water(물)는 일정한 모양이 없는 물질명사로 셀 수 없는 명사다. apple(사과)·book(책)·pencil(연필)은 하나, 둘 셀 수 있어 a/an을 붙이거나 복수형(-s)을 만들 수 있는 셀 수 있는 명사다.",
         "hint": "기본",
-        "_bank": "llm2",
-        "_unit": "비와 비율"
+        "_bank": "llm",
+        "_unit": "Grammar Joy 1 Unit 02 셀 수 없는 명사"
       }
     ]
   },
   {
     "id": 2,
     "cycle": 2,
-    "subject": "영어",
+    "subject": "국어",
     "역할": "서브",
-    "수능출처": "2021학년도 수능 영어 어법(주어-동사 수 일치) 유형 변형",
-    "unit": "주어-동사 수 일치 (Grammar Joy 3)",
-    "통합풀이법": "주어의 진짜 머리(핵심 명사)를 찾아 동사를 맞춰라 — 사이에 낀 수식어구에 속지 마",
+    "수능출처": "2023학년도 수능 국어 3번 [독서(비문학)] 변형",
+    "unit": "듣기·말하기 (대화를 통한 이해 확장)",
+    "통합풀이법": "대화는 '내 생각 지우기'가 아니라 '내 생각에 남의 근거를 더하기'.",
     "변형문제_세트": [
       {
         "type": "mcq",
-        "question": "빈칸에 알맞은 것은? The box of chocolates ___ on the table. (해석: 초콜릿이 든 상자가 탁자 위에 있다.)",
+        "question": "소연이가 「나는 이 책이 슬프기만 했어」라고 하자 준호가 「나는 마지막에 오히려 희망을 봤어. 강아지가 새 주인을 만났잖아」라고 말했다. 준호의 말이 소연이에게 준 것은?",
         "choices": [
-          "is",
-          "are",
-          "were",
-          "have"
+          "소연이의 생각을 틀렸다고 지적한 것",
+          "같은 장면을 다르게 볼 수 있음을 보여준 것",
+          "책 내용을 처음부터 다시 요약한 것",
+          "대화를 그만하자고 제안한 것"
         ],
-        "answer": "is",
-        "hint": "주어의 핵심은 box(상자) 하나. of chocolates는 꾸며주는 말일 뿐. 단수엔 is.",
-        "explanation": "주어의 진짜 머리는 box(단수). 'of chocolates'는 상자를 꾸미는 수식어라 동사를 정하지 않는다. 단수 주어 → is. 바로 앞 chocolates(복수)에 낚여 are를 고르는 게 흔한 함정. 핵심 명사만 보면 안 틀린다. 핵심 단어: box 상자 / chocolate 초콜릿.",
-        "개념키": "en.agreement.subject_verb"
+        "answer": "같은 장면을 다르게 볼 수 있음을 보여준 것",
+        "hint": "준호는 소연이를 혼내지 않았어. '나는 이렇게 봤어'라며 근거(새 주인)를 하나 보탰지.",
+        "explanation": "준호는 소연이가 틀렸다고 하지 않고, 같은 결말을 '희망'으로도 볼 수 있다고 근거를 들어 보여줬어. 그래서 답은 ②. 대화의 힘은 상대를 이기는 게 아니라 시야를 넓히는 데 있어. ①처럼 지적하거나 ④처럼 끊는 건 대화가 주는 확장과 반대야.",
+        "개념키": "kor.writing"
       },
       {
         "type": "mcq",
-        "question": "빈칸에 알맞은 것은? The girl with two dogs ___ in the park every morning. (해석: 개 두 마리를 데리고 있는 소녀가 매일 아침 공원에서 걷는다.)",
+        "question": "친구의 근거를 들은 뒤 나의 이해에 일어나는 일로 가장 알맞은 것은?",
         "choices": [
-          "walk",
-          "walks",
-          "walking",
-          "are walking"
+          "내 처음 생각이 사라지고 아무것도 안 남는다",
+          "다른 사람 의견은 읽기와 아무 상관이 없다",
+          "새 근거가 더해져 내 이해가 넓어질 수 있다",
+          "반드시 친구 말대로 생각을 바꿔야 한다"
         ],
-        "answer": "walks",
-        "hint": "누가 걷지? girl(소녀) 한 명. two dogs는 with로 묶인 딸림 말. 단수 주어 + 현재 → 동사에 -s.",
-        "explanation": "주어 머리는 girl(단수 3인칭). 'with two dogs'는 소녀를 꾸미는 부분이라 동사를 바꾸지 못한다. 단수 현재 → walks. dogs(복수)에 이끌려 walk를 고르면 함정. 지난번 이 유형에서 놓쳤으니 이번엔 머리 명사만 보자. 핵심 단어: walk 걷다 / every morning 매일 아침.",
-        "개념키": "en.agreement.subject_verb"
+        "answer": "새 근거가 더해져 내 이해가 넓어질 수 있다",
+        "hint": "말한다고 처음 생각이 지워지는 게 아니야. 새 근거가 '추가'되는 거야. 지난번엔 여기서 ①·②로 헷갈렸지.",
+        "explanation": "다른 사람과 이야기하면 내 처음 생각이 사라지는 게 아니라, 새 근거가 더해져 이해가 넓어질 수 있어. 그래서 답은 ③. 지난번에 골랐던 '사라진다'·'상관없다'는 대화의 역할을 거꾸로 본 거야. 읽기와 대화는 서로 돕는 짝이야.",
+        "개념키": "kor.writing"
       }
     ],
     "챌린지_추가": [
       {
         "type": "mcq",
-        "question": "빈칸에 알맞은 의문대명사는? \"___ is your favorite teacher?\" (누가 너의 가장 좋아하는 선생님이니?)",
+        "question": "시온이가 독서 감상문을 쓰는데, '처음 - 가운데 - 끝' 세 부분으로 나누고 가운데 부분만 4문단으로 썼습니다. 처음과 끝은 각각 1문단씩이라면, 이 글은 모두 몇 문단인가요?",
         "choices": [
-          "Who",
-          "What",
-          "Which",
-          "Whose"
+          "6문단",
+          "4문단",
+          "5문단",
+          "7문단"
         ],
-        "answer": "Who",
-        "explanation": "사람에 대해 '누구'를 물을 때는 의문대명사 Who를 쓴다.",
-        "hint": "기본",
-        "_bank": "llm",
-        "_unit": "Grammar Joy 3 의문대명사·의문형용사"
+        "answer": "6문단",
+        "explanation": "처음 1문단 + 가운데 4문단 + 끝 1문단 = 1 + 4 + 1 = 6문단이다. 4는 가운데만 센 값, 5는 처음과 끝 중 하나를 빠뜨린 값, 7은 하나를 더 더한 값이라 모두 틀리다.",
+        "hint": "응용",
+        "_bank": "llm2",
+        "_unit": "쓰기 (문단·글의 짜임)"
       },
       {
         "type": "mcq",
-        "question": "다음 중 study의 3인칭 단수 현재형으로 옳은 것은?",
+        "question": "다음 글의 중심 내용으로 가장 알맞은 것은?\n\n\"꿀벌은 꽃에서 꿀을 모으는 동안 몸에 꽃가루를 묻힌다. 그리고 다른 꽃으로 옮겨 가면서 그 꽃가루를 전해 준다. 이렇게 꿀벌이 꽃가루를 옮겨 주어야 식물은 열매를 맺을 수 있다. 만약 꿀벌이 사라진다면 많은 농작물이 열매를 맺지 못할 것이다.\"",
         "choices": [
-          "studys",
-          "studyes",
-          "studies",
-          "studied"
+          "꿀벌은 꽃가루를 옮겨 식물이 열매를 맺도록 돕는다.",
+          "꿀벌은 꿀의 맛이 매우 달콤하다.",
+          "꽃은 색깔이 알록달록해서 아름답다.",
+          "농부들은 가을에 열매를 거두어들인다."
         ],
-        "answer": "studies",
-        "explanation": "자음+y로 끝나는 동사는 y를 i로 바꾸고 -es를 붙입니다(study→studies).",
+        "answer": "꿀벌은 꽃가루를 옮겨 식물이 열매를 맺도록 돕는다.",
+        "explanation": "글 전체가 '꿀벌이 꽃가루를 옮겨 주어 식물이 열매를 맺는다'는 한 가지 내용을 설명하므로 이것이 중심 내용이다. '꿀맛이 달콤'·'꽃이 아름답다'·'가을에 거둔다'는 글에 나오지 않거나 글의 핵심이 아닌 곁가지 내용이므로 오답.",
         "hint": "기본",
-        "_bank": "llm",
-        "_unit": "Grammar Joy 2 일반동사"
+        "_bank": "llm2",
+        "_unit": "읽기 (비문학·설명문·주장하는 글)"
       },
       {
         "type": "mcq",
-        "question": "빈칸에 알맞은 접속사를 고르시오: I like apples ___ bananas.",
+        "question": "다음 주장하는 글에서 주장을 뒷받침하는 '근거'로 알맞지 않은 것은?\n\n주장: 학교에 나무를 더 많이 심자.\n\n\"① 나무는 더운 날 그늘을 만들어 준다. ② 나무는 공기를 맑게 해 준다. ③ 나는 빨간색 운동화를 좋아한다. ④ 나무가 많으면 새들이 찾아와 학교가 정겨워진다.\"",
         "choices": [
-          "and",
-          "but",
-          "because",
-          "so"
+          "나는 빨간색 운동화를 좋아한다.",
+          "나무는 더운 날 그늘을 만들어 준다.",
+          "나무는 공기를 맑게 해 준다.",
+          "나무가 많으면 새들이 찾아와 학교가 정겨워진다."
         ],
-        "answer": "and",
-        "explanation": "두 가지를 나란히 연결하므로 '그리고'의 뜻인 and가 알맞다.",
-        "hint": "기본",
-        "_bank": "llm",
-        "_unit": "Grammar Joy 3 접속사·명령문"
+        "answer": "나는 빨간색 운동화를 좋아한다.",
+        "explanation": "근거는 주장(나무를 더 심자)과 관련이 있어야 한다. '빨간색 운동화를 좋아한다'는 나무 심기와 아무 관련이 없어 근거가 될 수 없다. 그늘·맑은 공기·새들이 찾아옴은 모두 나무를 심어야 하는 까닭이므로 알맞은 근거이고, '알맞지 않은 것'을 묻는 정답은 첫 번째이다.",
+        "hint": "응용",
+        "_bank": "llm2",
+        "_unit": "읽기 (비문학·설명문·주장하는 글)"
       }
     ]
   },
   {
     "id": 3,
     "cycle": 3,
-    "subject": "통합과학",
+    "subject": "수학",
     "역할": "서브",
-    "수능출처": "2026학년도 수능 통합과학 원자·주기율 유형 변형",
-    "unit": "물질의 규칙성 — 원자 구조·밀도",
-    "통합풀이법": "원소는 양성자 수(원자 번호)가 정한다 · 밀도 = 질량 ÷ 부피",
+    "수능출처": "초6 2학기 6-2 분수의 나눗셈 + 닮음비·부피비 변형",
+    "unit": "6-2 분수의 나눗셈 / 부피비 = 닮음비의 세제곱",
+    "통합풀이법": "÷분수는 뒤집어 곱하기, 부피비는 닮음비를 세 번 곱하기(세제곱).",
     "변형문제_세트": [
       {
         "type": "mcq",
-        "question": "원자와 원소에 대한 설명으로 옳은 것은?",
+        "question": "5/6 ÷ 1/3 의 값은?",
         "choices": [
-          "원소의 종류는 중성자 수로 결정된다",
-          "양성자 수가 같은 원자는 같은 원소이다",
-          "같은 족 원소는 가장 바깥 전자 수가 서로 다르다",
-          "원자 번호는 질량수와 같다"
+          "5/18",
+          "2/5",
+          "5/2",
+          "15/2"
         ],
-        "answer": "양성자 수가 같은 원자는 같은 원소이다",
-        "hint": "원소의 이름표는 양성자 수 = 원자 번호. 중성자가 달라도 양성자만 같으면 같은 원소.",
-        "explanation": "원소의 종류를 정하는 것은 양성자 수(=원자 번호)다. 중성자 수는 같은 원소 안에서도 달라질 수 있어 종류를 정하지 못한다(①X). 같은 족은 가장 바깥 전자 수가 같아서 성질이 닮는다(③X). 원자 번호(양성자 수)는 질량수(양성자+중성자)와 다르다(④X). 지난번 '양성자 수가 원소를 안 정한다'로 틀렸던 부분을 정면으로 보강.",
-        "개념키": "sci.atom.structure"
+        "answer": "5/2",
+        "hint": "÷1/3 은 ×3 과 같아. 5/6 × 3 을 계산하고 약분해봐.",
+        "explanation": "나누는 수 1/3을 뒤집어 곱하면 5/6 × 3 = 15/6 = 5/2. 그래서 답은 ③. ①5/18은 뒤집지 않고 그냥 곱한 실수, ②2/5는 답을 거꾸로 뒤집은 값이야. '뒤집어 곱하기' 한 단계만 기억하면 돼.",
+        "개념키": "math.fraction.division"
       },
       {
         "type": "mcq",
-        "question": "질량이 24 g이고 부피가 8 cm³인 금속 조각의 밀도는?",
+        "question": "두 정육면체가 닮음이고 닮음비가 1:2다. 작은 정육면체의 부피가 5cm³일 때, 큰 정육면체의 부피는 몇 cm³?",
         "choices": [
-          "2 g/cm³",
-          "3 g/cm³",
-          "4 g/cm³",
-          "16 g/cm³"
+          "10cm³",
+          "20cm³",
+          "40cm³",
+          "25cm³"
         ],
-        "answer": "3 g/cm³",
-        "hint": "밀도 = 질량 ÷ 부피. 24 ÷ 8을 계산해. 빼기(24-8) 아니야.",
-        "explanation": "밀도 = 질량 ÷ 부피 = 24 ÷ 8 = 3 g/cm³. 16은 24-8로 뺀 실수, 4는 부피를 반으로 본 실수, 2는 지난번 잘못 적은 값이다. 밀도는 항상 '질량 나누기 부피'. 단위 g/cm³ 자체가 '그램 ÷ 부피'라는 걸 기억하면 방향이 안 헷갈린다.",
-        "개념키": "sci.matter.density"
+        "answer": "40cm³",
+        "hint": "부피비는 닮음비를 세 번 곱해. 1:2 → 1:(2×2×2)=1:8. 그럼 5의 몇 배?",
+        "explanation": "부피비 = 닮음비의 세제곱이라 1:2 → 1:8. 작은 부피 5cm³의 8배 = 40cm³, 답은 ③. ①10은 닮음비만 곱한 실수(×2), ②20은 세제곱 대신 제곱을 쓴 실수(×4)야. 지난번 세제곱을 놓쳤던 그 자리 — 이번엔 2를 세 번 곱했네.",
+        "개념키": "math.similarity.basic"
       }
     ],
-    "book_diagram_url": "./diagrams/book/2026-08-24_cycle_3.png",
-    "book_diagram_source": "출처: 수학의 구조 p.24",
+    "book_diagram_url": "./diagrams/book/2026-08-25_cycle_3.jpg",
+    "book_diagram_source": "출처: eomaeomahan suhag_su",
     "챌린지_추가": [
       {
         "type": "mcq",
-        "question": "다음은 빛의 밝기에 따른 식물 잎의 개수를 측정한 표이다. 어두운 곳 화분은 잎이 3장, 밝은 곳 화분은 잎이 9장이었다. 밝은 곳 화분의 잎 개수는 어두운 곳 화분의 잎 개수의 몇 배인가?",
+        "question": "반원 모양의 종이를 지름을 축으로 하여 한 바퀴 돌렸다. 만들어진 입체도형을 위에서 똑바로 내려다본 모양은 무엇인가? 알맞은 것은?",
         "choices": [
-          "3배",
-          "2배",
-          "6배",
-          "9배"
+          "원",
+          "삼각형",
+          "직사각형",
+          "반원"
         ],
-        "answer": "3배",
-        "explanation": "밝은 곳 9장을 어두운 곳 3장으로 나누면 9 ÷ 3 = 3배이다. 2배는 잘못 나눈 값, 6배는 9 - 3의 차이를 배수로 착각한 값, 9배는 밝은 곳의 잎 개수 자체이므로 모두 오답이다.",
+        "answer": "원",
+        "explanation": "반원을 지름을 축으로 돌리면 구가 만들어지고, 구를 위에서 본 모양은 원이다. 구를 위에서 봐도 옆에서 봐도 항상 원으로 보이므로 삼각형·직사각형은 오답. 회전 후에는 더 이상 반원 모양이 아니므로 반원도 오답.",
         "hint": "응용",
-        "_bank": "llm",
-        "_unit": "변인·관찰·실험 입문 (조건 비교)"
+        "_bank": "llm2",
+        "_unit": "원기둥·원뿔·구"
       },
       {
         "type": "mcq",
-        "question": "관찰 결과를 기록할 때 가장 바람직한 태도로 알맞은 것은?",
+        "question": "어느 마을 학생 200명이 좋아하는 운동을 조사한 띠그래프에서 축구가 35%를 차지했습니다. 축구를 좋아하는 학생은 몇 명입니까?",
         "choices": [
-          "본 그대로 사실을 적는다",
-          "내가 바라는 결과로 바꾸어 적는다",
-          "친구의 기록을 그대로 베껴 적는다",
-          "기억나는 대로 대충 적는다"
+          "70명",
+          "65명",
+          "75명",
+          "35명"
         ],
-        "answer": "본 그대로 사실을 적는다",
-        "explanation": "관찰 기록은 실제로 본 사실을 정확하게 적어야 한다. 바라는 대로 바꾸거나, 베끼거나, 대충 적으면 사실과 달라져 올바른 탐구를 할 수 없으므로 모두 틀린 태도이다.",
+        "answer": "70명",
+        "explanation": "전체 200명의 35%이므로 200×0.35=70명. 65명·75명은 계산 실수로 나온 값이고, 35명은 백분율 숫자를 그대로 인원으로 착각한 오답입니다.",
         "hint": "기본",
-        "_bank": "llm",
-        "_unit": "자연·실험 입문 (관찰과 분류)"
+        "_bank": "llm2",
+        "_unit": "여러 가지 그래프"
       },
       {
         "type": "mcq",
-        "question": "수아는 친구 4명과 함께 운동장에서 같은 거리를 달린 시간을 재서 평균을 구하려 한다. 네 명의 기록이 각각 10초, 12초, 9초, 13초였다. 네 명의 평균 기록은 몇 초인가?",
+        "question": "사탕 24개를 형과 동생에게 3 : 5로 나누어 줄 때, 형이 받는 사탕은 몇 개입니까?",
         "choices": [
-          "11초",
-          "10초",
-          "12초",
-          "44초"
+          "8개",
+          "9개",
+          "15개",
+          "12개"
         ],
-        "answer": "11초",
-        "explanation": "네 기록의 합은 10 + 12 + 9 + 13 = 44초이고, 사람 수 4로 나누면 44 ÷ 4 = 11초이다. 10초·12초는 개별 기록일 뿐 평균이 아니고, 44초는 평균을 내기 전 합계이므로 모두 오답이다.",
-        "hint": "응용",
-        "_bank": "llm",
-        "_unit": "변인·관찰·실험 입문 (조건 비교)"
+        "answer": "9개",
+        "explanation": "전체 비의 합은 3+5=8이므로 형은 24×(3/8)=9개를 받습니다. '15개'는 동생 몫(5/8), '12개'는 절반, '8개'는 비의 합과 헷갈린 값으로 틀립니다.",
+        "hint": "기본",
+        "_bank": "llm2",
+        "_unit": "비례식과 비례배분"
       }
     ]
   }
 ],
   meta: {
-  "generated_at": "2026-08-22",
-  "week": "2026-W34",
+  "generated_at": "2026-08-25",
+  "week": "2026-W35",
   "weakness_focus": [
     "수능 기출 학습",
-    "닮음비·부피비(부피비=닮음비의 세제곱) (2026-08-07 오답, 160 cm³→10 cm³)",
-    "닮음비와 부피비 (2026-08-13 오답, 160 cm³→135 cm³)"
+    "닮음비와 부피비 (2026-08-13 오답, 160 cm³→135 cm³)",
+    "닮음비·부피비 (부피비 = 닮음비의 세제곱) (2026-08-14 오답, 1:9→1:3)"
   ],
   "grade": "초6"
 },
@@ -335,8 +334,8 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 560,
-  "total_correct": 422,
+  "total_plays": 570,
+  "total_correct": 428,
   "accuracy": 75,
   "last_date": "2026-08-24",
   "영역별": [
@@ -363,10 +362,10 @@ window.GAME_CONFIG = {
       "strong_count": 9,
       "recent_accuracy": [
         1.0,
-        1.0,
-        1.0
+        0.75,
+        0.789
       ],
-      "is_master": true
+      "is_master": false
     },
     {
       "subject": "영어",
@@ -377,8 +376,8 @@ window.GAME_CONFIG = {
       "strong_count": 2,
       "recent_accuracy": [
         0.556,
-        0.556,
-        0.556
+        0.0,
+        0.333
       ],
       "is_master": false
     },
@@ -390,9 +389,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 1,
       "recent_accuracy": [
-        0.6,
-        0.6,
-        0.75
+        0.75,
+        0.5,
+        0.556
       ],
       "is_master": false
     },
@@ -425,10 +424,10 @@ window.GAME_CONFIG = {
       "is_master": false
     }
   ],
-  "level": 44,
-  "xp_total": 4320,
-  "xp_in_level": 20,
-  "master_units": 1,
+  "level": 43,
+  "xp_total": 4280,
+  "xp_in_level": 80,
+  "master_units": 0,
   "roadmap": [
     {
       "grade": "초6",
@@ -466,16 +465,7 @@ window.GAME_CONFIG = {
       "milestone": "🏆 5영역 완주 — 엔딩!"
     }
   ],
-  "trophies": [
-    {
-      "subject": "수학",
-      "color": "#5ba0ff",
-      "unit": "6-2 분수의 나눗셈",
-      "date": "2026-08-24",
-      "accuracy": 100,
-      "track": "초6"
-    }
-  ],
+  "trophies": [],
   "skill_tree": {
     "국어": [
       {
@@ -2204,20 +2194,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "어린이 사복음서 한 달 쓰기",
-  "book_key": "사복음서",
+  "title": "고정욱의 인문학 필사수업",
+  "book_key": "인문학필사",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 27,
-  "total": 65,
+  "page": 13,
+  "total": 119,
   "image": "./copywork/today.jpg",
-  "weekday": "월",
-  "date": "2026-08-24",
+  "weekday": "화",
+  "date": "2026-08-25",
   "flagged": false
 },
   revenge: {
-  "date": "2026-08-24",
+  "date": "2026-08-25",
   "items": [
     {
       "id": "warm-math.ratio.basic",
@@ -2228,16 +2218,16 @@ window.GAME_CONFIG = {
       "개념키": "math.ratio.basic",
       "problem": {
         "type": "mcq",
-        "question": "비 6:8과 비율이 같은 비가 9:□일 때, □에 알맞은 수는 얼마입니까?",
+        "question": "가격이 200원에서 250원으로 올랐습니다. 인상률은 몇 %입니까?",
         "choices": [
-          "10",
-          "11",
-          "12",
-          "14"
+          "20%",
+          "25%",
+          "50%",
+          "80%"
         ],
-        "answer": "12",
-        "explanation": "6:8을 간단히 하면 3:4이고, 9는 3의 3배이므로 □ = 4×3 = 12. 검산: 9:12를 간단히 하면 3:4로 같습니다. 오답: 10·11·14는 9:□를 3:4로 줄일 수 없어 비율이 달라집니다.",
-        "hint": "비와 비율 — 73일 밀린 간격 복습"
+        "answer": "25%",
+        "explanation": "오른 금액 50원을 기준량 200원으로 나누면 50/200=0.25 → 25%. 오답: 20%는 250원을 기준으로 잘못 나눈 값, 50%는 50원을 100원으로 나눈 값, 80%는 200/250을 계산한 엉뚱한 값입니다.",
+        "hint": "비와 비율 — 74일 밀린 간격 복습"
       }
     },
     {
@@ -2248,15 +2238,15 @@ window.GAME_CONFIG = {
       "단원": "분수의 나눗셈",
       "problem": {
         "type": "mcq",
-        "question": "주스 2 1/2 L를 한 병에 1/2 L씩 나누어 담으려고 합니다. 병은 모두 몇 개 필요한가요?",
+        "question": "길이가 3 1/3 L인 식용유가 있습니다. 이 식용유를 5/6 L들이 병에 모두 나누어 담으면 병은 몇 개가 되나요?",
         "choices": [
-          "5개",
           "4개",
-          "2개",
-          "10개"
+          "3개",
+          "5개",
+          "2개"
         ],
-        "answer": "5개",
-        "explanation": "2 1/2 = 5/2 이므로 5/2 ÷ 1/2 = 5/2 × 2/1 = 5개. '4'는 정수 부분만 본 오답, '2'는 분모만 본 오답, '10'은 5/2 × 2를 두 번 곱한 오답입니다.",
+        "answer": "4개",
+        "explanation": "3 1/3 = 10/3 이므로 10/3 ÷ 5/6 = 10/3 × 6/5 = 60/15 = 4개. '3'은 정수 부분만 본 오답, '5'는 나누는 수의 분자만 본 오답, '2'는 6/5 대신 5/6을 다시 곱한 오답입니다.",
         "hint": "분수의 나눗셈 — 지금 배우는 단원 워밍업"
       }
     },
@@ -2268,31 +2258,31 @@ window.GAME_CONFIG = {
       "단원": "기록·자료 정리",
       "problem": {
         "type": "mcq",
-        "question": "강낭콩의 키를 5월 1일 3cm, 5월 8일 7cm로 측정해 꺾은선그래프로 그렸다. 일주일 동안 강낭콩이 자란 키는 몇 cm인가?",
+        "question": "막대그래프를 그릴 때 가로축과 세로축 중 한쪽에는 항목(종류)을, 다른 쪽에는 양(수치)을 나타낸다. 막대그래프에 대한 설명으로 알맞은 것은?",
         "choices": [
-          "4cm",
-          "10cm",
-          "7cm",
-          "3cm"
+          "막대의 길이로 수량의 많고 적음을 한눈에 비교할 수 있다",
+          "막대그래프는 전체에서 차지하는 비율만 나타낼 수 있다",
+          "막대그래프는 항목이 한 개일 때만 그릴 수 있다",
+          "막대그래프는 수량을 숫자로 적을 수 없어 표보다 부정확하다"
         ],
-        "answer": "4cm",
-        "explanation": "나중 값에서 처음 값을 빼면 변화량이 나온다. 7 - 3 = 4cm이다. 10은 두 값을 더한 값, 7은 나중 키만 적은 값, 3은 처음 키만 적은 값이라 자란 정도가 아니므로 모두 틀리다.",
+        "answer": "막대의 길이로 수량의 많고 적음을 한눈에 비교할 수 있다",
+        "explanation": "막대그래프는 막대 길이로 수량을 비교하는 것이 핵심 장점이다. 비율만 나타내는 것은 원그래프이고, 여러 항목을 비교하려고 쓰며, 눈금으로 수량을 읽을 수 있어 부정확하지 않으므로 나머지는 틀리다.",
         "hint": "기록·자료 정리 — 지금 배우는 단원 워밍업"
       }
     }
   ]
 },
   vocab: {
-  "date": "2026-08-24",
+  "date": "2026-08-25",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
         "애쓰다",
-        "~을 이루다",
+        "친밀함",
+        "정확한",
         "모순되지 않는"
       ],
       "answer": "애쓰다",
@@ -2307,10 +2297,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
-        "애쓰다",
-        "모순되지 않는",
         "정확한",
-        "~을 이루다"
+        "친밀함",
+        "애쓰다",
+        "가리다, 감추다"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2326,8 +2316,8 @@ window.GAME_CONFIG = {
       "choices": [
         "지역",
         "가리다, 감추다",
-        "~을 이루다",
-        "추상적인"
+        "친밀함",
+        "정확한"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2342,8 +2332,8 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
         "가리다, 감추다",
-        "셀피, 자기 사진",
         "어린 시절",
+        "~을 이루다",
         "지역"
       ],
       "answer": "어린 시절",
@@ -2358,10 +2348,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
-        "어린 시절",
-        "가리다, 감추다",
         "셀피, 자기 사진",
-        "지역"
+        "정확한",
+        "지역",
+        "추상적인"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2375,10 +2365,10 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "추상적인",
-        "모순되지 않는",
+        "셀피, 자기 사진",
         "가리다, 감추다",
-        "지역"
+        "친밀함",
+        "모순되지 않는"
       ],
       "answer": "모순되지 않는",
       "explanation": "consistent = 모순되지 않는  (출처: 2020수능 30번)",
@@ -2392,10 +2382,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "추상적인",
         "애쓰다",
         "지역",
-        "~을 이루다"
+        "추상적인",
+        "친밀함"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2409,10 +2399,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "애쓰다",
-        "~을 이루다",
+        "지역",
         "가리다, 감추다",
-        "추상적인"
+        "모순되지 않는",
+        "~을 이루다"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2426,10 +2416,10 @@ window.GAME_CONFIG = {
       "id": "voc-intimacy",
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
-        "애쓰다",
-        "가리다, 감추다",
+        "~을 이루다",
         "친밀함",
-        "모순되지 않는"
+        "애쓰다",
+        "가리다, 감추다"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2443,10 +2433,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "추상적인",
+        "어린 시절",
+        "셀피, 자기 사진",
         "~을 이루다",
-        "지역",
-        "어린 시절"
+        "추상적인"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",

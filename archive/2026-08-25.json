@@ -1,0 +1,334 @@
+{
+  "date": "2026-08-25",
+  "weekday": "화",
+  "현재단원": "6-2 분수의 나눗셈",
+  "약점": [
+    "닮음비와 부피비 (2026-08-13 오답, 160 cm³→135 cm³)",
+    "닮음비·부피비 (부피비 = 닮음비의 세제곱) (2026-08-14 오답, 1:9→1:3)",
+    "6-2 분수의 나눗셈·부피비 (2026-08-19 오답, 9cm³→9/2cm³)"
+  ],
+  "problems": [
+    {
+      "id": 1,
+      "cycle": 1,
+      "subject": "영어",
+      "역할": "메인",
+      "계보id": "L260818-en-agreement-music",
+      "현재스텝": "M",
+      "수능출처": "2020학년도 수능 영어 34번",
+      "unit": "주어-동사 수 일치·명사 복수형 (음악·음높이 소재)",
+      "사다리_문항": [
+        {
+          "스텝": "E",
+          "type": "mcq",
+          "question": "빈칸에 알맞은 것은? The black cat ____ sleeping on my bed.",
+          "choices": [
+            "is",
+            "are",
+            "were",
+            "am"
+          ],
+          "answer": "is",
+          "hint": "주어가 무엇인지 먼저 찾아. The black cat = 고양이 한 마리. 한 마리면 동사도 하나짜리 모양이야.",
+          "explanation": "주어는 The black cat, 즉 고양이 한 마리(단수)라서 단수 동사 is가 맞아. are는 여럿일 때, am은 I 전용이야. 색깔(black)이 붙어도 마리 수는 하나 그대로. 주어의 수만 보면 바로 풀려. 잘했어, 이게 모든 수 일치의 뼈대야.",
+          "개념키": "en.agreement.subject_verb"
+        },
+        {
+          "스텝": "M",
+          "type": "mcq",
+          "question": "어법상 옳은 문장은?",
+          "choices": [
+            "Fixed pitches is important in music.",
+            "Fixed pitches are important in music.",
+            "Fixed pitch are important in music.",
+            "A fixed pitches are important in music."
+          ],
+          "answer": "Fixed pitches are important in music.",
+          "hint": "pitches는 -s가 붙은 복수야. 여럿이면 동사는 are. 그리고 A + 복수(pitches)는 함께 못 써.",
+          "explanation": "주어 Fixed pitches는 -s가 붙은 복수라서 동사는 are. ①은 복수에 is라 틀리고, ③은 pitch가 단수인데 are라 안 맞아, ④는 A(한 개)와 pitches(여럿)가 충돌해. 복수 주어 → 복수 동사 are 하나로 정리돼.",
+          "개념키": "en.noun.plural"
+        },
+        {
+          "스텝": "M",
+          "type": "mcq",
+          "question": "어법상 옳은 문장은? (어제 A fixed pitch are / they does 로 넘어진 문장)",
+          "choices": [
+            "A fixed pitch are important, but they does not define all music.",
+            "A fixed pitch is important, but they do not define all music.",
+            "A fixed pitches is important, but it do not define all music.",
+            "A fixed pitch is important, but they does not define all music."
+          ],
+          "answer": "A fixed pitch is important, but they do not define all music.",
+          "hint": "앞 주어 A fixed pitch = 한 개 → is. 뒤 주어 they = 여럿 → do. 어제는 여기서 are와 does로 뒤집혔어.",
+          "explanation": "A fixed pitch는 한 개(단수)라 is, they는 여럿(복수)이라 do가 맞아. 어제 고른 are·does는 정확히 반대로 붙인 실수였어. 단수엔 is/does, 복수엔 are/do — 주어의 수를 먼저 찾으면 자동으로 갈려. 이번엔 제대로 뒤집었네, 이게 오늘의 관문이었어.",
+          "개념키": "en.agreement.subject_verb"
+        },
+        {
+          "스텝": "H",
+          "type": "mcq",
+          "question": "빈칸에 알맞은 것은? The variety of pitches used across different cultures ____ often greater than we expect.",
+          "choices": [
+            "is",
+            "are",
+            "were",
+            "have been"
+          ],
+          "answer": "is",
+          "hint": "진짜 주어는 The variety(다양함, 한 덩어리). of pitches는 꾸며주는 곁가지일 뿐이야. 곁가지의 -s에 속지 마.",
+          "explanation": "핵심 주어는 The variety(단수)이고 of pitches는 앞을 꾸미는 전치사구라 동사는 is. 바로 옆 pitches, cultures의 -s를 보고 are로 끌려가는 게 수능이 파놓은 함정이야. 주어와 동사 사이 곁가지를 손으로 가리고 보면 The variety ... is 하나만 남아. 이게 수능 어법의 단골 트릭이야.",
+          "개념키": "en.grammar.general"
+        }
+      ],
+      "보스전": {
+        "진짜수능본문": "In most of the Western classical tradition, pitches are treated as a set of fixed and clearly defined points. A piano, for example, offers a finite number of keys, and each key produces a single, unchanging pitch that a performer is trained to strike precisely. In many other musical cultures, however, voices and instruments such as the sitar slide continuously from one note to the next, so that the borders between neighboring pitches blur. To a listener raised only on the piano, such music can sound out of tune. But this reaction mistakes one cultural habit for a law of nature. Fixed pitches are important in many musical cultures, but they do not define all music. What truly makes a system musical is not that its tones are physically produced in one particular way, but that the community of listeners has agreed the sounds are ________.",
+        "진짜수능선택지": [
+          "randomly generated without any lasting pattern",
+          "naturally fluctuating rather than deliberately fixed",
+          "meaningful only when written down in notation",
+          "identical in every culture across the world",
+          "organized into a shared series of understood steps"
+        ],
+        "진짜수능정답": "⑤",
+        "보스전_해설": "빈칸 앞이 열쇠야. 글은 처음부터 끝까지 '음악을 음악답게 만드는 건 소리 자체가 아니라, 사람들이 그 소리를 어떻게 정리하기로 약속했느냐'라고 말해. 그래서 정답은 ⑤ organized into a shared series of understood steps(함께 이해하는 단계로 정리됨). ②는 어제 시온이가 골랐던 함정 — naturally fluctuating(그냥 미끄러진다)은 오히려 글이 반박한 쪽이야. M 스텝에서 본 Fixed pitches are, they do not처럼 여기서도 주어의 수를 보며 문장을 정확히 읽어야 흐름이 잡혀. ①④는 글에 없는 극단, ③은 악보 얘기라 벗어나. '소리가 아니라 약속' — 이 한 줄이 정답으로 가는 사다리였어.",
+        "강조구간": [
+          "Fixed pitches are important in many musical cultures, but they do not define all music",
+          "the community of listeners has agreed the sounds are"
+        ]
+      },
+      "통합풀이법": "동사 고르기 전에 진짜 주어부터 손가락으로 짚어라 — 곁가지 -s는 무시.",
+      "이미지_묘사": "왼쪽 피아노 건반은 딱딱 끊긴 점들, 오른쪽 시타르 줄은 부드럽게 미끄러지는 곡선. 가운데 화살표가 '같은 음악'이라 잇는 대비 도식 1장.",
+      "image_url": "./images/2026-08-25_cycle_1.png",
+      "챌린지_추가": [
+        {
+          "type": "mcq",
+          "question": "다음 중 복수형이 단수형과 모양이 같은(변하지 않는) 명사는? (불규칙 복수형)",
+          "choices": [
+            "fish",
+            "child",
+            "tooth",
+            "foot"
+          ],
+          "answer": "fish",
+          "explanation": "fish는 단수와 복수의 모양이 같은 불변 명사로 one fish, two fish처럼 쓴다. child → children, tooth → teeth, foot → feet은 모두 모양이 바뀌는 불규칙 복수형이라 오답.",
+          "hint": "응용",
+          "_bank": "llm",
+          "_unit": "Grammar Joy 1 Unit 01 셀 수 있는 명사"
+        },
+        {
+          "type": "mcq",
+          "question": "빵 두 조각을 영어로 바르게 나타낸 것은?",
+          "choices": [
+            "two breads",
+            "two pieces of bread",
+            "a bread two",
+            "two of bread"
+          ],
+          "answer": "two pieces of bread",
+          "explanation": "bread는 셀 수 없는 명사라 직접 숫자를 붙이지 못하고 'two pieces of bread'처럼 단위를 빌려 센다. two breads는 복수형 오류, 나머지 둘은 어순·표현이 틀렸다.",
+          "hint": "응용",
+          "_bank": "llm",
+          "_unit": "Grammar Joy 1 Unit 02 셀 수 없는 명사"
+        },
+        {
+          "type": "mcq",
+          "question": "다음 중 셀 수 없는 명사(uncountable noun)는 무엇인가?",
+          "choices": [
+            "apple",
+            "book",
+            "water",
+            "pencil"
+          ],
+          "answer": "water",
+          "explanation": "water(물)는 일정한 모양이 없는 물질명사로 셀 수 없는 명사다. apple(사과)·book(책)·pencil(연필)은 하나, 둘 셀 수 있어 a/an을 붙이거나 복수형(-s)을 만들 수 있는 셀 수 있는 명사다.",
+          "hint": "기본",
+          "_bank": "llm",
+          "_unit": "Grammar Joy 1 Unit 02 셀 수 없는 명사"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "cycle": 2,
+      "subject": "국어",
+      "역할": "서브",
+      "수능출처": "2023학년도 수능 국어 3번 [독서(비문학)] 변형",
+      "unit": "듣기·말하기 (대화를 통한 이해 확장)",
+      "통합풀이법": "대화는 '내 생각 지우기'가 아니라 '내 생각에 남의 근거를 더하기'.",
+      "변형문제_세트": [
+        {
+          "type": "mcq",
+          "question": "소연이가 「나는 이 책이 슬프기만 했어」라고 하자 준호가 「나는 마지막에 오히려 희망을 봤어. 강아지가 새 주인을 만났잖아」라고 말했다. 준호의 말이 소연이에게 준 것은?",
+          "choices": [
+            "소연이의 생각을 틀렸다고 지적한 것",
+            "같은 장면을 다르게 볼 수 있음을 보여준 것",
+            "책 내용을 처음부터 다시 요약한 것",
+            "대화를 그만하자고 제안한 것"
+          ],
+          "answer": "같은 장면을 다르게 볼 수 있음을 보여준 것",
+          "hint": "준호는 소연이를 혼내지 않았어. '나는 이렇게 봤어'라며 근거(새 주인)를 하나 보탰지.",
+          "explanation": "준호는 소연이가 틀렸다고 하지 않고, 같은 결말을 '희망'으로도 볼 수 있다고 근거를 들어 보여줬어. 그래서 답은 ②. 대화의 힘은 상대를 이기는 게 아니라 시야를 넓히는 데 있어. ①처럼 지적하거나 ④처럼 끊는 건 대화가 주는 확장과 반대야.",
+          "개념키": "kor.writing"
+        },
+        {
+          "type": "mcq",
+          "question": "친구의 근거를 들은 뒤 나의 이해에 일어나는 일로 가장 알맞은 것은?",
+          "choices": [
+            "내 처음 생각이 사라지고 아무것도 안 남는다",
+            "다른 사람 의견은 읽기와 아무 상관이 없다",
+            "새 근거가 더해져 내 이해가 넓어질 수 있다",
+            "반드시 친구 말대로 생각을 바꿔야 한다"
+          ],
+          "answer": "새 근거가 더해져 내 이해가 넓어질 수 있다",
+          "hint": "말한다고 처음 생각이 지워지는 게 아니야. 새 근거가 '추가'되는 거야. 지난번엔 여기서 ①·②로 헷갈렸지.",
+          "explanation": "다른 사람과 이야기하면 내 처음 생각이 사라지는 게 아니라, 새 근거가 더해져 이해가 넓어질 수 있어. 그래서 답은 ③. 지난번에 골랐던 '사라진다'·'상관없다'는 대화의 역할을 거꾸로 본 거야. 읽기와 대화는 서로 돕는 짝이야.",
+          "개념키": "kor.writing"
+        }
+      ],
+      "챌린지_추가": [
+        {
+          "type": "mcq",
+          "question": "시온이가 독서 감상문을 쓰는데, '처음 - 가운데 - 끝' 세 부분으로 나누고 가운데 부분만 4문단으로 썼습니다. 처음과 끝은 각각 1문단씩이라면, 이 글은 모두 몇 문단인가요?",
+          "choices": [
+            "6문단",
+            "4문단",
+            "5문단",
+            "7문단"
+          ],
+          "answer": "6문단",
+          "explanation": "처음 1문단 + 가운데 4문단 + 끝 1문단 = 1 + 4 + 1 = 6문단이다. 4는 가운데만 센 값, 5는 처음과 끝 중 하나를 빠뜨린 값, 7은 하나를 더 더한 값이라 모두 틀리다.",
+          "hint": "응용",
+          "_bank": "llm2",
+          "_unit": "쓰기 (문단·글의 짜임)"
+        },
+        {
+          "type": "mcq",
+          "question": "다음 글의 중심 내용으로 가장 알맞은 것은?\n\n\"꿀벌은 꽃에서 꿀을 모으는 동안 몸에 꽃가루를 묻힌다. 그리고 다른 꽃으로 옮겨 가면서 그 꽃가루를 전해 준다. 이렇게 꿀벌이 꽃가루를 옮겨 주어야 식물은 열매를 맺을 수 있다. 만약 꿀벌이 사라진다면 많은 농작물이 열매를 맺지 못할 것이다.\"",
+          "choices": [
+            "꿀벌은 꽃가루를 옮겨 식물이 열매를 맺도록 돕는다.",
+            "꿀벌은 꿀의 맛이 매우 달콤하다.",
+            "꽃은 색깔이 알록달록해서 아름답다.",
+            "농부들은 가을에 열매를 거두어들인다."
+          ],
+          "answer": "꿀벌은 꽃가루를 옮겨 식물이 열매를 맺도록 돕는다.",
+          "explanation": "글 전체가 '꿀벌이 꽃가루를 옮겨 주어 식물이 열매를 맺는다'는 한 가지 내용을 설명하므로 이것이 중심 내용이다. '꿀맛이 달콤'·'꽃이 아름답다'·'가을에 거둔다'는 글에 나오지 않거나 글의 핵심이 아닌 곁가지 내용이므로 오답.",
+          "hint": "기본",
+          "_bank": "llm2",
+          "_unit": "읽기 (비문학·설명문·주장하는 글)"
+        },
+        {
+          "type": "mcq",
+          "question": "다음 주장하는 글에서 주장을 뒷받침하는 '근거'로 알맞지 않은 것은?\n\n주장: 학교에 나무를 더 많이 심자.\n\n\"① 나무는 더운 날 그늘을 만들어 준다. ② 나무는 공기를 맑게 해 준다. ③ 나는 빨간색 운동화를 좋아한다. ④ 나무가 많으면 새들이 찾아와 학교가 정겨워진다.\"",
+          "choices": [
+            "나는 빨간색 운동화를 좋아한다.",
+            "나무는 더운 날 그늘을 만들어 준다.",
+            "나무는 공기를 맑게 해 준다.",
+            "나무가 많으면 새들이 찾아와 학교가 정겨워진다."
+          ],
+          "answer": "나는 빨간색 운동화를 좋아한다.",
+          "explanation": "근거는 주장(나무를 더 심자)과 관련이 있어야 한다. '빨간색 운동화를 좋아한다'는 나무 심기와 아무 관련이 없어 근거가 될 수 없다. 그늘·맑은 공기·새들이 찾아옴은 모두 나무를 심어야 하는 까닭이므로 알맞은 근거이고, '알맞지 않은 것'을 묻는 정답은 첫 번째이다.",
+          "hint": "응용",
+          "_bank": "llm2",
+          "_unit": "읽기 (비문학·설명문·주장하는 글)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "cycle": 3,
+      "subject": "수학",
+      "역할": "서브",
+      "수능출처": "초6 2학기 6-2 분수의 나눗셈 + 닮음비·부피비 변형",
+      "unit": "6-2 분수의 나눗셈 / 부피비 = 닮음비의 세제곱",
+      "통합풀이법": "÷분수는 뒤집어 곱하기, 부피비는 닮음비를 세 번 곱하기(세제곱).",
+      "변형문제_세트": [
+        {
+          "type": "mcq",
+          "question": "5/6 ÷ 1/3 의 값은?",
+          "choices": [
+            "5/18",
+            "2/5",
+            "5/2",
+            "15/2"
+          ],
+          "answer": "5/2",
+          "hint": "÷1/3 은 ×3 과 같아. 5/6 × 3 을 계산하고 약분해봐.",
+          "explanation": "나누는 수 1/3을 뒤집어 곱하면 5/6 × 3 = 15/6 = 5/2. 그래서 답은 ③. ①5/18은 뒤집지 않고 그냥 곱한 실수, ②2/5는 답을 거꾸로 뒤집은 값이야. '뒤집어 곱하기' 한 단계만 기억하면 돼.",
+          "개념키": "math.fraction.division"
+        },
+        {
+          "type": "mcq",
+          "question": "두 정육면체가 닮음이고 닮음비가 1:2다. 작은 정육면체의 부피가 5cm³일 때, 큰 정육면체의 부피는 몇 cm³?",
+          "choices": [
+            "10cm³",
+            "20cm³",
+            "40cm³",
+            "25cm³"
+          ],
+          "answer": "40cm³",
+          "hint": "부피비는 닮음비를 세 번 곱해. 1:2 → 1:(2×2×2)=1:8. 그럼 5의 몇 배?",
+          "explanation": "부피비 = 닮음비의 세제곱이라 1:2 → 1:8. 작은 부피 5cm³의 8배 = 40cm³, 답은 ③. ①10은 닮음비만 곱한 실수(×2), ②20은 세제곱 대신 제곱을 쓴 실수(×4)야. 지난번 세제곱을 놓쳤던 그 자리 — 이번엔 2를 세 번 곱했네.",
+          "개념키": "math.similarity.basic"
+        }
+      ],
+      "book_diagram_url": "./diagrams/book/2026-08-25_cycle_3.jpg",
+      "book_diagram_source": "출처: eomaeomahan suhag_su",
+      "챌린지_추가": [
+        {
+          "type": "mcq",
+          "question": "반원 모양의 종이를 지름을 축으로 하여 한 바퀴 돌렸다. 만들어진 입체도형을 위에서 똑바로 내려다본 모양은 무엇인가? 알맞은 것은?",
+          "choices": [
+            "원",
+            "삼각형",
+            "직사각형",
+            "반원"
+          ],
+          "answer": "원",
+          "explanation": "반원을 지름을 축으로 돌리면 구가 만들어지고, 구를 위에서 본 모양은 원이다. 구를 위에서 봐도 옆에서 봐도 항상 원으로 보이므로 삼각형·직사각형은 오답. 회전 후에는 더 이상 반원 모양이 아니므로 반원도 오답.",
+          "hint": "응용",
+          "_bank": "llm2",
+          "_unit": "원기둥·원뿔·구"
+        },
+        {
+          "type": "mcq",
+          "question": "어느 마을 학생 200명이 좋아하는 운동을 조사한 띠그래프에서 축구가 35%를 차지했습니다. 축구를 좋아하는 학생은 몇 명입니까?",
+          "choices": [
+            "70명",
+            "65명",
+            "75명",
+            "35명"
+          ],
+          "answer": "70명",
+          "explanation": "전체 200명의 35%이므로 200×0.35=70명. 65명·75명은 계산 실수로 나온 값이고, 35명은 백분율 숫자를 그대로 인원으로 착각한 오답입니다.",
+          "hint": "기본",
+          "_bank": "llm2",
+          "_unit": "여러 가지 그래프"
+        },
+        {
+          "type": "mcq",
+          "question": "사탕 24개를 형과 동생에게 3 : 5로 나누어 줄 때, 형이 받는 사탕은 몇 개입니까?",
+          "choices": [
+            "8개",
+            "9개",
+            "15개",
+            "12개"
+          ],
+          "answer": "9개",
+          "explanation": "전체 비의 합은 3+5=8이므로 형은 24×(3/8)=9개를 받습니다. '15개'는 동생 몫(5/8), '12개'는 절반, '8개'는 비의 합과 헷갈린 값으로 틀립니다.",
+          "hint": "기본",
+          "_bank": "llm2",
+          "_unit": "비례식과 비례배분"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-08-25",
+    "week": "2026-W35",
+    "weakness_focus": [
+      "수능 기출 학습",
+      "닮음비와 부피비 (2026-08-13 오답, 160 cm³→135 cm³)",
+      "닮음비·부피비 (부피비 = 닮음비의 세제곱) (2026-08-14 오답, 1:9→1:3)"
+    ],
+    "grade": "초6"
+  }
+}
