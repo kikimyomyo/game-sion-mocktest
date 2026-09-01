@@ -1,0 +1,335 @@
+{
+  "date": "2026-09-01",
+  "weekday": "화",
+  "현재단원": "6-2 분수의 나눗셈",
+  "약점": [
+    "6-2 분수의 나눗셈 / 부피비 = 닮음비의 세제곱 (2026-08-25 오답, 5/18→5/2)",
+    "닮음비·넓이비·부피비 (2026-08-27 오답, 100→16)",
+    "닮음비·넓이비·부피비 (2026-08-27 오답, ② 4/9 V→③ 8/27 V)"
+  ],
+  "problems": [
+    {
+      "id": 1,
+      "cycle": 1,
+      "subject": "영어",
+      "역할": "메인",
+      "계보id": "L260818-en-agreement-music",
+      "현재스텝": "H",
+      "수능출처": "2024학년도 수능 영어 22번",
+      "unit": "주어–동사 수 일치 · 명사 복수형",
+      "사다리_문항": [
+        {
+          "스텝": "E",
+          "type": "mcq",
+          "question": "A little puppy ___ every morning in the yard.",
+          "choices": [
+            "barks",
+            "bark",
+            "are bark",
+            "barking"
+          ],
+          "answer": "barks",
+          "hint": "주어가 한 마리(단수)인지 여러 마리(복수)인지부터 봐. 강아지 한 마리(puppy)면 동사 뒤에 -s가 붙어.",
+          "explanation": "주어 A little puppy는 한 마리, 즉 단수야. 3인칭 단수 주어엔 동사에 -s를 붙여 barks가 맞아. bark는 여러 마리(복수)일 때 쓰는 형태라 틀려. 단수 주어 = 동사에 -s, 이 규칙 하나만 잡으면 나머지 사다리도 쉬워져. 잘하고 있어.",
+          "개념키": "en.agreement.subject_verb"
+        },
+        {
+          "스텝": "M",
+          "type": "mcq",
+          "question": "My sister and her friends ___ music together on weekends.",
+          "choices": [
+            "play",
+            "plays",
+            "is playing",
+            "plays music"
+          ],
+          "answer": "play",
+          "hint": "주어가 My sister and her friends — 언니 '와' 친구'들', 여러 명이야. 여러 명이면 동사에 -s를 붙일까, 뺄까?",
+          "explanation": "주어가 A and B 형태면 두 명 이상이라 복수야. 복수 주어엔 동사 원형 play를 써. plays는 한 명(단수)일 때 붙이는 -s라 틀려 — 저번에 walk에 -s를 잘못 붙였던 것과 똑같은 함정이야. 여러 명 = -s 빼기. 기억하자!",
+          "개념키": "en.agreement.subject_verb"
+        },
+        {
+          "스텝": "H",
+          "type": "mcq",
+          "question": "The sound of the drums ___ the whole room during the concert.",
+          "choices": [
+            "fills",
+            "fill",
+            "are filling",
+            "filling"
+          ],
+          "answer": "fills",
+          "hint": "동사 바로 앞 명사(drums)에 속지 마. 진짜 주어는 The sound야. sound는 한 개일까 여러 개일까?",
+          "explanation": "진짜 주어는 The sound(소리 하나=단수)야. of the drums는 주어를 꾸미는 곁가지일 뿐이지. 단수 주어니까 fills가 맞아. 바로 앞 drums만 보고 fill을 고르는 게 수능 최다 함정이야 — 주어를 끝까지 찾자. 이걸 넘으면 진짜 수능 어법도 잡혀.",
+          "개념키": "en.agreement.subject_verb"
+        },
+        {
+          "스텝": "H",
+          "type": "mcq",
+          "question": "Neither the guitar nor the pianos ___ out of tune tonight.",
+          "choices": [
+            "are",
+            "is",
+            "was",
+            "has been"
+          ],
+          "answer": "are",
+          "hint": "neither A nor B ___ 는 동사와 가까운 B(가까운 주어)에 수를 맞춰. 여기서 B는 the pianos — 한 대일까 여러 대일까?",
+          "explanation": "neither A nor B는 동사와 가까운 B에 수를 맞추는 근접 원칙이 적용돼. B가 the pianos(여러 대=복수)라 are가 맞아. is를 고르면 저번 were→is로 틀렸던 실수를 반복하는 거야. 가까운 주어가 복수면 are! 사다리 끝까지 왔어, 이제 보스전이야.",
+          "개념키": "en.grammar.general"
+        }
+      ],
+      "보스전": {
+        "진짜수능본문": "다음 글의 요지로 가장 적절한 것은?\n\nIn both the ancient hunter-gatherer band and our intimate speech communities today, the diffusion of speech shaped values. The fact that everyone was going to be able to speak and hear about everyone else meant that reputation, and the news people shared about one another, became a powerful force. What was said about you traveled far, and it lasted. In such communities the spoken word was the main channel through which trust was built and broken. Because talk spread so freely, honesty and fairness were rewarded while betrayal was punished — not by law, but by the steady pressure of everyone knowing everyone. In this way the simple act of talking, repeated across a whole community, quietly hardened into a shared code of how people ought to behave.",
+        "진짜수능선택지": [
+          "공동체 안에서 말이 퍼지면서 함께 지켜야 할 행동 규범이 만들어졌다.",
+          "수렵채집 사회는 현대 사회보다 언어 능력이 뛰어났다.",
+          "법과 제도가 없으면 공동체의 신뢰는 결코 유지될 수 없다.",
+          "개인의 평판은 말이 아니라 행동으로만 결정되어야 한다.",
+          "뉴스의 빠른 전파는 공동체의 갈등을 심화시킨다."
+        ],
+        "진짜수능정답": "①",
+        "보스전_해설": "이 지문의 핵심은 the diffusion of speech shaped values — 말이 퍼지면서 사람들의 가치, 곧 함께 지킬 행동 규범이 만들어졌다는 거야. 평판(reputation)이 힘을 얻고 신뢰(trust)가 말로 쌓이고 깨졌다는 흐름을 따라가면 요지는 ①이야. ②는 언어 능력 우월이라 지문에 없고, ③은 법이 있어야만이라 정반대(법 없이 규범이 생겼다고 했지), ⑤는 갈등 심화라 빗나가. 사다리에서 연습한 대로 The sound of the drums fills…처럼 진짜 주어(diffusion)와 동사(shaped)를 먼저 묶어 읽으면 긴 문장도 안 흔들려. 완주 멋져!",
+        "강조구간": [
+          "the diffusion of speech shaped values",
+          "reputation",
+          "trust was built and broken"
+        ]
+      },
+      "통합풀이법": "진짜 주어부터 찾고 → 중간 명사 무시 → 단수엔 -s, 복수엔 원형.",
+      "이미지_묘사": "칠판에 문장 The sound of the drums ___ , 진짜 주어 sound는 파란 동그라미, of the drums는 회색 곁가지로 표시된 도식 1장.",
+      "image_url": "./images/2026-09-01_cycle_1.png",
+      "챌린지_추가": [
+        {
+          "type": "mcq",
+          "question": "다음 빈칸에 들어갈 알맞은 be동사는?\n\nYou ____ very kind.",
+          "choices": [
+            "are",
+            "am",
+            "is",
+            "be"
+          ],
+          "answer": "are",
+          "explanation": "주어 You는 단수든 복수든 항상 are를 쓴다. am은 I에만, is는 3인칭 단수에 쓰므로 틀리고, be는 원형이라 그대로 쓸 수 없어 틀리다.",
+          "hint": "기본",
+          "_bank": "llm",
+          "_unit": "Grammar Joy 1 Unit 05 be동사 긍정문"
+        },
+        {
+          "type": "mcq",
+          "question": "다음 중 3인칭 단수 동사 변화가 옳게 된 문장은?",
+          "choices": [
+            "He go to the park.",
+            "She watchs TV.",
+            "Tom studys English.",
+            "It has four legs."
+          ],
+          "answer": "It has four legs.",
+          "explanation": "have의 3인칭 단수형은 불규칙하게 has. He go는 goes가 맞고, watch는 -es를 붙여 watches(watchs 아님), study는 y를 i로 바꿔 studies(studys 아님)라 모두 오답.",
+          "hint": "기본",
+          "_bank": "llm",
+          "_unit": "Grammar Joy 1 Unit 07 일반동사 긍정문"
+        },
+        {
+          "type": "mcq",
+          "question": "주어가 He/She/It(3인칭 단수)일 때 일반동사 현재형에 일어나는 변화로 옳은 것은?",
+          "choices": [
+            "동사 끝에 -s 또는 -es를 붙인다",
+            "동사 앞에 do를 붙인다",
+            "동사 모양이 항상 그대로다",
+            "동사 끝에 -ing를 붙인다"
+          ],
+          "answer": "동사 끝에 -s 또는 -es를 붙인다",
+          "explanation": "3인칭 단수 주어(He/She/It) 뒤 일반동사는 -s/-es를 붙인다(예: He plays). do를 붙이는 것은 의문문·부정문, -ing는 진행형, 그대로 쓰는 것은 I/You/We/They일 때라 모두 오답.",
+          "hint": "기본",
+          "_bank": "llm",
+          "_unit": "Grammar Joy 1 Unit 07 일반동사 긍정문"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "cycle": 2,
+      "subject": "국어",
+      "역할": "서브",
+      "수능출처": "2024학년도 수능 국어 22번 (문학) 변형 · 2021학년도 수능 국어 8번 (작문) 변형",
+      "unit": "문학 사실적 이해 · 작문 신뢰성",
+      "통합풀이법": "태도는 시어에서, 신뢰성은 근거(전문가 인용)에서 나온다.",
+      "변형문제_세트": [
+        {
+          "type": "mcq",
+          "question": "다음 시조에서 화자의 태도로 가장 적절한 것은? — 청산에 살어리랏다 / 낚싯대 드리우고 흰 구름 벗을 삼아 / 이 몸이 한가하니 세상 시름 다 잊었네.",
+          "choices": [
+            "자연 속에서 한가로움을 누리며 세속의 근심을 잊고 있다.",
+            "어부의 고된 노동을 사실적으로 그려 삶의 고달픔을 강조한다.",
+            "고향을 떠난 슬픔을 자연에 빗대어 토로하고 있다.",
+            "벼슬길에 나아가지 못한 안타까움을 드러내고 있다."
+          ],
+          "answer": "자연 속에서 한가로움을 누리며 세속의 근심을 잊고 있다.",
+          "hint": "세상 시름 다 잊었네가 핵심 단서. 화자는 힘들다고 했을까, 편안하다고 했을까?",
+          "explanation": "화자는 청산(자연)에서 낚시하며 세상 시름 다 잊었네라고 말해. 자연 속 한가로움과 만족이 핵심이라 ①이 맞아. ②처럼 고된 노동을 사실적으로는 지난번(8/26)에 틀렸던 함정 — 이 시엔 노동의 고달픔이 아니라 여유가 담겨 있어. 한가·구름·시름 잊음 같은 시어를 근거로 태도를 잡자.",
+          "개념키": "kor.literature"
+        },
+        {
+          "type": "mcq",
+          "question": "글의 신뢰성을 높이기 위해 밑줄 친 '잠은 중요하다.'를 고칠 때 가장 적절한 방법은?",
+          "choices": [
+            "수면 전문가의 말을 직접 인용하여 근거를 제시한다.",
+            "잠의 사전적 개념을 다시 한 번 정의한다.",
+            "글쓴이의 감상을 덧붙여 감정을 강조한다.",
+            "잠과 관련 없는 통계 자료를 추가한다."
+          ],
+          "answer": "수면 전문가의 말을 직접 인용하여 근거를 제시한다.",
+          "hint": "주장을 믿게 하려면 뭐가 필요할까 — 뜻풀이일까, 전문가의 말일까?",
+          "explanation": "잠은 중요하다는 주장만 있고 근거가 약해. 신뢰성을 높이려면 수면 전문가의 말을 직접 인용해 근거를 대는 ①이 맞아. ②처럼 개념을 다시 정의하는 건 근거가 아니라 되풀이일 뿐 — 8월(8/12)에 틀렸던 바로 그 함정이야. 정의가 아니라 전문가 인용이 신뢰성을 올린다는 걸 기억하자.",
+          "개념키": "kor.writing"
+        }
+      ],
+      "챌린지_추가": [
+        {
+          "type": "mcq",
+          "question": "다음 문장에서 관형어에 해당하는 부분은? '예쁜 꽃이 피었다.'",
+          "choices": [
+            "예쁜",
+            "꽃이",
+            "피었다",
+            "꽃"
+          ],
+          "answer": "예쁜",
+          "explanation": "체언 '꽃'을 꾸며 주는 '예쁜'이 관형어다. '꽃이'는 주어, '피었다'는 서술어다.",
+          "hint": "응용",
+          "_bank": "llm",
+          "_unit": "문법 (품사·문장 성분)"
+        },
+        {
+          "type": "mcq",
+          "question": "다음 문장에서 부사어에 해당하는 부분은? '꽃이 활짝 피었다.'",
+          "choices": [
+            "꽃이",
+            "활짝",
+            "피었다",
+            "꽃"
+          ],
+          "answer": "활짝",
+          "explanation": "서술어 '피었다'를 꾸며 주는 '활짝'이 부사어다. '꽃이'는 주어, '피었다'는 서술어다.",
+          "hint": "응용",
+          "_bank": "llm",
+          "_unit": "문법 (품사·문장 성분)"
+        },
+        {
+          "type": "mcq",
+          "question": "다음 중 낱말을 이루는 방식이 '파생어'(뜻을 더하는 말이 붙은 낱말)로 알맞은 것은?",
+          "choices": [
+            "김밥",
+            "햇과일",
+            "돌다리",
+            "밤낮"
+          ],
+          "answer": "햇과일",
+          "explanation": "파생어는 혼자 쓰이지 못하는 말(접사)이 붙어 만들어진다. '햇과일'은 '그해에 난'의 뜻을 더하는 접사 '햇-'이 '과일'에 붙은 파생어이다. '김밥', '돌다리', '밤낮'은 모두 뜻을 가진 두 낱말이 합쳐진 합성어이다.",
+          "hint": "응용",
+          "_bank": "llm",
+          "_unit": "문법 (낱말·문장 성분·높임)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "cycle": 3,
+      "subject": "수학",
+      "역할": "서브",
+      "수능출처": "6-2 분수의 나눗셈 (교과 기본) · 부피비=닮음비의 세제곱 (2026-08-25 오답 보강)",
+      "unit": "분수의 나눗셈 · 부피비",
+      "통합풀이법": "나눗셈은 역수 곱셈 / 부피비는 닮음비의 세제곱.",
+      "변형문제_세트": [
+        {
+          "type": "mcq",
+          "question": "3/4 ÷ 2/5 는 얼마?",
+          "choices": [
+            "15/8",
+            "8/15",
+            "3/10",
+            "6/5"
+          ],
+          "answer": "15/8",
+          "hint": "÷는 곧 ×역수. 2/5를 뒤집으면 뭐가 되지? 그다음 3/4에 곱하면 돼.",
+          "explanation": "분수의 나눗셈은 뒤 분수를 뒤집어 곱해(역수 곱셈). 3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8. 8/15는 뒤집는 걸 반대로 한 실수, 3/10은 안 뒤집고 그냥 곱한 실수야. 나눗셈은 역수 곱셈 이 한 줄만 지키면 백발백중!",
+          "개념키": "math.fraction.division"
+        },
+        {
+          "type": "mcq",
+          "question": "두 정육면체의 닮음비가 2 : 3일 때, 부피비(작은 것 : 큰 것)는?",
+          "choices": [
+            "8 : 27",
+            "4 : 9",
+            "2 : 3",
+            "6 : 9"
+          ],
+          "answer": "8 : 27",
+          "hint": "넓이비는 닮음비의 제곱, 부피비는? 한 번 더 곱해야 해 — 2를 세 번, 3을 세 번.",
+          "explanation": "닮음비가 2:3이면 부피비는 각 수를 세제곱해서 2³:3³ = 8:27이야. 4:9는 제곱(넓이비)을 쓴 실수 — 지난번(8/25) 제곱↔세제곱 함정을 그대로 밟은 거야. 넓이비=제곱, 부피비=세제곱! 부피는 세 번 곱한다고 외우자.",
+          "개념키": "math.similarity.volume_cube"
+        }
+      ],
+      "book_diagram_url": "./diagrams/book/2026-09-01_cycle_3.jpg",
+      "book_diagram_source": "출처: eomaeomahan suhag_su",
+      "챌린지_추가": [
+        {
+          "type": "mcq",
+          "question": "끈 3/4 m를 똑같이 둘로 나누면 한 도막의 길이는 몇 m인가요?",
+          "choices": [
+            "3/8 m",
+            "3/2 m",
+            "6/4 m",
+            "1/4 m"
+          ],
+          "answer": "3/8 m",
+          "explanation": "3/4 ÷ 2 = 3/(4×2) = 3/8 m. '3/2'와 '6/4'는 나누는 대신 2를 곱한 오답, '1/4'는 분자에서 빼기를 한 오답입니다.",
+          "hint": "기본",
+          "_bank": "llm2",
+          "_unit": "분수의 나눗셈"
+        },
+        {
+          "type": "mcq",
+          "question": "식 5/6 ÷ 2/3 을 곱셈으로 바르게 바꾼 것은?",
+          "choices": [
+            "5/6 × 3/2",
+            "5/6 × 2/3",
+            "6/5 × 2/3",
+            "5/6 ÷ 3/2"
+          ],
+          "answer": "5/6 × 3/2",
+          "explanation": "나누기는 나누는 수 2/3를 뒤집은 3/2를 곱하는 것과 같으므로 5/6 × 3/2가 맞습니다. '5/6 × 2/3'은 뒤집지 않은 오답, '6/5 × 2/3'은 나누는 수가 아니라 나누어지는 수를 뒤집은 오답, '5/6 ÷ 3/2'는 여전히 나눗셈이라 변환이 안 된 오답입니다.",
+          "hint": "기본",
+          "_bank": "llm2",
+          "_unit": "분수의 나눗셈"
+        },
+        {
+          "type": "mcq",
+          "question": "물 22.5L를 0.5L짜리 페트병에 하나도 남김없이 가득 담으려고 합니다. 페트병은 모두 몇 개 필요할까요? (22.5 ÷ 0.5)",
+          "choices": [
+            "45",
+            "44",
+            "11",
+            "4.5"
+          ],
+          "answer": "45",
+          "explanation": "22.5÷0.5는 225÷5=45와 같으므로 45개 필요합니다. 0.5L씩 담으면 수가 늘어나므로 45개가 맞습니다. 44는 계산 오류, 11은 22.5÷2 혼동 오답, 4.5는 소수점 위치 오류입니다.",
+          "hint": "응용",
+          "_bank": "llm2",
+          "_unit": "소수의 나눗셈"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-09-01",
+    "week": "2026-W36",
+    "weakness_focus": [
+      "수능 기출 학습",
+      "6-2 분수의 나눗셈 / 부피비 = 닮음비의 세제곱 (2026-08-25 오답, 5/18→5/2)",
+      "닮음비·넓이비·부피비 (2026-08-27 오답, 100→16)"
+    ],
+    "grade": "초6"
+  }
+}
