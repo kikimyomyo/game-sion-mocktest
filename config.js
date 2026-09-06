@@ -333,10 +333,10 @@ window.GAME_CONFIG = {
   "overall_progress": 5,
   "streak_days": 1,
   "longest_streak": 3,
-  "total_plays": 638,
-  "total_correct": 480,
+  "total_plays": 648,
+  "total_correct": 485,
   "accuracy": 75,
-  "last_date": "2026-09-03",
+  "last_date": "2026-09-04",
   "영역별": [
     {
       "subject": "국어",
@@ -358,11 +358,11 @@ window.GAME_CONFIG = {
       "progress": 52,
       "current_unit": "6-2 분수의 나눗셈",
       "weak_count": 6,
-      "strong_count": 9,
+      "strong_count": 12,
       "recent_accuracy": [
+        0.917,
         1.0,
-        0.75,
-        0.767
+        0.25
       ],
       "is_master": false
     },
@@ -374,9 +374,9 @@ window.GAME_CONFIG = {
       "weak_count": 6,
       "strong_count": 2,
       "recent_accuracy": [
-        0.8,
         0.5,
-        0.6
+        0.6,
+        0.5
       ],
       "is_master": false
     },
@@ -413,7 +413,7 @@ window.GAME_CONFIG = {
       "color": "#ff9d6b",
       "progress": 0,
       "current_unit": "미시작",
-      "weak_count": 4,
+      "weak_count": 5,
       "strong_count": 0,
       "recent_accuracy": [
         0.5,
@@ -424,8 +424,8 @@ window.GAME_CONFIG = {
     }
   ],
   "level": 50,
-  "xp_total": 4900,
-  "xp_in_level": 0,
+  "xp_total": 4950,
+  "xp_in_level": 50,
   "master_units": 1,
   "roadmap": [
     {
@@ -469,7 +469,7 @@ window.GAME_CONFIG = {
       "subject": "국어",
       "color": "#ff8fc5",
       "unit": "문학",
-      "date": "2026-09-03",
+      "date": "2026-09-04",
       "accuracy": 100,
       "track": "초6"
     }
@@ -2202,20 +2202,20 @@ window.GAME_CONFIG = {
   }
 },
   copywork: {
-  "title": "영어 필사 100일의 기적",
-  "book_key": "영어100일",
+  "title": "어린이 사복음서 한 달 쓰기",
+  "book_key": "사복음서",
   "images": [
     "./copywork/today.jpg"
   ],
-  "page": 14,
-  "total": 100,
+  "page": 31,
+  "total": 65,
   "image": "./copywork/today.jpg",
-  "weekday": "금",
-  "date": "2026-09-04",
+  "weekday": "월",
+  "date": "2026-09-07",
   "flagged": false
 },
   revenge: {
-  "date": "2026-09-04",
+  "date": "2026-09-07",
   "items": [
     {
       "id": "warm-math.ratio.basic",
@@ -2226,72 +2226,75 @@ window.GAME_CONFIG = {
       "개념키": "math.ratio.basic",
       "problem": {
         "type": "mcq",
-        "question": "비율을 분수나 소수, 백분율로 나타낸 것 중 옳은 것은 무엇입니까?",
+        "question": "비 3:4를 분수로 나타낸 비율은 얼마입니까?",
         "choices": [
-          "0.7 = 7%",
-          "1/2 = 5%",
-          "0.3 = 30%",
-          "1/4 = 40%"
+          "3/4",
+          "4/3",
+          "3/7",
+          "4/7"
         ],
-        "answer": "0.3 = 30%",
-        "explanation": "0.3×100 = 30%로 옳습니다. 오답: 0.7은 70%(7% 아님), 1/2=0.5=50%(5% 아님), 1/4=0.25=25%(40% 아님)로 모두 틀립니다.",
-        "hint": "비와 비율 — 84일 밀린 간격 복습"
+        "answer": "3/4",
+        "explanation": "비율은 (비교하는 양)÷(기준량)이므로 3:4 → 3/4. 오답: 4/3은 기준량과 비교양을 뒤바꾼 것, 3/7과 4/7은 분모를 합 7로 잘못 쓴 것입니다.",
+        "hint": "비와 비율 — 87일 밀린 간격 복습"
       }
     },
     {
-      "id": "warmfill-수학",
-      "kind": "warmup_fill",
-      "label": "오늘 단원 워밍업",
+      "id": "warm-math.similarity.basic",
+      "kind": "warmup",
+      "label": "box0 간격 복습",
       "과목": "수학",
-      "단원": "분수의 나눗셈",
+      "단원": "닮음과 선분비",
+      "개념키": "math.similarity.basic",
       "problem": {
         "type": "mcq",
-        "question": "3/5 ÷ 1/4 을 계산한 값은?",
+        "question": "삼각형 ABC에서 변 AB 위의 점 D와 변 AC 위의 점 E를 이은 선분 DE가 변 BC와 평행하다. AD=4cm, DB=6cm, AE=6cm일 때 EC의 길이는 몇 cm인가?",
         "choices": [
-          "12/5",
-          "3/20",
-          "12/20",
-          "5/12"
+          "9",
+          "4",
+          "10",
+          "12"
         ],
-        "answer": "12/5",
-        "explanation": "3/5 ÷ 1/4 = 3/5 × 4/1 = 12/5. '3/20'은 뒤집지 않고 그대로 곱한 오답, '12/20'은 분모를 잘못 곱한 오답, '5/12'는 정답을 거꾸로 뒤집은 오답입니다.",
-        "hint": "분수의 나눗셈 — 지금 배우는 단원 워밍업"
+        "answer": "9",
+        "explanation": "DE와 BC가 평행하면 AD:DB = AE:EC가 성립한다. 4:6 = 6:EC이므로 4×EC = 36, 따라서 EC = 9cm다. 평행선이 만드는 선분비는 위쪽 조각끼리, 아래쪽 조각끼리 짝을 맞추는 것이 핵심이다.",
+        "hint": "닮음과 선분비 — 81일 밀린 간격 복습"
       }
     },
     {
-      "id": "warmfill-국어",
-      "kind": "warmup_fill",
-      "label": "오늘 단원 워밍업",
-      "과목": "국어",
-      "단원": "문학",
+      "id": "warm-sci.energy.conservation",
+      "kind": "warmup",
+      "label": "box0 간격 복습",
+      "과목": "통합과학",
+      "단원": "역학적 에너지 보존",
+      "개념키": "sci.energy.conservation",
       "problem": {
         "type": "mcq",
-        "question": "'~같이', '~처럼', '~듯이'와 같은 말을 사용하여 두 대상을 직접 견주어 빗대는 비유 표현을 무엇이라고 하나요?",
+        "question": "어떤 물체의 위치 에너지가 30J이고 운동 에너지가 20J일 때, 이 물체의 역학적 에너지는 몇 J인가?",
         "choices": [
-          "직유법",
-          "은유법",
-          "의인법",
-          "과장법"
+          "50",
+          "10",
+          "600",
+          "25"
         ],
-        "answer": "직유법",
-        "explanation": "'~같이/~처럼/~듯이'를 써서 직접 견주는 것은 직유법이다. 은유법은 'A는 B다'처럼 연결어 없이 빗대는 것, 의인법은 사람이 아닌 것을 사람처럼 표현하는 것, 과장법은 실제보다 크게(또는 작게) 부풀려 표현하는 것이라 모두 다르다.",
-        "hint": "문학 — 지금 배우는 단원 워밍업"
+        "answer": "50",
+        "explanation": "역학적 에너지는 위치 에너지와 운동 에너지를 더한 값이다. 30J + 20J = 50J다. 두 에너지를 빼거나 곱하는 것이 아니라 더한다는 점이 핵심이다.",
+        "hint": "역학적 에너지 보존 — 74일 밀린 간격 복습"
       }
     }
-  ]
+  ],
+  "은행결손": []
 },
   vocab: {
-  "date": "2026-09-04",
+  "date": "2026-09-07",
   "cards": [
     {
       "type": "mcq",
       "id": "voc-struggle",
       "question": "영어 단어 'struggle'의 뜻은?",
       "choices": [
-        "가리다, 감추다",
+        "친밀함",
+        "모순되지 않는",
         "애쓰다",
-        "~을 이루다",
-        "정확한"
+        "추상적인"
       ],
       "answer": "애쓰다",
       "explanation": "struggle = 애쓰다  (출처: 2019수능 30번)",
@@ -2305,10 +2308,10 @@ window.GAME_CONFIG = {
       "id": "voc-accurate",
       "question": "영어 단어 'accurate'의 뜻은?",
       "choices": [
+        "추상적인",
+        "지역",
         "정확한",
-        "친밀함",
-        "셀피, 자기 사진",
-        "애쓰다"
+        "친밀함"
       ],
       "answer": "정확한",
       "explanation": "accurate = 정확한  (출처: 2023수능 42번)",
@@ -2322,10 +2325,10 @@ window.GAME_CONFIG = {
       "id": "voc-veil",
       "question": "영어 단어 'veil'의 뜻은?",
       "choices": [
-        "~을 이루다",
         "가리다, 감추다",
-        "모순되지 않는",
-        "셀피, 자기 사진"
+        "애쓰다",
+        "셀피, 자기 사진",
+        "친밀함"
       ],
       "answer": "가리다, 감추다",
       "explanation": "veil = 가리다, 감추다  (출처: 2022수능 39번)",
@@ -2339,10 +2342,10 @@ window.GAME_CONFIG = {
       "id": "voc-childhood",
       "question": "영어 단어 'childhood'의 뜻은?",
       "choices": [
-        "정확한",
+        "친밀함",
         "어린 시절",
-        "추상적인",
-        "가리다, 감추다"
+        "정확한",
+        "~을 이루다"
       ],
       "answer": "어린 시절",
       "explanation": "childhood = 어린 시절  (출처: 2023수능 18번)",
@@ -2356,10 +2359,10 @@ window.GAME_CONFIG = {
       "id": "voc-selfie",
       "question": "영어 단어 'selfie'의 뜻은?",
       "choices": [
+        "모순되지 않는",
         "애쓰다",
-        "~을 이루다",
         "셀피, 자기 사진",
-        "어린 시절"
+        "추상적인"
       ],
       "answer": "셀피, 자기 사진",
       "explanation": "selfie = 셀피, 자기 사진  (출처: 2025수능 24번)",
@@ -2373,9 +2376,9 @@ window.GAME_CONFIG = {
       "id": "voc-consistent",
       "question": "영어 단어 'consistent'의 뜻은?",
       "choices": [
-        "추상적인",
-        "모순되지 않는",
         "셀피, 자기 사진",
+        "모순되지 않는",
+        "애쓰다",
         "지역"
       ],
       "answer": "모순되지 않는",
@@ -2390,10 +2393,10 @@ window.GAME_CONFIG = {
       "id": "voc-region",
       "question": "영어 단어 'region'의 뜻은?",
       "choices": [
-        "친밀함",
-        "가리다, 감추다",
+        "셀피, 자기 사진",
         "지역",
-        "추상적인"
+        "정확한",
+        "가리다, 감추다"
       ],
       "answer": "지역",
       "explanation": "region = 지역  (출처: 2022수능 25번)",
@@ -2407,10 +2410,10 @@ window.GAME_CONFIG = {
       "id": "voc-constitute",
       "question": "영어 단어 'constitute'의 뜻은?",
       "choices": [
-        "어린 시절",
+        "추상적인",
         "애쓰다",
         "~을 이루다",
-        "모순되지 않는"
+        "셀피, 자기 사진"
       ],
       "answer": "~을 이루다",
       "explanation": "constitute = ~을 이루다  (출처: 2025수능 36번)",
@@ -2425,9 +2428,9 @@ window.GAME_CONFIG = {
       "question": "영어 단어 'intimacy'의 뜻은?",
       "choices": [
         "애쓰다",
-        "추상적인",
         "친밀함",
-        "모순되지 않는"
+        "셀피, 자기 사진",
+        "지역"
       ],
       "answer": "친밀함",
       "explanation": "intimacy = 친밀함  (출처: 2020수능 40번)",
@@ -2441,10 +2444,10 @@ window.GAME_CONFIG = {
       "id": "voc-abstract",
       "question": "영어 단어 'abstract'의 뜻은?",
       "choices": [
-        "애쓰다",
-        "추상적인",
         "지역",
-        "정확한"
+        "추상적인",
+        "정확한",
+        "어린 시절"
       ],
       "answer": "추상적인",
       "explanation": "abstract = 추상적인  (출처: 2022수능 42번)",
